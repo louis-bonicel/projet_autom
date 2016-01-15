@@ -4,5 +4,11 @@ var files =
     [ "cmsis_boot", "dir_403716cd79a43e1e972b00df67b8492f.html", "dir_403716cd79a43e1e972b00df67b8492f" ],
     [ "cmsis_lib", "dir_73040fe574d70257c3238f59fad3a740.html", "dir_73040fe574d70257c3238f59fad3a740" ],
     [ "delay", "dir_cd5c06f81069e8c06c8ba7f93ddccad7.html", "dir_cd5c06f81069e8c06c8ba7f93ddccad7" ],
-    [ "main.c", "main_8c.html", "main_8c" ]
+    [ "ADC.c", "_a_d_c_8c.html", "_a_d_c_8c" ],
+    [ "ADC.h", "_a_d_c_8h.html", "_a_d_c_8h" ],
+    [ "DAC.c", "_d_a_c_8c.html", "_d_a_c_8c" ],
+    [ "DAC.h", "_d_a_c_8h.html", "_d_a_c_8h" ],
+    [ "main.c", "main_8c.html", "main_8c" ],
+    [ "usart.c", "usart_8c.html", "usart_8c" ],
+    [ "usart.h", "usart_8h.html", "usart_8h" ]
 ];

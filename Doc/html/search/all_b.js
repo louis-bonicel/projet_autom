@@ -8,8 +8,8 @@ var searchData=
   ['k2rr',['K2RR',['../struct_c_r_y_p___type_def.html#a96ef270d5244bd331fb8db5b0deffb4a',1,'CRYP_TypeDef']]],
   ['k3lr',['K3LR',['../struct_c_r_y_p___type_def.html#a39e099c27b2be81a03c09810f390454b',1,'CRYP_TypeDef']]],
   ['k3rr',['K3RR',['../struct_c_r_y_p___type_def.html#a1c3230419aed39ab61263b87547cbc3e',1,'CRYP_TypeDef']]],
-  ['k_5ftachy',['K_TACHY',['../main_8c.html#a25e02a8b5b06eb2aee19636424e0a395',1,'main.c']]],
-  ['k_5ftachy_5fto_5frpm',['K_TACHY_TO_RPM',['../main_8c.html#a1911781f3bb81a726db94075ff6ded71',1,'main.c']]],
+  ['k_5ftachy',['K_TACHY',['../main_8c.html#aa77eee177460bc054cb47d1f6f61b8d7',1,'main.c']]],
+  ['k_5ftachy_5fto_5frpm',['K_TACHY_TO_RPM',['../main_8c.html#ab62e52cd8a1bb5c2734e3d38b58d5cba',1,'main.c']]],
   ['keyr',['KEYR',['../struct_f_l_a_s_h___type_def.html#a802e9a26a89b44decd2d32d97f729dd3',1,'FLASH_TypeDef']]],
   ['kr',['KR',['../struct_i_w_d_g___type_def.html#a63089aaa5f4ad34ee2677ebcdee49cd9',1,'IWDG_TypeDef']]]
 ];

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ge',['GE',['../union_a_p_s_r___type.html#adcb98a5b9c93b0cb69cdb7af5638f32e',1,'APSR_Type::GE()'],['../unionx_p_s_r___type.html#a2d0ec4ccae337c1df5658f8cf4632e76',1,'xPSR_Type::GE()']]],
+  ['global_5fconfig',['Global_Config',['../main_8c.html#a055a543fc5812c32f98b0bde7fd5c17f',1,'main.c']]],
   ['gpio',['GPIO',['../group___g_p_i_o.html',1,'']]],
   ['gpio_5faf_5fcan1',['GPIO_AF_CAN1',['../group___g_p_i_o___alternat__function__selection__define.html#gaf5defeedc302bf348e31dd7bdcdd882f',1,'stm32f4xx_gpio.h']]],
   ['gpio_5faf_5fdcmi',['GPIO_AF_DCMI',['../group___g_p_i_o___alternat__function__selection__define.html#gaa7bfafac663bac5d437bd6d6a2f6774d',1,'stm32f4xx_gpio.h']]],

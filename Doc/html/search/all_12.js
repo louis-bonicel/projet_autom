@@ -147,7 +147,7 @@ var searchData=
   ['reserved7',['RESERVED7',['../struct_i2_c___type_def.html#a0f398bdcc3f24e7547c3cb9343111fd0',1,'I2C_TypeDef::RESERVED7()'],['../struct_r_t_c___type_def.html#a09936292ef8d82974b55a03a1080534e',1,'RTC_TypeDef::RESERVED7()'],['../struct_s_p_i___type_def.html#a98df0a538eb077b2cfc5194eda200f1b',1,'SPI_TypeDef::RESERVED7()'],['../struct_t_i_m___type_def.html#a4157fa8f6e188281292f019ea24f5599',1,'TIM_TypeDef::RESERVED7()']]],
   ['reserved8',['RESERVED8',['../struct_i2_c___type_def.html#a6e762751c9d5a1e41efb6033a26d8ed8',1,'I2C_TypeDef::RESERVED8()'],['../struct_s_p_i___type_def.html#a0ffe762827b71caff20c75bf105387f6',1,'SPI_TypeDef::RESERVED8()'],['../struct_t_i_m___type_def.html#ac708e4f0f142ac14d7e1c46778ed6f96',1,'TIM_TypeDef::RESERVED8()']]],
   ['reserved9',['RESERVED9',['../struct_t_i_m___type_def.html#a6754dd714ff0885e8e511977d2f393ce',1,'TIM_TypeDef']]],
-  ['resolution',['RESOLUTION',['../main_8c.html#a97448ce2ad00bb6a1d9ddaaf7dd15e35',1,'main.c']]],
+  ['resolution',['RESOLUTION',['../_d_a_c_8h.html#a5061b9d892773ac35b164d349b36c81f',1,'DAC.h']]],
   ['resp1',['RESP1',['../struct_s_d_i_o___type_def.html#a2b6f1ca5a5a50f8ef5417fe7be22553c',1,'SDIO_TypeDef']]],
   ['resp2',['RESP2',['../struct_s_d_i_o___type_def.html#a9228c8a38c07c508373644220dd322f0',1,'SDIO_TypeDef']]],
   ['resp3',['RESP3',['../struct_s_d_i_o___type_def.html#a70f3e911570bd326bff852664fd8a7d5',1,'SDIO_TypeDef']]],

@@ -1,17 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=projet_autom.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\projet_autom -TC:\CooCox\CoIDE\configuration\ProgramData\projet_autom/arm-gcc-link.ld -g">
-      <target file="projet_autom.elf" lastModified="15241380e2e">
-         <source file="..\obj\delay.o" lastModified="15241380687"/>
-         <source file="..\obj\stm32f4xx_usart.o" lastModified="15241380728"/>
-         <source file="..\obj\stm32f4xx_dac.o" lastModified="152413807a6"/>
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="152413807fa"/>
-         <source file="..\obj\main.o" lastModified="15241380879"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15241380937"/>
-         <source file="..\obj\stm32f4xx_adc.o" lastModified="15241380a07"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15241380a7c"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="15241380ae5"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="15241380bef"/>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wall -g -nostartfiles -Map=projet_autom.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\projet_autom -TC:\CooCox\CoIDE\configuration\ProgramData\projet_autom/arm-gcc-link.ld -g">
+      <target file="projet_autom.elf" lastModified="15247798f6b">
+         <source file="..\obj\delay.o" lastModified="1524779857c"/>
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="1524779861c"/>
+         <source file="..\obj\DAC.o" lastModified="15247798680"/>
+         <source file="..\obj\stm32f4xx_dac.o" lastModified="15247798765"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="152477987b5"/>
+         <source file="..\obj\main.o" lastModified="1524779881a"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15247798891"/>
+         <source file="..\obj\ADC.o" lastModified="152477988db"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="1524779896f"/>
+         <source file="..\obj\printf.o" lastModified="15247798a01"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15247798a73"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="15247798ac4"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="15247798b93"/>
+         <source file="..\obj\usart.o" lastModified="15247798bdd"/>
       </target>
    </processor>
 </history>

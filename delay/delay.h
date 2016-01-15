@@ -1,3 +1,13 @@
+/**
+ * \file delay.h
+ *
+ * \author Inconnu
+ *
+ * \brief Decalaration des fonctions pour la creation de delay par le SysTick.
+ *
+ */
+
+
 #ifndef __DELAY_H
 #define __DELAY_H
 
@@ -9,4 +19,4 @@ void delay_nus(u32 n);
 void delay_1ms(void);
 void delay_nms(u32 n);
 
-#endif
+#endif // __DELAY_H

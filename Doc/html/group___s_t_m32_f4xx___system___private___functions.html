@@ -113,9 +113,50 @@ Functions</h2></td></tr>
 <tr class="memitem:gae0c36a9591fe6e9c45ecb21a794f0f0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4xx___system___private___functions.html#gae0c36a9591fe6e9c45ecb21a794f0f0f">SystemCoreClockUpdate</a> (void)</td></tr>
 <tr class="memdesc:gae0c36a9591fe6e9c45ecb21a794f0f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters.  <a href="#gae0c36a9591fe6e9c45ecb21a794f0f0f">More...</a><br /></td></tr>
 <tr class="separator:gae0c36a9591fe6e9c45ecb21a794f0f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ee14ac28e60198cc998586807b51e4c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4xx___system___private___functions.html#ga1ee14ac28e60198cc998586807b51e4c">SetSysClock</a> (void)</td></tr>
+<tr class="memdesc:ga1ee14ac28e60198cc998586807b51e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the System clock source, PLL Multiplier and Divider factors, AHB/APBx prescalers and Flash settings  This function should be called only once the RCC clock configuration is reset to the default reset state (done in <a class="el" href="group___s_t_m32_f4xx___system___private___functions.html#ga93f514700ccf00d08dbdcff7f1224eb2" title="Setup the microcontroller system Initialize the Embedded Flash Interface, the PLL and update the Syst...">SystemInit()</a> function).  <a href="#ga1ee14ac28e60198cc998586807b51e4c">More...</a><br /></td></tr>
+<tr class="separator:ga1ee14ac28e60198cc998586807b51e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga1ee14ac28e60198cc998586807b51e4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SetSysClock </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configures the System clock source, PLL Multiplier and Divider factors, AHB/APBx prescalers and Flash settings  This function should be called only once the RCC clock configuration is reset to the default reset state (done in <a class="el" href="group___s_t_m32_f4xx___system___private___functions.html#ga93f514700ccf00d08dbdcff7f1224eb2" title="Setup the microcontroller system Initialize the Embedded Flash Interface, the PLL and update the Syst...">SystemInit()</a> function). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gae0c36a9591fe6e9c45ecb21a794f0f0f"></a>
 <div class="memitem">
 <div class="memproto">

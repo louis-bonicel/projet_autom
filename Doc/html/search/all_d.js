@@ -18,5 +18,6 @@ var searchData=
   ['mmfr',['MMFR',['../struct_s_c_b___type.html#aec2f8283d2737c6897188568a4214976',1,'SCB_Type']]],
   ['moder',['MODER',['../struct_g_p_i_o___type_def.html#ac2505d096b6b650f1647b8e0ff8b196b',1,'GPIO_TypeDef']]],
   ['msr',['MSR',['../struct_c_a_n___type_def.html#af98b957a4e887751fbd407d3e2cf93b5',1,'CAN_TypeDef']]],
+  ['my_5fprintf',['my_printf',['../main_8c.html#a9749b09a79ef9329d2bfa6f4de6ae8e2',1,'printf.c']]],
   ['multiprocessor_20communication_20functions',['MultiProcessor Communication functions',['../group___u_s_a_r_t___group3.html',1,'']]]
 ];
