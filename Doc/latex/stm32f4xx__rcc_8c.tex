@@ -1,0 +1,211 @@
+\hypertarget{stm32f4xx__rcc_8c}{}\section{cmsis\+\_\+lib/source/stm32f4xx\+\_\+rcc.c File Reference}
+\label{stm32f4xx__rcc_8c}\index{cmsis\+\_\+lib/source/stm32f4xx\+\_\+rcc.\+c@{cmsis\+\_\+lib/source/stm32f4xx\+\_\+rcc.\+c}}
+
+
+This file provides firmware functions to manage the following functionalities of the Reset and clock control (R\+CC) peripheral\+:  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+rcc.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+O\+F\+F\+S\+ET}~(R\+C\+C\+\_\+\+B\+A\+SE -\/ \hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{P\+E\+R\+I\+P\+H\+\_\+\+B\+A\+SE})
+\item 
+\#define {\bfseries C\+R\+\_\+\+O\+F\+F\+S\+ET}~(R\+C\+C\+\_\+\+O\+F\+F\+S\+ET + 0x00)
+\item 
+\#define {\bfseries H\+S\+I\+O\+N\+\_\+\+Bit\+Number}~0x00
+\item 
+\#define {\bfseries C\+R\+\_\+\+H\+S\+I\+O\+N\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (C\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (H\+S\+I\+O\+N\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries C\+S\+S\+O\+N\+\_\+\+Bit\+Number}~0x13
+\item 
+\#define {\bfseries C\+R\+\_\+\+C\+S\+S\+O\+N\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (C\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (C\+S\+S\+O\+N\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries P\+L\+L\+O\+N\+\_\+\+Bit\+Number}~0x18
+\item 
+\#define {\bfseries C\+R\+\_\+\+P\+L\+L\+O\+N\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (C\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (P\+L\+L\+O\+N\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries P\+L\+L\+I2\+S\+O\+N\+\_\+\+Bit\+Number}~0x1A
+\item 
+\#define {\bfseries C\+R\+\_\+\+P\+L\+L\+I2\+S\+O\+N\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (C\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (P\+L\+L\+I2\+S\+O\+N\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries C\+F\+G\+R\+\_\+\+O\+F\+F\+S\+ET}~(R\+C\+C\+\_\+\+O\+F\+F\+S\+ET + 0x08)
+\item 
+\#define {\bfseries I2\+S\+S\+R\+C\+\_\+\+Bit\+Number}~0x17
+\item 
+\#define {\bfseries C\+F\+G\+R\+\_\+\+I2\+S\+S\+R\+C\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (C\+F\+G\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (I2\+S\+S\+R\+C\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries B\+D\+C\+R\+\_\+\+O\+F\+F\+S\+ET}~(R\+C\+C\+\_\+\+O\+F\+F\+S\+ET + 0x70)
+\item 
+\#define {\bfseries R\+T\+C\+E\+N\+\_\+\+Bit\+Number}~0x0F
+\item 
+\#define {\bfseries B\+D\+C\+R\+\_\+\+R\+T\+C\+E\+N\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (B\+D\+C\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (R\+T\+C\+E\+N\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries B\+D\+R\+S\+T\+\_\+\+Bit\+Number}~0x10
+\item 
+\#define {\bfseries B\+D\+C\+R\+\_\+\+B\+D\+R\+S\+T\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (B\+D\+C\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (B\+D\+R\+S\+T\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries C\+S\+R\+\_\+\+O\+F\+F\+S\+ET}~(R\+C\+C\+\_\+\+O\+F\+F\+S\+ET + 0x74)
+\item 
+\#define {\bfseries L\+S\+I\+O\+N\+\_\+\+Bit\+Number}~0x00
+\item 
+\#define {\bfseries C\+S\+R\+\_\+\+L\+S\+I\+O\+N\+\_\+\+BB}~(\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{P\+E\+R\+I\+P\+H\+\_\+\+B\+B\+\_\+\+B\+A\+SE} + (C\+S\+R\+\_\+\+O\+F\+F\+S\+ET $\ast$ 32) + (L\+S\+I\+O\+N\+\_\+\+Bit\+Number $\ast$ 4))
+\item 
+\#define {\bfseries C\+F\+G\+R\+\_\+\+M\+C\+O2\+\_\+\+R\+E\+S\+E\+T\+\_\+\+M\+A\+SK}~((uint32\+\_\+t)0x07\+F\+F\+F\+F\+F\+F)
+\item 
+\#define {\bfseries C\+F\+G\+R\+\_\+\+M\+C\+O1\+\_\+\+R\+E\+S\+E\+T\+\_\+\+M\+A\+SK}~((uint32\+\_\+t)0x\+F89\+F\+F\+F\+F\+F)
+\item 
+\#define {\bfseries F\+L\+A\+G\+\_\+\+M\+A\+SK}~((uint8\+\_\+t)0x1\+F)
+\item 
+\#define {\bfseries C\+R\+\_\+\+B\+Y\+T\+E3\+\_\+\+A\+D\+D\+R\+E\+SS}~((uint32\+\_\+t)0x40023802)
+\item 
+\#define {\bfseries C\+I\+R\+\_\+\+B\+Y\+T\+E2\+\_\+\+A\+D\+D\+R\+E\+SS}~((uint32\+\_\+t)(R\+C\+C\+\_\+\+B\+A\+SE + 0x0\+C + 0x01))
+\item 
+\#define {\bfseries C\+I\+R\+\_\+\+B\+Y\+T\+E3\+\_\+\+A\+D\+D\+R\+E\+SS}~((uint32\+\_\+t)(R\+C\+C\+\_\+\+B\+A\+SE + 0x0\+C + 0x02))
+\item 
+\#define {\bfseries B\+D\+C\+R\+\_\+\+A\+D\+D\+R\+E\+SS}~(\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{P\+E\+R\+I\+P\+H\+\_\+\+B\+A\+SE} + B\+D\+C\+R\+\_\+\+O\+F\+F\+S\+ET)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___r_c_c___group1_ga413f6422be11b1334abe60b3bff2e062}{R\+C\+C\+\_\+\+De\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Resets the R\+CC clock configuration to the default reset state. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga523b06e73f6aa8a03e42299c855066a8}{R\+C\+C\+\_\+\+H\+S\+E\+Config} (uint8\+\_\+t R\+C\+C\+\_\+\+H\+SE)
+\begin{DoxyCompactList}\small\item\em Configures the External High Speed oscillator (H\+SE). \end{DoxyCompactList}\item 
+Error\+Status \hyperlink{group___r_c_c___group1_gae0f15692614dd048ee4110a056f001dc}{R\+C\+C\+\_\+\+Wait\+For\+H\+S\+E\+Start\+Up} (void)
+\begin{DoxyCompactList}\small\item\em Waits for H\+SE start-\/up. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_gaa2d6a35f5c2e0f86317c3beb222677fc}{R\+C\+C\+\_\+\+Adjust\+H\+S\+I\+Calibration\+Value} (uint8\+\_\+t H\+S\+I\+Calibration\+Value)
+\begin{DoxyCompactList}\small\item\em Adjusts the Internal High Speed oscillator (H\+SI) calibration value. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga0c6772a1e43765909495f57815ef69e2}{R\+C\+C\+\_\+\+H\+S\+I\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Internal High Speed oscillator (H\+SI). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga65209ab5c3589b249c7d70f978735ca6}{R\+C\+C\+\_\+\+L\+S\+E\+Config} (uint8\+\_\+t R\+C\+C\+\_\+\+L\+SE)
+\begin{DoxyCompactList}\small\item\em Configures the External Low Speed oscillator (L\+SE). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga81e3ca29fd154ac2019bba6936d6d5ed}{R\+C\+C\+\_\+\+L\+S\+I\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Internal Low Speed oscillator (L\+SI). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga154b93e90bfdede2a874244a1ff1002e}{R\+C\+C\+\_\+\+P\+L\+L\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+P\+L\+L\+Source, uint32\+\_\+t P\+L\+LM, uint32\+\_\+t P\+L\+LN, uint32\+\_\+t P\+L\+LP, uint32\+\_\+t P\+L\+LQ)
+\begin{DoxyCompactList}\small\item\em Configures the main P\+LL clock source, multiplication and division factors. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga84dee53c75e58fdb53571716593c2272}{R\+C\+C\+\_\+\+P\+L\+L\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the main P\+LL. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga4c15157382939a693c15620a4867e6ad}{R\+C\+C\+\_\+\+P\+L\+L\+I2\+S\+Config} (uint32\+\_\+t P\+L\+L\+I2\+SN, uint32\+\_\+t P\+L\+L\+I2\+SR)
+\begin{DoxyCompactList}\small\item\em Configures the P\+L\+L\+I2S clock multiplication and division factors. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga2efe493a6337d5e0034bfcdfb0f541e4}{R\+C\+C\+\_\+\+P\+L\+L\+I2\+S\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the P\+L\+L\+I2S. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga0ff1fd7b9a8a49cdda11b7d7261c3494}{R\+C\+C\+\_\+\+Clock\+Security\+System\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Clock Security System. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_ga15c9ecb6ef015ed008cb28e5b7a50531}{R\+C\+C\+\_\+\+M\+C\+O1\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+M\+C\+O1\+Source, uint32\+\_\+t R\+C\+C\+\_\+\+M\+C\+O1\+Div)
+\begin{DoxyCompactList}\small\item\em Selects the clock source to output on M\+C\+O1 pin(\+P\+A8). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group1_gaf50f10675b747de60c739e44e5c22aee}{R\+C\+C\+\_\+\+M\+C\+O2\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+M\+C\+O2\+Source, uint32\+\_\+t R\+C\+C\+\_\+\+M\+C\+O2\+Div)
+\begin{DoxyCompactList}\small\item\em Selects the clock source to output on M\+C\+O2 pin(\+P\+C9). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group2_ga3551a36a8f0a3dc96a74d6b939048337}{R\+C\+C\+\_\+\+S\+Y\+S\+C\+L\+K\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+S\+Y\+S\+C\+L\+K\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the system clock (S\+Y\+S\+C\+LK). \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___r_c_c___group2_gaaeb32311c208b2a980841c9c884a41ea}{R\+C\+C\+\_\+\+Get\+S\+Y\+S\+C\+L\+K\+Source} (void)
+\begin{DoxyCompactList}\small\item\em Returns the clock source used as system clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group2_ga9d0aec72e236c6cdf3a3a82dfb525491}{R\+C\+C\+\_\+\+H\+C\+L\+K\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+S\+Y\+S\+C\+LK)
+\begin{DoxyCompactList}\small\item\em Configures the A\+HB clock (H\+C\+LK). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group2_ga448137346d4292985d4e7a61dd1a824f}{R\+C\+C\+\_\+\+P\+C\+L\+K1\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+H\+C\+LK)
+\begin{DoxyCompactList}\small\item\em Configures the Low Speed A\+PB clock (P\+C\+L\+K1). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group2_ga09f9c010a4adca9e036da42c2ca6126a}{R\+C\+C\+\_\+\+P\+C\+L\+K2\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+H\+C\+LK)
+\begin{DoxyCompactList}\small\item\em Configures the High Speed A\+PB clock (P\+C\+L\+K2). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group2_ga3e9944fd1ed734275222bbb3e3f29993}{R\+C\+C\+\_\+\+Get\+Clocks\+Freq} (\hyperlink{struct_r_c_c___clocks_type_def}{R\+C\+C\+\_\+\+Clocks\+Type\+Def} $\ast$R\+C\+C\+\_\+\+Clocks)
+\begin{DoxyCompactList}\small\item\em Returns the frequencies of different on chip clocks; S\+Y\+S\+C\+LK, H\+C\+LK, P\+C\+L\+K1 and P\+C\+L\+K2. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga1473d8a5a020642966359611c44181b0}{R\+C\+C\+\_\+\+R\+T\+C\+C\+L\+K\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+R\+T\+C\+C\+L\+K\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the R\+TC clock (R\+T\+C\+C\+LK). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga9802f84846df2cea8e369234ed13b159}{R\+C\+C\+\_\+\+R\+T\+C\+C\+L\+K\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the R\+TC clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga636c3b72f35391e67f12a551b15fa54a}{R\+C\+C\+\_\+\+Backup\+Reset\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases the Backup domain reset. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga6c56f8529988fcc8f4dbffbc1bab27d0}{R\+C\+C\+\_\+\+I2\+S\+C\+L\+K\+Config} (uint32\+\_\+t R\+C\+C\+\_\+\+I2\+S\+C\+L\+K\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the I2S clock source (I2\+S\+C\+LK). \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga80c89116820d48bb38db2e7d5e5a49b9}{R\+C\+C\+\_\+\+A\+H\+B1\+Periph\+Clock\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B1 peripheral clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_gaadffedbd87e796f01d9776b8ee01ff5e}{R\+C\+C\+\_\+\+A\+H\+B2\+Periph\+Clock\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B2 peripheral clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga4eb8c119f2e9bf2bd2e042d27f151338}{R\+C\+C\+\_\+\+A\+H\+B3\+Periph\+Clock\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B3\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B3 peripheral clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_gaee7cc5d73af7fe1986fceff8afd3973e}{R\+C\+C\+\_\+\+A\+P\+B1\+Periph\+Clock\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+P\+B1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Low Speed A\+PB (A\+P\+B1) peripheral clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga56ff55caf8d835351916b40dd030bc87}{R\+C\+C\+\_\+\+A\+P\+B2\+Periph\+Clock\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+P\+B2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the High Speed A\+PB (A\+P\+B2) peripheral clock. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_gaa7c450567f4731d4f0615f63586cad86}{R\+C\+C\+\_\+\+A\+H\+B1\+Periph\+Reset\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases A\+H\+B1 peripheral reset. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_gafb119d6d1955d1b8c361e8140845ac5a}{R\+C\+C\+\_\+\+A\+H\+B2\+Periph\+Reset\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases A\+H\+B2 peripheral reset. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_gaee44f159a1ca9ebdd7117bff387cd592}{R\+C\+C\+\_\+\+A\+H\+B3\+Periph\+Reset\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B3\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases A\+H\+B3 peripheral reset. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_gab197ae4369c10b92640a733b40ed2801}{R\+C\+C\+\_\+\+A\+P\+B1\+Periph\+Reset\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+P\+B1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases Low Speed A\+PB (A\+P\+B1) peripheral reset. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_gad94553850ac07106a27ee85fec37efdf}{R\+C\+C\+\_\+\+A\+P\+B2\+Periph\+Reset\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+P\+B2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases High Speed A\+PB (A\+P\+B2) peripheral reset. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga5cd0d5adbc7496d7005b208bd19ce255}{R\+C\+C\+\_\+\+A\+H\+B1\+Periph\+Clock\+L\+P\+Mode\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B1 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga1ac5bb9676ae9b48e50d6a95de922ce3}{R\+C\+C\+\_\+\+A\+H\+B2\+Periph\+Clock\+L\+P\+Mode\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B2 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga4e1df07cdfd81c068902d9d35fcc3911}{R\+C\+C\+\_\+\+A\+H\+B3\+Periph\+Clock\+L\+P\+Mode\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+H\+B3\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+H\+B3 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga84dd64badb84768cbcf19e241cadff50}{R\+C\+C\+\_\+\+A\+P\+B1\+Periph\+Clock\+L\+P\+Mode\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+P\+B1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+P\+B1 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group3_ga30365b9e0b4c5d7e98c2675c862ddd7e}{R\+C\+C\+\_\+\+A\+P\+B2\+Periph\+Clock\+L\+P\+Mode\+Cmd} (uint32\+\_\+t R\+C\+C\+\_\+\+A\+P\+B2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+P\+B2 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group4_gaa953aa226e9ce45300d535941e4dfe2f}{R\+C\+C\+\_\+\+I\+T\+Config} (uint8\+\_\+t R\+C\+C\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified R\+CC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \hyperlink{group___r_c_c___group4_ga2897bdc52f272031c44fb1f72205d295}{R\+C\+C\+\_\+\+Get\+Flag\+Status} (uint8\+\_\+t R\+C\+C\+\_\+\+F\+L\+AG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified R\+CC flag is set or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group4_ga53f909dbb15a54124419084ebda97d72}{R\+C\+C\+\_\+\+Clear\+Flag} (void)
+\begin{DoxyCompactList}\small\item\em Clears the R\+CC reset flags. The reset flags are\+: R\+C\+C\+\_\+\+F\+L\+A\+G\+\_\+\+P\+I\+N\+R\+ST, R\+C\+C\+\_\+\+F\+L\+A\+G\+\_\+\+P\+O\+R\+R\+ST, R\+C\+C\+\_\+\+F\+L\+A\+G\+\_\+\+S\+F\+T\+R\+ST, R\+C\+C\+\_\+\+F\+L\+A\+G\+\_\+\+I\+W\+D\+G\+R\+ST, R\+C\+C\+\_\+\+F\+L\+A\+G\+\_\+\+W\+W\+D\+G\+R\+ST, R\+C\+C\+\_\+\+F\+L\+A\+G\+\_\+\+L\+P\+W\+R\+R\+ST. \end{DoxyCompactList}\item 
+I\+T\+Status \hyperlink{group___r_c_c___group4_ga6126c99f398ee4be410ad76ae3aee18f}{R\+C\+C\+\_\+\+Get\+I\+T\+Status} (uint8\+\_\+t R\+C\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified R\+CC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___r_c_c___group4_ga529842d165910f8f87e26115da36089b}{R\+C\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit} (uint8\+\_\+t R\+C\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the R\+CC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the Reset and clock control (R\+CC) peripheral\+: 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/\+September-\/2011
+\begin{DoxyItemize}
+\item Internal/external clocks, P\+LL, C\+SS and M\+CO configuration
+\item System, A\+HB and A\+PB busses clocks configuration
+\item Peripheral clocks configuration
+\item Interrupts and flags management
+\end{DoxyItemize}
+\end{DoxyDate}
+\begin{DoxyVerb}*               
+*          ===================================================================
+*                               RCC specific features
+*          ===================================================================
+*    
+*          After reset the device is running from Internal High Speed oscillator 
+*          (HSI 16MHz) with Flash 0 wait state, Flash prefetch buffer, D-Cache 
+*          and I-Cache are disabled, and all peripherals are off except internal
+*          SRAM, Flash and JTAG.
+*           - There is no prescaler on High speed (AHB) and Low speed (APB) busses;
+*             all peripherals mapped on these busses are running at HSI speed.
+*             - The clock for all peripherals is switched off, except the SRAM and FLASH.
+*           - All GPIOs are in input floating state, except the JTAG pins which
+*             are assigned to be used for debug purpose.
+*        
+*          Once the device started from reset, the user application has to:        
+*           - Configure the clock source to be used to drive the System clock
+*             (if the application needs higher frequency/performance)
+*           - Configure the System clock frequency and Flash settings  
+*           - Configure the AHB and APB busses prescalers
+*           - Enable the clock for the peripheral(s) to be used
+*           - Configure the clock source(s) for peripherals which clocks are not
+*             derived from the System clock (I2S, RTC, ADC, USB OTG FS/SDIO/RNG)      
+*                        
+*  \end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+T\+HE P\+R\+E\+S\+E\+NT F\+I\+R\+M\+W\+A\+RE W\+H\+I\+CH IS F\+OR G\+U\+I\+D\+A\+N\+CE O\+N\+LY A\+I\+MS AT P\+R\+O\+V\+I\+D\+I\+NG C\+U\+S\+T\+O\+M\+E\+RS W\+I\+TH C\+O\+D\+I\+NG I\+N\+F\+O\+R\+M\+A\+T\+I\+ON R\+E\+G\+A\+R\+D\+I\+NG T\+H\+E\+IR P\+R\+O\+D\+U\+C\+TS IN O\+R\+D\+ER F\+OR T\+H\+EM TO S\+A\+VE T\+I\+ME. AS A R\+E\+S\+U\+LT, S\+T\+M\+I\+C\+R\+O\+E\+L\+E\+C\+T\+R\+O\+N\+I\+CS S\+H\+A\+LL N\+OT BE H\+E\+LD L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES W\+I\+TH R\+E\+S\+P\+E\+CT TO A\+NY C\+L\+A\+I\+MS A\+R\+I\+S\+I\+NG F\+R\+OM T\+HE C\+O\+N\+T\+E\+NT OF S\+U\+CH F\+I\+R\+M\+W\+A\+RE A\+N\+D/\+OR T\+HE U\+SE M\+A\+DE BY C\+U\+S\+T\+O\+M\+E\+RS OF T\+HE C\+O\+D\+I\+NG I\+N\+F\+O\+R\+M\+A\+T\+I\+ON C\+O\+N\+T\+A\+I\+N\+ED H\+E\+R\+E\+IN IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+H\+E\+IR P\+R\+O\+D\+U\+C\+TS.
+
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+HT 2011 S\+T\+Microelectronics\end{center} }

@@ -1,0 +1,225 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+
+
+Programme de controle d\textquotesingle{}un banc moteur.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+conf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}delay.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_a560179c9f943e8caf404c35c282f17c4}{A\+D\+C\+\_\+\+Config} (void)
+\begin{DoxyCompactList}\small\item\em Configure les A\+DC pour le potentiomètre et le tachymètre. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ae52255c535a22134f4a645458fbc5ddb}{D\+A\+C\+\_\+\+Set\+Values} (uint16\+\_\+t dac\+\_\+p, uint16\+\_\+t dac\+\_\+n)
+\begin{DoxyCompactList}\small\item\em Met à jour les valeurs du D\+AC contrôlant le moteur. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_af255127f7d5283ab3de381e419d2bf1b}{Tachy\+\_\+to\+\_\+\+R\+PM} (uint16\+\_\+t value\+\_\+to\+\_\+convert, uint16\+\_\+t $\ast$speed\+\_\+rpm)
+\begin{DoxyCompactList}\small\item\em Convertit une valeur de tachymètre vers une vitesse en tr/min. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6e2af20368b6a98997e2152308ac64ba}{A\+D\+C\+\_\+\+Get\+Pot\+Value} (uint16\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Cette fonction récupère une mesure d\textquotesingle{}A\+DC pour le potentiomètre. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a56c8ff165146f2f845a0bf90e3eacd39}{G\+P\+I\+O\+\_\+\+Config} (void)
+\begin{DoxyCompactList}\small\item\em Configure les G\+P\+I\+Os correspondant aux L\+E\+Ds sur la carte. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a1c4fcf5b7727573c3b30e5b95e61cdcc}{D\+A\+C\+\_\+\+Config} (void)
+\begin{DoxyCompactList}\small\item\em Configure les sorties D\+AC pour contrôler le moteur. Ce sont les ports dac\+\_\+n et dac\+\_\+p. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ab5e09814056d617c521549e542639b7e}{Sys\+Tick\+\_\+\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em Utilisée pour gérer les delay. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\begin{DoxyCompactList}\small\item\em Entrée du programme. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a54bf6b15aecba3352e559b02e8f17e32}{A\+D\+C\+\_\+\+Get\+Tachy\+Value} (uint16\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Récupère une mesure d\textquotesingle{}A\+DC pour le tachymètre et l\textquotesingle{}écrit dans son argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \hyperlink{main_8c_a97448ce2ad00bb6a1d9ddaaf7dd15e35}{R\+E\+S\+O\+L\+U\+T\+I\+ON} = 12\hypertarget{main_8c_a97448ce2ad00bb6a1d9ddaaf7dd15e35}{}\label{main_8c_a97448ce2ad00bb6a1d9ddaaf7dd15e35}
+
+\begin{DoxyCompactList}\small\item\em Constante de résolution des D\+AC en nombre de bits. \end{DoxyCompactList}\item 
+const float \hyperlink{main_8c_a25e02a8b5b06eb2aee19636424e0a395}{K\+\_\+\+T\+A\+C\+HY} = 0.\+518\hypertarget{main_8c_a25e02a8b5b06eb2aee19636424e0a395}{}\label{main_8c_a25e02a8b5b06eb2aee19636424e0a395}
+
+\begin{DoxyCompactList}\small\item\em Constante pour convertir une valeur d\textquotesingle{}A\+DC en tours par minutes. Vitesse en R\+PM = Valeur d\textquotesingle{}A\+DC / K\+\_\+\+T\+A\+C\+HY. \end{DoxyCompactList}\item 
+const float \hyperlink{main_8c_a1911781f3bb81a726db94075ff6ded71}{K\+\_\+\+T\+A\+C\+H\+Y\+\_\+\+T\+O\+\_\+\+R\+PM} = 1.\+93003663004\hypertarget{main_8c_a1911781f3bb81a726db94075ff6ded71}{}\label{main_8c_a1911781f3bb81a726db94075ff6ded71}
+
+\begin{DoxyCompactList}\small\item\em Constante pour convertir une valeur d\textquotesingle{}A\+DC en tours par minutes. K\+\_\+\+T\+A\+C\+H\+Y\+\_\+\+T\+O\+\_\+\+R\+PM = 1 / K\+\_\+\+T\+A\+C\+HY. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{main_8c_a6cea4abb53b1d33a354fc60831a938be}{pot\+\_\+value} = 0\hypertarget{main_8c_a6cea4abb53b1d33a354fc60831a938be}{}\label{main_8c_a6cea4abb53b1d33a354fc60831a938be}
+
+\begin{DoxyCompactList}\small\item\em Variable globale utilisée pour récupérer la valeur du potentiomètre avec S\+TM Studio. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{main_8c_ae1b67b995d69ed2834b6f032467b7c8a}{tachy\+\_\+value} = 0\hypertarget{main_8c_ae1b67b995d69ed2834b6f032467b7c8a}{}\label{main_8c_ae1b67b995d69ed2834b6f032467b7c8a}
+
+\begin{DoxyCompactList}\small\item\em Variable globale utilisée pour récupérer la valeur du tachymètre avec S\+TM Studio. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{main_8c_a71a15c61b9d7c679945a73636518bad7}{tachy\+\_\+speed} = 0\hypertarget{main_8c_a71a15c61b9d7c679945a73636518bad7}{}\label{main_8c_a71a15c61b9d7c679945a73636518bad7}
+
+\begin{DoxyCompactList}\small\item\em Variable globale utilisée pour récupérer la vitesse calculée depuis le tachymètre avec S\+TM Studio. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{main_8c_a30da09fc5e856f0ff8435826d199dbfe}{dac\+\_\+p\+\_\+value} = 0\hypertarget{main_8c_a30da09fc5e856f0ff8435826d199dbfe}{}\label{main_8c_a30da09fc5e856f0ff8435826d199dbfe}
+
+\begin{DoxyCompactList}\small\item\em Variable globale utilisée pour récupérer la valeur de D\+AC sur dac\+\_\+p avec S\+TM Studio. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{main_8c_a73fe09bcaa610b5521a1d6806b13a15a}{dac\+\_\+n\+\_\+value} = 0\hypertarget{main_8c_a73fe09bcaa610b5521a1d6806b13a15a}{}\label{main_8c_a73fe09bcaa610b5521a1d6806b13a15a}
+
+\begin{DoxyCompactList}\small\item\em Variable globale utilisée pour récupérer la valeur de D\+AC sur dac\+\_\+n avec S\+TM Studio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Programme de controle d\textquotesingle{}un banc moteur. 
+
+\begin{DoxyAuthor}{Author}
+Louis Bonicel 
+
+Florian Boyer 
+
+Victor Marnas
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+15 Janvier 2016
+\end{DoxyDate}
+Projet d\textquotesingle{}automatisme S\+E4, asservissement d\textquotesingle{}un moteur en vitesse. 
+
+\subsection{Function Documentation}
+\index{main.\+c@{main.\+c}!A\+D\+C\+\_\+\+Config@{A\+D\+C\+\_\+\+Config}}
+\index{A\+D\+C\+\_\+\+Config@{A\+D\+C\+\_\+\+Config}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Config(void)}{ADC_Config(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+Config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_a560179c9f943e8caf404c35c282f17c4}{}\label{main_8c_a560179c9f943e8caf404c35c282f17c4}
+
+
+Configure les A\+DC pour le potentiomètre et le tachymètre. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]Déplacer vers un A\+D\+C.\+c / A\+D\+C.\+h \end{DoxyRefDesc}
+
+
+Potentiomètre \+: adc\+\_\+consigne -\/$>$ P\+B0 A\+D\+C1 channel 8
+
+Tachymètre \+: adc\+\_\+tachy -\/$>$ P\+A2 A\+D\+C1 channel 2 \index{main.\+c@{main.\+c}!A\+D\+C\+\_\+\+Get\+Pot\+Value@{A\+D\+C\+\_\+\+Get\+Pot\+Value}}
+\index{A\+D\+C\+\_\+\+Get\+Pot\+Value@{A\+D\+C\+\_\+\+Get\+Pot\+Value}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Get\+Pot\+Value(uint16\+\_\+t $\ast$value)}{ADC_GetPotValue(uint16_t *value)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+Get\+Pot\+Value (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_a6e2af20368b6a98997e2152308ac64ba}{}\label{main_8c_a6e2af20368b6a98997e2152308ac64ba}
+
+
+Cette fonction récupère une mesure d\textquotesingle{}A\+DC pour le potentiomètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Pointeur vers la variable dans laquelle retourner la valeur d\textquotesingle{}A\+DC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Déplacer vers un A\+D\+C.\+c / A\+D\+C.\+h \end{DoxyRefDesc}
+\index{main.\+c@{main.\+c}!A\+D\+C\+\_\+\+Get\+Tachy\+Value@{A\+D\+C\+\_\+\+Get\+Tachy\+Value}}
+\index{A\+D\+C\+\_\+\+Get\+Tachy\+Value@{A\+D\+C\+\_\+\+Get\+Tachy\+Value}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Get\+Tachy\+Value(uint16\+\_\+t $\ast$value)}{ADC_GetTachyValue(uint16_t *value)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+Get\+Tachy\+Value (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_a54bf6b15aecba3352e559b02e8f17e32}{}\label{main_8c_a54bf6b15aecba3352e559b02e8f17e32}
+
+
+Récupère une mesure d\textquotesingle{}A\+DC pour le tachymètre et l\textquotesingle{}écrit dans son argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Pointeur vers la variable dans laquelle retourner la valeur d\textquotesingle{}A\+DC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]Déplacer vers un A\+D\+C.\+c / A\+D\+C.\+h \end{DoxyRefDesc}
+\index{main.\+c@{main.\+c}!D\+A\+C\+\_\+\+Config@{D\+A\+C\+\_\+\+Config}}
+\index{D\+A\+C\+\_\+\+Config@{D\+A\+C\+\_\+\+Config}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{D\+A\+C\+\_\+\+Config(void)}{DAC_Config(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+\+Config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_a1c4fcf5b7727573c3b30e5b95e61cdcc}{}\label{main_8c_a1c4fcf5b7727573c3b30e5b95e61cdcc}
+
+
+Configure les sorties D\+AC pour contrôler le moteur. Ce sont les ports dac\+\_\+n et dac\+\_\+p. 
+
+dac\+\_\+n -\/$>$ P\+A5 D\+A\+C1
+
+dac\+\_\+p -\/$>$ P\+A4 D\+A\+C2 \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000007}{Todo}]Déplacer vers un D\+A\+C.\+c / D\+A\+C.\+h \end{DoxyRefDesc}
+\index{main.\+c@{main.\+c}!D\+A\+C\+\_\+\+Set\+Values@{D\+A\+C\+\_\+\+Set\+Values}}
+\index{D\+A\+C\+\_\+\+Set\+Values@{D\+A\+C\+\_\+\+Set\+Values}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{D\+A\+C\+\_\+\+Set\+Values(uint16\+\_\+t dac\+\_\+p, uint16\+\_\+t dac\+\_\+n)}{DAC_SetValues(uint16_t dac_p, uint16_t dac_n)}}]{\setlength{\rightskip}{0pt plus 5cm}void D\+A\+C\+\_\+\+Set\+Values (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{dac\+\_\+p, }
+\item[{uint16\+\_\+t}]{dac\+\_\+n}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_ae52255c535a22134f4a645458fbc5ddb}{}\label{main_8c_ae52255c535a22134f4a645458fbc5ddb}
+
+
+Met à jour les valeurs du D\+AC contrôlant le moteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+\_\+p} & La valeur à écrire sur le port dac\+\_\+p. \\
+\hline
+{\em dac\+\_\+n} & La valeur à écrire sur le port dac\+\_\+n. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]Déplacer vers un D\+A\+C.\+c / D\+A\+C.\+h \end{DoxyRefDesc}
+\index{main.\+c@{main.\+c}!G\+P\+I\+O\+\_\+\+Config@{G\+P\+I\+O\+\_\+\+Config}}
+\index{G\+P\+I\+O\+\_\+\+Config@{G\+P\+I\+O\+\_\+\+Config}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Config(void)}{GPIO_Config(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_a56c8ff165146f2f845a0bf90e3eacd39}{}\label{main_8c_a56c8ff165146f2f845a0bf90e3eacd39}
+
+
+Configure les G\+P\+I\+Os correspondant aux L\+E\+Ds sur la carte. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]Déplacer vers un G\+P\+I\+O.\+c / G\+P\+I\+O.\+h \end{DoxyRefDesc}
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Entrée du programme. 
+
+\begin{DoxyReturn}{Returns}
+Rien, le int est ici pour éviter un warning G\+CC. 
+\end{DoxyReturn}
+\index{main.\+c@{main.\+c}!Sys\+Tick\+\_\+\+Handler@{Sys\+Tick\+\_\+\+Handler}}
+\index{Sys\+Tick\+\_\+\+Handler@{Sys\+Tick\+\_\+\+Handler}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{Sys\+Tick\+\_\+\+Handler(void)}{SysTick_Handler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Sys\+Tick\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_ab5e09814056d617c521549e542639b7e}{}\label{main_8c_ab5e09814056d617c521549e542639b7e}
+
+
+Utilisée pour gérer les delay. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000008}{Todo}]Déplacer vers un misc.\+c / misc.\+h ? Pas encore sur, voir future archi. \end{DoxyRefDesc}
+\index{main.\+c@{main.\+c}!Tachy\+\_\+to\+\_\+\+R\+PM@{Tachy\+\_\+to\+\_\+\+R\+PM}}
+\index{Tachy\+\_\+to\+\_\+\+R\+PM@{Tachy\+\_\+to\+\_\+\+R\+PM}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{Tachy\+\_\+to\+\_\+\+R\+P\+M(uint16\+\_\+t value\+\_\+to\+\_\+convert, uint16\+\_\+t $\ast$speed\+\_\+rpm)}{Tachy_to_RPM(uint16_t value_to_convert, uint16_t *speed_rpm)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tachy\+\_\+to\+\_\+\+R\+PM (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{value\+\_\+to\+\_\+convert, }
+\item[{uint16\+\_\+t $\ast$}]{speed\+\_\+rpm}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_af255127f7d5283ab3de381e419d2bf1b}{}\label{main_8c_af255127f7d5283ab3de381e419d2bf1b}
+
+
+Convertit une valeur de tachymètre vers une vitesse en tr/min. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+\_\+to\+\_\+convert} & La valeur lue du tachymètre. \\
+\hline
+{\em speed\+\_\+rpm} & Pointeur vers la variable dans laquelle retourner la vitesse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]Déplacer vers un tachy.\+c / tachy.\+h ? Pas encore sur, voir future archi. \end{DoxyRefDesc}

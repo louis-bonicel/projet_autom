@@ -1,0 +1,187 @@
+\hypertarget{stm32f4xx__dac_8h}{}\section{cmsis\+\_\+lib/include/stm32f4xx\+\_\+dac.h File Reference}
+\label{stm32f4xx__dac_8h}\index{cmsis\+\_\+lib/include/stm32f4xx\+\_\+dac.\+h@{cmsis\+\_\+lib/include/stm32f4xx\+\_\+dac.\+h}}
+
+
+This file contains all the functions prototypes for the D\+AC firmware library.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_d_a_c___init_type_def}{D\+A\+C\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em D\+AC Init structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga7849138e043267668d755390d923e4ba}{D\+A\+C\+\_\+\+Trigger\+\_\+\+None}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga3bfbff1e03af1fd17a57a43e57420fe6}{D\+A\+C\+\_\+\+Trigger\+\_\+\+T2\+\_\+\+T\+R\+GO}~((uint32\+\_\+t)0x00000024)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga58ccb2de3d22d66ee975152f5edb330a}{D\+A\+C\+\_\+\+Trigger\+\_\+\+T4\+\_\+\+T\+R\+GO}~((uint32\+\_\+t)0x0000002\+C)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga35352cebfd1ae8a3d63e374a5d86a85d}{D\+A\+C\+\_\+\+Trigger\+\_\+\+T5\+\_\+\+T\+R\+GO}~((uint32\+\_\+t)0x0000001\+C)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga083307783678a2f1d3066db57dc84cfe}{D\+A\+C\+\_\+\+Trigger\+\_\+\+T6\+\_\+\+T\+R\+GO}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga9b92d497746be54af46ae4e9c1fc4a6f}{D\+A\+C\+\_\+\+Trigger\+\_\+\+T7\+\_\+\+T\+R\+GO}~((uint32\+\_\+t)0x00000014)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga756700c6621eadb807e21a16966580a0}{D\+A\+C\+\_\+\+Trigger\+\_\+\+T8\+\_\+\+T\+R\+GO}~((uint32\+\_\+t)0x0000000\+C)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_ga67c15b2c26246a2304f9db28e25adcc4}{D\+A\+C\+\_\+\+Trigger\+\_\+\+Ext\+\_\+\+I\+T9}~((uint32\+\_\+t)0x00000034)
+\item 
+\#define \hyperlink{group___d_a_c__trigger__selection_gadef77bb8bbd109232900902402ef637f}{D\+A\+C\+\_\+\+Trigger\+\_\+\+Software}~((uint32\+\_\+t)0x0000003\+C)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+T\+R\+I\+G\+G\+ER}(T\+R\+I\+G\+G\+ER)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Wave\+Generation\+\_\+\+None}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Wave\+Generation\+\_\+\+Noise}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Wave\+Generation\+\_\+\+Triangle}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+W\+A\+VE}(W\+A\+VE)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga60794fd5092a332cfa82e1cee13945fc}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bit0}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga09f47cfa563252a1add4662284350c07}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits1\+\_\+0}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga60b800857b7e33d9c0be2846fc56849f}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits2\+\_\+0}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gafe219362b3a48d8678a65ef38cb45532}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits3\+\_\+0}~((uint32\+\_\+t)0x00000300)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga2543d802e19d592a26c8231be663cdac}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits4\+\_\+0}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga71a01660d410823bfe76a603080dc125}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits5\+\_\+0}~((uint32\+\_\+t)0x00000500)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga48fe2d3f4274d6bf28e446ca0001ed5d}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits6\+\_\+0}~((uint32\+\_\+t)0x00000600)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaf0a93c1ee1e13776fae7558b36243431}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits7\+\_\+0}~((uint32\+\_\+t)0x00000700)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga4f56965841d9d91ca5b6de43ee589598}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits8\+\_\+0}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaf7f4540d9ec6efe074e1e4485f9a347a}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits9\+\_\+0}~((uint32\+\_\+t)0x00000900)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga7670f0e10f062571d0e56027ef653228}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits10\+\_\+0}~((uint32\+\_\+t)0x00000\+A00)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaeb9b5992b771f9a14587eeda58227831}{D\+A\+C\+\_\+\+L\+F\+S\+R\+Unmask\+\_\+\+Bits11\+\_\+0}~((uint32\+\_\+t)0x00000\+B00)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga49b1eddf4e6371b4be8751162dc94ac4}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+1}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga9798d68c3bbf0a57306bf2f962697377}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+3}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gad3f31de1277836df1109576a53c47e87}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+7}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga42653712ce783d33ecb2f3e97e9c2ece}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+15}~((uint32\+\_\+t)0x00000300)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga10b15745b749c62a56bd3d7bd5a27e1b}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+31}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaaae92dae9c4da55e29c645396825e36b}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+63}~((uint32\+\_\+t)0x00000500)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaacec0af3f69db46f8984be3af9ecadfb}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+127}~((uint32\+\_\+t)0x00000600)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gadb404422c86a7b92d78e6d9617e8ce4d}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+255}~((uint32\+\_\+t)0x00000700)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga565b0c97bbdf152756617d491bf8ef85}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+511}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga7d573b0cebb1b939bd83367effb93d89}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+1023}~((uint32\+\_\+t)0x00000900)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gad33d28d7fcc09d84500ea9b6e6c5feed}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+2047}~((uint32\+\_\+t)0x00000\+A00)
+\item 
+\#define \hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga3ce69f5a63a2464dc4b5f73cb6fe72f5}{D\+A\+C\+\_\+\+Triangle\+Amplitude\+\_\+4095}~((uint32\+\_\+t)0x00000\+B00)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+L\+F\+S\+R\+\_\+\+U\+N\+M\+A\+S\+K\+\_\+\+T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+A\+M\+P\+L\+I\+T\+U\+DE}(V\+A\+L\+UE)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Output\+Buffer\+\_\+\+Enable}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Output\+Buffer\+\_\+\+Disable}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+T\+A\+TE}(S\+T\+A\+TE)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Channel\+\_\+1}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Channel\+\_\+2}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+C\+H\+A\+N\+N\+EL}(C\+H\+A\+N\+N\+EL)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Align\+\_\+12b\+\_\+R}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Align\+\_\+12b\+\_\+L}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Align\+\_\+8b\+\_\+R}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+A\+L\+I\+GN}(A\+L\+I\+GN)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Wave\+\_\+\+Noise}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+Wave\+\_\+\+Triangle}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+W\+A\+VE}(W\+A\+VE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+D\+A\+TA}(D\+A\+TA)~((D\+A\+TA) $<$= 0x\+F\+F\+F0)
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+I\+T\+\_\+\+D\+M\+A\+U\+DR}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+IT}(IT)~(((IT) == D\+A\+C\+\_\+\+I\+T\+\_\+\+D\+M\+A\+U\+DR))
+\item 
+\#define {\bfseries D\+A\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+M\+A\+U\+DR}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+A\+C\+\_\+\+F\+L\+AG}(F\+L\+AG)~(((F\+L\+AG) == D\+A\+C\+\_\+\+F\+L\+A\+G\+\_\+\+D\+M\+A\+U\+DR))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___d_a_c_ga1fae225204e1e049d6795319e99ba8bc}{D\+A\+C\+\_\+\+De\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the D\+AC peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga7c59850468ed4bf0659663fe495441da}{D\+A\+C\+\_\+\+Init} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, \hyperlink{struct_d_a_c___init_type_def}{D\+A\+C\+\_\+\+Init\+Type\+Def} $\ast$D\+A\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the D\+AC peripheral according to the specified parameters in the D\+A\+C\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_gadfc270974d54cb5fa5f92556015c4046}{D\+A\+C\+\_\+\+Struct\+Init} (\hyperlink{struct_d_a_c___init_type_def}{D\+A\+C\+\_\+\+Init\+Type\+Def} $\ast$D\+A\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each D\+A\+C\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga323e61530d7fa9396c3bce9edb61f733}{D\+A\+C\+\_\+\+Cmd} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified D\+AC channel. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga46f9f7f6b9520a86e300fe966afe5fb3}{D\+A\+C\+\_\+\+Software\+Trigger\+Cmd} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the selected D\+AC channel software trigger. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_gab4d3b364a6b184dcd65f3b294ebf56dc}{D\+A\+C\+\_\+\+Dual\+Software\+Trigger\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables simultaneously the two D\+AC channels software triggers. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_gabd51ae6880821d4dcd923969ec19a19e}{D\+A\+C\+\_\+\+Wave\+Generation\+Cmd} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, uint32\+\_\+t D\+A\+C\+\_\+\+Wave, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the selected D\+AC channel wave generation. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_gad06b4230d2b17d1d13f41dce4c782461}{D\+A\+C\+\_\+\+Set\+Channel1\+Data} (uint32\+\_\+t D\+A\+C\+\_\+\+Align, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Set the specified data holding register value for D\+AC channel1. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga44e12006ec186791378d132da8541552}{D\+A\+C\+\_\+\+Set\+Channel2\+Data} (uint32\+\_\+t D\+A\+C\+\_\+\+Align, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Set the specified data holding register value for D\+AC channel2. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga4ca2cfdf56ab35a23f2517f23d7fbb24}{D\+A\+C\+\_\+\+Set\+Dual\+Channel\+Data} (uint32\+\_\+t D\+A\+C\+\_\+\+Align, uint16\+\_\+t Data2, uint16\+\_\+t Data1)
+\begin{DoxyCompactList}\small\item\em Set the specified data holding register value for dual channel D\+AC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___d_a_c_ga51274838de1e5dd012a82d7f44d7a50b}{D\+A\+C\+\_\+\+Get\+Data\+Output\+Value} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel)
+\begin{DoxyCompactList}\small\item\em Returns the last data output value of the selected D\+AC channel. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga194cba38f60ace11658824f0250121f4}{D\+A\+C\+\_\+\+D\+M\+A\+Cmd} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified D\+AC channel D\+MA request. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga12d7495b30eae40c2570118cabbda1c3}{D\+A\+C\+\_\+\+I\+T\+Config} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, uint32\+\_\+t D\+A\+C\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified D\+AC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \hyperlink{group___d_a_c_ga9ee60b78f0ccd23bfbe54bce2a2f909b}{D\+A\+C\+\_\+\+Get\+Flag\+Status} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, uint32\+\_\+t D\+A\+C\+\_\+\+F\+L\+AG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified D\+AC flag is set or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga49543c52786d70d6b6311f3fee856d37}{D\+A\+C\+\_\+\+Clear\+Flag} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, uint32\+\_\+t D\+A\+C\+\_\+\+F\+L\+AG)
+\begin{DoxyCompactList}\small\item\em Clears the D\+AC channel\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+I\+T\+Status \hyperlink{group___d_a_c_ga541aac3b50db3a8a806ec5ef30679aca}{D\+A\+C\+\_\+\+Get\+I\+T\+Status} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, uint32\+\_\+t D\+A\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified D\+AC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___d_a_c_ga12d90e69a2642997136b23224d180641}{D\+A\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit} (uint32\+\_\+t D\+A\+C\+\_\+\+Channel, uint32\+\_\+t D\+A\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the D\+AC channel\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains all the functions prototypes for the D\+AC firmware library. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/\+September-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+T\+HE P\+R\+E\+S\+E\+NT F\+I\+R\+M\+W\+A\+RE W\+H\+I\+CH IS F\+OR G\+U\+I\+D\+A\+N\+CE O\+N\+LY A\+I\+MS AT P\+R\+O\+V\+I\+D\+I\+NG C\+U\+S\+T\+O\+M\+E\+RS W\+I\+TH C\+O\+D\+I\+NG I\+N\+F\+O\+R\+M\+A\+T\+I\+ON R\+E\+G\+A\+R\+D\+I\+NG T\+H\+E\+IR P\+R\+O\+D\+U\+C\+TS IN O\+R\+D\+ER F\+OR T\+H\+EM TO S\+A\+VE T\+I\+ME. AS A R\+E\+S\+U\+LT, S\+T\+M\+I\+C\+R\+O\+E\+L\+E\+C\+T\+R\+O\+N\+I\+CS S\+H\+A\+LL N\+OT BE H\+E\+LD L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES W\+I\+TH R\+E\+S\+P\+E\+CT TO A\+NY C\+L\+A\+I\+MS A\+R\+I\+S\+I\+NG F\+R\+OM T\+HE C\+O\+N\+T\+E\+NT OF S\+U\+CH F\+I\+R\+M\+W\+A\+RE A\+N\+D/\+OR T\+HE U\+SE M\+A\+DE BY C\+U\+S\+T\+O\+M\+E\+RS OF T\+HE C\+O\+D\+I\+NG I\+N\+F\+O\+R\+M\+A\+T\+I\+ON C\+O\+N\+T\+A\+I\+N\+ED H\+E\+R\+E\+IN IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+H\+E\+IR P\+R\+O\+D\+U\+C\+TS.
+
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+HT 2011 S\+T\+Microelectronics\end{center} }

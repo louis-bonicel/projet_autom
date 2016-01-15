@@ -1,0 +1,120 @@
+\hypertarget{group___a_d_c___group5}{}\section{Regular Channels D\+MA Configuration functions}
+\label{group___a_d_c___group5}\index{Regular Channels D\+M\+A Configuration functions@{Regular Channels D\+M\+A Configuration functions}}
+
+
+Regular Channels D\+MA Configuration functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___a_d_c___group5_gac5881d5995818001584b27b137a8dbcb}{A\+D\+C\+\_\+\+D\+M\+A\+Cmd} (\hyperlink{struct_a_d_c___type_def}{A\+D\+C\+\_\+\+Type\+Def} $\ast$A\+D\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified A\+DC D\+MA request. \end{DoxyCompactList}\item 
+void \hyperlink{group___a_d_c___group5_ga912fd3e923ae4435621724e1bbc52729}{A\+D\+C\+\_\+\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd} (\hyperlink{struct_a_d_c___type_def}{A\+D\+C\+\_\+\+Type\+Def} $\ast$A\+D\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+DC D\+MA request after last transfer (Single-\/\+A\+DC mode) \end{DoxyCompactList}\item 
+void \hyperlink{group___a_d_c___group5_ga40f2be2edf2a33fc15f4a5933b562970}{A\+D\+C\+\_\+\+Multi\+Mode\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the A\+DC D\+MA request after last transfer in multi A\+DC mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Regular Channels D\+MA Configuration functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                   Regular Channels DMA Configuration functions
+ ===============================================================================  
+
+  This section provides functions allowing to configure the DMA for ADC regular 
+  channels.
+  Since converted regular channel values are stored into a unique data register, 
+  it is useful to use DMA for conversion of more than one regular channel. This 
+  avoids the loss of the data already stored in the ADC Data register. 
+  
+  When the DMA mode is enabled (using the ADC_DMACmd() function), after each
+  conversion of a regular channel, a DMA request is generated.
+  
+  Depending on the "DMA disable selection for Independent ADC mode" 
+  configuration (using the ADC_DMARequestAfterLastTransferCmd() function), 
+  at the end of the last DMA transfer, two possibilities are allowed:
+  - No new DMA request is issued to the DMA controller (feature DISABLED) 
+  - Requests can continue to be generated (feature ENABLED).
+  
+  Depending on the "DMA disable selection for multi ADC mode" configuration 
+  (using the void ADC_MultiModeDMARequestAfterLastTransferCmd() function), 
+  at the end of the last DMA transfer, two possibilities are allowed:
+  - No new DMA request is issued to the DMA controller (feature DISABLED) 
+  - Requests can continue to be generated (feature ENABLED).\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Regular Channels D\+M\+A Configuration functions@{Regular Channels D\+M\+A Configuration functions}!A\+D\+C\+\_\+\+D\+M\+A\+Cmd@{A\+D\+C\+\_\+\+D\+M\+A\+Cmd}}
+\index{A\+D\+C\+\_\+\+D\+M\+A\+Cmd@{A\+D\+C\+\_\+\+D\+M\+A\+Cmd}!Regular Channels D\+M\+A Configuration functions@{Regular Channels D\+M\+A Configuration functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+D\+M\+A\+Cmd(\+A\+D\+C\+\_\+\+Type\+Def $\ast$\+A\+D\+Cx, Functional\+State New\+State)}{ADC_DMACmd(ADC_TypeDef *ADCx, FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+D\+M\+A\+Cmd (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+D\+C\+\_\+\+Type\+Def} $\ast$}]{A\+D\+Cx, }
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group5_gac5881d5995818001584b27b137a8dbcb}{}\label{group___a_d_c___group5_gac5881d5995818001584b27b137a8dbcb}
+
+
+Enables or disables the specified A\+DC D\+MA request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+D\+Cx} & where x can be 1, 2 or 3 to select the A\+DC peripheral. \\
+\hline
+{\em New\+State} & new state of the selected A\+DC D\+MA transfer. This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Regular Channels D\+M\+A Configuration functions@{Regular Channels D\+M\+A Configuration functions}!A\+D\+C\+\_\+\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd@{A\+D\+C\+\_\+\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd}}
+\index{A\+D\+C\+\_\+\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd@{A\+D\+C\+\_\+\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd}!Regular Channels D\+M\+A Configuration functions@{Regular Channels D\+M\+A Configuration functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd(\+A\+D\+C\+\_\+\+Type\+Def $\ast$\+A\+D\+Cx, Functional\+State New\+State)}{ADC_DMARequestAfterLastTransferCmd(ADC_TypeDef *ADCx, FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+D\+C\+\_\+\+Type\+Def} $\ast$}]{A\+D\+Cx, }
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group5_ga912fd3e923ae4435621724e1bbc52729}{}\label{group___a_d_c___group5_ga912fd3e923ae4435621724e1bbc52729}
+
+
+Enables or disables the A\+DC D\+MA request after last transfer (Single-\/\+A\+DC mode) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+D\+Cx} & where x can be 1, 2 or 3 to select the A\+DC peripheral. \\
+\hline
+{\em New\+State} & new state of the selected A\+DC D\+MA request after last transfer. This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Regular Channels D\+M\+A Configuration functions@{Regular Channels D\+M\+A Configuration functions}!A\+D\+C\+\_\+\+Multi\+Mode\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd@{A\+D\+C\+\_\+\+Multi\+Mode\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd}}
+\index{A\+D\+C\+\_\+\+Multi\+Mode\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd@{A\+D\+C\+\_\+\+Multi\+Mode\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd}!Regular Channels D\+M\+A Configuration functions@{Regular Channels D\+M\+A Configuration functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Multi\+Mode\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd(\+Functional\+State New\+State)}{ADC_MultiModeDMARequestAfterLastTransferCmd(FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+Multi\+Mode\+D\+M\+A\+Request\+After\+Last\+Transfer\+Cmd (
+\begin{DoxyParamCaption}
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group5_ga40f2be2edf2a33fc15f4a5933b562970}{}\label{group___a_d_c___group5_ga40f2be2edf2a33fc15f4a5933b562970}
+
+
+Enables or disables the A\+DC D\+MA request after last transfer in multi A\+DC mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the selected A\+DC D\+MA request after last transfer. This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+if Enabled, D\+MA requests are issued as long as data are converted and D\+MA mode for multi A\+DC mode (selected using \hyperlink{group___a_d_c___group1_ga5803f6581a9cd7e90b6e637067102d94}{A\+D\+C\+\_\+\+Common\+Init()} function by A\+D\+C\+\_\+\+Common\+Init\+Struct.\+A\+D\+C\+\_\+\+D\+M\+A\+Access\+Mode structure member) is A\+D\+C\+\_\+\+D\+M\+A\+Access\+Mode\+\_\+1, A\+D\+C\+\_\+\+D\+M\+A\+Access\+Mode\+\_\+2 or A\+D\+C\+\_\+\+D\+M\+A\+Access\+Mode\+\_\+3. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

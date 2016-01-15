@@ -1,0 +1,557 @@
+\hypertarget{group___g_p_i_o}{}\section{G\+P\+IO}
+\label{group___g_p_i_o}\index{G\+P\+IO@{G\+P\+IO}}
+
+
+G\+P\+IO driver modules.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___g_p_i_o___exported___constants}{G\+P\+I\+O\+\_\+\+Exported\+\_\+\+Constants}
+\item 
+\hyperlink{group___g_p_i_o___private___functions}{G\+P\+I\+O\+\_\+\+Private\+\_\+\+Functions}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Init structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH}(P\+E\+R\+I\+PH)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE}(M\+O\+DE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+O\+T\+Y\+PE}(O\+T\+Y\+PE)~(((O\+T\+Y\+PE) == G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+PP) $\vert$$\vert$ ((O\+T\+Y\+PE) == G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+OD))\hypertarget{group___g_p_i_o_ga7145550a414f2b0455d79ddde6100af8}{}\label{group___g_p_i_o_ga7145550a414f2b0455d79ddde6100af8}
+
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED}(S\+P\+E\+ED)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD}(P\+U\+PD)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+B\+I\+T\+\_\+\+A\+C\+T\+I\+ON}(A\+C\+T\+I\+ON)~(((A\+C\+T\+I\+ON) == Bit\+\_\+\+R\+E\+S\+ET) $\vert$$\vert$ ((A\+C\+T\+I\+ON) == Bit\+\_\+\+S\+ET))\hypertarget{group___g_p_i_o_ga6b882caa8ed9857c5c7267959a7818c5}{}\label{group___g_p_i_o_ga6b882caa8ed9857c5c7267959a7818c5}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___g_p_i_o_ga1347339e1c84a196fabbb31205eec5d4}{G\+P\+I\+O\+Mode\+\_\+\+Type\+Def} \{ \hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a484aa18a6156ce916049b334ba1839de}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+IN} = 0x00, 
+\hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a60f1d530f4119efcad8e1a68c890c6a6}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+O\+UT} = 0x01, 
+\hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6d44c35c6c5008d85bac9251a867e701}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AF} = 0x02, 
+\hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6e5c0d7e6d2e22b834b24e1ca1d6d0db}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN} = 0x03
+ \}\begin{DoxyCompactList}\small\item\em G\+P\+IO Configuration Mode enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_gae74212e8d66c389f47326b06bdf6d2ab}{G\+P\+I\+O\+O\+Type\+\_\+\+Type\+Def} \{ {\bfseries G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+PP} = 0x00, 
+{\bfseries G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+OD} = 0x01
+ \}\hypertarget{group___g_p_i_o_gae74212e8d66c389f47326b06bdf6d2ab}{}\label{group___g_p_i_o_gae74212e8d66c389f47326b06bdf6d2ab}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Output type enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_ga062ad92b67b4a1f301c161022cf3ba8e}{G\+P\+I\+O\+Speed\+\_\+\+Type\+Def} \{ \hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9bff9e174639332007c914483361be18}{G\+P\+I\+O\+\_\+\+Speed\+\_\+2\+M\+Hz} = 0x00, 
+\hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea59a0acdf2ccd1b4b8d507e845e497c62}{G\+P\+I\+O\+\_\+\+Speed\+\_\+25\+M\+Hz} = 0x01, 
+\hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581}{G\+P\+I\+O\+\_\+\+Speed\+\_\+50\+M\+Hz} = 0x02, 
+\hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea195a0e73cd63d7f5b5d41bd0155eacbb}{G\+P\+I\+O\+\_\+\+Speed\+\_\+100\+M\+Hz} = 0x03
+ \}\begin{DoxyCompactList}\small\item\em G\+P\+IO Output Maximum frequency enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_gafb7ecd99c44b4fd702d669304a36c2c8}{G\+P\+I\+O\+Pu\+Pd\+\_\+\+Type\+Def} \{ {\bfseries G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+\+N\+O\+P\+U\+LL} = 0x00, 
+{\bfseries G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+\+UP} = 0x01, 
+{\bfseries G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+\+D\+O\+WN} = 0x02
+ \}\hypertarget{group___g_p_i_o_gafb7ecd99c44b4fd702d669304a36c2c8}{}\label{group___g_p_i_o_gafb7ecd99c44b4fd702d669304a36c2c8}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Configuration Pull\+Up Pull\+Down enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action} \{ {\bfseries Bit\+\_\+\+R\+E\+S\+ET} = 0, 
+{\bfseries Bit\+\_\+\+S\+ET}
+ \}\hypertarget{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}{}\label{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Bit S\+ET and Bit R\+E\+S\+ET enumeration. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___g_p_i_o_gaa60bdf3182c44b5fa818f237042f52ee}{G\+P\+I\+O\+\_\+\+De\+Init} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Deinitializes the G\+P\+I\+Ox peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga71abf9404261370d03cca449b88d3a65}{G\+P\+I\+O\+\_\+\+Init} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$G\+P\+I\+O\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the G\+P\+I\+Ox peripheral according to the specified parameters in the G\+P\+I\+O\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gab28de41278e7f8c63d0851e2733b10df}{G\+P\+I\+O\+\_\+\+Struct\+Init} (\hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$G\+P\+I\+O\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each G\+P\+I\+O\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gad2f2e615928c69fd0d8c641a7cedaafc}{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks G\+P\+IO Pins configuration registers. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___g_p_i_o_ga98772ef6b639b3fa06c8ae5ba28d3aaa}{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified input port pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___g_p_i_o_ga139a33adc8409288e9f193bbebb5a0f7}{G\+P\+I\+O\+\_\+\+Read\+Input\+Data} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Reads the specified G\+P\+IO input data port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___g_p_i_o_ga138270f8695b105b7c6ed405792919c1}{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified output data port bit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___g_p_i_o_gaf8938a34280b7dc3e39872a7c17bb323}{G\+P\+I\+O\+\_\+\+Read\+Output\+Data} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Reads the specified G\+P\+IO output data port. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga9e1352eed7c6620e18af2d86f6b6ff8e}{G\+P\+I\+O\+\_\+\+Set\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets the selected data port bits. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga6fcd35b207a66608dd2c9d7de9247dc8}{G\+P\+I\+O\+\_\+\+Reset\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Clears the selected data port bits. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga8f7b237fd744d9f7456fbe0da47a9b80}{G\+P\+I\+O\+\_\+\+Write\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action} Bit\+Val)
+\begin{DoxyCompactList}\small\item\em Sets or clears the selected data port bit. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gaa925f19c8547a00c7a0c269a84873bf9}{G\+P\+I\+O\+\_\+\+Write} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t Port\+Val)
+\begin{DoxyCompactList}\small\item\em Writes data to the specified G\+P\+IO data port. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gac1b837c66258872740d5f89f23549ab1}{G\+P\+I\+O\+\_\+\+Toggle\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Toggles the specified G\+P\+IO pins.. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga0a77617a322562ae84f8d72486032c5d}{G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin\+Source, uint8\+\_\+t G\+P\+I\+O\+\_\+\+AF)
+\begin{DoxyCompactList}\small\item\em Changes the mapping of the specified pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\+P\+IO driver modules. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{G\+P\+IO@{G\+P\+IO}!I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH}}
+\index{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH}{IS_GPIO_ALL_PERIPH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH(
+\begin{DoxyParamCaption}
+\item[{}]{P\+E\+R\+I\+PH}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga68b2a1f0b05c13978217db5439c7f790}{}\label{group___g_p_i_o_ga68b2a1f0b05c13978217db5439c7f790}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((PERIPH) == GPIOA) || \(\backslash\)
+                                    ((PERIPH) == GPIOB) || \(\backslash\)
+                                    ((PERIPH) == GPIOC) || \(\backslash\)
+                                    ((PERIPH) == GPIOD) || \(\backslash\)
+                                    ((PERIPH) == GPIOE) || \(\backslash\)
+                                    ((PERIPH) == GPIOF) || \(\backslash\)
+                                    ((PERIPH) == GPIOG) || \(\backslash\)
+                                    ((PERIPH) == GPIOH) || \(\backslash\)
+                                    ((PERIPH) == GPIOI))
+\end{DoxyCode}
+\index{G\+P\+IO@{G\+P\+IO}!I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE}}
+\index{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE}{IS_GPIO_MODE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE(
+\begin{DoxyParamCaption}
+\item[{}]{M\+O\+DE}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gacc5fde3eef57ec3c558c11d0011d900c}{}\label{group___g_p_i_o_gacc5fde3eef57ec3c558c11d0011d900c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((MODE) == \hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a484aa18a6156ce916049b334ba1839de}{GPIO\_Mode\_IN})  || ((MODE) == \hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a60f1d530f4119efcad8e1a68c890c6a6}{GPIO\_Mode\_OUT}) || \(\backslash\)
+                            ((MODE) == \hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6d44c35c6c5008d85bac9251a867e701}{GPIO\_Mode\_AF})|| ((MODE) == 
+      \hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6e5c0d7e6d2e22b834b24e1ca1d6d0db}{GPIO\_Mode\_AN}))
+\end{DoxyCode}
+\index{G\+P\+IO@{G\+P\+IO}!I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD}}
+\index{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD}{IS_GPIO_PUPD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD(
+\begin{DoxyParamCaption}
+\item[{}]{P\+U\+PD}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gae30c92591d1f29dbd594ac3cd855b503}{}\label{group___g_p_i_o_gae30c92591d1f29dbd594ac3cd855b503}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((PUPD) == GPIO\_PuPd\_NOPULL) || ((PUPD) == GPIO\_PuPd\_UP) || \(\backslash\)
+                            ((PUPD) == GPIO\_PuPd\_DOWN))
+\end{DoxyCode}
+\index{G\+P\+IO@{G\+P\+IO}!I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED}}
+\index{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED@{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED}{IS_GPIO_SPEED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED(
+\begin{DoxyParamCaption}
+\item[{}]{S\+P\+E\+ED}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga888e1f951df2fe9dbf827528051a3a56}{}\label{group___g_p_i_o_ga888e1f951df2fe9dbf827528051a3a56}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((SPEED) == \hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9bff9e174639332007c914483361be18}{GPIO\_Speed\_2MHz}) || ((SPEED) == \hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea59a0acdf2ccd1b4b8d507e845e497c62}{GPIO\_Speed\_25MHz}) || \(\backslash\)
+                              ((SPEED) == \hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581}{GPIO\_Speed\_50MHz})||  ((SPEED) == 
+      \hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea195a0e73cd63d7f5b5d41bd0155eacbb}{GPIO\_Speed\_100MHz}))
+\end{DoxyCode}
+
+
+\subsection{Enumeration Type Documentation}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+Mode\+\_\+\+Type\+Def@{G\+P\+I\+O\+Mode\+\_\+\+Type\+Def}}
+\index{G\+P\+I\+O\+Mode\+\_\+\+Type\+Def@{G\+P\+I\+O\+Mode\+\_\+\+Type\+Def}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Mode\+\_\+\+Type\+Def}{GPIOMode_TypeDef}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf G\+P\+I\+O\+Mode\+\_\+\+Type\+Def}}\hypertarget{group___g_p_i_o_ga1347339e1c84a196fabbb31205eec5d4}{}\label{group___g_p_i_o_ga1347339e1c84a196fabbb31205eec5d4}
+
+
+G\+P\+IO Configuration Mode enumeration. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+IN@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+IN}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Mode\+\_\+\+IN@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+IN}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Mode\+\_\+\+IN\hypertarget{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a484aa18a6156ce916049b334ba1839de}{}\label{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a484aa18a6156ce916049b334ba1839de}
+}]G\+P\+IO Input Mode \index{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+O\+UT@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+O\+UT}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Mode\+\_\+\+O\+UT@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+O\+UT}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Mode\+\_\+\+O\+UT\hypertarget{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a60f1d530f4119efcad8e1a68c890c6a6}{}\label{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a60f1d530f4119efcad8e1a68c890c6a6}
+}]G\+P\+IO Output Mode \index{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AF@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AF}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AF@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AF}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AF\hypertarget{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6d44c35c6c5008d85bac9251a867e701}{}\label{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6d44c35c6c5008d85bac9251a867e701}
+}]G\+P\+IO Alternate function Mode \index{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN@{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN\hypertarget{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6e5c0d7e6d2e22b834b24e1ca1d6d0db}{}\label{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6e5c0d7e6d2e22b834b24e1ca1d6d0db}
+}]G\+P\+IO Analog Mode \end{description}
+\end{Desc}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+Speed\+\_\+\+Type\+Def@{G\+P\+I\+O\+Speed\+\_\+\+Type\+Def}}
+\index{G\+P\+I\+O\+Speed\+\_\+\+Type\+Def@{G\+P\+I\+O\+Speed\+\_\+\+Type\+Def}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+Speed\+\_\+\+Type\+Def}{GPIOSpeed_TypeDef}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf G\+P\+I\+O\+Speed\+\_\+\+Type\+Def}}\hypertarget{group___g_p_i_o_ga062ad92b67b4a1f301c161022cf3ba8e}{}\label{group___g_p_i_o_ga062ad92b67b4a1f301c161022cf3ba8e}
+
+
+G\+P\+IO Output Maximum frequency enumeration. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{G\+P\+I\+O\+\_\+\+Speed\+\_\+2\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+2\+M\+Hz}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Speed\+\_\+2\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+2\+M\+Hz}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Speed\+\_\+2\+M\+Hz\hypertarget{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9bff9e174639332007c914483361be18}{}\label{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9bff9e174639332007c914483361be18}
+}]Low speed \index{G\+P\+I\+O\+\_\+\+Speed\+\_\+25\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+25\+M\+Hz}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Speed\+\_\+25\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+25\+M\+Hz}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Speed\+\_\+25\+M\+Hz\hypertarget{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea59a0acdf2ccd1b4b8d507e845e497c62}{}\label{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea59a0acdf2ccd1b4b8d507e845e497c62}
+}]Medium speed \index{G\+P\+I\+O\+\_\+\+Speed\+\_\+50\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+50\+M\+Hz}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Speed\+\_\+50\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+50\+M\+Hz}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Speed\+\_\+50\+M\+Hz\hypertarget{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581}{}\label{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581}
+}]Fast speed \index{G\+P\+I\+O\+\_\+\+Speed\+\_\+100\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+100\+M\+Hz}!G\+P\+IO@{G\+P\+IO}}\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Speed\+\_\+100\+M\+Hz@{G\+P\+I\+O\+\_\+\+Speed\+\_\+100\+M\+Hz}}\item[{\em 
+G\+P\+I\+O\+\_\+\+Speed\+\_\+100\+M\+Hz\hypertarget{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea195a0e73cd63d7f5b5d41bd0155eacbb}{}\label{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea195a0e73cd63d7f5b5d41bd0155eacbb}
+}]High speed on 30 pF (80 M\+Hz Output max speed on 15 pF) \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+De\+Init@{G\+P\+I\+O\+\_\+\+De\+Init}}
+\index{G\+P\+I\+O\+\_\+\+De\+Init@{G\+P\+I\+O\+\_\+\+De\+Init}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+De\+Init(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox)}{GPIO_DeInit(GPIO_TypeDef *GPIOx)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+De\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gaa60bdf3182c44b5fa818f237042f52ee}{}\label{group___g_p_i_o_gaa60bdf3182c44b5fa818f237042f52ee}
+
+
+Deinitializes the G\+P\+I\+Ox peripheral registers to their default reset values. 
+
+\begin{DoxyNote}{Note}
+By default, The G\+P\+IO pins are configured in input floating mode (except J\+T\+AG pins). 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Init@{G\+P\+I\+O\+\_\+\+Init}}
+\index{G\+P\+I\+O\+\_\+\+Init@{G\+P\+I\+O\+\_\+\+Init}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Init(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$\+G\+P\+I\+O\+\_\+\+Init\+Struct)}{GPIO_Init(GPIO_TypeDef *GPIOx, GPIO_InitTypeDef *GPIO_InitStruct)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{{\bf G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$}]{G\+P\+I\+O\+\_\+\+Init\+Struct}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga71abf9404261370d03cca449b88d3a65}{}\label{group___g_p_i_o_ga71abf9404261370d03cca449b88d3a65}
+
+
+Initializes the G\+P\+I\+Ox peripheral according to the specified parameters in the G\+P\+I\+O\+\_\+\+Init\+Struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Init\+Struct} & pointer to a \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} structure that contains the configuration information for the specified G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config@{G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config}}
+\index{G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config@{G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin\+Source, uint8\+\_\+t G\+P\+I\+O\+\_\+\+A\+F)}{GPIO_PinAFConfig(GPIO_TypeDef *GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin\+Source, }
+\item[{uint8\+\_\+t}]{G\+P\+I\+O\+\_\+\+AF}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga0a77617a322562ae84f8d72486032c5d}{}\label{group___g_p_i_o_ga0a77617a322562ae84f8d72486032c5d}
+
+
+Changes the mapping of the specified pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin\+Source} & specifies the pin for the Alternate function. This parameter can be G\+P\+I\+O\+\_\+\+Pin\+Sourcex where x can be (0..15). \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+A\+F\+Selection} & selects the pin to used as Alternate function. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+R\+T\+C\+\_\+50\+Hz\+: Connect R\+T\+C\+\_\+50\+Hz pin to A\+F0 (default after reset) \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+M\+CO\+: Connect M\+CO pin (M\+C\+O1 and M\+C\+O2) to A\+F0 (default after reset) \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+A\+M\+P\+ER\+: Connect T\+A\+M\+P\+ER pins (T\+A\+M\+P\+E\+R\+\_\+1 and T\+A\+M\+P\+E\+R\+\_\+2) to A\+F0 (default after reset) \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+WJ\+: Connect S\+WJ pins (S\+WD and J\+T\+AG)to A\+F0 (default after reset) \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+R\+A\+CE\+: Connect T\+R\+A\+CE pins to A\+F0 (default after reset) \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M1\+: Connect T\+I\+M1 pins to A\+F1 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M2\+: Connect T\+I\+M2 pins to A\+F1 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M3\+: Connect T\+I\+M3 pins to A\+F2 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M4\+: Connect T\+I\+M4 pins to A\+F2 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M5\+: Connect T\+I\+M5 pins to A\+F2 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M8\+: Connect T\+I\+M8 pins to A\+F3 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M9\+: Connect T\+I\+M9 pins to A\+F3 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M10\+: Connect T\+I\+M10 pins to A\+F3 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M11\+: Connect T\+I\+M11 pins to A\+F3 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+C1\+: Connect I2\+C1 pins to A\+F4 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+C2\+: Connect I2\+C2 pins to A\+F4 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+C3\+: Connect I2\+C3 pins to A\+F4 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+P\+I1\+: Connect S\+P\+I1 pins to A\+F5 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+P\+I2\+: Connect S\+P\+I2/\+I2\+S2 pins to A\+F5 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+P\+I3\+: Connect S\+P\+I3/\+I2\+S3 pins to A\+F6 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+S3ext\+: Connect I2\+S3ext pins to A\+F7 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T1\+: Connect U\+S\+A\+R\+T1 pins to A\+F7 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T2\+: Connect U\+S\+A\+R\+T2 pins to A\+F7 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T3\+: Connect U\+S\+A\+R\+T3 pins to A\+F7 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+A\+R\+T4\+: Connect U\+A\+R\+T4 pins to A\+F8 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+A\+R\+T5\+: Connect U\+A\+R\+T5 pins to A\+F8 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T6\+: Connect U\+S\+A\+R\+T6 pins to A\+F8 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+C\+A\+N1\+: Connect C\+A\+N1 pins to A\+F9 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+C\+A\+N2\+: Connect C\+A\+N2 pins to A\+F9 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M12\+: Connect T\+I\+M12 pins to A\+F9 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M13\+: Connect T\+I\+M13 pins to A\+F9 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M14\+: Connect T\+I\+M14 pins to A\+F9 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+FS\+: Connect O\+T\+G\+\_\+\+FS pins to A\+F10 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+HS\+: Connect O\+T\+G\+\_\+\+HS pins to A\+F10 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+E\+TH\+: Connect E\+T\+H\+E\+R\+N\+ET pins to A\+F11 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+F\+S\+MC\+: Connect F\+S\+MC pins to A\+F12 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+H\+S\+\_\+\+FS\+: Connect O\+TG HS (configured in FS) pins to A\+F12 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+D\+IO\+: Connect S\+D\+IO pins to A\+F12 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+D\+C\+MI\+: Connect D\+C\+MI pins to A\+F13 \item G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+E\+V\+E\+N\+T\+O\+UT\+: Connect E\+V\+E\+N\+T\+O\+UT pins to A\+F15 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config@{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config}}
+\index{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config@{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_PinLockConfig(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gad2f2e615928c69fd0d8c641a7cedaafc}{}\label{group___g_p_i_o_gad2f2e615928c69fd0d8c641a7cedaafc}
+
+
+Locks G\+P\+IO Pins configuration registers. 
+
+\begin{DoxyNote}{Note}
+The locked registers are G\+P\+I\+Ox\+\_\+\+M\+O\+D\+ER, G\+P\+I\+Ox\+\_\+\+O\+T\+Y\+P\+ER, G\+P\+I\+Ox\+\_\+\+O\+S\+P\+E\+E\+DR, G\+P\+I\+Ox\+\_\+\+P\+U\+P\+DR, G\+P\+I\+Ox\+\_\+\+A\+F\+RL and G\+P\+I\+Ox\+\_\+\+A\+F\+RH. 
+
+The configuration of the locked G\+P\+IO pins can no longer be modified until the next reset. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be locked. This parameter can be any combination of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Read\+Input\+Data@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Input\+Data@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Input\+Data(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox)}{GPIO_ReadInputData(GPIO_TypeDef *GPIOx)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Input\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga139a33adc8409288e9f193bbebb5a0f7}{}\label{group___g_p_i_o_ga139a33adc8409288e9f193bbebb5a0f7}
+
+
+Reads the specified G\+P\+IO input data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em G\+P\+IO} & input data port value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ReadInputDataBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga98772ef6b639b3fa06c8ae5ba28d3aaa}{}\label{group___g_p_i_o_ga98772ef6b639b3fa06c8ae5ba28d3aaa}
+
+
+Reads the specified input port pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to read. This parameter can be G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & input port pin value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Read\+Output\+Data@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Output\+Data@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Output\+Data(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox)}{GPIO_ReadOutputData(GPIO_TypeDef *GPIOx)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Output\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gaf8938a34280b7dc3e39872a7c17bb323}{}\label{group___g_p_i_o_gaf8938a34280b7dc3e39872a7c17bb323}
+
+
+Reads the specified G\+P\+IO output data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em G\+P\+IO} & output data port value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ReadOutputDataBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga138270f8695b105b7c6ed405792919c1}{}\label{group___g_p_i_o_ga138270f8695b105b7c6ed405792919c1}
+
+
+Reads the specified output data port bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to read. This parameter can be G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & output port pin value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Reset\+Bits@{G\+P\+I\+O\+\_\+\+Reset\+Bits}}
+\index{G\+P\+I\+O\+\_\+\+Reset\+Bits@{G\+P\+I\+O\+\_\+\+Reset\+Bits}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Reset\+Bits(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ResetBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Reset\+Bits (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga6fcd35b207a66608dd2c9d7de9247dc8}{}\label{group___g_p_i_o_ga6fcd35b207a66608dd2c9d7de9247dc8}
+
+
+Clears the selected data port bits. 
+
+\begin{DoxyNote}{Note}
+This functions uses G\+P\+I\+Ox\+\_\+\+B\+S\+RR register to allow atomic read/modify accesses. In this way, there is no risk of an I\+RQ occurring between the read and the modify access. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bits to be written. This parameter can be any combination of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Set\+Bits@{G\+P\+I\+O\+\_\+\+Set\+Bits}}
+\index{G\+P\+I\+O\+\_\+\+Set\+Bits@{G\+P\+I\+O\+\_\+\+Set\+Bits}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Set\+Bits(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_SetBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Set\+Bits (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga9e1352eed7c6620e18af2d86f6b6ff8e}{}\label{group___g_p_i_o_ga9e1352eed7c6620e18af2d86f6b6ff8e}
+
+
+Sets the selected data port bits. 
+
+\begin{DoxyNote}{Note}
+This functions uses G\+P\+I\+Ox\+\_\+\+B\+S\+RR register to allow atomic read/modify accesses. In this way, there is no risk of an I\+RQ occurring between the read and the modify access. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bits to be written. This parameter can be any combination of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Struct\+Init@{G\+P\+I\+O\+\_\+\+Struct\+Init}}
+\index{G\+P\+I\+O\+\_\+\+Struct\+Init@{G\+P\+I\+O\+\_\+\+Struct\+Init}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Struct\+Init(\+G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$\+G\+P\+I\+O\+\_\+\+Init\+Struct)}{GPIO_StructInit(GPIO_InitTypeDef *GPIO_InitStruct)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Struct\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$}]{G\+P\+I\+O\+\_\+\+Init\+Struct}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gab28de41278e7f8c63d0851e2733b10df}{}\label{group___g_p_i_o_gab28de41278e7f8c63d0851e2733b10df}
+
+
+Fills each G\+P\+I\+O\+\_\+\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+O\+\_\+\+Init\+Struct} & \+: pointer to a \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Toggle\+Bits@{G\+P\+I\+O\+\_\+\+Toggle\+Bits}}
+\index{G\+P\+I\+O\+\_\+\+Toggle\+Bits@{G\+P\+I\+O\+\_\+\+Toggle\+Bits}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Toggle\+Bits(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ToggleBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Toggle\+Bits (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gac1b837c66258872740d5f89f23549ab1}{}\label{group___g_p_i_o_gac1b837c66258872740d5f89f23549ab1}
+
+
+Toggles the specified G\+P\+IO pins.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Specifies the pins to be toggled. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Write@{G\+P\+I\+O\+\_\+\+Write}}
+\index{G\+P\+I\+O\+\_\+\+Write@{G\+P\+I\+O\+\_\+\+Write}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Write(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t Port\+Val)}{GPIO_Write(GPIO_TypeDef *GPIOx, uint16_t PortVal)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Write (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{Port\+Val}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_gaa925f19c8547a00c7a0c269a84873bf9}{}\label{group___g_p_i_o_gaa925f19c8547a00c7a0c269a84873bf9}
+
+
+Writes data to the specified G\+P\+IO data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em Port\+Val} & specifies the value to be written to the port output data register. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+IO@{G\+P\+IO}!G\+P\+I\+O\+\_\+\+Write\+Bit@{G\+P\+I\+O\+\_\+\+Write\+Bit}}
+\index{G\+P\+I\+O\+\_\+\+Write\+Bit@{G\+P\+I\+O\+\_\+\+Write\+Bit}!G\+P\+IO@{G\+P\+IO}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Write\+Bit(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, Bit\+Action Bit\+Val)}{GPIO_WriteBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, BitAction BitVal)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Write\+Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin, }
+\item[{{\bf Bit\+Action}}]{Bit\+Val}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o_ga8f7b237fd744d9f7456fbe0da47a9b80}{}\label{group___g_p_i_o_ga8f7b237fd744d9f7456fbe0da47a9b80}
+
+
+Sets or clears the selected data port bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+{\em Bit\+Val} & specifies the value to be written to the selected bit. This parameter can be one of the Bit\+Action enum values\+: \begin{DoxyItemize}
+\item Bit\+\_\+\+R\+E\+S\+ET\+: to clear the port pin \item Bit\+\_\+\+S\+ET\+: to set the port pin \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

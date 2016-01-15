@@ -1,0 +1,49 @@
+\hypertarget{group___t_i_m___group9}{}\section{Specific remapping management function}
+\label{group___t_i_m___group9}\index{Specific remapping management function@{Specific remapping management function}}
+
+
+Specific remapping management function.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___t_i_m___group9_ga08ffb6f2bfa96b6fbcbb8d8001cb8ba9}{T\+I\+M\+\_\+\+Remap\+Config} (\hyperlink{struct_t_i_m___type_def}{T\+I\+M\+\_\+\+Type\+Def} $\ast$T\+I\+Mx, uint16\+\_\+t T\+I\+M\+\_\+\+Remap)
+\begin{DoxyCompactList}\small\item\em Configures the T\+I\+M2, T\+I\+M5 and T\+I\+M11 Remapping input capabilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Specific remapping management function. 
+
+\begin{DoxyVerb} ===============================================================================
+                     Specific remapping management function
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Specific remapping management function@{Specific remapping management function}!T\+I\+M\+\_\+\+Remap\+Config@{T\+I\+M\+\_\+\+Remap\+Config}}
+\index{T\+I\+M\+\_\+\+Remap\+Config@{T\+I\+M\+\_\+\+Remap\+Config}!Specific remapping management function@{Specific remapping management function}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+Remap\+Config(\+T\+I\+M\+\_\+\+Type\+Def $\ast$\+T\+I\+Mx, uint16\+\_\+t T\+I\+M\+\_\+\+Remap)}{TIM_RemapConfig(TIM_TypeDef *TIMx, uint16_t TIM_Remap)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+Remap\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+Type\+Def} $\ast$}]{T\+I\+Mx, }
+\item[{uint16\+\_\+t}]{T\+I\+M\+\_\+\+Remap}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group9_ga08ffb6f2bfa96b6fbcbb8d8001cb8ba9}{}\label{group___t_i_m___group9_ga08ffb6f2bfa96b6fbcbb8d8001cb8ba9}
+
+
+Configures the T\+I\+M2, T\+I\+M5 and T\+I\+M11 Remapping input capabilities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+Mx} & where x can be 2, 5 or 11 to select the T\+IM peripheral. \\
+\hline
+{\em T\+I\+M\+\_\+\+Remap} & specifies the T\+IM input remapping source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item T\+I\+M2\+\_\+\+T\+I\+M8\+\_\+\+T\+R\+GO\+: T\+I\+M2 I\+T\+R1 input is connected to T\+I\+M8 Trigger output(default) \item T\+I\+M2\+\_\+\+E\+T\+H\+\_\+\+P\+TP\+: T\+I\+M2 I\+T\+R1 input is connected to E\+TH P\+TP trogger output. \item T\+I\+M2\+\_\+\+U\+S\+B\+F\+S\+\_\+\+S\+OF\+: T\+I\+M2 I\+T\+R1 input is connected to U\+SB FS S\+OF. \item T\+I\+M2\+\_\+\+U\+S\+B\+H\+S\+\_\+\+S\+OF\+: T\+I\+M2 I\+T\+R1 input is connected to U\+SB HS S\+OF. \item T\+I\+M5\+\_\+\+G\+P\+IO\+: T\+I\+M5 C\+H4 input is connected to dedicated Timer pin(default) \item T\+I\+M5\+\_\+\+L\+SI\+: T\+I\+M5 C\+H4 input is connected to L\+SI clock. \item T\+I\+M5\+\_\+\+L\+SE\+: T\+I\+M5 C\+H4 input is connected to L\+SE clock. \item T\+I\+M5\+\_\+\+R\+TC\+: T\+I\+M5 C\+H4 input is connected to R\+TC Output event. \item T\+I\+M11\+\_\+\+G\+P\+IO\+: T\+I\+M11 C\+H4 input is connected to dedicated Timer pin(default) \item T\+I\+M11\+\_\+\+H\+SE\+: T\+I\+M11 C\+H4 input is connected to H\+S\+E\+\_\+\+R\+TC clock (H\+SE divided by a programmable prescaler) \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

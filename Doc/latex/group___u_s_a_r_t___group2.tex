@@ -1,0 +1,86 @@
+\hypertarget{group___u_s_a_r_t___group2}{}\section{Data transfers functions}
+\label{group___u_s_a_r_t___group2}\index{Data transfers functions@{Data transfers functions}}
+
+
+Data transfers functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb}{U\+S\+A\+R\+T\+\_\+\+Send\+Data} (\hyperlink{struct_u_s_a_r_t___type_def}{U\+S\+A\+R\+T\+\_\+\+Type\+Def} $\ast$U\+S\+A\+R\+Tx, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the U\+S\+A\+R\+Tx peripheral. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c}{U\+S\+A\+R\+T\+\_\+\+Receive\+Data} (\hyperlink{struct_u_s_a_r_t___type_def}{U\+S\+A\+R\+T\+\_\+\+Type\+Def} $\ast$U\+S\+A\+R\+Tx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the U\+S\+A\+R\+Tx peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data transfers functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                            Data transfers functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART data 
+  transfers.
+  
+  During an USART reception, data shifts in least significant bit first through 
+  the RX pin. In this mode, the USART_DR register consists of a buffer (RDR) 
+  between the internal bus and the received shift register.
+
+  When a transmission is taking place, a write instruction to the USART_DR register 
+  stores the data in the TDR register and which is copied in the shift register 
+  at the end of the current transmission.
+
+  The read access of the USART_DR register can be done using the USART_ReceiveData()
+  function and returns the RDR buffered value. Whereas a write access to the USART_DR 
+  can be done using USART_SendData() function and stores the written data into 
+  TDR buffer.\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Data transfers functions@{Data transfers functions}!U\+S\+A\+R\+T\+\_\+\+Receive\+Data@{U\+S\+A\+R\+T\+\_\+\+Receive\+Data}}
+\index{U\+S\+A\+R\+T\+\_\+\+Receive\+Data@{U\+S\+A\+R\+T\+\_\+\+Receive\+Data}!Data transfers functions@{Data transfers functions}}
+\subsubsection[{\texorpdfstring{U\+S\+A\+R\+T\+\_\+\+Receive\+Data(\+U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$\+U\+S\+A\+R\+Tx)}{USART_ReceiveData(USART_TypeDef *USARTx)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t U\+S\+A\+R\+T\+\_\+\+Receive\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf U\+S\+A\+R\+T\+\_\+\+Type\+Def} $\ast$}]{U\+S\+A\+R\+Tx}
+\end{DoxyParamCaption}
+)}\hypertarget{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c}{}\label{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c}
+
+
+Returns the most recent received data by the U\+S\+A\+R\+Tx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+S\+A\+R\+Tx} & where x can be 1, 2, 3, 4, 5 or 6 to select the U\+S\+A\+RT or U\+A\+RT peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & received data. \\
+\hline
+\end{DoxyRetVals}
+\index{Data transfers functions@{Data transfers functions}!U\+S\+A\+R\+T\+\_\+\+Send\+Data@{U\+S\+A\+R\+T\+\_\+\+Send\+Data}}
+\index{U\+S\+A\+R\+T\+\_\+\+Send\+Data@{U\+S\+A\+R\+T\+\_\+\+Send\+Data}!Data transfers functions@{Data transfers functions}}
+\subsubsection[{\texorpdfstring{U\+S\+A\+R\+T\+\_\+\+Send\+Data(\+U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$\+U\+S\+A\+R\+Tx, uint16\+\_\+t Data)}{USART_SendData(USART_TypeDef *USARTx, uint16_t Data)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+\_\+\+Send\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf U\+S\+A\+R\+T\+\_\+\+Type\+Def} $\ast$}]{U\+S\+A\+R\+Tx, }
+\item[{uint16\+\_\+t}]{Data}
+\end{DoxyParamCaption}
+)}\hypertarget{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb}{}\label{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb}
+
+
+Transmits single data through the U\+S\+A\+R\+Tx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em U\+S\+A\+R\+Tx} & where x can be 1, 2, 3, 4, 5 or 6 to select the U\+S\+A\+RT or U\+A\+RT peripheral. \\
+\hline
+{\em Data} & the data to transmit. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=projet_autom.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\projet_autom -TC:\CooCox\CoIDE\configuration\ProgramData\projet_autom/arm-gcc-link.ld -g">
+      <target file="projet_autom.elf" lastModified="15241380e2e">
+         <source file="..\obj\delay.o" lastModified="15241380687"/>
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="15241380728"/>
+         <source file="..\obj\stm32f4xx_dac.o" lastModified="152413807a6"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="152413807fa"/>
+         <source file="..\obj\main.o" lastModified="15241380879"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15241380937"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="15241380a07"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15241380a7c"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="15241380ae5"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="15241380bef"/>
+      </target>
+   </processor>
+</history>

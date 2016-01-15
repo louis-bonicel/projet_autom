@@ -1,0 +1,165 @@
+\hypertarget{group___t_i_m___group4}{}\section{Advanced-\/control timers (T\+I\+M1 and T\+I\+M8) specific features}
+\label{group___t_i_m___group4}\index{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}}
+
+
+Advanced-\/control timers (T\+I\+M1 and T\+I\+M8) specific features.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___t_i_m___group4_ga3df4ba3f0727f63ce621e2b2e6035d4f}{T\+I\+M\+\_\+\+B\+D\+T\+R\+Config} (\hyperlink{struct_t_i_m___type_def}{T\+I\+M\+\_\+\+Type\+Def} $\ast$T\+I\+Mx, \hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def} $\ast$T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Configures the Break feature, dead time, Lock level, O\+S\+S\+I/\+O\+S\+SR State and the A\+O\+E(automatic output enable). \end{DoxyCompactList}\item 
+void \hyperlink{group___t_i_m___group4_gaea0f49938cda8ae0738162194798afc6}{T\+I\+M\+\_\+\+B\+D\+T\+R\+Struct\+Init} (\hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def} $\ast$T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_i_m___group4_ga3e59ebced2ab8e0b817c460f1670e97d}{T\+I\+M\+\_\+\+Ctrl\+P\+W\+M\+Outputs} (\hyperlink{struct_t_i_m___type_def}{T\+I\+M\+\_\+\+Type\+Def} $\ast$T\+I\+Mx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the T\+IM peripheral Main Outputs. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_i_m___group4_gaff2e7f9959b1b36e830df028c14accc8}{T\+I\+M\+\_\+\+Select\+C\+OM} (\hyperlink{struct_t_i_m___type_def}{T\+I\+M\+\_\+\+Type\+Def} $\ast$T\+I\+Mx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Selects the T\+IM peripheral Commutation event. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_i_m___group4_ga0a935254e44312b1d78e8684a58db3c1}{T\+I\+M\+\_\+\+C\+C\+Preload\+Control} (\hyperlink{struct_t_i_m___type_def}{T\+I\+M\+\_\+\+Type\+Def} $\ast$T\+I\+Mx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Sets or Resets the T\+IM peripheral Capture Compare Preload Control bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Advanced-\/control timers (T\+I\+M1 and T\+I\+M8) specific features. 
+
+\begin{DoxyVerb} ===============================================================================
+          Advanced-control timers (TIM1 and TIM8) specific features
+ ===============================================================================  
+  
+       ===================================================================      
+              TIM Driver: how to use the Break feature
+       =================================================================== 
+       After configuring the Timer channel(s) in the appropriate Output Compare mode: 
+                         
+       1. Fill the TIM_BDTRInitStruct with the desired parameters for the Timer
+          Break Polarity, dead time, Lock level, the OSSI/OSSR State and the 
+          AOE(automatic output enable).
+               
+       2. Call TIM_BDTRConfig(TIMx, &TIM_BDTRInitStruct) to configure the Timer
+          
+       3. Enable the Main Output using TIM_CtrlPWMOutputs(TIM1, ENABLE) 
+          
+       4. Once the break even occurs, the Timer's output signals are put in reset
+          state or in a known state (according to the configuration made in
+          TIM_BDTRConfig() function).\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}!T\+I\+M\+\_\+\+B\+D\+T\+R\+Config@{T\+I\+M\+\_\+\+B\+D\+T\+R\+Config}}
+\index{T\+I\+M\+\_\+\+B\+D\+T\+R\+Config@{T\+I\+M\+\_\+\+B\+D\+T\+R\+Config}!Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+B\+D\+T\+R\+Config(\+T\+I\+M\+\_\+\+Type\+Def $\ast$\+T\+I\+Mx, T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def $\ast$\+T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct)}{TIM_BDTRConfig(TIM_TypeDef *TIMx, TIM_BDTRInitTypeDef *TIM_BDTRInitStruct)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+B\+D\+T\+R\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+Type\+Def} $\ast$}]{T\+I\+Mx, }
+\item[{{\bf T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def} $\ast$}]{T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group4_ga3df4ba3f0727f63ce621e2b2e6035d4f}{}\label{group___t_i_m___group4_ga3df4ba3f0727f63ce621e2b2e6035d4f}
+
+
+Configures the Break feature, dead time, Lock level, O\+S\+S\+I/\+O\+S\+SR State and the A\+O\+E(automatic output enable). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+Mx} & where x can be 1 or 8 to select the T\+IM \\
+\hline
+{\em T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct} & pointer to a \hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def} structure that contains the B\+D\+TR Register configuration information for the T\+IM peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}!T\+I\+M\+\_\+\+B\+D\+T\+R\+Struct\+Init@{T\+I\+M\+\_\+\+B\+D\+T\+R\+Struct\+Init}}
+\index{T\+I\+M\+\_\+\+B\+D\+T\+R\+Struct\+Init@{T\+I\+M\+\_\+\+B\+D\+T\+R\+Struct\+Init}!Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+B\+D\+T\+R\+Struct\+Init(\+T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def $\ast$\+T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct)}{TIM_BDTRStructInit(TIM_BDTRInitTypeDef *TIM_BDTRInitStruct)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+B\+D\+T\+R\+Struct\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def} $\ast$}]{T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group4_gaea0f49938cda8ae0738162194798afc6}{}\label{group___t_i_m___group4_gaea0f49938cda8ae0738162194798afc6}
+
+
+Fills each T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Struct} & pointer to a \hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{T\+I\+M\+\_\+\+B\+D\+T\+R\+Init\+Type\+Def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}!T\+I\+M\+\_\+\+C\+C\+Preload\+Control@{T\+I\+M\+\_\+\+C\+C\+Preload\+Control}}
+\index{T\+I\+M\+\_\+\+C\+C\+Preload\+Control@{T\+I\+M\+\_\+\+C\+C\+Preload\+Control}!Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+C\+C\+Preload\+Control(\+T\+I\+M\+\_\+\+Type\+Def $\ast$\+T\+I\+Mx, Functional\+State New\+State)}{TIM_CCPreloadControl(TIM_TypeDef *TIMx, FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+C\+C\+Preload\+Control (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+Type\+Def} $\ast$}]{T\+I\+Mx, }
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group4_ga0a935254e44312b1d78e8684a58db3c1}{}\label{group___t_i_m___group4_ga0a935254e44312b1d78e8684a58db3c1}
+
+
+Sets or Resets the T\+IM peripheral Capture Compare Preload Control bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+Mx} & where x can be 1 or 8 to select the T\+I\+Mx peripheral \\
+\hline
+{\em New\+State} & new state of the Capture Compare Preload Control bit This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}!T\+I\+M\+\_\+\+Ctrl\+P\+W\+M\+Outputs@{T\+I\+M\+\_\+\+Ctrl\+P\+W\+M\+Outputs}}
+\index{T\+I\+M\+\_\+\+Ctrl\+P\+W\+M\+Outputs@{T\+I\+M\+\_\+\+Ctrl\+P\+W\+M\+Outputs}!Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+Ctrl\+P\+W\+M\+Outputs(\+T\+I\+M\+\_\+\+Type\+Def $\ast$\+T\+I\+Mx, Functional\+State New\+State)}{TIM_CtrlPWMOutputs(TIM_TypeDef *TIMx, FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+Ctrl\+P\+W\+M\+Outputs (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+Type\+Def} $\ast$}]{T\+I\+Mx, }
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group4_ga3e59ebced2ab8e0b817c460f1670e97d}{}\label{group___t_i_m___group4_ga3e59ebced2ab8e0b817c460f1670e97d}
+
+
+Enables or disables the T\+IM peripheral Main Outputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+Mx} & where x can be 1 or 8 to select the T\+I\+Mx peripheral. \\
+\hline
+{\em New\+State} & new state of the T\+IM peripheral Main Outputs. This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}!T\+I\+M\+\_\+\+Select\+C\+OM@{T\+I\+M\+\_\+\+Select\+C\+OM}}
+\index{T\+I\+M\+\_\+\+Select\+C\+OM@{T\+I\+M\+\_\+\+Select\+C\+OM}!Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features@{Advanced-\/control timers (\+T\+I\+M1 and T\+I\+M8) specific features}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+Select\+C\+O\+M(\+T\+I\+M\+\_\+\+Type\+Def $\ast$\+T\+I\+Mx, Functional\+State New\+State)}{TIM_SelectCOM(TIM_TypeDef *TIMx, FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+Select\+C\+OM (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+Type\+Def} $\ast$}]{T\+I\+Mx, }
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group4_gaff2e7f9959b1b36e830df028c14accc8}{}\label{group___t_i_m___group4_gaff2e7f9959b1b36e830df028c14accc8}
+
+
+Selects the T\+IM peripheral Commutation event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+Mx} & where x can be 1 or 8 to select the T\+I\+Mx peripheral \\
+\hline
+{\em New\+State} & new state of the Commutation event. This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

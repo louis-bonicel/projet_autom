@@ -1,0 +1,260 @@
+\hypertarget{group___g_p_i_o___group2}{}\section{G\+P\+IO Read and Write}
+\label{group___g_p_i_o___group2}\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+
+
+G\+P\+IO Read and Write.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{group___g_p_i_o___group2_ga98772ef6b639b3fa06c8ae5ba28d3aaa}{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified input port pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___g_p_i_o___group2_ga139a33adc8409288e9f193bbebb5a0f7}{G\+P\+I\+O\+\_\+\+Read\+Input\+Data} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Reads the specified G\+P\+IO input data port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___g_p_i_o___group2_ga138270f8695b105b7c6ed405792919c1}{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified output data port bit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___g_p_i_o___group2_gaf8938a34280b7dc3e39872a7c17bb323}{G\+P\+I\+O\+\_\+\+Read\+Output\+Data} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Reads the specified G\+P\+IO output data port. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group2_ga9e1352eed7c6620e18af2d86f6b6ff8e}{G\+P\+I\+O\+\_\+\+Set\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets the selected data port bits. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group2_ga6fcd35b207a66608dd2c9d7de9247dc8}{G\+P\+I\+O\+\_\+\+Reset\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Clears the selected data port bits. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group2_ga8f7b237fd744d9f7456fbe0da47a9b80}{G\+P\+I\+O\+\_\+\+Write\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action} Bit\+Val)
+\begin{DoxyCompactList}\small\item\em Sets or clears the selected data port bit. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group2_gaa925f19c8547a00c7a0c269a84873bf9}{G\+P\+I\+O\+\_\+\+Write} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t Port\+Val)
+\begin{DoxyCompactList}\small\item\em Writes data to the specified G\+P\+IO data port. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group2_gac1b837c66258872740d5f89f23549ab1}{G\+P\+I\+O\+\_\+\+Toggle\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Toggles the specified G\+P\+IO pins.. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\+P\+IO Read and Write. 
+
+\begin{DoxyVerb} ===============================================================================
+                              GPIO Read and Write
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Read\+Input\+Data@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Input\+Data@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Input\+Data(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox)}{GPIO_ReadInputData(GPIO_TypeDef *GPIOx)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Input\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_ga139a33adc8409288e9f193bbebb5a0f7}{}\label{group___g_p_i_o___group2_ga139a33adc8409288e9f193bbebb5a0f7}
+
+
+Reads the specified G\+P\+IO input data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em G\+P\+IO} & input data port value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ReadInputDataBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_ga98772ef6b639b3fa06c8ae5ba28d3aaa}{}\label{group___g_p_i_o___group2_ga98772ef6b639b3fa06c8ae5ba28d3aaa}
+
+
+Reads the specified input port pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to read. This parameter can be G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & input port pin value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Read\+Output\+Data@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Output\+Data@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Output\+Data(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox)}{GPIO_ReadOutputData(GPIO_TypeDef *GPIOx)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Output\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_gaf8938a34280b7dc3e39872a7c17bb323}{}\label{group___g_p_i_o___group2_gaf8938a34280b7dc3e39872a7c17bb323}
+
+
+Reads the specified G\+P\+IO output data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em G\+P\+IO} & output data port value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit}}
+\index{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit@{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ReadOutputDataBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_ga138270f8695b105b7c6ed405792919c1}{}\label{group___g_p_i_o___group2_ga138270f8695b105b7c6ed405792919c1}
+
+
+Reads the specified output data port bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to read. This parameter can be G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & output port pin value. \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Reset\+Bits@{G\+P\+I\+O\+\_\+\+Reset\+Bits}}
+\index{G\+P\+I\+O\+\_\+\+Reset\+Bits@{G\+P\+I\+O\+\_\+\+Reset\+Bits}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Reset\+Bits(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ResetBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Reset\+Bits (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_ga6fcd35b207a66608dd2c9d7de9247dc8}{}\label{group___g_p_i_o___group2_ga6fcd35b207a66608dd2c9d7de9247dc8}
+
+
+Clears the selected data port bits. 
+
+\begin{DoxyNote}{Note}
+This functions uses G\+P\+I\+Ox\+\_\+\+B\+S\+RR register to allow atomic read/modify accesses. In this way, there is no risk of an I\+RQ occurring between the read and the modify access. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bits to be written. This parameter can be any combination of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Set\+Bits@{G\+P\+I\+O\+\_\+\+Set\+Bits}}
+\index{G\+P\+I\+O\+\_\+\+Set\+Bits@{G\+P\+I\+O\+\_\+\+Set\+Bits}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Set\+Bits(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_SetBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Set\+Bits (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_ga9e1352eed7c6620e18af2d86f6b6ff8e}{}\label{group___g_p_i_o___group2_ga9e1352eed7c6620e18af2d86f6b6ff8e}
+
+
+Sets the selected data port bits. 
+
+\begin{DoxyNote}{Note}
+This functions uses G\+P\+I\+Ox\+\_\+\+B\+S\+RR register to allow atomic read/modify accesses. In this way, there is no risk of an I\+RQ occurring between the read and the modify access. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bits to be written. This parameter can be any combination of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Toggle\+Bits@{G\+P\+I\+O\+\_\+\+Toggle\+Bits}}
+\index{G\+P\+I\+O\+\_\+\+Toggle\+Bits@{G\+P\+I\+O\+\_\+\+Toggle\+Bits}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Toggle\+Bits(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_ToggleBits(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Toggle\+Bits (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_gac1b837c66258872740d5f89f23549ab1}{}\label{group___g_p_i_o___group2_gac1b837c66258872740d5f89f23549ab1}
+
+
+Toggles the specified G\+P\+IO pins.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & Specifies the pins to be toggled. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Write@{G\+P\+I\+O\+\_\+\+Write}}
+\index{G\+P\+I\+O\+\_\+\+Write@{G\+P\+I\+O\+\_\+\+Write}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Write(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t Port\+Val)}{GPIO_Write(GPIO_TypeDef *GPIOx, uint16_t PortVal)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Write (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{Port\+Val}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_gaa925f19c8547a00c7a0c269a84873bf9}{}\label{group___g_p_i_o___group2_gaa925f19c8547a00c7a0c269a84873bf9}
+
+
+Writes data to the specified G\+P\+IO data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em Port\+Val} & specifies the value to be written to the port output data register. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}!G\+P\+I\+O\+\_\+\+Write\+Bit@{G\+P\+I\+O\+\_\+\+Write\+Bit}}
+\index{G\+P\+I\+O\+\_\+\+Write\+Bit@{G\+P\+I\+O\+\_\+\+Write\+Bit}!G\+P\+I\+O Read and Write@{G\+P\+I\+O Read and Write}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Write\+Bit(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, Bit\+Action Bit\+Val)}{GPIO_WriteBit(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, BitAction BitVal)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Write\+Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin, }
+\item[{{\bf Bit\+Action}}]{Bit\+Val}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group2_ga8f7b237fd744d9f7456fbe0da47a9b80}{}\label{group___g_p_i_o___group2_ga8f7b237fd744d9f7456fbe0da47a9b80}
+
+
+Sets or clears the selected data port bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+{\em Bit\+Val} & specifies the value to be written to the selected bit. This parameter can be one of the Bit\+Action enum values\+: \begin{DoxyItemize}
+\item Bit\+\_\+\+R\+E\+S\+ET\+: to clear the port pin \item Bit\+\_\+\+S\+ET\+: to set the port pin \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

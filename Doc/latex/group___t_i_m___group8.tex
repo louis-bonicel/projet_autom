@@ -1,0 +1,85 @@
+\hypertarget{group___t_i_m___group8}{}\section{Specific interface management functions}
+\label{group___t_i_m___group8}\index{Specific interface management functions@{Specific interface management functions}}
+
+
+Specific interface management functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___t_i_m___group8_ga0fc7e76c47a3bd1ba1ebc71427832b51}{T\+I\+M\+\_\+\+Encoder\+Interface\+Config} (\hyperlink{struct_t_i_m___type_def}{T\+I\+M\+\_\+\+Type\+Def} $\ast$T\+I\+Mx, uint16\+\_\+t T\+I\+M\+\_\+\+Encoder\+Mode, uint16\+\_\+t T\+I\+M\+\_\+\+I\+C1\+Polarity, uint16\+\_\+t T\+I\+M\+\_\+\+I\+C2\+Polarity)
+\begin{DoxyCompactList}\small\item\em Configures the T\+I\+Mx Encoder Interface. \end{DoxyCompactList}\item 
+void \hyperlink{group___t_i_m___group8_ga42c2d1025a3937c9d9f38631af86ffa4}{T\+I\+M\+\_\+\+Select\+Hall\+Sensor} (\hyperlink{struct_t_i_m___type_def}{T\+I\+M\+\_\+\+Type\+Def} $\ast$T\+I\+Mx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the T\+I\+Mx\textquotesingle{}s Hall sensor interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Specific interface management functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                    Specific interface management functions
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Specific interface management functions@{Specific interface management functions}!T\+I\+M\+\_\+\+Encoder\+Interface\+Config@{T\+I\+M\+\_\+\+Encoder\+Interface\+Config}}
+\index{T\+I\+M\+\_\+\+Encoder\+Interface\+Config@{T\+I\+M\+\_\+\+Encoder\+Interface\+Config}!Specific interface management functions@{Specific interface management functions}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+Encoder\+Interface\+Config(\+T\+I\+M\+\_\+\+Type\+Def $\ast$\+T\+I\+Mx, uint16\+\_\+t T\+I\+M\+\_\+\+Encoder\+Mode, uint16\+\_\+t T\+I\+M\+\_\+\+I\+C1\+Polarity, uint16\+\_\+t T\+I\+M\+\_\+\+I\+C2\+Polarity)}{TIM_EncoderInterfaceConfig(TIM_TypeDef *TIMx, uint16_t TIM_EncoderMode, uint16_t TIM_IC1Polarity, uint16_t TIM_IC2Polarity)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+Encoder\+Interface\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+Type\+Def} $\ast$}]{T\+I\+Mx, }
+\item[{uint16\+\_\+t}]{T\+I\+M\+\_\+\+Encoder\+Mode, }
+\item[{uint16\+\_\+t}]{T\+I\+M\+\_\+\+I\+C1\+Polarity, }
+\item[{uint16\+\_\+t}]{T\+I\+M\+\_\+\+I\+C2\+Polarity}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group8_ga0fc7e76c47a3bd1ba1ebc71427832b51}{}\label{group___t_i_m___group8_ga0fc7e76c47a3bd1ba1ebc71427832b51}
+
+
+Configures the T\+I\+Mx Encoder Interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+Mx} & where x can be 1, 2, 3, 4, 5, 8, 9 or 12 to select the T\+IM peripheral. \\
+\hline
+{\em T\+I\+M\+\_\+\+Encoder\+Mode} & specifies the T\+I\+Mx Encoder Mode. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item T\+I\+M\+\_\+\+Encoder\+Mode\+\_\+\+T\+I1\+: Counter counts on T\+I1\+F\+P1 edge depending on T\+I2\+F\+P2 level. \item T\+I\+M\+\_\+\+Encoder\+Mode\+\_\+\+T\+I2\+: Counter counts on T\+I2\+F\+P2 edge depending on T\+I1\+F\+P1 level. \item T\+I\+M\+\_\+\+Encoder\+Mode\+\_\+\+T\+I12\+: Counter counts on both T\+I1\+F\+P1 and T\+I2\+F\+P2 edges depending on the level of the other input. \end{DoxyItemize}
+\\
+\hline
+{\em T\+I\+M\+\_\+\+I\+C1\+Polarity} & specifies the I\+C1 Polarity This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item T\+I\+M\+\_\+\+I\+C\+Polarity\+\_\+\+Falling\+: IC Falling edge. \item T\+I\+M\+\_\+\+I\+C\+Polarity\+\_\+\+Rising\+: IC Rising edge. \end{DoxyItemize}
+\\
+\hline
+{\em T\+I\+M\+\_\+\+I\+C2\+Polarity} & specifies the I\+C2 Polarity This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item T\+I\+M\+\_\+\+I\+C\+Polarity\+\_\+\+Falling\+: IC Falling edge. \item T\+I\+M\+\_\+\+I\+C\+Polarity\+\_\+\+Rising\+: IC Rising edge. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Specific interface management functions@{Specific interface management functions}!T\+I\+M\+\_\+\+Select\+Hall\+Sensor@{T\+I\+M\+\_\+\+Select\+Hall\+Sensor}}
+\index{T\+I\+M\+\_\+\+Select\+Hall\+Sensor@{T\+I\+M\+\_\+\+Select\+Hall\+Sensor}!Specific interface management functions@{Specific interface management functions}}
+\subsubsection[{\texorpdfstring{T\+I\+M\+\_\+\+Select\+Hall\+Sensor(\+T\+I\+M\+\_\+\+Type\+Def $\ast$\+T\+I\+Mx, Functional\+State New\+State)}{TIM_SelectHallSensor(TIM_TypeDef *TIMx, FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+I\+M\+\_\+\+Select\+Hall\+Sensor (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+I\+M\+\_\+\+Type\+Def} $\ast$}]{T\+I\+Mx, }
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m___group8_ga42c2d1025a3937c9d9f38631af86ffa4}{}\label{group___t_i_m___group8_ga42c2d1025a3937c9d9f38631af86ffa4}
+
+
+Enables or disables the T\+I\+Mx\textquotesingle{}s Hall sensor interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\+I\+Mx} & where x can be 1, 2, 3, 4, 5, 8, 9 or 12 to select the T\+IM peripheral. \\
+\hline
+{\em New\+State} & new state of the T\+I\+Mx Hall sensor interface. This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

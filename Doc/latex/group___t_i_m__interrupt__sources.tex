@@ -1,0 +1,58 @@
+\hypertarget{group___t_i_m__interrupt__sources}{}\section{T\+I\+M\+\_\+interrupt\+\_\+sources}
+\label{group___t_i_m__interrupt__sources}\index{T\+I\+M\+\_\+interrupt\+\_\+sources@{T\+I\+M\+\_\+interrupt\+\_\+sources}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+Update}~((uint16\+\_\+t)0x0001)\hypertarget{group___t_i_m__interrupt__sources_ga8fb63577fec9a3e7c7f5f3eb775ee624}{}\label{group___t_i_m__interrupt__sources_ga8fb63577fec9a3e7c7f5f3eb775ee624}
+
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+C\+C1}~((uint16\+\_\+t)0x0002)\hypertarget{group___t_i_m__interrupt__sources_ga02267a938ab4722c5013fffa447cf5a6}{}\label{group___t_i_m__interrupt__sources_ga02267a938ab4722c5013fffa447cf5a6}
+
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+C\+C2}~((uint16\+\_\+t)0x0004)\hypertarget{group___t_i_m__interrupt__sources_ga60f6b6c424b62ca58d3fafd8f5955e4f}{}\label{group___t_i_m__interrupt__sources_ga60f6b6c424b62ca58d3fafd8f5955e4f}
+
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+C\+C3}~((uint16\+\_\+t)0x0008)\hypertarget{group___t_i_m__interrupt__sources_ga6aef020aebafd9e585283fbbaf8b841f}{}\label{group___t_i_m__interrupt__sources_ga6aef020aebafd9e585283fbbaf8b841f}
+
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+C\+C4}~((uint16\+\_\+t)0x0010)\hypertarget{group___t_i_m__interrupt__sources_ga1dce7f1bc32a258f2964cb7c05f413a6}{}\label{group___t_i_m__interrupt__sources_ga1dce7f1bc32a258f2964cb7c05f413a6}
+
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+C\+OM}~((uint16\+\_\+t)0x0020)\hypertarget{group___t_i_m__interrupt__sources_gaeb7eff6c39922814e7ee47c0820c3d9f}{}\label{group___t_i_m__interrupt__sources_gaeb7eff6c39922814e7ee47c0820c3d9f}
+
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+Trigger}~((uint16\+\_\+t)0x0040)\hypertarget{group___t_i_m__interrupt__sources_ga339629d21f2490729b28905f5c04bad1}{}\label{group___t_i_m__interrupt__sources_ga339629d21f2490729b28905f5c04bad1}
+
+\item 
+\#define {\bfseries T\+I\+M\+\_\+\+I\+T\+\_\+\+Break}~((uint16\+\_\+t)0x0080)\hypertarget{group___t_i_m__interrupt__sources_gad16adab3ac1a4a552a86da069702f24b}{}\label{group___t_i_m__interrupt__sources_gad16adab3ac1a4a552a86da069702f24b}
+
+\item 
+\#define {\bfseries I\+S\+\_\+\+T\+I\+M\+\_\+\+IT}(IT)~((((IT) \& (uint16\+\_\+t)0x\+F\+F00) == 0x0000) \&\& ((\+I\+T) != 0x0000))\hypertarget{group___t_i_m__interrupt__sources_ga14fce0f8dbe0925e45b415b34bd162c9}{}\label{group___t_i_m__interrupt__sources_ga14fce0f8dbe0925e45b415b34bd162c9}
+
+\item 
+\#define {\bfseries I\+S\+\_\+\+T\+I\+M\+\_\+\+G\+E\+T\+\_\+\+IT}(IT)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\index{T\+I\+M\+\_\+interrupt\+\_\+sources@{T\+I\+M\+\_\+interrupt\+\_\+sources}!I\+S\+\_\+\+T\+I\+M\+\_\+\+G\+E\+T\+\_\+\+IT@{I\+S\+\_\+\+T\+I\+M\+\_\+\+G\+E\+T\+\_\+\+IT}}
+\index{I\+S\+\_\+\+T\+I\+M\+\_\+\+G\+E\+T\+\_\+\+IT@{I\+S\+\_\+\+T\+I\+M\+\_\+\+G\+E\+T\+\_\+\+IT}!T\+I\+M\+\_\+interrupt\+\_\+sources@{T\+I\+M\+\_\+interrupt\+\_\+sources}}
+\subsubsection[{\texorpdfstring{I\+S\+\_\+\+T\+I\+M\+\_\+\+G\+E\+T\+\_\+\+IT}{IS_TIM_GET_IT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+T\+I\+M\+\_\+\+G\+E\+T\+\_\+\+IT(
+\begin{DoxyParamCaption}
+\item[{}]{IT}
+\end{DoxyParamCaption}
+)}\hypertarget{group___t_i_m__interrupt__sources_ga38e9d740c8d4ed8fcaced73816c124e6}{}\label{group___t_i_m__interrupt__sources_ga38e9d740c8d4ed8fcaced73816c124e6}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((IT) == TIM\_IT\_Update) || \(\backslash\)
+                           ((IT) == TIM\_IT\_CC1) || \(\backslash\)
+                           ((IT) == TIM\_IT\_CC2) || \(\backslash\)
+                           ((IT) == TIM\_IT\_CC3) || \(\backslash\)
+                           ((IT) == TIM\_IT\_CC4) || \(\backslash\)
+                           ((IT) == TIM\_IT\_COM) || \(\backslash\)
+                           ((IT) == TIM\_IT\_Trigger) || \(\backslash\)
+                           ((IT) == TIM\_IT\_Break))
+\end{DoxyCode}

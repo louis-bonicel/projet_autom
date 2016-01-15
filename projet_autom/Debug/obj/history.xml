@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 4.8.2 i686-w64-mingw32 -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\projet_autom\cmsis -I..\..\..\workspace -I..\..\..\workspace\projet_autom\cmsis_boot -I..\..\..\workspace\projet_autom\cmsis_lib\include -I..\..\..\workspace\projet_autom\delay -I..\..\..\workspace\projet_autom\cmsis_lib -I..\..\..\workspace\projet_autom">
+      <target file="stm32f4xx_gpio.o" lastModified="15241380a7c">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="152408ea71e"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="15241380a07">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="152408ee50b"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="15241380bef">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="152408f2413"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="15241380ae5">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="152408de541"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="152413807fa">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="152408fbacb"/>
+      </target>
+      <target file="stm32f4xx_usart.o" lastModified="15241380728">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="152408f0761"/>
+      </target>
+      <target file="main.o" lastModified="15241380879">
+         <source file="..\..\..\main.c" lastModified="1524137fe2f"/>
+      </target>
+      <target file="stm32f4xx_dac.o" lastModified="152413807a6">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dac.c" lastModified="152408ef516"/>
+      </target>
+      <target file="delay.o" lastModified="15241380687">
+         <source file="..\..\..\delay\delay.c" lastModified="15103169058"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="15241380937">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="152408ea778"/>
+      </target>
+   </processor>
+</history>

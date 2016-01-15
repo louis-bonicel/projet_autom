@@ -1,0 +1,127 @@
+\hypertarget{group___g_p_i_o___group1}{}\section{Initialization and Configuration}
+\label{group___g_p_i_o___group1}\index{Initialization and Configuration@{Initialization and Configuration}}
+
+
+Initialization and Configuration.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___g_p_i_o___group1_gaa60bdf3182c44b5fa818f237042f52ee}{G\+P\+I\+O\+\_\+\+De\+Init} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Deinitializes the G\+P\+I\+Ox peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group1_ga71abf9404261370d03cca449b88d3a65}{G\+P\+I\+O\+\_\+\+Init} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$G\+P\+I\+O\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the G\+P\+I\+Ox peripheral according to the specified parameters in the G\+P\+I\+O\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group1_gab28de41278e7f8c63d0851e2733b10df}{G\+P\+I\+O\+\_\+\+Struct\+Init} (\hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$G\+P\+I\+O\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each G\+P\+I\+O\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o___group1_gad2f2e615928c69fd0d8c641a7cedaafc}{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks G\+P\+IO Pins configuration registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Initialization and Configuration. 
+
+\begin{DoxyVerb} ===============================================================================
+                        Initialization and Configuration
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Initialization and Configuration@{Initialization and Configuration}!G\+P\+I\+O\+\_\+\+De\+Init@{G\+P\+I\+O\+\_\+\+De\+Init}}
+\index{G\+P\+I\+O\+\_\+\+De\+Init@{G\+P\+I\+O\+\_\+\+De\+Init}!Initialization and Configuration@{Initialization and Configuration}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+De\+Init(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox)}{GPIO_DeInit(GPIO_TypeDef *GPIOx)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+De\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group1_gaa60bdf3182c44b5fa818f237042f52ee}{}\label{group___g_p_i_o___group1_gaa60bdf3182c44b5fa818f237042f52ee}
+
+
+Deinitializes the G\+P\+I\+Ox peripheral registers to their default reset values. 
+
+\begin{DoxyNote}{Note}
+By default, The G\+P\+IO pins are configured in input floating mode (except J\+T\+AG pins). 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Initialization and Configuration@{Initialization and Configuration}!G\+P\+I\+O\+\_\+\+Init@{G\+P\+I\+O\+\_\+\+Init}}
+\index{G\+P\+I\+O\+\_\+\+Init@{G\+P\+I\+O\+\_\+\+Init}!Initialization and Configuration@{Initialization and Configuration}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Init(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$\+G\+P\+I\+O\+\_\+\+Init\+Struct)}{GPIO_Init(GPIO_TypeDef *GPIOx, GPIO_InitTypeDef *GPIO_InitStruct)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{{\bf G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$}]{G\+P\+I\+O\+\_\+\+Init\+Struct}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group1_ga71abf9404261370d03cca449b88d3a65}{}\label{group___g_p_i_o___group1_ga71abf9404261370d03cca449b88d3a65}
+
+
+Initializes the G\+P\+I\+Ox peripheral according to the specified parameters in the G\+P\+I\+O\+\_\+\+Init\+Struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Init\+Struct} & pointer to a \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} structure that contains the configuration information for the specified G\+P\+IO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Initialization and Configuration@{Initialization and Configuration}!G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config@{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config}}
+\index{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config@{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config}!Initialization and Configuration@{Initialization and Configuration}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config(\+G\+P\+I\+O\+\_\+\+Type\+Def $\ast$\+G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}{GPIO_PinLockConfig(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$}]{G\+P\+I\+Ox, }
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group1_gad2f2e615928c69fd0d8c641a7cedaafc}{}\label{group___g_p_i_o___group1_gad2f2e615928c69fd0d8c641a7cedaafc}
+
+
+Locks G\+P\+IO Pins configuration registers. 
+
+\begin{DoxyNote}{Note}
+The locked registers are G\+P\+I\+Ox\+\_\+\+M\+O\+D\+ER, G\+P\+I\+Ox\+\_\+\+O\+T\+Y\+P\+ER, G\+P\+I\+Ox\+\_\+\+O\+S\+P\+E\+E\+DR, G\+P\+I\+Ox\+\_\+\+P\+U\+P\+DR, G\+P\+I\+Ox\+\_\+\+A\+F\+RL and G\+P\+I\+Ox\+\_\+\+A\+F\+RH. 
+
+The configuration of the locked G\+P\+IO pins can no longer be modified until the next reset. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+Ox} & where x can be (A..I) to select the G\+P\+IO peripheral. \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be locked. This parameter can be any combination of G\+P\+I\+O\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Initialization and Configuration@{Initialization and Configuration}!G\+P\+I\+O\+\_\+\+Struct\+Init@{G\+P\+I\+O\+\_\+\+Struct\+Init}}
+\index{G\+P\+I\+O\+\_\+\+Struct\+Init@{G\+P\+I\+O\+\_\+\+Struct\+Init}!Initialization and Configuration@{Initialization and Configuration}}
+\subsubsection[{\texorpdfstring{G\+P\+I\+O\+\_\+\+Struct\+Init(\+G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$\+G\+P\+I\+O\+\_\+\+Init\+Struct)}{GPIO_StructInit(GPIO_InitTypeDef *GPIO_InitStruct)}}]{\setlength{\rightskip}{0pt plus 5cm}void G\+P\+I\+O\+\_\+\+Struct\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$}]{G\+P\+I\+O\+\_\+\+Init\+Struct}
+\end{DoxyParamCaption}
+)}\hypertarget{group___g_p_i_o___group1_gab28de41278e7f8c63d0851e2733b10df}{}\label{group___g_p_i_o___group1_gab28de41278e7f8c63d0851e2733b10df}
+
+
+Fills each G\+P\+I\+O\+\_\+\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G\+P\+I\+O\+\_\+\+Init\+Struct} & \+: pointer to a \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,272 @@
+\hypertarget{stm32f4xx__gpio_8h}{}\section{cmsis\+\_\+lib/include/stm32f4xx\+\_\+gpio.h File Reference}
+\label{stm32f4xx__gpio_8h}\index{cmsis\+\_\+lib/include/stm32f4xx\+\_\+gpio.\+h@{cmsis\+\_\+lib/include/stm32f4xx\+\_\+gpio.\+h}}
+
+
+This file contains all the functions prototypes for the G\+P\+IO firmware library.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Init structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+A\+L\+L\+\_\+\+P\+E\+R\+I\+PH}(P\+E\+R\+I\+PH)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+M\+O\+DE}(M\+O\+DE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+O\+T\+Y\+PE}(O\+T\+Y\+PE)~(((O\+T\+Y\+PE) == G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+PP) $\vert$$\vert$ ((O\+T\+Y\+PE) == G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+OD))
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+S\+P\+E\+ED}(S\+P\+E\+ED)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+U\+PD}(P\+U\+PD)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+B\+I\+T\+\_\+\+A\+C\+T\+I\+ON}(A\+C\+T\+I\+ON)~(((A\+C\+T\+I\+ON) == Bit\+\_\+\+R\+E\+S\+ET) $\vert$$\vert$ ((A\+C\+T\+I\+ON) == Bit\+\_\+\+S\+ET))
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+0}~((uint16\+\_\+t)0x0001)  /$\ast$ Pin 0 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+1}~((uint16\+\_\+t)0x0002)  /$\ast$ Pin 1 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+2}~((uint16\+\_\+t)0x0004)  /$\ast$ Pin 2 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+3}~((uint16\+\_\+t)0x0008)  /$\ast$ Pin 3 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+4}~((uint16\+\_\+t)0x0010)  /$\ast$ Pin 4 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+5}~((uint16\+\_\+t)0x0020)  /$\ast$ Pin 5 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+6}~((uint16\+\_\+t)0x0040)  /$\ast$ Pin 6 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+7}~((uint16\+\_\+t)0x0080)  /$\ast$ Pin 7 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+8}~((uint16\+\_\+t)0x0100)  /$\ast$ Pin 8 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+9}~((uint16\+\_\+t)0x0200)  /$\ast$ Pin 9 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+10}~((uint16\+\_\+t)0x0400)  /$\ast$ Pin 10 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+11}~((uint16\+\_\+t)0x0800)  /$\ast$ Pin 11 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+12}~((uint16\+\_\+t)0x1000)  /$\ast$ Pin 12 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+13}~((uint16\+\_\+t)0x2000)  /$\ast$ Pin 13 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+14}~((uint16\+\_\+t)0x4000)  /$\ast$ Pin 14 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+15}~((uint16\+\_\+t)0x8000)  /$\ast$ Pin 15 selected $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+\_\+\+All}~((uint16\+\_\+t)0x\+F\+F\+F\+F)  /$\ast$ All pins selected $\ast$/
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+IN}(P\+IN)~((((P\+IN) \& (uint16\+\_\+t)0x00) == 0x00) \&\& ((\+P\+I\+N) != (uint16\+\_\+t)0x00))
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+E\+T\+\_\+\+G\+P\+I\+O\+\_\+\+P\+IN}(P\+IN)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source0}~((uint8\+\_\+t)0x00)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source1}~((uint8\+\_\+t)0x01)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source2}~((uint8\+\_\+t)0x02)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source3}~((uint8\+\_\+t)0x03)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source4}~((uint8\+\_\+t)0x04)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source5}~((uint8\+\_\+t)0x05)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source6}~((uint8\+\_\+t)0x06)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source7}~((uint8\+\_\+t)0x07)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source8}~((uint8\+\_\+t)0x08)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source9}~((uint8\+\_\+t)0x09)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source10}~((uint8\+\_\+t)0x0\+A)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source11}~((uint8\+\_\+t)0x0\+B)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source12}~((uint8\+\_\+t)0x0\+C)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source13}~((uint8\+\_\+t)0x0\+D)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source14}~((uint8\+\_\+t)0x0\+E)
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Pin\+Source15}~((uint8\+\_\+t)0x0\+F)
+\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+\+S\+O\+U\+R\+CE}(P\+I\+N\+S\+O\+U\+R\+CE)
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_ga93071f0121fab9f8f13e59c612ed6291}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+R\+T\+C\+\_\+50\+Hz}~((uint8\+\_\+t)0x00)  /$\ast$ R\+T\+C\+\_\+50\+Hz Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 0 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+M\+CO}~((uint8\+\_\+t)0x00)  /$\ast$ M\+C\+O (\+M\+C\+O1 and M\+C\+O2) Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+A\+M\+P\+ER}~((uint8\+\_\+t)0x00)  /$\ast$ T\+A\+M\+P\+E\+R (\+T\+A\+M\+P\+E\+R\+\_\+1 and T\+A\+M\+P\+E\+R\+\_\+2) Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+WJ}~((uint8\+\_\+t)0x00)  /$\ast$ S\+W\+J (\+S\+W\+D and J\+T\+A\+G) Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+R\+A\+CE}~((uint8\+\_\+t)0x00)  /$\ast$ T\+R\+A\+C\+E Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_ga9a65573a3d8684febe1fda5c6cd8c992}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M1}~((uint8\+\_\+t)0x01)  /$\ast$ T\+I\+M1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 1 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M2}~((uint8\+\_\+t)0x01)  /$\ast$ T\+I\+M2 Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_ga8c6bda0c56abc29eef7709b52d9d3e0d}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M3}~((uint8\+\_\+t)0x02)  /$\ast$ T\+I\+M3 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 2 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M4}~((uint8\+\_\+t)0x02)  /$\ast$ T\+I\+M4 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M5}~((uint8\+\_\+t)0x02)  /$\ast$ T\+I\+M5 Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gaf7562d5cf5d33dbc7b7c69df63182583}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M8}~((uint8\+\_\+t)0x03)  /$\ast$ T\+I\+M8 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 3 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M9}~((uint8\+\_\+t)0x03)  /$\ast$ T\+I\+M9 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M10}~((uint8\+\_\+t)0x03)  /$\ast$ T\+I\+M10 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M11}~((uint8\+\_\+t)0x03)  /$\ast$ T\+I\+M11 Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gaa246f87c460c4bb4036b8ab39e0220f1}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+C1}~((uint8\+\_\+t)0x04)  /$\ast$ I2\+C1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 4 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+C2}~((uint8\+\_\+t)0x04)  /$\ast$ I2\+C2 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+C3}~((uint8\+\_\+t)0x04)  /$\ast$ I2\+C3 Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_ga7804aaf9275dbb5502312729a76d13be}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+P\+I1}~((uint8\+\_\+t)0x05)  /$\ast$ S\+P\+I1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 5 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+P\+I2}~((uint8\+\_\+t)0x05)  /$\ast$ S\+P\+I2/\+I2\+S2 Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gad6e716ad894aa5299273541c6966864a}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+P\+I3}~((uint8\+\_\+t)0x06)  /$\ast$ S\+P\+I3/\+I2\+S3 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 6 selection. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_ga790e1f37e75f475cf09c211f566fb069}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T1}~((uint8\+\_\+t)0x07)  /$\ast$ U\+S\+A\+R\+T1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 7 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T2}~((uint8\+\_\+t)0x07)  /$\ast$ U\+S\+A\+R\+T2 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T3}~((uint8\+\_\+t)0x07)  /$\ast$ U\+S\+A\+R\+T3 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+I2\+S3ext}~((uint8\+\_\+t)0x07)  /$\ast$ I2\+S3ext Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gad1754187e64b66681cc1447695062706}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+A\+R\+T4}~((uint8\+\_\+t)0x08)  /$\ast$ U\+A\+R\+T4 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 8 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+A\+R\+T5}~((uint8\+\_\+t)0x08)  /$\ast$ U\+A\+R\+T5 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+U\+S\+A\+R\+T6}~((uint8\+\_\+t)0x08)  /$\ast$ U\+S\+A\+R\+T6 Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gaf5defeedc302bf348e31dd7bdcdd882f}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+C\+A\+N1}~((uint8\+\_\+t)0x09)  /$\ast$ C\+A\+N1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 9 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+C\+A\+N2}~((uint8\+\_\+t)0x09)  /$\ast$ C\+A\+N2 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M12}~((uint8\+\_\+t)0x09)  /$\ast$ T\+I\+M12 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M13}~((uint8\+\_\+t)0x09)  /$\ast$ T\+I\+M13 Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+T\+I\+M14}~((uint8\+\_\+t)0x09)  /$\ast$ T\+I\+M14 Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gaeba0aeefec841e505170efc7762ae588}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+FS}~((uint8\+\_\+t)0x\+A)  /$\ast$ O\+T\+G\+\_\+\+F\+S Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 10 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+HS}~((uint8\+\_\+t)0x\+A)  /$\ast$ O\+T\+G\+\_\+\+H\+S Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_ga26cf3f30fe5154bd461b27fab58e45e2}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+E\+TH}~((uint8\+\_\+t)0x0\+B)  /$\ast$ E\+T\+H\+E\+R\+N\+E\+T Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 11 selection. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_ga8378a89ae1a16d5ae5d315ca49a57674}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+F\+S\+MC}~((uint8\+\_\+t)0x\+C)  /$\ast$ F\+S\+M\+C Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 12 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+H\+S\+\_\+\+FS}~((uint8\+\_\+t)0x\+C)  /$\ast$ O\+T\+G H\+S configured in F\+S, Alternate Function mapping $\ast$/
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+S\+D\+IO}~((uint8\+\_\+t)0x\+C)  /$\ast$ S\+D\+I\+O Alternate Function mapping $\ast$/
+\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gaa7bfafac663bac5d437bd6d6a2f6774d}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+D\+C\+MI}~((uint8\+\_\+t)0x0\+D)  /$\ast$ D\+C\+M\+I Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 13 selection. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o___alternat__function__selection__define_gacd5e7846b3709cddbf41ece2b1fb068e}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+E\+V\+E\+N\+T\+O\+UT}~((uint8\+\_\+t)0x0\+F)  /$\ast$ E\+V\+E\+N\+T\+O\+U\+T Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 15 selection. \end{DoxyCompactList}\item 
+\#define {\bfseries I\+S\+\_\+\+G\+P\+I\+O\+\_\+\+AF}(AF)  
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+Mode\+\_\+\+A\+IN}~\hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6e5c0d7e6d2e22b834b24e1ca1d6d0db}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN}
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G1\+\_\+\+FS}~\hyperlink{group___g_p_i_o___alternat__function__selection__define_gaeba0aeefec841e505170efc7762ae588}{G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+FS}
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G2\+\_\+\+HS}~G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+HS
+\item 
+\#define {\bfseries G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G2\+\_\+\+FS}~G\+P\+I\+O\+\_\+\+A\+F\+\_\+\+O\+T\+G\+\_\+\+H\+S\+\_\+\+FS
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group___g_p_i_o_ga1347339e1c84a196fabbb31205eec5d4}{G\+P\+I\+O\+Mode\+\_\+\+Type\+Def} \{ \hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a484aa18a6156ce916049b334ba1839de}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+IN} = 0x00, 
+\hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a60f1d530f4119efcad8e1a68c890c6a6}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+O\+UT} = 0x01, 
+\hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6d44c35c6c5008d85bac9251a867e701}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AF} = 0x02, 
+\hyperlink{group___g_p_i_o_gga1347339e1c84a196fabbb31205eec5d4a6e5c0d7e6d2e22b834b24e1ca1d6d0db}{G\+P\+I\+O\+\_\+\+Mode\+\_\+\+AN} = 0x03
+ \}\begin{DoxyCompactList}\small\item\em G\+P\+IO Configuration Mode enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_gae74212e8d66c389f47326b06bdf6d2ab}{G\+P\+I\+O\+O\+Type\+\_\+\+Type\+Def} \{ {\bfseries G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+PP} = 0x00, 
+{\bfseries G\+P\+I\+O\+\_\+\+O\+Type\+\_\+\+OD} = 0x01
+ \}\hypertarget{group___g_p_i_o_gae74212e8d66c389f47326b06bdf6d2ab}{}\label{group___g_p_i_o_gae74212e8d66c389f47326b06bdf6d2ab}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Output type enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_ga062ad92b67b4a1f301c161022cf3ba8e}{G\+P\+I\+O\+Speed\+\_\+\+Type\+Def} \{ \hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9bff9e174639332007c914483361be18}{G\+P\+I\+O\+\_\+\+Speed\+\_\+2\+M\+Hz} = 0x00, 
+\hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea59a0acdf2ccd1b4b8d507e845e497c62}{G\+P\+I\+O\+\_\+\+Speed\+\_\+25\+M\+Hz} = 0x01, 
+\hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581}{G\+P\+I\+O\+\_\+\+Speed\+\_\+50\+M\+Hz} = 0x02, 
+\hyperlink{group___g_p_i_o_gga062ad92b67b4a1f301c161022cf3ba8ea195a0e73cd63d7f5b5d41bd0155eacbb}{G\+P\+I\+O\+\_\+\+Speed\+\_\+100\+M\+Hz} = 0x03
+ \}\begin{DoxyCompactList}\small\item\em G\+P\+IO Output Maximum frequency enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_gafb7ecd99c44b4fd702d669304a36c2c8}{G\+P\+I\+O\+Pu\+Pd\+\_\+\+Type\+Def} \{ {\bfseries G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+\+N\+O\+P\+U\+LL} = 0x00, 
+{\bfseries G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+\+UP} = 0x01, 
+{\bfseries G\+P\+I\+O\+\_\+\+Pu\+Pd\+\_\+\+D\+O\+WN} = 0x02
+ \}\hypertarget{group___g_p_i_o_gafb7ecd99c44b4fd702d669304a36c2c8}{}\label{group___g_p_i_o_gafb7ecd99c44b4fd702d669304a36c2c8}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Configuration Pull\+Up Pull\+Down enumeration. \end{DoxyCompactList}
+\item 
+enum \hyperlink{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action} \{ {\bfseries Bit\+\_\+\+R\+E\+S\+ET} = 0, 
+{\bfseries Bit\+\_\+\+S\+ET}
+ \}\hypertarget{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}{}\label{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}
+\begin{DoxyCompactList}\small\item\em G\+P\+IO Bit S\+ET and Bit R\+E\+S\+ET enumeration. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___g_p_i_o_gaa60bdf3182c44b5fa818f237042f52ee}{G\+P\+I\+O\+\_\+\+De\+Init} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Deinitializes the G\+P\+I\+Ox peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga71abf9404261370d03cca449b88d3a65}{G\+P\+I\+O\+\_\+\+Init} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, \hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$G\+P\+I\+O\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the G\+P\+I\+Ox peripheral according to the specified parameters in the G\+P\+I\+O\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gab28de41278e7f8c63d0851e2733b10df}{G\+P\+I\+O\+\_\+\+Struct\+Init} (\hyperlink{struct_g_p_i_o___init_type_def}{G\+P\+I\+O\+\_\+\+Init\+Type\+Def} $\ast$G\+P\+I\+O\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each G\+P\+I\+O\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gad2f2e615928c69fd0d8c641a7cedaafc}{G\+P\+I\+O\+\_\+\+Pin\+Lock\+Config} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks G\+P\+IO Pins configuration registers. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___g_p_i_o_ga98772ef6b639b3fa06c8ae5ba28d3aaa}{G\+P\+I\+O\+\_\+\+Read\+Input\+Data\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified input port pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___g_p_i_o_ga139a33adc8409288e9f193bbebb5a0f7}{G\+P\+I\+O\+\_\+\+Read\+Input\+Data} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Reads the specified G\+P\+IO input data port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{group___g_p_i_o_ga138270f8695b105b7c6ed405792919c1}{G\+P\+I\+O\+\_\+\+Read\+Output\+Data\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified output data port bit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group___g_p_i_o_gaf8938a34280b7dc3e39872a7c17bb323}{G\+P\+I\+O\+\_\+\+Read\+Output\+Data} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox)
+\begin{DoxyCompactList}\small\item\em Reads the specified G\+P\+IO output data port. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga9e1352eed7c6620e18af2d86f6b6ff8e}{G\+P\+I\+O\+\_\+\+Set\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets the selected data port bits. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga6fcd35b207a66608dd2c9d7de9247dc8}{G\+P\+I\+O\+\_\+\+Reset\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Clears the selected data port bits. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga8f7b237fd744d9f7456fbe0da47a9b80}{G\+P\+I\+O\+\_\+\+Write\+Bit} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, \hyperlink{group___g_p_i_o_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action} Bit\+Val)
+\begin{DoxyCompactList}\small\item\em Sets or clears the selected data port bit. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gaa925f19c8547a00c7a0c269a84873bf9}{G\+P\+I\+O\+\_\+\+Write} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t Port\+Val)
+\begin{DoxyCompactList}\small\item\em Writes data to the specified G\+P\+IO data port. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_gac1b837c66258872740d5f89f23549ab1}{G\+P\+I\+O\+\_\+\+Toggle\+Bits} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Toggles the specified G\+P\+IO pins.. \end{DoxyCompactList}\item 
+void \hyperlink{group___g_p_i_o_ga0a77617a322562ae84f8d72486032c5d}{G\+P\+I\+O\+\_\+\+Pin\+A\+F\+Config} (\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def} $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin\+Source, uint8\+\_\+t G\+P\+I\+O\+\_\+\+AF)
+\begin{DoxyCompactList}\small\item\em Changes the mapping of the specified pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains all the functions prototypes for the G\+P\+IO firmware library. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/\+September-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+T\+HE P\+R\+E\+S\+E\+NT F\+I\+R\+M\+W\+A\+RE W\+H\+I\+CH IS F\+OR G\+U\+I\+D\+A\+N\+CE O\+N\+LY A\+I\+MS AT P\+R\+O\+V\+I\+D\+I\+NG C\+U\+S\+T\+O\+M\+E\+RS W\+I\+TH C\+O\+D\+I\+NG I\+N\+F\+O\+R\+M\+A\+T\+I\+ON R\+E\+G\+A\+R\+D\+I\+NG T\+H\+E\+IR P\+R\+O\+D\+U\+C\+TS IN O\+R\+D\+ER F\+OR T\+H\+EM TO S\+A\+VE T\+I\+ME. AS A R\+E\+S\+U\+LT, S\+T\+M\+I\+C\+R\+O\+E\+L\+E\+C\+T\+R\+O\+N\+I\+CS S\+H\+A\+LL N\+OT BE H\+E\+LD L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES W\+I\+TH R\+E\+S\+P\+E\+CT TO A\+NY C\+L\+A\+I\+MS A\+R\+I\+S\+I\+NG F\+R\+OM T\+HE C\+O\+N\+T\+E\+NT OF S\+U\+CH F\+I\+R\+M\+W\+A\+RE A\+N\+D/\+OR T\+HE U\+SE M\+A\+DE BY C\+U\+S\+T\+O\+M\+E\+RS OF T\+HE C\+O\+D\+I\+NG I\+N\+F\+O\+R\+M\+A\+T\+I\+ON C\+O\+N\+T\+A\+I\+N\+ED H\+E\+R\+E\+IN IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+H\+E\+IR P\+R\+O\+D\+U\+C\+TS.
+
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+HT 2011 S\+T\+Microelectronics\end{center} }

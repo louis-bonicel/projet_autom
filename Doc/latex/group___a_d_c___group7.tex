@@ -1,0 +1,232 @@
+\hypertarget{group___a_d_c___group7}{}\section{Interrupts and flags management functions}
+\label{group___a_d_c___group7}\index{Interrupts and flags management functions@{Interrupts and flags management functions}}
+
+
+Interrupts and flags management functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___a_d_c___group7_gad4c84b54b539944f555488bf979f82b6}{A\+D\+C\+\_\+\+I\+T\+Config} (\hyperlink{struct_a_d_c___type_def}{A\+D\+C\+\_\+\+Type\+Def} $\ast$A\+D\+Cx, uint16\+\_\+t A\+D\+C\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified A\+DC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \hyperlink{group___a_d_c___group7_gaa12546e51ec905c90a3aada432bd4633}{A\+D\+C\+\_\+\+Get\+Flag\+Status} (\hyperlink{struct_a_d_c___type_def}{A\+D\+C\+\_\+\+Type\+Def} $\ast$A\+D\+Cx, uint8\+\_\+t A\+D\+C\+\_\+\+F\+L\+AG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified A\+DC flag is set or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___a_d_c___group7_gaf34f36798f811b4a41321ea2d12118d4}{A\+D\+C\+\_\+\+Clear\+Flag} (\hyperlink{struct_a_d_c___type_def}{A\+D\+C\+\_\+\+Type\+Def} $\ast$A\+D\+Cx, uint8\+\_\+t A\+D\+C\+\_\+\+F\+L\+AG)
+\begin{DoxyCompactList}\small\item\em Clears the A\+D\+Cx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+I\+T\+Status \hyperlink{group___a_d_c___group7_gaa1d3b910a83dbf14d4f68c8eef058612}{A\+D\+C\+\_\+\+Get\+I\+T\+Status} (\hyperlink{struct_a_d_c___type_def}{A\+D\+C\+\_\+\+Type\+Def} $\ast$A\+D\+Cx, uint16\+\_\+t A\+D\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified A\+DC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \hyperlink{group___a_d_c___group7_ga601c6a67bd883eb631ecc7aa5e999b9c}{A\+D\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit} (\hyperlink{struct_a_d_c___type_def}{A\+D\+C\+\_\+\+Type\+Def} $\ast$A\+D\+Cx, uint16\+\_\+t A\+D\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the A\+D\+Cx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interrupts and flags management functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                   Interrupts and flags management functions
+ ===============================================================================  
+
+  This section provides functions allowing to configure the ADC Interrupts and 
+  to get the status and clear flags and Interrupts pending bits.
+  
+  Each ADC provides 4 Interrupts sources and 6 Flags which can be divided into 
+  3 groups:
+  
+  I. Flags and Interrupts for ADC regular channels
+  =================================================
+  Flags :
+  ---------- 
+     1. ADC_FLAG_OVR : Overrun detection when regular converted data are lost
+
+     2. ADC_FLAG_EOC : Regular channel end of conversion ==> to indicate (depending 
+              on EOCS bit, managed by ADC_EOCOnEachRegularChannelCmd() ) the end of:
+               ==> a regular CHANNEL conversion 
+               ==> sequence of regular GROUP conversions .
+
+     3. ADC_FLAG_STRT: Regular channel start ==> to indicate when regular CHANNEL 
+              conversion starts.
+
+  Interrupts :
+  ------------
+     1. ADC_IT_OVR : specifies the interrupt source for Overrun detection event.  
+     2. ADC_IT_EOC : specifies the interrupt source for Regular channel end of 
+                     conversion event.
+  
+  
+  II. Flags and Interrupts for ADC Injected channels
+  =================================================
+  Flags :
+  ---------- 
+     1. ADC_FLAG_JEOC : Injected channel end of conversion ==> to indicate at 
+               the end of injected GROUP conversion  
+              
+     2. ADC_FLAG_JSTRT: Injected channel start ==> to indicate hardware when 
+               injected GROUP conversion starts.
+
+  Interrupts :
+  ------------
+     1. ADC_IT_JEOC : specifies the interrupt source for Injected channel end of 
+                      conversion event.     
+
+  III. General Flags and Interrupts for the ADC
+  ================================================= 
+  Flags :
+  ---------- 
+     1. ADC_FLAG_AWD: Analog watchdog ==> to indicate if the converted voltage 
+              crosses the programmed thresholds values.
+              
+  Interrupts :
+  ------------
+     1. ADC_IT_AWD : specifies the interrupt source for Analog watchdog event. 
+
+  
+  The user should identify which mode will be used in his application to manage 
+  the ADC controller events: Polling mode or Interrupt mode.
+  
+  In the Polling Mode it is advised to use the following functions:
+      - ADC_GetFlagStatus() : to check if flags events occur. 
+      - ADC_ClearFlag()     : to clear the flags events.
+      
+  In the Interrupt Mode it is advised to use the following functions:
+     - ADC_ITConfig()          : to enable or disable the interrupt source.
+     - ADC_GetITStatus()       : to check if Interrupt occurs.
+     - ADC_ClearITPendingBit() : to clear the Interrupt pending Bit 
+                                 (corresponding Flag). 
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!A\+D\+C\+\_\+\+Clear\+Flag@{A\+D\+C\+\_\+\+Clear\+Flag}}
+\index{A\+D\+C\+\_\+\+Clear\+Flag@{A\+D\+C\+\_\+\+Clear\+Flag}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Clear\+Flag(\+A\+D\+C\+\_\+\+Type\+Def $\ast$\+A\+D\+Cx, uint8\+\_\+t A\+D\+C\+\_\+\+F\+L\+A\+G)}{ADC_ClearFlag(ADC_TypeDef *ADCx, uint8_t ADC_FLAG)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+Clear\+Flag (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+D\+C\+\_\+\+Type\+Def} $\ast$}]{A\+D\+Cx, }
+\item[{uint8\+\_\+t}]{A\+D\+C\+\_\+\+F\+L\+AG}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group7_gaf34f36798f811b4a41321ea2d12118d4}{}\label{group___a_d_c___group7_gaf34f36798f811b4a41321ea2d12118d4}
+
+
+Clears the A\+D\+Cx\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+D\+Cx} & where x can be 1, 2 or 3 to select the A\+DC peripheral. \\
+\hline
+{\em A\+D\+C\+\_\+\+F\+L\+AG} & specifies the flag to clear. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+A\+WD\+: Analog watchdog flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+E\+OC\+: End of conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+J\+E\+OC\+: End of injected group conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+J\+S\+T\+RT\+: Start of injected group conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+S\+T\+RT\+: Start of regular group conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+O\+VR\+: Overrun flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!A\+D\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit@{A\+D\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit}}
+\index{A\+D\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit@{A\+D\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit(\+A\+D\+C\+\_\+\+Type\+Def $\ast$\+A\+D\+Cx, uint16\+\_\+t A\+D\+C\+\_\+\+I\+T)}{ADC_ClearITPendingBit(ADC_TypeDef *ADCx, uint16_t ADC_IT)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+Clear\+I\+T\+Pending\+Bit (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+D\+C\+\_\+\+Type\+Def} $\ast$}]{A\+D\+Cx, }
+\item[{uint16\+\_\+t}]{A\+D\+C\+\_\+\+IT}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group7_ga601c6a67bd883eb631ecc7aa5e999b9c}{}\label{group___a_d_c___group7_ga601c6a67bd883eb631ecc7aa5e999b9c}
+
+
+Clears the A\+D\+Cx\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+D\+Cx} & where x can be 1, 2 or 3 to select the A\+DC peripheral. \\
+\hline
+{\em A\+D\+C\+\_\+\+IT} & specifies the A\+DC interrupt pending bit to clear. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item A\+D\+C\+\_\+\+I\+T\+\_\+\+E\+OC\+: End of conversion interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+A\+WD\+: Analog watchdog interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+J\+E\+OC\+: End of injected conversion interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+O\+VR\+: Overrun interrupt mask \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!A\+D\+C\+\_\+\+Get\+Flag\+Status@{A\+D\+C\+\_\+\+Get\+Flag\+Status}}
+\index{A\+D\+C\+\_\+\+Get\+Flag\+Status@{A\+D\+C\+\_\+\+Get\+Flag\+Status}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Get\+Flag\+Status(\+A\+D\+C\+\_\+\+Type\+Def $\ast$\+A\+D\+Cx, uint8\+\_\+t A\+D\+C\+\_\+\+F\+L\+A\+G)}{ADC_GetFlagStatus(ADC_TypeDef *ADCx, uint8_t ADC_FLAG)}}]{\setlength{\rightskip}{0pt plus 5cm}Flag\+Status A\+D\+C\+\_\+\+Get\+Flag\+Status (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+D\+C\+\_\+\+Type\+Def} $\ast$}]{A\+D\+Cx, }
+\item[{uint8\+\_\+t}]{A\+D\+C\+\_\+\+F\+L\+AG}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group7_gaa12546e51ec905c90a3aada432bd4633}{}\label{group___a_d_c___group7_gaa12546e51ec905c90a3aada432bd4633}
+
+
+Checks whether the specified A\+DC flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+D\+Cx} & where x can be 1, 2 or 3 to select the A\+DC peripheral. \\
+\hline
+{\em A\+D\+C\+\_\+\+F\+L\+AG} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+A\+WD\+: Analog watchdog flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+E\+OC\+: End of conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+J\+E\+OC\+: End of injected group conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+J\+S\+T\+RT\+: Start of injected group conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+S\+T\+RT\+: Start of regular group conversion flag \item A\+D\+C\+\_\+\+F\+L\+A\+G\+\_\+\+O\+VR\+: Overrun flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of A\+D\+C\+\_\+\+F\+L\+AG (S\+ET or R\+E\+S\+ET). \\
+\hline
+\end{DoxyRetVals}
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!A\+D\+C\+\_\+\+Get\+I\+T\+Status@{A\+D\+C\+\_\+\+Get\+I\+T\+Status}}
+\index{A\+D\+C\+\_\+\+Get\+I\+T\+Status@{A\+D\+C\+\_\+\+Get\+I\+T\+Status}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+Get\+I\+T\+Status(\+A\+D\+C\+\_\+\+Type\+Def $\ast$\+A\+D\+Cx, uint16\+\_\+t A\+D\+C\+\_\+\+I\+T)}{ADC_GetITStatus(ADC_TypeDef *ADCx, uint16_t ADC_IT)}}]{\setlength{\rightskip}{0pt plus 5cm}I\+T\+Status A\+D\+C\+\_\+\+Get\+I\+T\+Status (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+D\+C\+\_\+\+Type\+Def} $\ast$}]{A\+D\+Cx, }
+\item[{uint16\+\_\+t}]{A\+D\+C\+\_\+\+IT}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group7_gaa1d3b910a83dbf14d4f68c8eef058612}{}\label{group___a_d_c___group7_gaa1d3b910a83dbf14d4f68c8eef058612}
+
+
+Checks whether the specified A\+DC interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+D\+Cx} & where x can be 1, 2 or 3 to select the A\+DC peripheral. \\
+\hline
+{\em A\+D\+C\+\_\+\+IT} & specifies the A\+DC interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item A\+D\+C\+\_\+\+I\+T\+\_\+\+E\+OC\+: End of conversion interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+A\+WD\+: Analog watchdog interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+J\+E\+OC\+: End of injected conversion interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+O\+VR\+: Overrun interrupt mask \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of A\+D\+C\+\_\+\+IT (S\+ET or R\+E\+S\+ET). \\
+\hline
+\end{DoxyRetVals}
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!A\+D\+C\+\_\+\+I\+T\+Config@{A\+D\+C\+\_\+\+I\+T\+Config}}
+\index{A\+D\+C\+\_\+\+I\+T\+Config@{A\+D\+C\+\_\+\+I\+T\+Config}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\subsubsection[{\texorpdfstring{A\+D\+C\+\_\+\+I\+T\+Config(\+A\+D\+C\+\_\+\+Type\+Def $\ast$\+A\+D\+Cx, uint16\+\_\+t A\+D\+C\+\_\+\+I\+T, Functional\+State New\+State)}{ADC_ITConfig(ADC_TypeDef *ADCx, uint16_t ADC_IT, FunctionalState NewState)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+C\+\_\+\+I\+T\+Config (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+D\+C\+\_\+\+Type\+Def} $\ast$}]{A\+D\+Cx, }
+\item[{uint16\+\_\+t}]{A\+D\+C\+\_\+\+IT, }
+\item[{Functional\+State}]{New\+State}
+\end{DoxyParamCaption}
+)}\hypertarget{group___a_d_c___group7_gad4c84b54b539944f555488bf979f82b6}{}\label{group___a_d_c___group7_gad4c84b54b539944f555488bf979f82b6}
+
+
+Enables or disables the specified A\+DC interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A\+D\+Cx} & where x can be 1, 2 or 3 to select the A\+DC peripheral. \\
+\hline
+{\em A\+D\+C\+\_\+\+IT} & specifies the A\+DC interrupt sources to be enabled or disabled. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item A\+D\+C\+\_\+\+I\+T\+\_\+\+E\+OC\+: End of conversion interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+A\+WD\+: Analog watchdog interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+J\+E\+OC\+: End of injected conversion interrupt mask \item A\+D\+C\+\_\+\+I\+T\+\_\+\+O\+VR\+: Overrun interrupt enable \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the specified A\+DC interrupts. This parameter can be\+: E\+N\+A\+B\+LE or D\+I\+S\+A\+B\+LE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
