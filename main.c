@@ -83,7 +83,7 @@ void Global_Config ( void )
 	DAC_Config();
 
 	my_printf( "\r\n" );
-	my_printf( "                    Fin d'initialisation des peripheriques\r\n\r\n");
+	my_printf( "                  Fin de l'initialisation des peripheriques\r\n\r\n");
 }
 
 

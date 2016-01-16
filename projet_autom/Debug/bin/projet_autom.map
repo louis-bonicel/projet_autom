@@ -545,7 +545,7 @@ Linker script and memory map
 
                 0x20020000                _eram = 0x20020000
 
-.text           0x08000000     0x205f
+.text           0x08000000     0x2063
  *(.isr_vector)
  .isr_vector    0x08000000      0x188 ..\obj\startup_stm32f4xx.o
                 0x08000000                g_pfnVectors
@@ -857,41 +857,40 @@ Linker script and memory map
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x08001e64      0x16f ..\obj\main.o
- *fill*         0x08001fd3        0x1 
+ .rodata        0x08001e64      0x170 ..\obj\main.o
  .rodata        0x08001fd4       0x24 ..\obj\printf.o
- .rodata        0x08001ff8       0x67 ..\obj\asservissement.o
+ .rodata        0x08001ff8       0x6b ..\obj\asservissement.o
  *(.eh_fram e*)
 
-.glue_7         0x08002060        0x0
+.glue_7         0x08002064        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x08002060        0x0
+.glue_7t        0x08002064        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x08002060        0x0
+.vfp11_veneer   0x08002064        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08002060        0x0
+.v4_bx          0x08002064        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08002060        0x0
+.iplt           0x08002064        0x0
  .iplt          0x00000000        0x0 ..\obj\encodeur.o
 
-.rel.dyn        0x08002060        0x0
+.rel.dyn        0x08002064        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\encodeur.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08002060                __exidx_start = .
+                0x08002064                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08002060                __exidx_end = .
-                0x08002060                __etext = .
-                0x0800205f                _sidata = __etext
+                0x08002064                __exidx_end = .
+                0x08002064                __etext = .
+                0x08002063                _sidata = __etext
 
-.data           0x20000000      0x450 load address 0x0800205f
+.data           0x20000000      0x450 load address 0x08002063
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -922,10 +921,10 @@ Linker script and memory map
                 0x20000450                __data_end__ = .
                 0x20000450                _edata = __data_end__
 
-.igot.plt       0x20000450        0x0 load address 0x080024b0
+.igot.plt       0x20000450        0x0 load address 0x080024b4
  .igot.plt      0x00000000        0x0 ..\obj\encodeur.o
 
-.bss            0x20000450        0x8 load address 0x080024b0
+.bss            0x20000450        0x8 load address 0x080024b4
                 0x20000450                . = ALIGN (0x4)
                 0x20000450                __bss_start__ = .
                 0x20000450                _sbss = __bss_start__
@@ -946,7 +945,7 @@ Linker script and memory map
  *(.heap*)
                 0x20000458                __HeapLimit = .
 
-.co_stack       0x20000458      0x800 load address 0x080024b8
+.co_stack       0x20000458      0x800 load address 0x080024bc
                 0x20000458                . = ALIGN (0x8)
  *(.co_stack .co_stack.*)
  .co_stack      0x20000458      0x800 ..\obj\startup_stm32f4xx.o
