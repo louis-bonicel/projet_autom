@@ -25,9 +25,6 @@ void Global_Config ( void );
 void SysTick_Handler( void );
 void EXTI0_IRQHandler ( void );
 
-volatile struct flag {
-	uint8_t button : 1;
-} flag;
 
 /**
 * @brief Entree du programme.
@@ -84,6 +81,9 @@ void Global_Config ( void )
 	// Configure le DAC.
 	my_printf( "Initialisation DAC\r\n" );
 	DAC_Config();
+
+	my_printf( "\r\n" );
+	my_printf( "                    Fin d'initialisation des peripheriques\r\n\r\n");
 }
 
 

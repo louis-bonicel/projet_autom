@@ -545,7 +545,7 @@ Linker script and memory map
 
                 0x20020000                _eram = 0x20020000
 
-.text           0x08000000     0x1fdb
+.text           0x08000000     0x205f
  *(.isr_vector)
  .isr_vector    0x08000000      0x188 ..\obj\startup_stm32f4xx.o
                 0x08000000                g_pfnVectors
@@ -707,143 +707,143 @@ Linker script and memory map
  .text.main     0x080008f0       0x3c ..\obj\main.o
                 0x080008f0                main
  .text.Global_Config
-                0x0800092c       0x7c ..\obj\main.o
+                0x0800092c       0x8c ..\obj\main.o
                 0x0800092c                Global_Config
  .text.SysTick_Handler
-                0x080009a8        0xc ..\obj\main.o
-                0x080009a8                SysTick_Handler
+                0x080009b8        0xc ..\obj\main.o
+                0x080009b8                SysTick_Handler
  .text.EXTI0_IRQHandler
-                0x080009b4       0x28 ..\obj\main.o
-                0x080009b4                EXTI0_IRQHandler
+                0x080009c4       0x28 ..\obj\main.o
+                0x080009c4                EXTI0_IRQHandler
  .text.EXTI9_5_IRQHandler
-                0x080009dc       0x2c ..\obj\main.o
-                0x080009dc                EXTI9_5_IRQHandler
+                0x080009ec       0x2c ..\obj\main.o
+                0x080009ec                EXTI9_5_IRQHandler
  .text.RCC_GetClocksFreq
-                0x08000a08      0x154 ..\obj\stm32f4xx_rcc.o
-                0x08000a08                RCC_GetClocksFreq
+                0x08000a18      0x154 ..\obj\stm32f4xx_rcc.o
+                0x08000a18                RCC_GetClocksFreq
  .text.RCC_AHB1PeriphClockCmd
-                0x08000b5c       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000b5c                RCC_AHB1PeriphClockCmd
+                0x08000b6c       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000b6c                RCC_AHB1PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x08000b98       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000b98                RCC_APB1PeriphClockCmd
+                0x08000ba8       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000ba8                RCC_APB1PeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x08000bd4       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000bd4                RCC_APB2PeriphClockCmd
+                0x08000be4       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000be4                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphResetCmd
-                0x08000c10       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000c10                RCC_APB1PeriphResetCmd
+                0x08000c20       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000c20                RCC_APB1PeriphResetCmd
  .text.RCC_APB2PeriphResetCmd
-                0x08000c4c       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000c4c                RCC_APB2PeriphResetCmd
+                0x08000c5c       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000c5c                RCC_APB2PeriphResetCmd
  .text.LED_Config
-                0x08000c88       0x38 ..\obj\board.o
-                0x08000c88                LED_Config
+                0x08000c98       0x38 ..\obj\board.o
+                0x08000c98                LED_Config
  .text.PushButton_Config
-                0x08000cc0       0x78 ..\obj\board.o
-                0x08000cc0                PushButton_Config
+                0x08000cd0       0x78 ..\obj\board.o
+                0x08000cd0                PushButton_Config
  .text.ADC_Config
-                0x08000d38       0xa0 ..\obj\ADC.o
-                0x08000d38                ADC_Config
+                0x08000d48       0xa0 ..\obj\ADC.o
+                0x08000d48                ADC_Config
  .text.ADC_GetValue
-                0x08000dd8       0x50 ..\obj\ADC.o
-                0x08000dd8                ADC_GetValue
+                0x08000de8       0x50 ..\obj\ADC.o
+                0x08000de8                ADC_GetValue
  .text.ADC_DeInit
-                0x08000e28       0x1c ..\obj\stm32f4xx_adc.o
-                0x08000e28                ADC_DeInit
+                0x08000e38       0x1c ..\obj\stm32f4xx_adc.o
+                0x08000e38                ADC_DeInit
  .text.ADC_Init
-                0x08000e44       0xa8 ..\obj\stm32f4xx_adc.o
-                0x08000e44                ADC_Init
+                0x08000e54       0xa8 ..\obj\stm32f4xx_adc.o
+                0x08000e54                ADC_Init
  .text.ADC_StructInit
-                0x08000eec       0x3c ..\obj\stm32f4xx_adc.o
-                0x08000eec                ADC_StructInit
- .text.ADC_Cmd  0x08000f28       0x38 ..\obj\stm32f4xx_adc.o
-                0x08000f28                ADC_Cmd
+                0x08000efc       0x3c ..\obj\stm32f4xx_adc.o
+                0x08000efc                ADC_StructInit
+ .text.ADC_Cmd  0x08000f38       0x38 ..\obj\stm32f4xx_adc.o
+                0x08000f38                ADC_Cmd
  .text.ADC_RegularChannelConfig
-                0x08000f60      0x194 ..\obj\stm32f4xx_adc.o
-                0x08000f60                ADC_RegularChannelConfig
+                0x08000f70      0x194 ..\obj\stm32f4xx_adc.o
+                0x08000f70                ADC_RegularChannelConfig
  .text.ADC_SoftwareStartConv
-                0x080010f4       0x20 ..\obj\stm32f4xx_adc.o
-                0x080010f4                ADC_SoftwareStartConv
+                0x08001104       0x20 ..\obj\stm32f4xx_adc.o
+                0x08001104                ADC_SoftwareStartConv
  .text.ADC_GetConversionValue
-                0x08001114       0x1c ..\obj\stm32f4xx_adc.o
-                0x08001114                ADC_GetConversionValue
+                0x08001124       0x1c ..\obj\stm32f4xx_adc.o
+                0x08001124                ADC_GetConversionValue
  .text.ADC_GetFlagStatus
-                0x08001130       0x34 ..\obj\stm32f4xx_adc.o
-                0x08001130                ADC_GetFlagStatus
+                0x08001140       0x34 ..\obj\stm32f4xx_adc.o
+                0x08001140                ADC_GetFlagStatus
  .text.ADC_ClearFlag
-                0x08001164       0x20 ..\obj\stm32f4xx_adc.o
-                0x08001164                ADC_ClearFlag
+                0x08001174       0x20 ..\obj\stm32f4xx_adc.o
+                0x08001174                ADC_ClearFlag
  .text.PrintChar
-                0x08001184       0x30 ..\obj\printf.o
-                0x08001184                PrintChar
- .text.PutChar  0x080011b4       0x20 ..\obj\printf.o
-                0x080011b4                PutChar
+                0x08001194       0x30 ..\obj\printf.o
+                0x08001194                PrintChar
+ .text.PutChar  0x080011c4       0x20 ..\obj\printf.o
+                0x080011c4                PutChar
  .text.PutString
-                0x080011d4       0x3c ..\obj\printf.o
-                0x080011d4                PutString
+                0x080011e4       0x3c ..\obj\printf.o
+                0x080011e4                PutString
  .text.PutUnsignedInt
-                0x08001210       0xa0 ..\obj\printf.o
-                0x08001210                PutUnsignedInt
+                0x08001220       0xa0 ..\obj\printf.o
+                0x08001220                PutUnsignedInt
  .text.PutSignedInt
-                0x080012b0      0x104 ..\obj\printf.o
-                0x080012b0                PutSignedInt
- .text.PutHexa  0x080013b4       0xd8 ..\obj\printf.o
-                0x080013b4                PutHexa
+                0x080012c0      0x104 ..\obj\printf.o
+                0x080012c0                PutSignedInt
+ .text.PutHexa  0x080013c4       0xd8 ..\obj\printf.o
+                0x080013c4                PutHexa
  .text.vsnprintf
-                0x0800148c      0x25c ..\obj\printf.o
-                0x0800148c                vsnprintf
+                0x0800149c      0x25c ..\obj\printf.o
+                0x0800149c                vsnprintf
  .text.vsprintf
-                0x080016e8       0x24 ..\obj\printf.o
-                0x080016e8                vsprintf
+                0x080016f8       0x24 ..\obj\printf.o
+                0x080016f8                vsprintf
  .text.vfprintf
-                0x0800170c       0x68 ..\obj\printf.o
-                0x0800170c                vfprintf
- .text.vprintf  0x08001774       0x28 ..\obj\printf.o
-                0x08001774                vprintf
+                0x0800171c       0x68 ..\obj\printf.o
+                0x0800171c                vfprintf
+ .text.vprintf  0x08001784       0x28 ..\obj\printf.o
+                0x08001784                vprintf
  .text.my_printf
-                0x0800179c       0x28 ..\obj\printf.o
-                0x0800179c                my_printf
- .text.fputc    0x080017c4       0x40 ..\obj\printf.o
-                0x080017c4                fputc
- .text.fputs    0x08001804       0x48 ..\obj\printf.o
-                0x08001804                fputs
+                0x080017ac       0x28 ..\obj\printf.o
+                0x080017ac                my_printf
+ .text.fputc    0x080017d4       0x40 ..\obj\printf.o
+                0x080017d4                fputc
+ .text.fputs    0x08001814       0x48 ..\obj\printf.o
+                0x08001814                fputs
  .text.Tachy_Config
-                0x0800184c       0x38 ..\obj\tachy.o
-                0x0800184c                Tachy_Config
+                0x0800185c       0x38 ..\obj\tachy.o
+                0x0800185c                Tachy_Config
  .text.GetTachyValue
-                0x08001884       0x48 ..\obj\tachy.o
-                0x08001884                GetTachyValue
+                0x08001894       0x48 ..\obj\tachy.o
+                0x08001894                GetTachyValue
  .text.Tachy_to_RPM
-                0x080018cc       0x40 ..\obj\tachy.o
-                0x080018cc                Tachy_to_RPM
+                0x080018dc       0x40 ..\obj\tachy.o
+                0x080018dc                Tachy_to_RPM
  .text.GPIO_Init
-                0x0800190c      0x11c ..\obj\stm32f4xx_gpio.o
-                0x0800190c                GPIO_Init
+                0x0800191c      0x11c ..\obj\stm32f4xx_gpio.o
+                0x0800191c                GPIO_Init
  .text.GPIO_ReadInputDataBit
-                0x08001a28       0x34 ..\obj\stm32f4xx_gpio.o
-                0x08001a28                GPIO_ReadInputDataBit
+                0x08001a38       0x34 ..\obj\stm32f4xx_gpio.o
+                0x08001a38                GPIO_ReadInputDataBit
  .text.GPIO_PinAFConfig
-                0x08001a5c       0x90 ..\obj\stm32f4xx_gpio.o
-                0x08001a5c                GPIO_PinAFConfig
+                0x08001a6c       0x90 ..\obj\stm32f4xx_gpio.o
+                0x08001a6c                GPIO_PinAFConfig
  .text.Sweep_Consigne
-                0x08001aec       0xa4 ..\obj\asservissement.o
-                0x08001aec                Sweep_Consigne
+                0x08001afc       0xd8 ..\obj\asservissement.o
+                0x08001afc                Sweep_Consigne
  .text.EXTI_Init
-                0x08001b90       0xe4 ..\obj\stm32f4xx_exti.o
-                0x08001b90                EXTI_Init
+                0x08001bd4       0xe4 ..\obj\stm32f4xx_exti.o
+                0x08001bd4                EXTI_Init
  .text.EXTI_GetITStatus
-                0x08001c74       0x48 ..\obj\stm32f4xx_exti.o
-                0x08001c74                EXTI_GetITStatus
+                0x08001cb8       0x48 ..\obj\stm32f4xx_exti.o
+                0x08001cb8                EXTI_GetITStatus
  .text.EXTI_ClearITPendingBit
-                0x08001cbc       0x1c ..\obj\stm32f4xx_exti.o
-                0x08001cbc                EXTI_ClearITPendingBit
+                0x08001d00       0x1c ..\obj\stm32f4xx_exti.o
+                0x08001d00                EXTI_ClearITPendingBit
  .text.NVIC_Init
-                0x08001cd8       0xc0 ..\obj\misc.o
-                0x08001cd8                NVIC_Init
+                0x08001d1c       0xc0 ..\obj\misc.o
+                0x08001d1c                NVIC_Init
  .text.USART3_Config
-                0x08001d98       0x88 ..\obj\usart.o
-                0x08001d98                USART3_Config
+                0x08001ddc       0x88 ..\obj\usart.o
+                0x08001ddc                USART3_Config
  *(.init)
  *(.fini)
  *crtbegin.o(.ctors)
@@ -857,41 +857,41 @@ Linker script and memory map
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x08001e20      0x12d ..\obj\main.o
- *fill*         0x08001f4d        0x3 
- .rodata        0x08001f50       0x24 ..\obj\printf.o
- .rodata        0x08001f74       0x67 ..\obj\asservissement.o
+ .rodata        0x08001e64      0x16f ..\obj\main.o
+ *fill*         0x08001fd3        0x1 
+ .rodata        0x08001fd4       0x24 ..\obj\printf.o
+ .rodata        0x08001ff8       0x67 ..\obj\asservissement.o
  *(.eh_fram e*)
 
-.glue_7         0x08001fdc        0x0
+.glue_7         0x08002060        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x08001fdc        0x0
+.glue_7t        0x08002060        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x08001fdc        0x0
+.vfp11_veneer   0x08002060        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08001fdc        0x0
+.v4_bx          0x08002060        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08001fdc        0x0
+.iplt           0x08002060        0x0
  .iplt          0x00000000        0x0 ..\obj\encodeur.o
 
-.rel.dyn        0x08001fdc        0x0
+.rel.dyn        0x08002060        0x0
  .rel.iplt      0x00000000        0x0 ..\obj\encodeur.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08001fdc                __exidx_start = .
+                0x08002060                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08001fdc                __exidx_end = .
-                0x08001fdc                __etext = .
-                0x08001fdb                _sidata = __etext
+                0x08002060                __exidx_end = .
+                0x08002060                __etext = .
+                0x0800205f                _sidata = __etext
 
-.data           0x20000000      0x450 load address 0x08001fdb
+.data           0x20000000      0x450 load address 0x0800205f
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -922,10 +922,10 @@ Linker script and memory map
                 0x20000450                __data_end__ = .
                 0x20000450                _edata = __data_end__
 
-.igot.plt       0x20000450        0x0 load address 0x0800242c
+.igot.plt       0x20000450        0x0 load address 0x080024b0
  .igot.plt      0x00000000        0x0 ..\obj\encodeur.o
 
-.bss            0x20000450        0x8 load address 0x0800242c
+.bss            0x20000450        0x8 load address 0x080024b0
                 0x20000450                . = ALIGN (0x4)
                 0x20000450                __bss_start__ = .
                 0x20000450                _sbss = __bss_start__
@@ -946,7 +946,7 @@ Linker script and memory map
  *(.heap*)
                 0x20000458                __HeapLimit = .
 
-.co_stack       0x20000458      0x800 load address 0x08002434
+.co_stack       0x20000458      0x800 load address 0x080024b8
                 0x20000458                . = ALIGN (0x8)
  *(.co_stack .co_stack.*)
  .co_stack      0x20000458      0x800 ..\obj\startup_stm32f4xx.o
@@ -983,7 +983,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2015q3/bin/../lib/gcc/arm
 END GROUP
 OUTPUT(projet_autom.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x7560
+.debug_info     0x00000000     0x75d2
  .debug_info    0x00000000      0x5e8 ..\obj\encodeur.o
  .debug_info    0x000005e8      0x26c ..\obj\stm32f4xx_syscfg.o
  .debug_info    0x00000854      0x70f ..\obj\delay.o
@@ -993,19 +993,19 @@ OUTPUT(projet_autom.elf elf32-littlearm)
  .debug_info    0x00002314       0xed ..\obj\startup_stm32f4xx.o
  .debug_info    0x00002401      0x1a7 ..\obj\main.o
  .debug_info    0x000025a8      0xc4d ..\obj\stm32f4xx_rcc.o
- .debug_info    0x000031f5      0x636 ..\obj\board.o
- .debug_info    0x0000382b      0x49f ..\obj\ADC.o
- .debug_info    0x00003cca      0xc38 ..\obj\stm32f4xx_adc.o
- .debug_info    0x00004902      0xf71 ..\obj\printf.o
- .debug_info    0x00005873      0x388 ..\obj\tachy.o
- .debug_info    0x00005bfb      0x602 ..\obj\stm32f4xx_gpio.o
- .debug_info    0x000061fd      0x592 ..\obj\system_stm32f4xx.o
- .debug_info    0x0000678f      0x162 ..\obj\asservissement.o
- .debug_info    0x000068f1      0x347 ..\obj\stm32f4xx_exti.o
- .debug_info    0x00006c38      0x53d ..\obj\misc.o
- .debug_info    0x00007175      0x3eb ..\obj\usart.o
+ .debug_info    0x000031f5      0x668 ..\obj\board.o
+ .debug_info    0x0000385d      0x49f ..\obj\ADC.o
+ .debug_info    0x00003cfc      0xc38 ..\obj\stm32f4xx_adc.o
+ .debug_info    0x00004934      0xf71 ..\obj\printf.o
+ .debug_info    0x000058a5      0x388 ..\obj\tachy.o
+ .debug_info    0x00005c2d      0x602 ..\obj\stm32f4xx_gpio.o
+ .debug_info    0x0000622f      0x592 ..\obj\system_stm32f4xx.o
+ .debug_info    0x000067c1      0x1a2 ..\obj\asservissement.o
+ .debug_info    0x00006963      0x347 ..\obj\stm32f4xx_exti.o
+ .debug_info    0x00006caa      0x53d ..\obj\misc.o
+ .debug_info    0x000071e7      0x3eb ..\obj\usart.o
 
-.debug_abbrev   0x00000000     0x1a85
+.debug_abbrev   0x00000000     0x1afe
  .debug_abbrev  0x00000000      0x10e ..\obj\encodeur.o
  .debug_abbrev  0x0000010e      0x131 ..\obj\stm32f4xx_syscfg.o
  .debug_abbrev  0x0000023f      0x1be ..\obj\delay.o
@@ -1015,17 +1015,17 @@ OUTPUT(projet_autom.elf elf32-littlearm)
  .debug_abbrev  0x000007e3       0xb0 ..\obj\startup_stm32f4xx.o
  .debug_abbrev  0x00000893       0xe9 ..\obj\main.o
  .debug_abbrev  0x0000097c      0x1e3 ..\obj\stm32f4xx_rcc.o
- .debug_abbrev  0x00000b5f      0x126 ..\obj\board.o
- .debug_abbrev  0x00000c85      0x120 ..\obj\ADC.o
- .debug_abbrev  0x00000da5      0x196 ..\obj\stm32f4xx_adc.o
- .debug_abbrev  0x00000f3b      0x2c4 ..\obj\printf.o
- .debug_abbrev  0x000011ff      0x138 ..\obj\tachy.o
- .debug_abbrev  0x00001337      0x1a3 ..\obj\stm32f4xx_gpio.o
- .debug_abbrev  0x000014da      0x136 ..\obj\system_stm32f4xx.o
- .debug_abbrev  0x00001610       0x8c ..\obj\asservissement.o
- .debug_abbrev  0x0000169c      0x1a5 ..\obj\stm32f4xx_exti.o
- .debug_abbrev  0x00001841      0x145 ..\obj\misc.o
- .debug_abbrev  0x00001986       0xff ..\obj\usart.o
+ .debug_abbrev  0x00000b5f      0x15b ..\obj\board.o
+ .debug_abbrev  0x00000cba      0x120 ..\obj\ADC.o
+ .debug_abbrev  0x00000dda      0x196 ..\obj\stm32f4xx_adc.o
+ .debug_abbrev  0x00000f70      0x2c4 ..\obj\printf.o
+ .debug_abbrev  0x00001234      0x138 ..\obj\tachy.o
+ .debug_abbrev  0x0000136c      0x1a3 ..\obj\stm32f4xx_gpio.o
+ .debug_abbrev  0x0000150f      0x136 ..\obj\system_stm32f4xx.o
+ .debug_abbrev  0x00001645       0xd0 ..\obj\asservissement.o
+ .debug_abbrev  0x00001715      0x1a5 ..\obj\stm32f4xx_exti.o
+ .debug_abbrev  0x000018ba      0x145 ..\obj\misc.o
+ .debug_abbrev  0x000019ff       0xff ..\obj\usart.o
 
 .debug_aranges  0x00000000      0x868
  .debug_aranges
@@ -1091,7 +1091,7 @@ OUTPUT(projet_autom.elf elf32-littlearm)
  .debug_ranges  0x000006e8       0x30 ..\obj\misc.o
  .debug_ranges  0x00000718       0x10 ..\obj\usart.o
 
-.debug_line     0x00000000     0x3840
+.debug_line     0x00000000     0x384e
  .debug_line    0x00000000      0x22a ..\obj\encodeur.o
  .debug_line    0x0000022a      0x228 ..\obj\stm32f4xx_syscfg.o
  .debug_line    0x00000452      0x25f ..\obj\delay.o
@@ -1099,21 +1099,21 @@ OUTPUT(projet_autom.elf elf32-littlearm)
  .debug_line    0x00000b63      0x245 ..\obj\DAC.o
  .debug_line    0x00000da8      0x368 ..\obj\stm32f4xx_dac.o
  .debug_line    0x00001110       0xa1 ..\obj\startup_stm32f4xx.o
- .debug_line    0x000011b1      0x21a ..\obj\main.o
- .debug_line    0x000013cb      0x5b1 ..\obj\stm32f4xx_rcc.o
- .debug_line    0x0000197c      0x24e ..\obj\board.o
- .debug_line    0x00001bca      0x237 ..\obj\ADC.o
- .debug_line    0x00001e01      0x562 ..\obj\stm32f4xx_adc.o
- .debug_line    0x00002363      0x474 ..\obj\printf.o
- .debug_line    0x000027d7      0x23e ..\obj\tachy.o
- .debug_line    0x00002a15      0x353 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x00002d68      0x201 ..\obj\system_stm32f4xx.o
- .debug_line    0x00002f69      0x1b3 ..\obj\asservissement.o
- .debug_line    0x0000311c      0x2b5 ..\obj\stm32f4xx_exti.o
- .debug_line    0x000033d1      0x255 ..\obj\misc.o
- .debug_line    0x00003626      0x21a ..\obj\usart.o
+ .debug_line    0x000011b1      0x227 ..\obj\main.o
+ .debug_line    0x000013d8      0x5b1 ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x00001989      0x259 ..\obj\board.o
+ .debug_line    0x00001be2      0x237 ..\obj\ADC.o
+ .debug_line    0x00001e19      0x562 ..\obj\stm32f4xx_adc.o
+ .debug_line    0x0000237b      0x474 ..\obj\printf.o
+ .debug_line    0x000027ef      0x23e ..\obj\tachy.o
+ .debug_line    0x00002a2d      0x353 ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x00002d80      0x201 ..\obj\system_stm32f4xx.o
+ .debug_line    0x00002f81      0x1a9 ..\obj\asservissement.o
+ .debug_line    0x0000312a      0x2b5 ..\obj\stm32f4xx_exti.o
+ .debug_line    0x000033df      0x255 ..\obj\misc.o
+ .debug_line    0x00003634      0x21a ..\obj\usart.o
 
-.debug_str      0x00000000     0x2d0c
+.debug_str      0x00000000     0x2cf2
  .debug_str     0x00000000      0x989 ..\obj\encodeur.o
                                 0x9e4 (size before relaxing)
  .debug_str     0x00000989      0x175 ..\obj\stm32f4xx_syscfg.o
@@ -1133,7 +1133,7 @@ OUTPUT(projet_autom.elf elf32-littlearm)
  .debug_str     0x000015c5      0x5e2 ..\obj\stm32f4xx_rcc.o
                                 0x872 (size before relaxing)
  .debug_str     0x00001ba7       0x58 ..\obj\board.o
-                                0xa00 (size before relaxing)
+                                0xa0c (size before relaxing)
  .debug_str     0x00001bff      0x15f ..\obj\ADC.o
                                 0x494 (size before relaxing)
  .debug_str     0x00001d5e      0x512 ..\obj\stm32f4xx_adc.o
@@ -1146,13 +1146,13 @@ OUTPUT(projet_autom.elf elf32-littlearm)
                                 0x4c5 (size before relaxing)
  .debug_str     0x00002993       0xb3 ..\obj\system_stm32f4xx.o
                                 0x3cc (size before relaxing)
- .debug_str     0x00002a46       0x6b ..\obj\asservissement.o
-                                0x217 (size before relaxing)
- .debug_str     0x00002ab1       0xff ..\obj\stm32f4xx_exti.o
+ .debug_str     0x00002a46       0x51 ..\obj\asservissement.o
+                                0x209 (size before relaxing)
+ .debug_str     0x00002a97       0xff ..\obj\stm32f4xx_exti.o
                                 0x37b (size before relaxing)
- .debug_str     0x00002bb0      0x10b ..\obj\misc.o
+ .debug_str     0x00002b96      0x10b ..\obj\misc.o
                                 0x3f0 (size before relaxing)
- .debug_str     0x00002cbb       0x51 ..\obj\usart.o
+ .debug_str     0x00002ca1       0x51 ..\obj\usart.o
                                 0x449 (size before relaxing)
 
 .comment        0x00000000       0x70
