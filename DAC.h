@@ -21,6 +21,7 @@
 static const uint8_t RESOLUTION = 12;
 
 void DAC_Config ( void );
-void DAC_SetValues ( uint16_t dac_p , uint16_t dac_n );
+void Set_Consigne ( int16_t delta );
+inline void DAC_SetValues ( uint16_t dac_p , uint16_t dac_n );
 
 #endif // __DAC_H

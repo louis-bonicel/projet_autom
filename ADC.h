@@ -17,7 +17,6 @@
 #define __ADC_H
 
 void ADC_Config ( void );
-void ADC_GetPotValue( uint16_t * value );
-void ADC_GetTachyValue ( uint16_t * value );
+void ADC_GetValue ( uint8_t ADC_Channel , uint16_t * value );
 
 #endif // __ADC_H

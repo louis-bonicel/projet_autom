@@ -54,8 +54,8 @@ void USART3_Config( void )
 
 	// L'USART est une fonction alternative, on parametre donc les pins
 	// pour les "mapper" sur celle-ci
-	GPIO_PinAFConfig( GPIOD , GPIO_PinSource8 | GPIO_PinSource9 , GPIO_AF_USART3 );
-
+	GPIO_PinAFConfig( GPIOD , GPIO_PinSource8 , GPIO_AF_USART3 );
+	GPIO_PinAFConfig( GPIOD , GPIO_PinSource9 , GPIO_AF_USART3 );
 
 	// On configure le peripherique USART comme
 	// Baudrate = 115200

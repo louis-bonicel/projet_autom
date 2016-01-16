@@ -14,6 +14,7 @@
 */
 
 #include "stm32f4xx_conf.h"
+#include "DAC.h"
 
 /**
 * \fn void DAC_Config ( void )
@@ -61,13 +62,26 @@ void DAC_Config ( void )
 
 
 /**
-* \fn void DAC_SetValues ( uint16_t dac_p , uint16_t dac_n )
-*
-* \brief Met a jour les valeurs du DAC controlant le moteur.
-* \param dac_p La valeur a ecrire sur le port dac_p.
-* \param dac_n La valeur a ecrire sur le port dac_n.
+ * @brief Envoie une nouvelle consigne de vitesse.
+ * @param delta Consigne desiree ( -4095 ; 4095 )
+ */
+void Set_Consigne ( int16_t delta )
+{
+	int16_t consigne = delta % ( ( 0x01 << RESOLUTION ) - 1 );
+
+	uint16_t consigne_dac_p = ( 0x01 << ( RESOLUTION - 1 ) ) + ( consigne / 2 );
+	uint16_t consigne_dac_n = ( 0x01 << ( RESOLUTION - 1 ) ) - ( consigne / 2 );
+
+	DAC_SetValues( consigne_dac_p , consigne_dac_n );
+}
+
+
+/**
+* @brief Met a jour les valeurs du DAC controlant le moteur.
+* @param dac_p La valeur a ecrire sur le port dac_p.
+* @param dac_n La valeur a ecrire sur le port dac_n.
 */
-void DAC_SetValues ( uint16_t dac_p , uint16_t dac_n )
+inline void DAC_SetValues ( uint16_t dac_p , uint16_t dac_n )
 {
 	// Met a jour le channel 1 du DAC avec la valeur de dac_p
 	DAC_SetChannel1Data( DAC_Align_12b_R , dac_p );

@@ -14,6 +14,7 @@
 */
 
 #include "stm32f4xx_conf.h"
+#include "ADC.h"
 
 /**
 * \fn void ADC_Config ( void )
@@ -78,49 +79,19 @@ void ADC_Config ( void )
 
 
 /**
-* \fn void ADC_GetPotValue ( uint16_t * value )
-*
-* \brief Cette fonction recupere une mesure d'ADC pour le potentiometre.
-* \param value Pointeur vers la variable dans laquelle retourner la valeur d'ADC.
-*
+* @brief Recupere une mesure d'ADC pour le tachymetre et l'ecrit dans son argument.
+* @param value Pointeur vers la variable dans laquelle retourner la valeur d'ADC.
+* @param ADC_Channel Canal d'ADC a utiliser
+* ADC_Channel_2 pour tachy
+* ADC_Channel_8 pour potentiometre
 */
-void ADC_GetPotValue ( uint16_t * value )
-{
-	/*
-	Puisque l'on utilise un seul ADC mais avec plusieur channels, nous devons selectionner
-	lequel utiliser. Ici, le potentiometre est sur l'ADC 1 , channel 8.
-	*/
-	ADC_RegularChannelConfig( ADC1 , ADC_Channel_8 , 1 , ADC_SampleTime_15Cycles );
-
-	// Demande a l'ADC de demarrer une acquisition.
-	ADC_SoftwareStartConv( ADC1 );
-
-	// Tant que la conversion n'est pas terminee (End Of Conversion == 0)
-	// on attend.
-	while( ADC_GetFlagStatus( ADC1 , ADC_FLAG_EOC ) == RESET );
-
-	// La valeur lue est ecrite dans la variable value.
-	*value = ADC_GetConversionValue( ADC1 );
-
-	// Mise x 0 du flag signifiant la fin d'acquisition.
-	ADC_ClearFlag( ADC1 , ADC_FLAG_EOC );
-}
-
-
-/**
-* \fn void ADC_GetTachyValue ( uint16_t * value )
-*
-* \brief Recupere une mesure d'ADC pour le tachymetre et l'ecrit dans son argument.
-* \param value Pointeur vers la variable dans laquelle retourner la valeur d'ADC.
-*
-*/
-void ADC_GetTachyValue ( uint16_t * value )
+void ADC_GetValue ( uint8_t ADC_Channel , uint16_t * value )
 {
 	/*
 	Puisque l'on utilise un seul ADC mais avec plusieur channels, nous devons selectionner
 	lequel utiliser. Ici, le tachymetre est sur l'ADC 1 , channel 2.
 	*/
-	ADC_RegularChannelConfig( ADC1 , ADC_Channel_2 , 1 , ADC_SampleTime_15Cycles );
+	ADC_RegularChannelConfig( ADC1 , ADC_Channel , 1 , ADC_SampleTime_15Cycles );
 
 	// Demande a l'ADC de demarrer une acquisition.
 	ADC_SoftwareStartConv( ADC1 );
