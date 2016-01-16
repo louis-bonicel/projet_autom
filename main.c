@@ -36,7 +36,6 @@ volatile struct flag {
 int main ( void )
 {
 	Global_Config();
-	// Sweep_Consigne( -4095 , 4095 );
 
 	while(1)
 	{
@@ -45,8 +44,8 @@ int main ( void )
 			flag.button = 0;
 			Sweep_Consigne( -4095 , 4095 );
 		}
-		// Reboucler toutes les 1 ms.
-		delay_nms( 1 );
+		// Reboucler toutes les 100 ms.
+		delay_nms( 100 );
 	}
 }
 
@@ -61,28 +60,30 @@ void Global_Config ( void )
 	// Configure l'USART
 	USART3_Config();
 
-	my_printf( "                                  Projet SE 4                                  \r\n\r\n" );
-	my_printf( "USART Initialise avec succes !\r\n\r\n" );
+	my_printf( "\r\n" );
+	my_printf( "                                  Projet SE 4\r\n\r\n" );
+	my_printf( "                                Initialisations\r\n" );
+	my_printf( "UART Initialise avec succes !\r\n\r\n" );
 
 	// Configure les GPIOs pour les LEDs.
 	my_printf( "Initialisation LEDs\r\n" );
 	LED_Config();
-	my_printf( "LEDs Initialisees avec succes !\r\n\r\n" );
 
 	// Configure les GPIOs pour les LEDs.
 	my_printf( "Initialisation du bouton\r\n" );
 	PushButton_Config();
-	my_printf( "Bouton Initialise avec succes !\r\n\r\n" );
 
 	// Configure les ADCs.
 	my_printf( "Initialisation ADCs et Signe tachymetre\r\n" );
 	Tachy_Config();
-	my_printf( "ADCs et signe tachymetre Initialise avec succes !\r\n\r\n" );
+
+	// Configure l'encodeur
+	my_printf( "Initialisation Encodeur\r\n" );
+	Encodeur_Config();
 
 	// Configure le DAC.
 	my_printf( "Initialisation DAC\r\n" );
 	DAC_Config();
-	my_printf( "DAC Initialise avec succes !\r\n\r\n" );
 }
 
 

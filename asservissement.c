@@ -26,7 +26,7 @@ void Sweep_Consigne ( int16_t consigne_min , int16_t consigne_max )
 	int16_t tachy_value = 0;
 	int16_t rpm_speed = 0;
 
-	my_printf( "                                Starting Sweep                                 \r\n\r\n" );
+	my_printf( "                                Starting Sweep\r\n\r\n" );
 	my_printf( "Consigne,ADC_tachy,RPM\r\n" );
 
 	Set_Consigne( consigne_min );
