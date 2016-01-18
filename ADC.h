@@ -16,7 +16,6 @@
 #ifndef __ADC_H
 #define __ADC_H
 
-void ADC_Config ( void );
-void ADC_GetValue ( uint8_t ADC_Channel , uint16_t * value );
+void ADC_Config ( volatile uint16_t * adc_buffer );
 
 #endif // __ADC_H

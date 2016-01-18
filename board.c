@@ -75,16 +75,3 @@ void PushButton_Config ( void )
 
 	NVIC_Init( &NVIC_InitStructure );
 }
-
-
-/**
-* \fn void GetPotValue ( uint16_t * value )
-*
-* \brief Cette fonction recupere une mesure d'ADC pour le potentiometre.
-* \param value Pointeur vers la variable dans laquelle retourner la valeur d'ADC.
-*
-*/
-void GetPotValue ( uint16_t * value )
-{
-	ADC_GetValue( ADC_Channel_8 , value );
-}

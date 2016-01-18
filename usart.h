@@ -16,7 +16,8 @@
 #ifndef __USART_H
 #define __USART_H
 
-void USART3_Config( void );
+
+void USART3_Config( volatile uint8_t * rx_buffer );
 signed int my_printf(const char *pFormat, ...);
 
 #endif // __USART_H

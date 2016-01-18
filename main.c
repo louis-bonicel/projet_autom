@@ -25,6 +25,8 @@ void Global_Config ( void );
 void SysTick_Handler( void );
 void EXTI0_IRQHandler ( void );
 
+static volatile uint8_t t_USART3_rx_buffer[16];
+static volatile uint16_t t_adc_buffer[2];
 
 /**
 * @brief Entree du programme.
@@ -41,6 +43,12 @@ int main ( void )
 			flag.button = 0;
 			Sweep_Consigne( -4095 , 4095 );
 		}
+
+		uint8_t dma_counter = DMA_GetCurrDataCounter( DMA1_Stream1 );
+		my_printf( "DMA counter = %02d\t" , dma_counter);
+		my_printf( "Input buffer : %s\r\n" , t_USART3_rx_buffer );
+
+
 		// Reboucler toutes les 100 ms.
 		delay_nms( 100 );
 	}
@@ -55,12 +63,12 @@ void Global_Config ( void )
 	// Initialise le "tick" systeme, qui permet de lever une interruption toutes les us.
 	SysTick_Init();
 	// Configure l'USART
-	USART3_Config();
+	USART3_Config( t_USART3_rx_buffer );
 
 	my_printf( "\r\n" );
 	my_printf( "                                  Projet SE 4\r\n\r\n" );
 	my_printf( "                                Initialisations\r\n" );
-	my_printf( "UART Initialise avec succes !\r\n\r\n" );
+	my_printf( "UART et RX DMA Initialise avec succes !\r\n\r\n" );
 
 	// Configure les GPIOs pour les LEDs.
 	my_printf( "Initialisation LEDs\r\n" );
@@ -72,6 +80,7 @@ void Global_Config ( void )
 
 	// Configure les ADCs.
 	my_printf( "Initialisation ADCs et Signe tachymetre\r\n" );
+	ADC_Config( t_adc_buffer );
 	Tachy_Config();
 
 	// Configure l'encodeur
@@ -84,6 +93,46 @@ void Global_Config ( void )
 
 	my_printf( "\r\n" );
 	my_printf( "                  Fin de l'initialisation des peripheriques\r\n\r\n");
+}
+
+
+void Sweep_Consigne ( int16_t min , int16_t max )
+{
+	int16_t consigne = ( min < max ) ? min : max;
+	int16_t tachy_value = 0;
+	int16_t rpm_speed = 0;
+
+	my_printf( "                              Demarrage du sweep\r\n\r\n" );
+	my_printf( "Consigne,ADC_tachy,RPM\r\n" );
+
+	Set_Consigne( min );
+	delay_nms( 100 );
+
+	int16_t fin = min < max ? max : min;
+
+	while ( !flag.button && consigne <= fin )
+	{
+		Set_Consigne( consigne );
+		delay_nms( 1 );
+		GetTachyValue( &tachy_value );
+
+		Tachy_to_RPM( tachy_value , &rpm_speed );
+
+		my_printf( "%i,%i,%i\r\n" , consigne , tachy_value , rpm_speed );
+
+		consigne++;
+	}
+	flag.button = 0;
+}
+
+
+void GetTachyValue ( int16_t * tachy_value )
+{
+	uint16_t adc_value = t_adc_buffer[0];
+
+	uint8_t signe = GPIO_ReadInputDataBit( GPIOA , GPIO_Pin_1 );
+
+	*tachy_value = signe == Bit_RESET ? -adc_value : adc_value;
 }
 
 

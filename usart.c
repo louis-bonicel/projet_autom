@@ -14,17 +14,17 @@
 */
 
 #include "stm32f4xx_conf.h"
+#include "usart.h"
 
 /**
- * \fn void USART3_Config ( void )
- *
- * \brief Cette fonction configure les GPIOs utilises pour l'USART et
+ * @brief Cette fonction configure les GPIOs utilises pour l'USART et
  * le peripherique USART3.
  *
- * \details TX -> PD8, USART 3
- * \details RX -> PD9, USART 3
+ * @details TX -> PD8, USART 3
+ * @details RX -> PD9, USART 3
+ * @param rx_buffer Buffer pour la reception DMA
  */
-void USART3_Config( void )
+void USART3_Config( volatile uint8_t * rx_buffer )
 {
 	// Structure qui sera utilisee pour initialiser les GPIOs
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -32,11 +32,15 @@ void USART3_Config( void )
 	// Structure pour initialiser l'USART
 	USART_InitTypeDef USART_InitStructure;
 
+	DMA_InitTypeDef DMA_InitStructure;
+
 	// Demarrage de l'horloge GPIOD
 	RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_GPIOD , ENABLE );
 
 	// Demarrage de l'horloge de l'USART3
 	RCC_APB1PeriphClockCmd( RCC_APB1Periph_USART3 , ENABLE );
+
+	RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_DMA1 , ENABLE );
 
 	// Les pins utilises sont les pins 8 et 9 ( voir schema electrique de la board )
 	// L'USART est une "Alternative function"
@@ -71,6 +75,27 @@ void USART3_Config( void )
 
 	// On applique les parametres
 	USART_Init( USART3 , &USART_InitStructure );
+
+
+	DMA_DeInit( DMA1_Stream1 );
+	DMA_StructInit( &DMA_InitStructure );
+
+	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)0x40004804;
+	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
+	DMA_InitStructure.DMA_BufferSize = (uint16_t)16;
+	DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)rx_buffer;
+	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
+	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
+	DMA_InitStructure.DMA_Channel = DMA_Channel_4;
+	DMA_InitStructure.DMA_Priority = DMA_Priority_Low;
+	DMA_Init( DMA1_Stream1 , &DMA_InitStructure );
+
+	USART_DMACmd( USART3 , USART_DMAReq_Rx , ENABLE );
+
+	DMA_Cmd( DMA1_Stream1 , ENABLE );
 
 	// Et on demarre l'USART
 	USART_Cmd( USART3 , ENABLE );
