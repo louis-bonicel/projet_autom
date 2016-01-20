@@ -31,7 +31,7 @@ void TIM2_IRQHandler( void );
 static volatile uint8_t t_USART3_rx_buffer[5];
 static volatile uint16_t t_adc_buffer[2];
 
-volatile struct consigne{
+struct consigne{
 	uint16_t start_point;
 	uint16_t end_point;
 	uint8_t mode;
@@ -86,7 +86,7 @@ void TIMs_Init( void )
 
 	// Time base configuration
 
-	TIM_TimeBaseStructure.TIM_Period		= 1000 - 1; 	// TS in µs (1 milli)
+	TIM_TimeBaseStructure.TIM_Period		= 1000 - 1; 	// TS in Âµs (1 milli)
 	TIM_TimeBaseStructure.TIM_Prescaler		= 168 - 1; 		// 168 MHz Clock down to 1 MHz
 	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
 	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
@@ -108,7 +108,7 @@ void TIMs_Init( void )
 
 	// Time base configuration
 
-	TIM_TimeBaseStructure.TIM_Period		= 10000 - 1; 	// TS in µs (10 milli)
+	TIM_TimeBaseStructure.TIM_Period		= 10000 - 1; 	// TS in Âµs (10 milli)
 	TIM_TimeBaseStructure.TIM_Prescaler		= 168 - 1; 		// 168 MHz Clock down to 1 MHz
 	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
 	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
