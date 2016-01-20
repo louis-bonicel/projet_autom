@@ -7,7 +7,7 @@ volatile struct flag {
 	uint8_t consigneUpdate	: 1;
 	uint8_t mainProcess		: 1;
 	uint8_t sendData		: 1;
-	uint16_t				: 14;
+	uint16_t				: 12;
 } flag;
 
 void LED_Config ( void );

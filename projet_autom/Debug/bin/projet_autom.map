@@ -2,7 +2,7 @@
 Allocating common symbols
 Common symbol       size              file
 
-flag                0x4               ..\obj\main.o
+flag                0x2               ..\obj\main.o
 consigne            0x6               ..\obj\main.o
 
 Discarded input sections
