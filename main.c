@@ -21,24 +21,53 @@
 #include "encodeur.h"
 #include "tachy.h"
 
+typedef enum { NORMAL = (uint8_t)0b0001 , SWEEP = (uint8_t)0b0010 , STEP = (uint8_t)0b0100 } e_mode;
+
+typedef struct Consigne{
+	e_mode mode;
+	int16_t start_point;
+	int16_t end_point;
+}Consigne;
+
+typedef struct Data{
+	int16_t speed_tachy;
+	int16_t speed_encoder;
+	int16_t consigne;
+}Data;
+
+volatile struct flag {
+	uint8_t button			: 1;
+	uint8_t consigneUpdate	: 1;
+	uint8_t mainProcess		: 1;
+	uint8_t sendData		: 1;
+	uint16_t				: 12;
+} flag;
+
 void Global_Config ( void );
+void SendData( Data * data );
+void Data_Init( Data * data );
+void Consigne_Init( Consigne * consigne );
+void UpdateConsigne( Consigne * consigne );
 void SysTick_Handler( void );
 void EXTI0_IRQHandler ( void );
 void DMA1_Stream1_IRQHandler ( void );
 void EXTI9_5_IRQHandler ( void );
 void TIM2_IRQHandler( void );
 
-static volatile uint8_t t_USART3_rx_buffer[5];
-static volatile uint16_t t_adc_buffer[2];
+volatile uint8_t t_USART3_rx_buffer[5];
+static const uint8_t MODE_OFFSET = 0;
+static const uint8_t SIGNE_OFFSET = 0;
+static const uint8_t START_OFFSET = 1;
+static const uint8_t END_OFFSET = 4;
 
-struct consigne{
-	uint16_t start_point;
-	uint16_t end_point;
-	uint8_t mode;
-}consigne;
+volatile uint16_t t_adc_buffer[2];
+static const uint8_t POT_OFFSET = 0;
+static const uint8_t TACHY_OFFSET = 1;
 
-enum e_mode { NORMAL = 0b0001 , SWEEP = 0b0010 , STEP = 0b0100 };
-
+static const uint8_t START_POINT_NEG = (uint8_t)0b0100;
+static const uint8_t END_POINT_NEG = (uint8_t)0b0001;
+static const uint8_t START_POINT_POS = (uint8_t)0b1000;
+static const uint8_t END_POINT_POS = (uint8_t)0b0010;
 /**
 * @brief Entree du programme.
 * @return Rien, le int est ici pour eviter un warning GCC.
@@ -46,18 +75,117 @@ enum e_mode { NORMAL = 0b0001 , SWEEP = 0b0010 , STEP = 0b0100 };
 int main ( void )
 {
 	Global_Config();
+	
+	Consigne consigne;
+	Consigne_Init( &consigne );
+	
+	Data data;
+	Data_Init( &data );
 
 	while(1)
 	{
+		while ( flag.mainProcess )
+		{
+			flag.mainProcess = 0;
+			switch( consigne -> mode )
+			{
+				case NORMAL:
+					break;
+				case STEP:
+					break;
+				case SWEEP:
+					Sweep_Consigne( consigne->start_point , consigne->end_point);
+					break;
+			}			
+		}
 		while ( flag.consigneUpdate )
 		{
 			flag.consigneUpdate = 0;
-
-			consigne.mode = t_USART3_rx_buffer[0] >> 4;
-			consigne.start_point = ((uint16_t) t_USART3_rx_buffer[1] << 8 ) | ((uint16_t) t_USART3_rx_buffer[2]);
-			consigne.start_point = ((uint16_t) t_USART3_rx_buffer[3] << 8 ) | ((uint16_t) t_USART3_rx_buffer[4]);
+			UpdateConsigne( &consigne );
+		}
+		while ( flag.sendData )
+		{
+			flag.sendData = 0;
+			SendData( &data );
+		}
+		while ( flag.button )
+		{
+			flag.button = 0;
 		}
 	}
+}
+
+
+void Data_Init( Data * data )
+{
+	data -> speed_encoder	= 0;
+	data -> speed_tachy		= 0:
+	data -> consigne		= 0;
+}
+
+
+void Consigne_Init( Consigne * consigne )
+{
+	consigne -> mode		= NORMAL;
+	consigne -> start_point = 0;
+	consigne -> end_point	= 0;
+}
+
+
+void UpdateConsigne( Consigne * consigne )
+{
+	consigne -> mode = t_USART3_rx_buffer[MODE_OFFSET] >> 4;
+	consigne -> start_point = ((uint16_t) t_USART3_rx_buffer[START_OFFSET] << 8 ) | ((uint16_t) t_USART3_rx_buffer[START_OFFSET + 1]);
+	consigne -> start_point = ((uint16_t) t_USART3_rx_buffer[END_OFFSET] << 8 ) | ((uint16_t) t_USART3_rx_buffer[END_OFFSET + 1]);
+	
+	if (t_USART3_rx_buffer[SIGNE_OFFSET] & START_POINT_NEG)
+	{
+		consigne->start_point = -( consigne->start_point );
+	}
+	if (t_USART3_rx_buffer[SIGNE_OFFSET] & END_POINT_NEG)
+	{
+		consigne->end_point = -( consigne->end_point );
+	}
+}
+
+
+void SendData( Data * data )
+{
+	uint8_t to_send[5];
+	
+	uint8_t signe = 0;
+	uint16_t speed_tachy_to_send = 0;
+	uint16_t speed_encoder_to_send = (uint16_t)(data -> speed_encoder);
+	
+	if (data -> speed_tachy) < 0
+	{
+		signe |= START_POINT_NEG;
+		speed_tachy_to_send = (uint16_t)(-(data -> speed_tachy));
+	}
+	else
+	{
+		signe |= START_POINT_POS;
+		speed_tachy_to_send = (uint16_t)(data -> speed_tachy);
+	}
+	
+	if (data -> speed_encoder) < 0
+	{
+		signe |= END_POINT_NEG;
+		speed_encoder_to_send = (uint16_t)(-(data -> speed_encoder));
+	}
+	else
+	{
+		signe |= END_POINT_POS;
+		speed_encoder_to_send = (uint16_t)(data -> speed_encoder);
+	}
+	
+	to_send[ SIGNE_OFFSET ] = signe;
+	to_send[ START_OFFSET ] = (uint8_t)(speed_tachy_to_send >> 8);
+	to_send[ START_OFFSET + 1 ] = (uint8_t)(speed_tachy_to_send & 0x00FF);
+	to_send[ END_OFFSET ] = (uint8_t)(speed_encoder_to_send >> 8);
+	to_send[ END_OFFSET + 1 ] = (uint8_t)(speed_encoder_to_send & 0x00FF);
+	
+	my_printf( to_send );
 }
 
 
