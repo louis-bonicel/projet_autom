@@ -8,8 +8,6 @@ from PyQt4.QtCore import QObject, SIGNAL, SLOT, QThread
 
 slide_command = 0
 available_port = []
-#COMPort = ""
-#serialPort = None
 
 
 class MotorController(QtGui.QWidget):
@@ -121,10 +119,22 @@ class MotorController(QtGui.QWidget):
 
         
     def displayValue( self , text ):
-        textValue = int(text)
-        if self.unitSI:
-            textValue = textValue * math.pi / 30
-        self.textTachy.setText( textValue );
+        received = unicode(text).rstrip('\n')
+ 
+        l = []
+        for t in received.split():
+            try:
+                l.append(float(t))
+            except ValueError:
+                pass
+        try:
+            textValue = int(l[0])
+            if self.unitSI:
+                textValue = textValue * math.pi / 30
+            self.textTachy.setText( str(int(textValue)) );
+        except IndexError:
+            pass
+
         
 
     def updateValue( self ):
@@ -222,7 +232,6 @@ class SerialReader( QThread ):
             n = self.ser.inWaiting()
             if n:
                data = data + self.ser.read(n)
-            print data
             self.emit(SIGNAL("newData(QString)"), data)
          except:
             print "Reader thread has terminated unexpectedly."

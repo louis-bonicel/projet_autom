@@ -14,7 +14,6 @@
 #include "stm32f4xx_conf.h"
 #include "delay.h"
 #include "usart.h"
-#include "ADC.h"
 #include "DAC.h"
 #include "asservissement.h"
 #include "board.h"
@@ -23,51 +22,53 @@
 
 typedef enum { NORMAL = (uint8_t)0b0001 , SWEEP = (uint8_t)0b0010 , STEP = (uint8_t)0b0100 } e_mode;
 
-typedef struct Consigne{
+typedef struct{
 	e_mode mode;
 	int16_t start_point;
 	int16_t end_point;
 }Consigne;
 
-typedef struct Data{
+typedef struct{
 	int16_t speed_tachy;
 	int16_t speed_encoder;
 	int16_t consigne;
 }Data;
 
-volatile struct flag {
+static volatile struct{
 	uint8_t button			: 1;
 	uint8_t consigneUpdate	: 1;
 	uint8_t mainProcess		: 1;
 	uint8_t sendData		: 1;
-	uint16_t				: 12;
 } flag;
 
+
 void Global_Config ( void );
+void ADC_Config ( void );
 void SendData( Data * data );
 void Data_Init( Data * data );
+void UpdateValues( Data * data );
 void Consigne_Init( Consigne * consigne );
 void UpdateConsigne( Consigne * consigne );
 void SysTick_Handler( void );
-void EXTI0_IRQHandler ( void );
-void DMA1_Stream1_IRQHandler ( void );
-void EXTI9_5_IRQHandler ( void );
-void TIM2_IRQHandler( void );
 
-volatile uint8_t t_USART3_rx_buffer[5];
+static volatile uint8_t t_USART3_rx_buffer[5];
 static const uint8_t MODE_OFFSET = 0;
 static const uint8_t SIGNE_OFFSET = 0;
 static const uint8_t START_OFFSET = 1;
-static const uint8_t END_OFFSET = 4;
+static const uint8_t END_OFFSET = 3;
 
-volatile uint16_t t_adc_buffer[2];
+uint16_t t_adc_buffer[2];
 static const uint8_t POT_OFFSET = 0;
 static const uint8_t TACHY_OFFSET = 1;
 
-static const uint8_t START_POINT_NEG = (uint8_t)0b0100;
-static const uint8_t END_POINT_NEG = (uint8_t)0b0001;
-static const uint8_t START_POINT_POS = (uint8_t)0b1000;
-static const uint8_t END_POINT_POS = (uint8_t)0b0010;
+static uint8_t to_send[5];
+
+static const uint8_t START_POINT_NEG = 0b0100;
+static const uint8_t END_POINT_NEG = 0b0001;
+static const uint8_t START_POINT_POS = 0b1000;
+static const uint8_t END_POINT_POS = 0b0010;
+
+static volatile Data data;
 /**
 * @brief Entree du programme.
 * @return Rien, le int est ici pour eviter un warning GCC.
@@ -75,41 +76,48 @@ static const uint8_t END_POINT_POS = (uint8_t)0b0010;
 int main ( void )
 {
 	Global_Config();
-	
 	Consigne consigne;
 	Consigne_Init( &consigne );
-	
-	Data data;
+
 	Data_Init( &data );
 
 	while(1)
 	{
 		while ( flag.mainProcess )
 		{
-			flag.mainProcess = 0;
-			switch( consigne -> mode )
+			GPIO_ToggleBits( GPIOD , GPIO_Pin_12 );
+			UpdateValues( &data );
+
+			switch( consigne.mode )
 			{
 				case NORMAL:
+					data.consigne = consigne.start_point;
 					break;
 				case STEP:
 					break;
 				case SWEEP:
-					Sweep_Consigne( consigne->start_point , consigne->end_point);
+					Sweep_Consigne( consigne.start_point , consigne.end_point);
+					consigne.mode = NORMAL;
 					break;
-			}			
+			}
+
+			flag.mainProcess = 0;
 		}
 		while ( flag.consigneUpdate )
 		{
-			flag.consigneUpdate = 0;
+			GPIO_ToggleBits( GPIOD , GPIO_Pin_14 );
 			UpdateConsigne( &consigne );
+			flag.consigneUpdate = 0;
 		}
 		while ( flag.sendData )
 		{
-			flag.sendData = 0;
+			GPIO_ToggleBits( GPIOD , GPIO_Pin_13 );
 			SendData( &data );
+			flag.sendData = 0;
 		}
 		while ( flag.button )
 		{
+			GPIO_ToggleBits( GPIOD , GPIO_Pin_15 );
 			flag.button = 0;
 		}
 	}
@@ -119,10 +127,16 @@ int main ( void )
 void Data_Init( Data * data )
 {
 	data -> speed_encoder	= 0;
-	data -> speed_tachy		= 0:
+	data -> speed_tachy		= 0;
 	data -> consigne		= 0;
 }
 
+
+void UpdateValues( Data * data )
+{
+	data -> speed_encoder	= 0;
+	data -> speed_tachy		= t_adc_buffer[TACHY_OFFSET];
+}
 
 void Consigne_Init( Consigne * consigne )
 {
@@ -151,13 +165,12 @@ void UpdateConsigne( Consigne * consigne )
 
 void SendData( Data * data )
 {
-	uint8_t to_send[5];
-	
+/*
 	uint8_t signe = 0;
 	uint16_t speed_tachy_to_send = 0;
-	uint16_t speed_encoder_to_send = (uint16_t)(data -> speed_encoder);
+	uint16_t speed_encoder_to_send = 0;
 	
-	if (data -> speed_tachy) < 0
+	if ((data -> speed_tachy) < 0)
 	{
 		signe |= START_POINT_NEG;
 		speed_tachy_to_send = (uint16_t)(-(data -> speed_tachy));
@@ -168,7 +181,7 @@ void SendData( Data * data )
 		speed_tachy_to_send = (uint16_t)(data -> speed_tachy);
 	}
 	
-	if (data -> speed_encoder) < 0
+	if ((data -> speed_encoder) < 0)
 	{
 		signe |= END_POINT_NEG;
 		speed_encoder_to_send = (uint16_t)(-(data -> speed_encoder));
@@ -179,6 +192,7 @@ void SendData( Data * data )
 		speed_encoder_to_send = (uint16_t)(data -> speed_encoder);
 	}
 	
+
 	to_send[ SIGNE_OFFSET ] = signe;
 	to_send[ START_OFFSET ] = (uint8_t)(speed_tachy_to_send >> 8);
 	to_send[ START_OFFSET + 1 ] = (uint8_t)(speed_tachy_to_send & 0x00FF);
@@ -186,21 +200,46 @@ void SendData( Data * data )
 	to_send[ END_OFFSET + 1 ] = (uint8_t)(speed_encoder_to_send & 0x00FF);
 	
 	my_printf( to_send );
+*/
+	my_printf( "%i %i\r\n" , data->speed_tachy , data->speed_encoder );
 }
 
 
-void TIMs_Init( void )
+void TIM2_Init( void )
 {
 	NVIC_InitTypeDef 			NVIC_InitStructure;
 	TIM_TimeBaseInitTypeDef		TIM_TimeBaseStructure;
 
-	// Enable the TIM2&3 global Interrupt
+	RCC_APB2PeriphClockCmd( RCC_APB2Periph_SYSCFG , ENABLE );
+	RCC_APB1PeriphClockCmd( RCC_APB1Periph_TIM2 , ENABLE );
+	RCC_APB1PeriphClockCmd( RCC_APB1Periph_TIM3 , ENABLE );
 
+	// Enable the TIM2&3 global Interrupt
 	NVIC_InitStructure.NVIC_IRQChannel						= TIM2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 0;
 	NVIC_Init(&NVIC_InitStructure);
+
+	TIM_TimeBaseStructure.TIM_Period		= 1000 - 1; 	// TS in us (1 milli)
+	TIM_TimeBaseStructure.TIM_Prescaler		= 84 - 1; 		// 84 MHz Clock down to 1 MHz
+	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
+	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
+	TIM_TimeBaseInit( TIM2 , &TIM_TimeBaseStructure );
+
+	TIM_ITConfig( TIM2 , TIM_IT_Update , ENABLE );
+
+	TIM_Cmd( TIM2 , ENABLE );
+}
+
+
+void TIM3_Init( void )
+{
+	NVIC_InitTypeDef 			NVIC_InitStructure;
+	TIM_TimeBaseInitTypeDef		TIM_TimeBaseStructure;
+
+	RCC_APB2PeriphClockCmd( RCC_APB2Periph_SYSCFG , ENABLE );
+	RCC_APB1PeriphClockCmd( RCC_APB1Periph_TIM3 , ENABLE );
 
 	NVIC_InitStructure.NVIC_IRQChannel						= TIM3_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
@@ -208,45 +247,13 @@ void TIMs_Init( void )
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 1;
 	NVIC_Init(&NVIC_InitStructure);
 
-	// TIM2 clock enable
-
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-
-	// Time base configuration
-
-	TIM_TimeBaseStructure.TIM_Period		= 1000 - 1; 	// TS in µs (1 milli)
-	TIM_TimeBaseStructure.TIM_Prescaler		= 168 - 1; 		// 168 MHz Clock down to 1 MHz
-	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
-	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
-	TIM_TimeBaseInit( TIM2 , &TIM_TimeBaseStructure );
-
-	// TIM IT enable
-
-	TIM_ITConfig( TIM2 , TIM_IT_Update , ENABLE );
-
-	// TIM2 enable counter
-
-	TIM_Cmd( TIM2 , ENABLE );
-
-
-
-	// TIM3 clock enable
-
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3 , ENABLE);
-
-	// Time base configuration
-
-	TIM_TimeBaseStructure.TIM_Period		= 10000 - 1; 	// TS in µs (10 milli)
-	TIM_TimeBaseStructure.TIM_Prescaler		= 168 - 1; 		// 168 MHz Clock down to 1 MHz
+	TIM_TimeBaseStructure.TIM_Period		= 100000 - 1; 	// TS in us (100 millis)
+	TIM_TimeBaseStructure.TIM_Prescaler		= 84 - 1; 		// 84 MHz Clock down to 1 MHz
 	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
 	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
 	TIM_TimeBaseInit( TIM3 , &TIM_TimeBaseStructure );
 
-	// TIM IT enable
-
 	TIM_ITConfig( TIM3 , TIM_IT_Update , ENABLE );
-
-	// TIM2 enable counter
 
 	TIM_Cmd( TIM3 , ENABLE );
 }
@@ -261,6 +268,7 @@ void Global_Config ( void )
 	SysTick_Init();
 	// Configure l'USART
 	USART3_Config( t_USART3_rx_buffer );
+
 
 	my_printf( "\r\n" );
 	my_printf( "                                  Projet SE 4\r\n\r\n" );
@@ -277,7 +285,7 @@ void Global_Config ( void )
 
 	// Configure les ADCs.
 	my_printf( "Initialisation ADCs et Signe tachymetre\r\n" );
-	ADC_Config( t_adc_buffer );
+	ADC_Config();
 	Tachy_Config();
 
 	// Configure l'encodeur
@@ -288,10 +296,111 @@ void Global_Config ( void )
 	my_printf( "Initialisation DAC\r\n" );
 	DAC_Config();
 
+
+
 	my_printf( "\r\n" );
 	my_printf( "                  Fin de l'initialisation des peripheriques\r\n\r\n");
+
+	// Configure les TIMERS
+	my_printf( "Initialisation Timers\r\n" );
+	TIM2_Init();
+	TIM3_Init();
 }
 
+
+/**
+* @brief Configure les ADC pour le potentiometre et le tachymetre.
+*
+* @details Potentiometre	: adc_consigne	-> PB0	ADC1 channel 8
+* @details Tachymetre		: adc_tachy		-> PA2	ADC1 channel 2
+* @param adc_buffer Buffer pour la reception DMA
+*/
+void ADC_Config ( void )
+{
+	// Configuration de l'ADC.
+
+	ADC_CommonInitTypeDef ADC_CommonInitStructure;
+	ADC_InitTypeDef ADC_InitStruct;
+	GPIO_InitTypeDef GPIOA_InitStruct;
+	GPIO_InitTypeDef GPIOB_InitStruct;
+	DMA_InitTypeDef DMA_InitStructure;
+
+	// Demarrage des horloges de GPIOB, GPIOA et ADC1
+	RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_GPIOA , ENABLE );
+	RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_GPIOB , ENABLE );
+	RCC_APB2PeriphClockCmd( RCC_APB2Periph_ADC1 , ENABLE );
+	RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_DMA2 , ENABLE);
+
+
+	// B0 est une entree analogique, sans Pull-Up.
+	GPIOB_InitStruct.GPIO_Pin	= GPIO_Pin_0;
+	GPIOB_InitStruct.GPIO_Mode	= GPIO_Mode_AN;
+	GPIOB_InitStruct.GPIO_PuPd	= GPIO_PuPd_NOPULL;
+	// Initialisation de B0
+	GPIO_Init( GPIOB , &GPIOB_InitStruct );
+
+	// A2 est une entree analogique, sans Pull-Up.
+	GPIOA_InitStruct.GPIO_Pin	= GPIO_Pin_2;
+	GPIOA_InitStruct.GPIO_Mode	= GPIO_Mode_AN;
+	GPIOA_InitStruct.GPIO_PuPd	= GPIO_PuPd_NOPULL;
+	// Initialisation de A2
+	GPIO_Init( GPIOA , &GPIOA_InitStruct );
+
+	DMA_DeInit( DMA2_Stream0 );
+	DMA_InitStructure.DMA_Channel = DMA_Channel_0;
+	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)0x4001204C;
+	DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)t_adc_buffer;
+	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
+	DMA_InitStructure.DMA_BufferSize = 2;
+	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+	DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+	DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;
+	DMA_InitStructure.DMA_FIFOThreshold = DMA_FIFOThreshold_HalfFull;
+	DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;
+	DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;
+	DMA_Init(DMA2_Stream0, &DMA_InitStructure);
+
+	DMA_Cmd( DMA2_Stream0 , ENABLE );
+
+
+	// Nettoie la configuration existante des ADC.
+	ADC_DeInit( );
+
+	ADC_CommonInitStructure.ADC_Mode = ADC_Mode_Independent;
+	ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div2;
+	ADC_CommonInitStructure.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
+	ADC_CommonInitStructure.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
+	ADC_CommonInit(&ADC_CommonInitStructure);
+
+	// L'ADC est en 12 bits, l'aquisition est declenchee manuellement
+	// Les donnees sont alignees a droite, sans declenchement en externe.
+	ADC_InitStruct.ADC_Resolution			= ADC_Resolution_12b;
+	ADC_InitStruct.ADC_DataAlign			= ADC_DataAlign_Right;
+	ADC_InitStruct.ADC_ScanConvMode			= ENABLE;
+	ADC_InitStruct.ADC_ContinuousConvMode	= ENABLE;
+	ADC_InitStruct.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;
+	ADC_InitStruct.ADC_ExternalTrigConv		= ADC_ExternalTrigConv_T1_CC1;
+	ADC_InitStruct.ADC_NbrOfConversion		= 2;
+
+	// Initialisation de l'ADC1 avec la structure remplie au dessus.
+	ADC_Init( ADC1 , &ADC_InitStruct );
+
+	ADC_RegularChannelConfig( ADC1 , ADC_Channel_2 ,  1 , ADC_SampleTime_480Cycles);
+	ADC_RegularChannelConfig( ADC1 , ADC_Channel_8 ,  2 , ADC_SampleTime_480Cycles );
+
+	ADC_DMARequestAfterLastTransferCmd( ADC1 , ENABLE );
+
+	ADC_DMACmd( ADC1 , ENABLE );
+
+	// Demarre l'ADC.
+	ADC_Cmd( ADC1 , ENABLE );
+
+	ADC_SoftwareStartConv(ADC1);
+}
 
 void Sweep_Consigne ( int16_t min , int16_t max )
 {
@@ -307,7 +416,7 @@ void Sweep_Consigne ( int16_t min , int16_t max )
 
 	int16_t fin = min < max ? max : min;
 
-	while ( !flag.button && consigne <= fin )
+	while ( !flag.consigneUpdate && consigne <= fin )
 	{
 		Set_Consigne( consigne );
 		delay_nms( 1 );
@@ -315,17 +424,16 @@ void Sweep_Consigne ( int16_t min , int16_t max )
 
 		Tachy_to_RPM( tachy_value , &rpm_speed );
 
-		my_printf( "%i,%i,%i\r\n" , consigne , tachy_value , rpm_speed );
+		my_printf( "%i,%i,%i" , consigne , tachy_value , rpm_speed );
 
 		consigne++;
 	}
-	flag.button = 0;
 }
 
 
 void GetTachyValue ( int16_t * tachy_value )
 {
-	uint16_t adc_value = t_adc_buffer[0];
+	uint16_t adc_value = t_adc_buffer[TACHY_OFFSET];
 
 	uint8_t signe = GPIO_ReadInputDataBit( GPIOA , GPIO_Pin_1 );
 
@@ -350,8 +458,8 @@ void EXTI0_IRQHandler ( void )
 {
 	if ( EXTI_GetITStatus( EXTI_Line0 ) != RESET )
 	{
+		flag.button = 1;
 		EXTI_ClearITPendingBit( EXTI_Line0 );
-		flag.button = 0b1;
 	}
 }
 
@@ -384,8 +492,8 @@ void DMA1_Stream1_IRQHandler ( void )
 {
 	if ( DMA_GetITStatus( DMA1_Stream1 , DMA_IT_TCIF1 ) )
 	{
-		flag.consigneUpdate;
 		DMA_ClearITPendingBit( DMA1_Stream1 , DMA_IT_TCIF1 );
+		flag.consigneUpdate = 1;
 	}
 }
 
