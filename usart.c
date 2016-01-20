@@ -26,21 +26,17 @@
  */
 void USART3_Config( volatile uint8_t * rx_buffer )
 {
-	// Structure qui sera utilisee pour initialiser les GPIOs
+	// Structures qui seront utilisees pour initialiser les GPIOs, USART et DMA
 	GPIO_InitTypeDef GPIO_InitStructure;
-
-	// Structure pour initialiser l'USART
 	USART_InitTypeDef USART_InitStructure;
-
 	DMA_InitTypeDef DMA_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
 
-	// Demarrage de l'horloge GPIOD
+	// Demarrage de l'horloge GPIOD, USART3 et DMA1
 	RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_GPIOD , ENABLE );
-
-	// Demarrage de l'horloge de l'USART3
 	RCC_APB1PeriphClockCmd( RCC_APB1Periph_USART3 , ENABLE );
-
 	RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_DMA1 , ENABLE );
+	RCC_APB2PeriphClockCmd( RCC_APB2Periph_SYSCFG , ENABLE );
 
 	// Les pins utilises sont les pins 8 et 9 ( voir schema electrique de la board )
 	// L'USART est une "Alternative function"
@@ -66,12 +62,12 @@ void USART3_Config( volatile uint8_t * rx_buffer )
 	// 8N1
 	// Pas de Flow Control
 	// En Rx/Tx puisqu'il est prevu de communiquer en duplex
-	USART_InitStructure.USART_BaudRate = 115200;
-	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-	USART_InitStructure.USART_Parity = USART_Parity_No;
-	USART_InitStructure.USART_StopBits = USART_StopBits_1;
-	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART_InitStructure.USART_BaudRate				= 115200;
+	USART_InitStructure.USART_WordLength			= USART_WordLength_8b;
+	USART_InitStructure.USART_Parity				= USART_Parity_No;
+	USART_InitStructure.USART_StopBits				= USART_StopBits_1;
+	USART_InitStructure.USART_HardwareFlowControl	= USART_HardwareFlowControl_None;
+	USART_InitStructure.USART_Mode					= USART_Mode_Rx | USART_Mode_Tx;
 
 	// On applique les parametres
 	USART_Init( USART3 , &USART_InitStructure );
@@ -80,17 +76,17 @@ void USART3_Config( volatile uint8_t * rx_buffer )
 	DMA_DeInit( DMA1_Stream1 );
 	DMA_StructInit( &DMA_InitStructure );
 
-	DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)0x40004804;
-	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
-	DMA_InitStructure.DMA_BufferSize = (uint16_t)16;
-	DMA_InitStructure.DMA_Memory0BaseAddr = (uint32_t)rx_buffer;
-	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
-	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
-	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
-	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
-	DMA_InitStructure.DMA_Channel = DMA_Channel_4;
-	DMA_InitStructure.DMA_Priority = DMA_Priority_Low;
+	DMA_InitStructure.DMA_PeripheralBaseAddr	= (uint32_t)0x40004804;
+	DMA_InitStructure.DMA_PeripheralDataSize	= DMA_PeripheralDataSize_Byte;
+	DMA_InitStructure.DMA_BufferSize			= (uint16_t)5;
+	DMA_InitStructure.DMA_Memory0BaseAddr		= (uint32_t)rx_buffer;
+	DMA_InitStructure.DMA_MemoryInc				= DMA_MemoryInc_Enable;
+	DMA_InitStructure.DMA_PeripheralInc			= DMA_PeripheralInc_Disable;
+	DMA_InitStructure.DMA_DIR					= DMA_DIR_PeripheralToMemory;
+	DMA_InitStructure.DMA_Mode					= DMA_Mode_Circular;
+	DMA_InitStructure.DMA_MemoryDataSize		= DMA_MemoryDataSize_Byte;
+	DMA_InitStructure.DMA_Channel				= DMA_Channel_4;
+	DMA_InitStructure.DMA_Priority				= DMA_Priority_Low;
 	DMA_Init( DMA1_Stream1 , &DMA_InitStructure );
 
 	USART_DMACmd( USART3 , USART_DMAReq_Rx , ENABLE );
@@ -99,4 +95,12 @@ void USART3_Config( volatile uint8_t * rx_buffer )
 
 	// Et on demarre l'USART
 	USART_Cmd( USART3 , ENABLE );
+
+	NVIC_InitStructure.NVIC_IRQChannel						= DMA1_Stream1_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 2;
+	NVIC_Init( &NVIC_InitStructure );
+
+	DMA_ITConfig( DMA1_Stream1 , DMA_IT_TC , ENABLE );
 }

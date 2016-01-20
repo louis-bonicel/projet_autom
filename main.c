@@ -24,9 +24,20 @@
 void Global_Config ( void );
 void SysTick_Handler( void );
 void EXTI0_IRQHandler ( void );
+void DMA1_Stream1_IRQHandler ( void );
+void EXTI9_5_IRQHandler ( void );
+void TIM2_IRQHandler( void );
 
-static volatile uint8_t t_USART3_rx_buffer[16];
+static volatile uint8_t t_USART3_rx_buffer[5];
 static volatile uint16_t t_adc_buffer[2];
+
+volatile struct consigne{
+	uint16_t start_point;
+	uint16_t end_point;
+	uint8_t mode;
+}consigne;
+
+enum e_mode { NORMAL = 0b0001 , SWEEP = 0b0010 , STEP = 0b0100 };
 
 /**
 * @brief Entree du programme.
@@ -38,20 +49,78 @@ int main ( void )
 
 	while(1)
 	{
-		while ( flag.button )
+		while ( flag.consigneUpdate )
 		{
-			flag.button = 0;
-			Sweep_Consigne( -4095 , 4095 );
+			flag.consigneUpdate = 0;
+
+			consigne.mode = t_USART3_rx_buffer[0] >> 4;
+			consigne.start_point = ((uint16_t) t_USART3_rx_buffer[1] << 8 ) | ((uint16_t) t_USART3_rx_buffer[2]);
+			consigne.start_point = ((uint16_t) t_USART3_rx_buffer[3] << 8 ) | ((uint16_t) t_USART3_rx_buffer[4]);
 		}
-
-		uint8_t dma_counter = DMA_GetCurrDataCounter( DMA1_Stream1 );
-		my_printf( "DMA counter = %02d\t" , dma_counter);
-		my_printf( "Input buffer : %s\r\n" , t_USART3_rx_buffer );
-
-
-		// Reboucler toutes les 100 ms.
-		delay_nms( 100 );
 	}
+}
+
+
+void TIMs_Init( void )
+{
+	NVIC_InitTypeDef 			NVIC_InitStructure;
+	TIM_TimeBaseInitTypeDef		TIM_TimeBaseStructure;
+
+	// Enable the TIM2&3 global Interrupt
+
+	NVIC_InitStructure.NVIC_IRQChannel						= TIM2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 0;
+	NVIC_Init(&NVIC_InitStructure);
+
+	NVIC_InitStructure.NVIC_IRQChannel						= TIM3_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 1;
+	NVIC_Init(&NVIC_InitStructure);
+
+	// TIM2 clock enable
+
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+
+	// Time base configuration
+
+	TIM_TimeBaseStructure.TIM_Period		= 1000 - 1; 	// TS in µs (1 milli)
+	TIM_TimeBaseStructure.TIM_Prescaler		= 168 - 1; 		// 168 MHz Clock down to 1 MHz
+	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
+	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
+	TIM_TimeBaseInit( TIM2 , &TIM_TimeBaseStructure );
+
+	// TIM IT enable
+
+	TIM_ITConfig( TIM2 , TIM_IT_Update , ENABLE );
+
+	// TIM2 enable counter
+
+	TIM_Cmd( TIM2 , ENABLE );
+
+
+
+	// TIM3 clock enable
+
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3 , ENABLE);
+
+	// Time base configuration
+
+	TIM_TimeBaseStructure.TIM_Period		= 10000 - 1; 	// TS in µs (10 milli)
+	TIM_TimeBaseStructure.TIM_Prescaler		= 168 - 1; 		// 168 MHz Clock down to 1 MHz
+	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
+	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
+	TIM_TimeBaseInit( TIM3 , &TIM_TimeBaseStructure );
+
+	// TIM IT enable
+
+	TIM_ITConfig( TIM3 , TIM_IT_Update , ENABLE );
+
+	// TIM2 enable counter
+
+	TIM_Cmd( TIM3 , ENABLE );
 }
 
 
@@ -176,5 +245,38 @@ void EXTI9_5_IRQHandler ( void )
 	if ( EXTI_GetITStatus( EXTI_Line7 ) != RESET )
 	{
 		EXTI_ClearITPendingBit( EXTI_Line7 );
+	}
+}
+
+
+/**
+ * @brief Handler pour buffer UART plein
+ */
+void DMA1_Stream1_IRQHandler ( void )
+{
+	if ( DMA_GetITStatus( DMA1_Stream1 , DMA_IT_TCIF1 ) )
+	{
+		flag.consigneUpdate;
+		DMA_ClearITPendingBit( DMA1_Stream1 , DMA_IT_TCIF1 );
+	}
+}
+
+
+void TIM2_IRQHandler(void)
+{
+	if ( TIM_GetITStatus( TIM2 , TIM_IT_Update ) != RESET )
+	{
+		flag.mainProcess = 1;
+		TIM_ClearITPendingBit( TIM2 , TIM_IT_Update );
+	}
+}
+
+
+void TIM3_IRQHandler(void)
+{
+	if ( TIM_GetITStatus( TIM3 , TIM_IT_Update ) != RESET )
+	{
+		flag.sendData = 1;
+		TIM_ClearITPendingBit( TIM3 , TIM_IT_Update );
 	}
 }
