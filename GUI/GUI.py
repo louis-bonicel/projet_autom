@@ -3,6 +3,8 @@ import math
 import glob
 import serial
 from PyQt4 import QtGui, QtCore
+from PyQt4.QtGui import QApplication, QMainWindow, QTextCursor
+from PyQt4.QtCore import QObject, SIGNAL, SLOT, QThread
 
 slide_command = 0
 available_port = []
@@ -19,6 +21,9 @@ class MotorController(QtGui.QWidget):
         self.serialPort = None
         self.mode = 0
         self.initUI()
+        self.reader = SerialReader()
+        
+        QObject.connect(self.reader, SIGNAL("newData(QString)"), self.displayValue)
         
     def initUI( self ):
         self.CreateSISelection()
@@ -108,12 +113,19 @@ class MotorController(QtGui.QWidget):
         global slide_command
         slide_command = value
         
-        textBoxValue = int(slide_command)
+        textBoxValue = int(value)
         textToSend = textBoxValue
         if self.unitSI:
             textBoxValue = textBoxValue * math.pi / 30
         self.textConsigne.setText(str(int(textBoxValue)))
 
+        
+    def displayValue( self , text ):
+        textValue = int(text)
+        if self.unitSI:
+            textValue = textValue * math.pi / 30
+        self.textTachy.setText( textValue );
+        
 
     def updateValue( self ):
         textToSend = int( self.sld.value() )
@@ -160,6 +172,8 @@ class MotorController(QtGui.QWidget):
     def COMUpdate( self , value ):
         if self.serialPort != None:
             try:
+                if self.reader.isRunning():
+                    self.reader.terminate()
                 self.serialPort.close()
             except:
                 print "Failed closing " + str(value)
@@ -170,6 +184,7 @@ class MotorController(QtGui.QWidget):
         except:
             print "Failed opening " + str(value)
         self.COMPort = value
+        self.reader.start( self.serialPort )
 
     def Sweep( self ):
         minSweep = int(str(self.textMin.text()));
@@ -194,6 +209,28 @@ class MotorController(QtGui.QWidget):
         else:
             self.sendConsigne( maxStep , minStep )
 
+
+class SerialReader( QThread ):
+   def start( self , ser , priority = QThread.InheritPriority ):
+      self.ser = ser
+      QThread.start( self , priority )
+      
+   def run( self ):
+      while 1:
+         try:
+            data = self.ser.read(1)
+            n = self.ser.inWaiting()
+            if n:
+               data = data + self.ser.read(n)
+            print data
+            self.emit(SIGNAL("newData(QString)"), data)
+         except:
+            print "Reader thread has terminated unexpectedly."
+            break
+
+   def terminate(self):
+      self.wait()
+      QThread.terminate(self)
 
 
 def serial_ports():
