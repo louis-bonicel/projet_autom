@@ -44,9 +44,9 @@ static volatile struct{
 
 void Global_Config ( void );
 void ADC_Config ( void );
-void SendData( Data * data );
-void Data_Init( Data * data );
-void UpdateValues( Data * data );
+void SendData( volatile Data * data );
+void Data_Init( volatile Data * data );
+void UpdateValues( volatile Data * data );
 void Consigne_Init( Consigne * consigne );
 void UpdateConsigne( Consigne * consigne );
 void SysTick_Handler( void );
@@ -58,10 +58,10 @@ static const uint8_t START_OFFSET = 1;
 static const uint8_t END_OFFSET = 3;
 
 uint16_t t_adc_buffer[2];
-static const uint8_t POT_OFFSET = 0;
-static const uint8_t TACHY_OFFSET = 1;
+static const uint8_t TACHY_OFFSET = 0;
+static const uint8_t POT_OFFSET = 1;
 
-static uint8_t to_send[5];
+static char to_send[5];
 
 static const uint8_t START_POINT_NEG = 0b0100;
 static const uint8_t END_POINT_NEG = 0b0001;
@@ -124,7 +124,7 @@ int main ( void )
 }
 
 
-void Data_Init( Data * data )
+void Data_Init( volatile Data * data )
 {
 	data -> speed_encoder	= 0;
 	data -> speed_tachy		= 0;
@@ -132,10 +132,15 @@ void Data_Init( Data * data )
 }
 
 
-void UpdateValues( Data * data )
+void UpdateValues( volatile Data * data )
 {
 	data -> speed_encoder	= 0;
-	data -> speed_tachy		= t_adc_buffer[TACHY_OFFSET];
+	Tachy_to_RPM( t_adc_buffer[TACHY_OFFSET] , &(data->speed_tachy));
+
+	if (GPIO_ReadInputDataBit( GPIOA , GPIO_Pin_1 ) == Bit_RESET)
+	{
+		data -> speed_tachy = -(data -> speed_tachy);
+	}
 }
 
 void Consigne_Init( Consigne * consigne )
@@ -163,9 +168,9 @@ void UpdateConsigne( Consigne * consigne )
 }
 
 
-void SendData( Data * data )
+void SendData( volatile Data * data )
 {
-/*
+
 	uint8_t signe = 0;
 	uint16_t speed_tachy_to_send = 0;
 	uint16_t speed_encoder_to_send = 0;
@@ -191,17 +196,28 @@ void SendData( Data * data )
 		signe |= END_POINT_POS;
 		speed_encoder_to_send = (uint16_t)(data -> speed_encoder);
 	}
-	
 
+	uint16_t buffer = 0;
 	to_send[ SIGNE_OFFSET ] = signe;
-	to_send[ START_OFFSET ] = (uint8_t)(speed_tachy_to_send >> 8);
-	to_send[ START_OFFSET + 1 ] = (uint8_t)(speed_tachy_to_send & 0x00FF);
-	to_send[ END_OFFSET ] = (uint8_t)(speed_encoder_to_send >> 8);
-	to_send[ END_OFFSET + 1 ] = (uint8_t)(speed_encoder_to_send & 0x00FF);
+
+	buffer = speed_tachy_to_send >> 6;
+	buffer |= 0b00000001;
+	to_send[ START_OFFSET ] = (char)buffer & 0x00FF;
+
+	buffer = speed_tachy_to_send << 1;
+	buffer |= 0b00000001;
+	to_send[ START_OFFSET + 1 ] = (char)buffer & 0x00FF;
+
+
+	buffer = speed_encoder_to_send >> 6;
+	buffer |= 0b00000001;
+	to_send[ END_OFFSET ] = (char)buffer & 0x00FF;
+
+	buffer = speed_encoder_to_send << 1;
+	buffer |= 0b00000001;
+	to_send[ END_OFFSET + 1 ] = (char)buffer & 0x00FF;
 	
-	my_printf( to_send );
-*/
-	my_printf( "%i %i\r\n" , data->speed_tachy , data->speed_encoder );
+	my_printf( &to_send[0] );
 }
 
 

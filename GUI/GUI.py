@@ -119,21 +119,53 @@ class MotorController(QtGui.QWidget):
 
         
     def displayValue( self , text ):
-        received = unicode(text).rstrip('\n')
- 
-        l = []
-        for t in received.split():
-            try:
-                l.append(float(t))
-            except ValueError:
-                pass
+        received = unicode(text)
+        signe_first_value = 1
+        signe_second_value = 1
+        
         try:
-            textValue = int(l[0])
+            signe = int(str(ord(received[0])))
+            if ( signe & 0b00000100 ) == 0b00000100:
+                signe_first_value = -1
+            if ( signe & 0b00000001 ) == 0b00000001:
+                signe_second_value = -1
+
+            tachyValue_part_1 = int(str(ord(received[1])))
+            tachyValue_part_2 = int(str(ord(received[2])))
+
+            tachyValue = ((tachyValue_part_1 & 0b11111110) << 7 ) | (tachyValue_part_2 >> 1)
+            tachyValue = tachyValue * signe_first_value
+
+            second_value_part_1 = int(str(ord(received[3])))
+            second_value_part_2 = int(str(ord(received[4])))
+
+            value_2 = ((second_value_part_1 & 0b11111110) << 7 ) | (second_value_part_2 >> 1)
+            value_2 = value_2 * signe_second_value
+
             if self.unitSI:
-                textValue = textValue * math.pi / 30
-            self.textTachy.setText( str(int(textValue)) );
+                tachyValue = tachyValue * math.pi / 30
+            self.textTachy.setText( str(int(tachyValue)) );
+            
         except IndexError:
             pass
+
+##        value_1 = (ord(received[1].encode("utf8")) << 8) + ord(received[2].encode("utf8"))
+##        print "Value 1 : " + format(value_1, "16b")
+##        value_2 = (ord(received[3].encode("utf8")) << 8) + ord(received[4].encode("utf8"))
+##        print "Value 2 : " + format(value_2, "16b")
+##        l = []
+##        for t in received.split():
+##            try:
+##                l.append(float(t))
+##            except ValueError:
+##                pass
+##        try:
+##            textValue = int(l[0])
+##            if self.unitSI:
+##                textValue = textValue * math.pi / 30
+##            self.textTachy.setText( str(int(textValue)) );
+##        except IndexError:
+##            pass
 
         
 
@@ -228,7 +260,7 @@ class SerialReader( QThread ):
    def run( self ):
       while 1:
          try:
-            data = self.ser.read(1)
+            data = self.ser.read()
             n = self.ser.inWaiting()
             if n:
                data = data + self.ser.read(n)

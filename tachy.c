@@ -27,7 +27,7 @@ void Tachy_Config( void )
 * \param speed_rpm Pointeur vers la variable dans laquelle retourner la vitesse.
 * \todo Deplacer vers un tachy.c / tachy.h ? Pas encore sur, voir future archi.
 */
-void Tachy_to_RPM ( int16_t value_to_convert , int16_t * speed_rpm )
+void Tachy_to_RPM ( int16_t value_to_convert , volatile int16_t * speed_rpm )
 {
 	// La vitesse en tr/min = valeur lue par l'ADC * K_TACHY_TO_RPM (=1.93...).
 	*speed_rpm = (int16_t) ( (float) value_to_convert * K_TACHY_TO_RPM );
