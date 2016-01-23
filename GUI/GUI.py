@@ -148,25 +148,6 @@ class MotorController(QtGui.QWidget):
             
         except IndexError:
             pass
-
-##        value_1 = (ord(received[1].encode("utf8")) << 8) + ord(received[2].encode("utf8"))
-##        print "Value 1 : " + format(value_1, "16b")
-##        value_2 = (ord(received[3].encode("utf8")) << 8) + ord(received[4].encode("utf8"))
-##        print "Value 2 : " + format(value_2, "16b")
-##        l = []
-##        for t in received.split():
-##            try:
-##                l.append(float(t))
-##            except ValueError:
-##                pass
-##        try:
-##            textValue = int(l[0])
-##            if self.unitSI:
-##                textValue = textValue * math.pi / 30
-##            self.textTachy.setText( str(int(textValue)) );
-##        except IndexError:
-##            pass
-
         
 
     def updateValue( self ):

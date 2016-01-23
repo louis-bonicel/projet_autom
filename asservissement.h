@@ -15,6 +15,4 @@
 #ifndef __ASSERVISSEMENT_H
 #define __ASSERVISSEMENT_H
 
-void Sweep_Consigne ( int16_t consigne_min , int16_t consigne_max );
-
 #endif // __ASSERVISSEMENT_H
