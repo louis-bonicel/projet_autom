@@ -13,8 +13,15 @@
 *
 */
 
-#ifndef __DAC_H
-#define __DAC_H
+#pragma once
 
+/// @todo a determiner sur maquette
+static const float K_RPM_TO_CONSIGNE = 0.4489154;
 
-#endif // __DAC_H
+/// \var static const uint8_t RESOLUTION
+/// \brief Constante de resolution des DAC en nombre de bits.
+static const uint8_t RESOLUTION = 12;
+
+void DAC_Config ( void );
+void UpdateConsigneDAC( int16_t consigne_rpm );
+void RPMToDAC( int16_t consigne, uint16_t * dac_p , uint16_t * dac_n );

@@ -14,7 +14,10 @@
 */
 
 #include "stm32f4xx_conf.h"
+#include "PrjDefinitions.h"
 #include "usart.h"
+
+static uint8_t t_USART3_rx_buffer[5];
 
 /**
  * @brief Cette fonction configure les GPIOs utilises pour l'USART et
@@ -24,7 +27,7 @@
  * @details RX -> PD9, USART 3
  * @param rx_buffer Buffer pour la reception DMA
  */
-void USART3_Config( volatile uint8_t * rx_buffer )
+void USART3_Config( void )
 {
 	// Structures qui seront utilisees pour initialiser les GPIOs, USART et DMA
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -79,7 +82,7 @@ void USART3_Config( volatile uint8_t * rx_buffer )
 	DMA_InitStructure.DMA_PeripheralBaseAddr	= (uint32_t)0x40004804;
 	DMA_InitStructure.DMA_PeripheralDataSize	= DMA_PeripheralDataSize_Byte;
 	DMA_InitStructure.DMA_BufferSize			= (uint16_t)5;
-	DMA_InitStructure.DMA_Memory0BaseAddr		= (uint32_t)rx_buffer;
+	DMA_InitStructure.DMA_Memory0BaseAddr		= (uint32_t)t_USART3_rx_buffer;
 	DMA_InitStructure.DMA_MemoryInc				= DMA_MemoryInc_Enable;
 	DMA_InitStructure.DMA_PeripheralInc			= DMA_PeripheralInc_Disable;
 	DMA_InitStructure.DMA_DIR					= DMA_DIR_PeripheralToMemory;
@@ -103,4 +106,75 @@ void USART3_Config( volatile uint8_t * rx_buffer )
 	NVIC_Init( &NVIC_InitStructure );
 
 	DMA_ITConfig( DMA1_Stream1 , DMA_IT_TC , ENABLE );
+}
+
+
+void UpdateReceivedConsigne( t_ConsigneReceived * consigne )
+{
+	consigne -> mode = t_USART3_rx_buffer[MODE_OFFSET] >> 4;
+	consigne -> start_point = ((uint16_t) t_USART3_rx_buffer[START_OFFSET] << 8 ) | ((uint16_t) t_USART3_rx_buffer[START_OFFSET + 1]);
+	consigne -> end_point = ((uint16_t) t_USART3_rx_buffer[END_OFFSET] << 8 ) | ((uint16_t) t_USART3_rx_buffer[END_OFFSET + 1]);
+
+	if (t_USART3_rx_buffer[SIGNE_OFFSET] & START_POINT_NEG)
+	{
+		consigne->start_point = -( consigne->start_point );
+	}
+	if (t_USART3_rx_buffer[SIGNE_OFFSET] & END_POINT_NEG)
+	{
+		consigne->end_point = -( consigne->end_point );
+	}
+}
+
+
+void SendData( t_Data data )
+{
+	uint8_t to_send[5];
+
+	uint8_t signe = 0;
+	uint16_t speed_tachy_to_send = 0;
+	uint16_t speed_encoder_to_send = 0;
+
+	if (data.speed_tachy < 0)
+	{
+		signe |= START_POINT_NEG;
+		speed_tachy_to_send = (uint16_t)(-data.speed_tachy);
+	}
+	else
+	{
+		signe |= START_POINT_POS;
+		speed_tachy_to_send = (uint16_t)data.speed_tachy;
+	}
+
+	if ((data.speed_encoder) < 0)
+	{
+		signe |= END_POINT_NEG;
+		speed_encoder_to_send = (uint16_t)(-data.speed_encoder);
+	}
+	else
+	{
+		signe |= END_POINT_POS;
+		speed_encoder_to_send = (uint16_t)data.speed_encoder;
+	}
+
+	uint16_t buffer = 0;
+	to_send[ SIGNE_OFFSET ] = signe;
+
+	buffer = speed_tachy_to_send >> 6;
+	buffer |= 0b00000001;
+	to_send[ START_OFFSET ] = (uint8_t)buffer & 0x00FF;
+
+	buffer = speed_tachy_to_send << 1;
+	buffer |= 0b00000001;
+	to_send[ START_OFFSET + 1 ] = (uint8_t)buffer & 0x00FF;
+
+
+	buffer = speed_encoder_to_send >> 6;
+	buffer |= 0b00000001;
+	to_send[ END_OFFSET ] = (uint8_t)buffer & 0x00FF;
+
+	buffer = speed_encoder_to_send << 1;
+	buffer |= 0b00000001;
+	to_send[ END_OFFSET + 1 ] = (uint8_t)buffer & 0x00FF;
+
+	my_printf( &to_send[0] );
 }

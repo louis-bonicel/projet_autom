@@ -12,7 +12,12 @@
 *
 */
 
-#ifndef __ASSERVISSEMENT_H
-#define __ASSERVISSEMENT_H
+#pragma once
 
-#endif // __ASSERVISSEMENT_H
+static const uint16_t STEP_HOLD_START = 100;
+static const uint16_t STEP_HOLD_STOP = 300;
+
+void TIM2_Init( void );
+void TIM3_Init( void );
+void UpdateValues( t_Data * data );
+void Sweep_Consigne ( int16_t consigne_min , int16_t consigne_max );

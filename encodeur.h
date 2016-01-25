@@ -1,7 +1,4 @@
-
-#ifndef __ENCODEUR_H
-#define __ENCODEUR_H
+#pragma once
 
 void Encodeur_Config ( void );
-
-#endif // __ENCODEUR_H
+void TIM4_Init( void );

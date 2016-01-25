@@ -47,6 +47,7 @@ class MotorController(QtGui.QWidget):
 
     def CreateCOMPortSelection( self ):
         self.comboCOM = QtGui.QComboBox(self)
+        self.comboCOM.addItem("")
         for comPort in available_port :
             self.comboCOM.addItem(comPort)
         self.comboCOM.move(230, 10)
@@ -195,19 +196,20 @@ class MotorController(QtGui.QWidget):
     def COMUpdate( self , value ):
         if self.serialPort != None:
             try:
+                self.serialPort.close()
                 if self.reader.isRunning():
                     self.reader.terminate()
-                self.serialPort.close()
             except:
                 print "Failed closing " + str(value)
 
         try:
-            self.serialPort = serial.Serial(str(value), 115200)
-            print value + " opened successfully !"
+            if str(value) != "":
+                self.serialPort = serial.Serial(str(value), 115200)
+                print value + " opened successfully !"
+                self.reader.start( self.serialPort )
         except:
             print "Failed opening " + str(value)
         self.COMPort = value
-        self.reader.start( self.serialPort )
 
     def Sweep( self ):
         minSweep = int(str(self.textMin.text()));

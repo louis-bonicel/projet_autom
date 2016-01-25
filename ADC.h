@@ -13,9 +13,10 @@
 *
 */
 
-#ifndef __ADC_H
-#define __ADC_H
+#pragma once
 
-void ADC_Config ( volatile uint16_t * adc_buffer );
+static const uint8_t TACHY_OFFSET = 0;
+static const uint8_t POT_OFFSET = 1;
+uint16_t t_adc_buffer[2];
 
-#endif // __ADC_H
+void ADC_Config ( void );
