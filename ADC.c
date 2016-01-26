@@ -100,8 +100,8 @@ void ADC_Config ( void )
 
 	ADC_DMACmd( ADC1 , ENABLE );
 
-	ADC_RegularChannelConfig( ADC1 , ADC_Channel_2 ,  1 , ADC_SampleTime_15Cycles);
-	ADC_RegularChannelConfig( ADC1 , ADC_Channel_8 ,  2 , ADC_SampleTime_15Cycles );
+	ADC_RegularChannelConfig( ADC1 , ADC_Channel_2 ,  1 , ADC_SampleTime_480Cycles);
+	ADC_RegularChannelConfig( ADC1 , ADC_Channel_8 ,  2 , ADC_SampleTime_480Cycles );
 
 	ADC_DMARequestAfterLastTransferCmd( ADC1 , ENABLE );
 

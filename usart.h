@@ -14,6 +14,8 @@
 */
 #pragma once
 
+#include "PrjDefinitions.h"
+
 static const uint8_t MODE_OFFSET = 0;
 static const uint8_t SIGNE_OFFSET = 0;
 static const uint8_t START_OFFSET = 1;

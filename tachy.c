@@ -25,7 +25,6 @@ void Tachy_Config( void )
 * \brief Convertit une valeur de tachymetre vers une vitesse en tr/min.
 * \param value_to_convert La valeur lue du tachymetre.
 * \param speed_rpm Pointeur vers la variable dans laquelle retourner la vitesse.
-* \todo Deplacer vers un tachy.c / tachy.h ? Pas encore sur, voir future archi.
 */
 void Tachy_to_RPM ( int16_t value_to_convert , volatile int16_t * speed_rpm )
 {

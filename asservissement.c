@@ -27,16 +27,15 @@
 void UpdateValues( t_Data * data )
 {
 	data -> speed_encoder	= 0;
+	/*
 	Tachy_to_RPM( t_adc_buffer[TACHY_OFFSET] , &(data->speed_tachy));
-
-	// DAC_SetDualChannelData( DAC_Align_12b_R , t_DAC_BUFFER[1] , t_DAC_BUFFER[0] );
-
-	DAC_DualSoftwareTriggerCmd( ENABLE );
 
 	if (GPIO_ReadInputDataBit( GPIOA , GPIO_Pin_1 ) == Bit_RESET)
 	{
 		data -> speed_tachy = -(data -> speed_tachy);
 	}
+	*/
+	data->speed_tachy = t_adc_buffer[TACHY_OFFSET];
 
 	/**
 	 * @todo Add rotary encoder value, and determine best value to
@@ -53,7 +52,6 @@ void TIM2_Init( void )
 
 	RCC_APB2PeriphClockCmd( RCC_APB2Periph_SYSCFG , ENABLE );
 	RCC_APB1PeriphClockCmd( RCC_APB1Periph_TIM2 , ENABLE );
-	RCC_APB1PeriphClockCmd( RCC_APB1Periph_TIM3 , ENABLE );
 
 	// Enable the TIM2&3 global Interrupt
 	NVIC_InitStructure.NVIC_IRQChannel						= TIM2_IRQn;

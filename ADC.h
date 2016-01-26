@@ -17,6 +17,6 @@
 
 static const uint8_t TACHY_OFFSET = 0;
 static const uint8_t POT_OFFSET = 1;
-uint16_t t_adc_buffer[2];
+volatile uint16_t t_adc_buffer[2];
 
 void ADC_Config ( void );

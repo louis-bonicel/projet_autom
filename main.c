@@ -102,10 +102,11 @@ int main ( void )
 		{
 			GPIO_ToggleBits( GPIOD , GPIO_Pin_14 );
 			UpdateReceivedConsigne( &consigne );
-
-			sweepCounter = consigne.start_point;
-			stepCounter = 0;
-
+			if (consigne.mode != NORMAL)
+			{
+				sweepCounter = consigne.start_point;
+				stepCounter = 0;
+			}
 			flag.consigneUpdate = 0;
 		}
 		while ( flag.sendData )
@@ -118,6 +119,9 @@ int main ( void )
 		{
 			GPIO_ToggleBits( GPIOD , GPIO_Pin_15 );
 			PID_Init( &pid );
+			consigne.mode = SWEEP;
+			consigne.start_point = 0;
+			consigne.end_point = 8000;
 			flag.button = 0;
 		}
 	}
@@ -161,15 +165,15 @@ void Global_Config ( void )
 	my_printf( "Initialisation DAC\r\n" );
 	DAC_Config();
 
-
-	my_printf( "\r\n" );
-	my_printf( "                  Fin de l'initialisation des peripheriques\r\n\r\n");
-
 	// Configure les TIMERS
 	my_printf( "Initialisation Timers\r\n" );
 	TIM2_Init();
 	TIM3_Init();
 	TIM4_Init();
+
+
+	my_printf( "\r\n" );
+	my_printf( "                  Fin de l'initialisation des peripheriques\r\n\r\n");
 }
 
 

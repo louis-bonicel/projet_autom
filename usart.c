@@ -111,7 +111,13 @@ void USART3_Config( void )
 
 void UpdateReceivedConsigne( t_ConsigneReceived * consigne )
 {
-	consigne -> mode = t_USART3_rx_buffer[MODE_OFFSET] >> 4;
+	uint8_t received_mode = t_USART3_rx_buffer[MODE_OFFSET] >> 4;
+
+	if ( received_mode == NORMAL || received_mode == SWEEP || received_mode == STEP)
+		consigne->mode = received_mode;
+	else
+		consigne->mode = NORMAL;
+
 	consigne -> start_point = ((uint16_t) t_USART3_rx_buffer[START_OFFSET] << 8 ) | ((uint16_t) t_USART3_rx_buffer[START_OFFSET + 1]);
 	consigne -> end_point = ((uint16_t) t_USART3_rx_buffer[END_OFFSET] << 8 ) | ((uint16_t) t_USART3_rx_buffer[END_OFFSET + 1]);
 
