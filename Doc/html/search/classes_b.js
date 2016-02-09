@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['scb_5ftype',['SCB_Type',['../struct_s_c_b___type.html',1,'']]],
-  ['scnscb_5ftype',['SCnSCB_Type',['../struct_s_cn_s_c_b___type.html',1,'']]],
-  ['sdio_5ftypedef',['SDIO_TypeDef',['../struct_s_d_i_o___type_def.html',1,'']]],
-  ['spi_5ftypedef',['SPI_TypeDef',['../struct_s_p_i___type_def.html',1,'']]],
-  ['syscfg_5ftypedef',['SYSCFG_TypeDef',['../struct_s_y_s_c_f_g___type_def.html',1,'']]],
-  ['systick_5ftype',['SysTick_Type',['../struct_sys_tick___type.html',1,'']]]
+  ['rcc_5fclockstypedef',['RCC_ClocksTypeDef',['../struct_r_c_c___clocks_type_def.html',1,'']]],
+  ['rcc_5ftypedef',['RCC_TypeDef',['../struct_r_c_c___type_def.html',1,'']]],
+  ['rng_5ftypedef',['RNG_TypeDef',['../struct_r_n_g___type_def.html',1,'']]],
+  ['rtc_5ftypedef',['RTC_TypeDef',['../struct_r_t_c___type_def.html',1,'']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['gpiomode_5ftypedef',['GPIOMode_TypeDef',['../group___g_p_i_o.html#ga1347339e1c84a196fabbb31205eec5d4',1,'stm32f4xx_gpio.h']]],
-  ['gpiootype_5ftypedef',['GPIOOType_TypeDef',['../group___g_p_i_o.html#gae74212e8d66c389f47326b06bdf6d2ab',1,'stm32f4xx_gpio.h']]],
-  ['gpiopupd_5ftypedef',['GPIOPuPd_TypeDef',['../group___g_p_i_o.html#gafb7ecd99c44b4fd702d669304a36c2c8',1,'stm32f4xx_gpio.h']]],
-  ['gpiospeed_5ftypedef',['GPIOSpeed_TypeDef',['../group___g_p_i_o.html#ga062ad92b67b4a1f301c161022cf3ba8e',1,'stm32f4xx_gpio.h']]]
+  ['e_5fmode',['e_mode',['../_prj_definitions_8h.html#abef803757dd9b7a2b0dc5056d76d7937',1,'PrjDefinitions.h']]],
+  ['errorstatus',['ErrorStatus',['../group___exported__types.html#ga8333b96c67f83cba354b3407fcbb6ee8',1,'stm32f4xx.h']]],
+  ['extimode_5ftypedef',['EXTIMode_TypeDef',['../group___e_x_t_i.html#gad5e69af98dc0dfdf64417adc1cf57929',1,'stm32f4xx_exti.h']]],
+  ['extitrigger_5ftypedef',['EXTITrigger_TypeDef',['../group___e_x_t_i.html#ga9da190f5425d1b421a06bced8cc48e9b',1,'stm32f4xx_exti.h']]]
 ];

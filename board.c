@@ -3,11 +3,9 @@
 #include "board.h"
 #include "ADC.h"
 
+
 /**
-* \fn void LED_Config ( void )
-*
-* \brief Configure les GPIOs correspondant aux LEDs sur la carte.
-* \todo Deplacer vers un GPIO.c / GPIO.h
+* @brief Configure les GPIOs correspondant aux LEDs sur la carte.
 */
 void LED_Config ( void )
 {
@@ -74,4 +72,23 @@ void PushButton_Config ( void )
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
 
 	NVIC_Init( &NVIC_InitStructure );
+}
+
+
+void GPIO_BNC_Config ( void )
+{
+	// Structure qui sera utilisee pour configurer les GPIOs.
+	GPIO_InitTypeDef  GPIO_InitStructure;
+
+	// Demarrage de l'horloge du peripherique GPIO port D.
+	RCC_AHB1PeriphClockCmd (RCC_AHB1Periph_GPIOE , ENABLE );
+
+	// Initialise les 4 LEDs, presentent sur les pins PD13,12,14,15, comme
+	// sortie, en mode PP, @100MHz, sans Pull-Up.
+	GPIO_InitStructure.GPIO_Pin =	GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14;
+	GPIO_InitStructure.GPIO_Mode =	GPIO_Mode_OUT;
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+	GPIO_InitStructure.GPIO_PuPd =	GPIO_PuPd_NOPULL;
+	GPIO_Init( GPIOE , &GPIO_InitStructure );
 }

@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,9 +71,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,74 +108,86 @@ $(document).ready(function(){initNavTree('struct_r_c_c___clocks_type_def.html','
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_r_c_c___clocks_type_def-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">RCC_ClocksTypeDef Struct Reference<div class="ingroups"><a class="el" href="group___s_t_m32_f4xx___std_periph___driver.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="group___r_c_c.html">RCC</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a2ba325067f3d464ad7955358932563d8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#a2ba325067f3d464ad7955358932563d8">SYSCLK_Frequency</a></td></tr>
-<tr class="separator:a2ba325067f3d464ad7955358932563d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b9859d33954117daf7fab42f804b92"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#a41b9859d33954117daf7fab42f804b92">HCLK_Frequency</a></td></tr>
-<tr class="separator:a41b9859d33954117daf7fab42f804b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add4cfc63c35178d187107edc764e0b8f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#add4cfc63c35178d187107edc764e0b8f">PCLK1_Frequency</a></td></tr>
-<tr class="separator:add4cfc63c35178d187107edc764e0b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad854f0b70a6c4cf6de6dbbdcbc99b856"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#ad854f0b70a6c4cf6de6dbbdcbc99b856">PCLK2_Frequency</a></td></tr>
-<tr class="separator:ad854f0b70a6c4cf6de6dbbdcbc99b856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a48b5f04759728e39921969e75c4899e8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#a48b5f04759728e39921969e75c4899e8">SYSCLK_Frequency</a></td></tr>
+<tr class="separator:a48b5f04759728e39921969e75c4899e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f9bf60f522a160aa7a878acf92ce129"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#a5f9bf60f522a160aa7a878acf92ce129">HCLK_Frequency</a></td></tr>
+<tr class="separator:a5f9bf60f522a160aa7a878acf92ce129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9045b24904bde572d479e85c6d2801f6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#a9045b24904bde572d479e85c6d2801f6">PCLK1_Frequency</a></td></tr>
+<tr class="separator:a9045b24904bde572d479e85c6d2801f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ada83b2d388a60ed994451f260f389"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_c_c___clocks_type_def.html#a45ada83b2d388a60ed994451f260f389">PCLK2_Frequency</a></td></tr>
+<tr class="separator:a45ada83b2d388a60ed994451f260f389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a41b9859d33954117daf7fab42f804b92"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00042">42</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="a5f9bf60f522a160aa7a878acf92ce129"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t RCC_ClocksTypeDef::HCLK_Frequency</td>
+          <td class="memname">uint32_t HCLK_Frequency</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>HCLK clock frequency expressed in Hz </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00045">45</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="add4cfc63c35178d187107edc764e0b8f"></a>
+<a class="anchor" id="a9045b24904bde572d479e85c6d2801f6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t RCC_ClocksTypeDef::PCLK1_Frequency</td>
+          <td class="memname">uint32_t PCLK1_Frequency</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>PCLK1 clock frequency expressed in Hz </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00046">46</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ad854f0b70a6c4cf6de6dbbdcbc99b856"></a>
+<a class="anchor" id="a45ada83b2d388a60ed994451f260f389"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t RCC_ClocksTypeDef::PCLK2_Frequency</td>
+          <td class="memname">uint32_t PCLK2_Frequency</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>PCLK2 clock frequency expressed in Hz </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00047">47</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a2ba325067f3d464ad7955358932563d8"></a>
+<a class="anchor" id="a48b5f04759728e39921969e75c4899e8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t RCC_ClocksTypeDef::SYSCLK_Frequency</td>
+          <td class="memname">uint32_t SYSCLK_Frequency</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>SYSCLK clock frequency expressed in Hz </p>
+
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00044">44</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
 
 </div>
 </div>

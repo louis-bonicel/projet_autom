@@ -295,7 +295,7 @@ void Default_Reset_Handler(void)
         "  STR R1, [R0]");
 #endif	
 
-  // SystemInit();
+  SystemInit();
   /* Call the application's entry point.*/
   main();
 }

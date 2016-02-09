@@ -1,7 +1,7 @@
 var struct_core_debug___type =
 [
-    [ "DCRDR", "struct_core_debug___type.html#ab8f4bb076402b61f7be6308075a789c9", null ],
-    [ "DCRSR", "struct_core_debug___type.html#afefa84bce7497652353a1b76d405d983", null ],
-    [ "DEMCR", "struct_core_debug___type.html#a5cdd51dbe3ebb7041880714430edd52d", null ],
-    [ "DHCSR", "struct_core_debug___type.html#a25c14c022c73a725a1736e903431095d", null ]
+    [ "DCRDR", "struct_core_debug___type.html#a5bcffe99d1d5471d5e5befbc6272ebf0", null ],
+    [ "DCRSR", "struct_core_debug___type.html#a7b49cb58573da77cc8a83a1b21262180", null ],
+    [ "DEMCR", "struct_core_debug___type.html#a6cdfc0a6ce3e988cc02c2d6e8107d193", null ],
+    [ "DHCSR", "struct_core_debug___type.html#a39bc5e68dc6071187fbe2348891eabfa", null ]
 ];

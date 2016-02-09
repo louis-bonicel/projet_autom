@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,9 +71,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,8 +108,7 @@ $(document).ready(function(){initNavTree('struct_n_v_i_c___type.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_n_v_i_c___type-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">NVIC_Type Struct Reference<div class="ingroups"><a class="el" href="group___c_m_s_i_s__core__register.html">Defines and Type Definitions</a> &raquo; <a class="el" href="group___c_m_s_i_s___n_v_i_c.html">Nested Vectored Interrupt Controller (NVIC)</a></div></div>  </div>
 </div><!--header-->
@@ -119,131 +120,225 @@ $(document).ready(function(){initNavTree('struct_n_v_i_c___type.html','');});
 <p><code>#include &lt;<a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:af90c80b7c2b48e248780b3781e0df80f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#af90c80b7c2b48e248780b3781e0df80f">ISER</a> [8]</td></tr>
-<tr class="separator:af90c80b7c2b48e248780b3781e0df80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2de17698945ea49abd58a2d45bdc9c80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2de17698945ea49abd58a2d45bdc9c80"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>RESERVED0</b> [24]</td></tr>
-<tr class="separator:a2de17698945ea49abd58a2d45bdc9c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1965a2e68b61d2e2009621f6949211a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a1965a2e68b61d2e2009621f6949211a5">ICER</a> [8]</td></tr>
-<tr class="separator:a1965a2e68b61d2e2009621f6949211a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d1daf7ab6f2ba83f57ff67ae6f571fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d1daf7ab6f2ba83f57ff67ae6f571fe"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>RSERVED1</b> [24]</td></tr>
-<tr class="separator:a6d1daf7ab6f2ba83f57ff67ae6f571fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf8e38fc2e97316242ddeb7ea959ab90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#acf8e38fc2e97316242ddeb7ea959ab90">ISPR</a> [8]</td></tr>
-<tr class="separator:acf8e38fc2e97316242ddeb7ea959ab90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0953af43af8ec7fd5869a1d826ce5b72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0953af43af8ec7fd5869a1d826ce5b72"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>RESERVED2</b> [24]</td></tr>
-<tr class="separator:a0953af43af8ec7fd5869a1d826ce5b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46241be64208436d35c9a4f8552575c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a46241be64208436d35c9a4f8552575c5">ICPR</a> [8]</td></tr>
-<tr class="separator:a46241be64208436d35c9a4f8552575c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dd330835dbf21471e7b5be8692d77ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9dd330835dbf21471e7b5be8692d77ab"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>RESERVED3</b> [24]</td></tr>
-<tr class="separator:a9dd330835dbf21471e7b5be8692d77ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33e917b381e08dabe4aa5eb2881a7c11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a33e917b381e08dabe4aa5eb2881a7c11">IABR</a> [8]</td></tr>
-<tr class="separator:a33e917b381e08dabe4aa5eb2881a7c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c0e5d507ac3c1bd5cdaaf9bbd177790"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c0e5d507ac3c1bd5cdaaf9bbd177790"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>RESERVED4</b> [56]</td></tr>
-<tr class="separator:a5c0e5d507ac3c1bd5cdaaf9bbd177790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6524789fedb94623822c3e0a47f3d06c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a6524789fedb94623822c3e0a47f3d06c">IP</a> [240]</td></tr>
-<tr class="separator:a6524789fedb94623822c3e0a47f3d06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f753b4f824270175af045ac99bc12e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f753b4f824270175af045ac99bc12e8"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>RESERVED5</b> [644]</td></tr>
-<tr class="separator:a4f753b4f824270175af045ac99bc12e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b0d7f3131da89c659a2580249432749"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a0b0d7f3131da89c659a2580249432749">STIR</a></td></tr>
-<tr class="separator:a0b0d7f3131da89c659a2580249432749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a0bf79013b539f9f929c75bd50f8ec67d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a0bf79013b539f9f929c75bd50f8ec67d">ISER</a> [8]</td></tr>
+<tr class="separator:a0bf79013b539f9f929c75bd50f8ec67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac881b676be4d9659951f43c2fccb34b4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#ac881b676be4d9659951f43c2fccb34b4">RESERVED0</a> [24]</td></tr>
+<tr class="separator:ac881b676be4d9659951f43c2fccb34b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af458bc93cfb899fc1c77c5d1f39dde88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#af458bc93cfb899fc1c77c5d1f39dde88">ICER</a> [8]</td></tr>
+<tr class="separator:af458bc93cfb899fc1c77c5d1f39dde88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab993fe7f0b489b30bc677ccf53426a92"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#ab993fe7f0b489b30bc677ccf53426a92">RSERVED1</a> [24]</td></tr>
+<tr class="separator:ab993fe7f0b489b30bc677ccf53426a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39acf254b485e3ad71b18aa9f1ca594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#ab39acf254b485e3ad71b18aa9f1ca594">ISPR</a> [8]</td></tr>
+<tr class="separator:ab39acf254b485e3ad71b18aa9f1ca594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86dfd6bf6c297be163d078945f67e8b6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a86dfd6bf6c297be163d078945f67e8b6">RESERVED2</a> [24]</td></tr>
+<tr class="separator:a86dfd6bf6c297be163d078945f67e8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8165d9a8c0090021e56bbe91c2c44667"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a8165d9a8c0090021e56bbe91c2c44667">ICPR</a> [8]</td></tr>
+<tr class="separator:a8165d9a8c0090021e56bbe91c2c44667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3371761ff5e69fb1b6b3c2c3b4d69b18"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a3371761ff5e69fb1b6b3c2c3b4d69b18">RESERVED3</a> [24]</td></tr>
+<tr class="separator:a3371761ff5e69fb1b6b3c2c3b4d69b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8694e172f431db09b5d570993da3917"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#ac8694e172f431db09b5d570993da3917">IABR</a> [8]</td></tr>
+<tr class="separator:ac8694e172f431db09b5d570993da3917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c75e6c517dc8e5596ffa3ef6285c232"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a0c75e6c517dc8e5596ffa3ef6285c232">RESERVED4</a> [56]</td></tr>
+<tr class="separator:a0c75e6c517dc8e5596ffa3ef6285c232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c377984f751265667317981f101bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a38c377984f751265667317981f101bb4">IP</a> [240]</td></tr>
+<tr class="separator:a38c377984f751265667317981f101bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77017390737a14d5eb4cdb41f0aa3dce"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a77017390737a14d5eb4cdb41f0aa3dce">RESERVED5</a> [644]</td></tr>
+<tr class="separator:a77017390737a14d5eb4cdb41f0aa3dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a471c399bb79454dcdfb342a31a5684ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_v_i_c___type.html#a471c399bb79454dcdfb342a31a5684ae">STIR</a></td></tr>
+<tr class="separator:a471c399bb79454dcdfb342a31a5684ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure type to access the Nested Vectored Interrupt Controller (NVIC). </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a33e917b381e08dabe4aa5eb2881a7c11"></a>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00321">321</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="ac8694e172f431db09b5d570993da3917"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t NVIC_Type::IABR[8]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t IABR[8]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Offset: 0x200 (R/W) Interrupt Active bit Register </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00331">331</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a1965a2e68b61d2e2009621f6949211a5"></a>
+<a class="anchor" id="af458bc93cfb899fc1c77c5d1f39dde88"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t NVIC_Type::ICER[8]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t ICER[8]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Offset: 0x080 (R/W) Interrupt Clear Enable Register </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00325">325</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a46241be64208436d35c9a4f8552575c5"></a>
+<a class="anchor" id="a8165d9a8c0090021e56bbe91c2c44667"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t NVIC_Type::ICPR[8]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t ICPR[8]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Offset: 0x180 (R/W) Interrupt Clear Pending Register </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00329">329</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a6524789fedb94623822c3e0a47f3d06c"></a>
+<a class="anchor" id="a38c377984f751265667317981f101bb4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t NVIC_Type::IP[240]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t IP[240]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Offset: 0x300 (R/W) Interrupt Priority Register (8Bit wide) </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00333">333</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="af90c80b7c2b48e248780b3781e0df80f"></a>
+<a class="anchor" id="a0bf79013b539f9f929c75bd50f8ec67d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t NVIC_Type::ISER[8]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t ISER[8]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Offset: 0x000 (R/W) Interrupt Set Enable Register </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00323">323</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="acf8e38fc2e97316242ddeb7ea959ab90"></a>
+<a class="anchor" id="ab39acf254b485e3ad71b18aa9f1ca594"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t NVIC_Type::ISPR[8]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t ISPR[8]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Offset: 0x100 (R/W) Interrupt Set Pending Register </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00327">327</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a0b0d7f3131da89c659a2580249432749"></a>
+<a class="anchor" id="ac881b676be4d9659951f43c2fccb34b4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a> uint32_t NVIC_Type::STIR</td>
+          <td class="memname">uint32_t RESERVED0[24]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00324">324</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86dfd6bf6c297be163d078945f67e8b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t RESERVED2[24]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00328">328</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3371761ff5e69fb1b6b3c2c3b4d69b18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t RESERVED3[24]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00330">330</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c75e6c517dc8e5596ffa3ef6285c232"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t RESERVED4[56]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00332">332</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a77017390737a14d5eb4cdb41f0aa3dce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t RESERVED5[644]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00334">334</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab993fe7f0b489b30bc677ccf53426a92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t RSERVED1[24]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00326">326</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a471c399bb79454dcdfb342a31a5684ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a> uint32_t STIR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Offset: 0xE00 ( /W) Software Trigger Interrupt Register </p>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00335">335</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
 
 </div>
 </div>

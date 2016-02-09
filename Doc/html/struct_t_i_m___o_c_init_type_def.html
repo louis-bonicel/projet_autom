@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,9 +71,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,8 +108,7 @@ $(document).ready(function(){initNavTree('struct_t_i_m___o_c_init_type_def.html'
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_t_i_m___o_c_init_type_def-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">TIM_OCInitTypeDef Struct Reference<div class="ingroups"><a class="el" href="group___s_t_m32_f4xx___std_periph___driver.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="group___t_i_m.html">TIM</a></div></div>  </div>
 </div><!--header-->
@@ -119,128 +120,146 @@ $(document).ready(function(){initNavTree('struct_t_i_m___o_c_init_type_def.html'
 <p><code>#include &lt;<a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ad4338ed2415b0d6d19589bf72b7ba3b0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#ad4338ed2415b0d6d19589bf72b7ba3b0">TIM_OCMode</a></td></tr>
-<tr class="separator:ad4338ed2415b0d6d19589bf72b7ba3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2baca9c02d214d3125635a74e8d9aee4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a2baca9c02d214d3125635a74e8d9aee4">TIM_OutputState</a></td></tr>
-<tr class="separator:a2baca9c02d214d3125635a74e8d9aee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a933904d2f892d0b945a908b9257fe869"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a933904d2f892d0b945a908b9257fe869">TIM_OutputNState</a></td></tr>
-<tr class="separator:a933904d2f892d0b945a908b9257fe869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4a2620c38029b136be560041173375d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#ab4a2620c38029b136be560041173375d">TIM_Pulse</a></td></tr>
-<tr class="separator:ab4a2620c38029b136be560041173375d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed3e2de4700d008729a916d8ba78486"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a9ed3e2de4700d008729a916d8ba78486">TIM_OCPolarity</a></td></tr>
-<tr class="separator:a9ed3e2de4700d008729a916d8ba78486"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e47e672810747302c9d0626ae2ccb17"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a3e47e672810747302c9d0626ae2ccb17">TIM_OCNPolarity</a></td></tr>
-<tr class="separator:a3e47e672810747302c9d0626ae2ccb17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a28f2d62339e06caef12816e04a8f55"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a2a28f2d62339e06caef12816e04a8f55">TIM_OCIdleState</a></td></tr>
-<tr class="separator:a2a28f2d62339e06caef12816e04a8f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cbbe6eb87c2ab49e4d68fa9703ce949"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a6cbbe6eb87c2ab49e4d68fa9703ce949">TIM_OCNIdleState</a></td></tr>
-<tr class="separator:a6cbbe6eb87c2ab49e4d68fa9703ce949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:afa69e616eb0b11bd238062dd8a5ceaa5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#afa69e616eb0b11bd238062dd8a5ceaa5">TIM_OCMode</a></td></tr>
+<tr class="separator:afa69e616eb0b11bd238062dd8a5ceaa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e88e3081574da1e1abc089df87985ba"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a1e88e3081574da1e1abc089df87985ba">TIM_OutputState</a></td></tr>
+<tr class="separator:a1e88e3081574da1e1abc089df87985ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a30f1a994c6676c0ce2b56243ed184"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a74a30f1a994c6676c0ce2b56243ed184">TIM_OutputNState</a></td></tr>
+<tr class="separator:a74a30f1a994c6676c0ce2b56243ed184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd7020848ac0ad264aa3c4687f3c3ec4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#afd7020848ac0ad264aa3c4687f3c3ec4">TIM_Pulse</a></td></tr>
+<tr class="separator:afd7020848ac0ad264aa3c4687f3c3ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc7066b59671f62f2696c382c879c9c8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#acc7066b59671f62f2696c382c879c9c8">TIM_OCPolarity</a></td></tr>
+<tr class="separator:acc7066b59671f62f2696c382c879c9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa392739b843a7974702c5ec71864f982"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#aa392739b843a7974702c5ec71864f982">TIM_OCNPolarity</a></td></tr>
+<tr class="separator:aa392739b843a7974702c5ec71864f982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb328e9ef4de6eb9d78390d7366b9a6e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#afb328e9ef4de6eb9d78390d7366b9a6e">TIM_OCIdleState</a></td></tr>
+<tr class="separator:afb328e9ef4de6eb9d78390d7366b9a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f0241aa8d57bb42cd8e56c153f8e48"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___o_c_init_type_def.html#a68f0241aa8d57bb42cd8e56c153f8e48">TIM_OCNIdleState</a></td></tr>
+<tr class="separator:a68f0241aa8d57bb42cd8e56c153f8e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>TIM Output Compare Init structure definition. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a2a28f2d62339e06caef12816e04a8f55"></a>
+
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00078">78</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="afb328e9ef4de6eb9d78390d7366b9a6e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TIM_OCInitTypeDef::TIM_OCIdleState</td>
+          <td class="memname">uint16_t TIM_OCIdleState</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the TIM Output Compare pin state during Idle state. This parameter can be a value of <a class="el" href="group___t_i_m___output___compare___idle___state.html">TIM_Output_Compare_Idle_State</a> </p><dl class="section note"><dt>Note</dt><dd>This parameter is valid only for TIM1 and TIM8. </dd></dl>
 
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00100">100</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ad4338ed2415b0d6d19589bf72b7ba3b0"></a>
+<a class="anchor" id="afa69e616eb0b11bd238062dd8a5ceaa5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TIM_OCInitTypeDef::TIM_OCMode</td>
+          <td class="memname">uint16_t TIM_OCMode</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the TIM mode. This parameter can be a value of <a class="el" href="group___t_i_m___output___compare__and___p_w_m__modes.html">TIM_Output_Compare_and_PWM_modes</a> </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00080">80</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a6cbbe6eb87c2ab49e4d68fa9703ce949"></a>
+<a class="anchor" id="a68f0241aa8d57bb42cd8e56c153f8e48"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TIM_OCInitTypeDef::TIM_OCNIdleState</td>
+          <td class="memname">uint16_t TIM_OCNIdleState</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the TIM Output Compare pin state during Idle state. This parameter can be a value of <a class="el" href="group___t_i_m___output___compare___n___idle___state.html">TIM_Output_Compare_N_Idle_State</a> </p><dl class="section note"><dt>Note</dt><dd>This parameter is valid only for TIM1 and TIM8. </dd></dl>
 
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00104">104</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a3e47e672810747302c9d0626ae2ccb17"></a>
+<a class="anchor" id="aa392739b843a7974702c5ec71864f982"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TIM_OCInitTypeDef::TIM_OCNPolarity</td>
+          <td class="memname">uint16_t TIM_OCNPolarity</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the complementary output polarity. This parameter can be a value of <a class="el" href="group___t_i_m___output___compare___n___polarity.html">TIM_Output_Compare_N_Polarity</a> </p><dl class="section note"><dt>Note</dt><dd>This parameter is valid only for TIM1 and TIM8. </dd></dl>
 
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00096">96</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a9ed3e2de4700d008729a916d8ba78486"></a>
+<a class="anchor" id="acc7066b59671f62f2696c382c879c9c8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TIM_OCInitTypeDef::TIM_OCPolarity</td>
+          <td class="memname">uint16_t TIM_OCPolarity</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the output polarity. This parameter can be a value of <a class="el" href="group___t_i_m___output___compare___polarity.html">TIM_Output_Compare_Polarity</a> </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00093">93</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a933904d2f892d0b945a908b9257fe869"></a>
+<a class="anchor" id="a74a30f1a994c6676c0ce2b56243ed184"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TIM_OCInitTypeDef::TIM_OutputNState</td>
+          <td class="memname">uint16_t TIM_OutputNState</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the TIM complementary Output Compare state. This parameter can be a value of <a class="el" href="group___t_i_m___output___compare___n___state.html">TIM_Output_Compare_N_State</a> </p><dl class="section note"><dt>Note</dt><dd>This parameter is valid only for TIM1 and TIM8. </dd></dl>
 
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00086">86</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a2baca9c02d214d3125635a74e8d9aee4"></a>
+<a class="anchor" id="a1e88e3081574da1e1abc089df87985ba"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t TIM_OCInitTypeDef::TIM_OutputState</td>
+          <td class="memname">uint16_t TIM_OutputState</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the TIM Output Compare state. This parameter can be a value of <a class="el" href="group___t_i_m___output___compare___state.html">TIM_Output_Compare_State</a> </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00083">83</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ab4a2620c38029b136be560041173375d"></a>
+<a class="anchor" id="afd7020848ac0ad264aa3c4687f3c3ec4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t TIM_OCInitTypeDef::TIM_Pulse</td>
+          <td class="memname">uint32_t TIM_Pulse</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Specifies the pulse value to be loaded into the Capture Compare Register. This parameter can be a number between 0x0000 and 0xFFFF </p>
+
+<p>Definition at line <a class="el" href="stm32f4xx__tim_8h_source.html#l00090">90</a> of file <a class="el" href="stm32f4xx__tim_8h_source.html">stm32f4xx_tim.h</a>.</p>
 
 </div>
 </div>

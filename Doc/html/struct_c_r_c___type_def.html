@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,9 +71,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,8 +108,7 @@ $(document).ready(function(){initNavTree('struct_c_r_c___type_def.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_c_r_c___type_def-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">CRC_TypeDef Struct Reference<div class="ingroups"><a class="el" href="group___c_m_s_i_s.html">CMSIS</a> &raquo; <a class="el" href="group__stm32f4xx.html">Stm32f4xx</a> &raquo; <a class="el" href="group___peripheral__registers__structures.html">Peripheral_registers_structures</a></div></div>  </div>
 </div><!--header-->
@@ -119,83 +120,95 @@ $(document).ready(function(){initNavTree('struct_c_r_c___type_def.html','');});
 <p><code>#include &lt;<a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a50cb22870dbb9001241cec694994e5ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#a50cb22870dbb9001241cec694994e5ef">DR</a></td></tr>
-<tr class="separator:a50cb22870dbb9001241cec694994e5ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad84e8694cd4b5375ee533c2d875c3b5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#ad84e8694cd4b5375ee533c2d875c3b5a">IDR</a></td></tr>
-<tr class="separator:ad84e8694cd4b5375ee533c2d875c3b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70dfd1730dba65041550ef55a44db87c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#a70dfd1730dba65041550ef55a44db87c">RESERVED0</a></td></tr>
-<tr class="separator:a70dfd1730dba65041550ef55a44db87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b205c6e25b1808ac016db2356b3021d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#a8b205c6e25b1808ac016db2356b3021d">RESERVED1</a></td></tr>
-<tr class="separator:a8b205c6e25b1808ac016db2356b3021d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af33fa5c173e1c102e6d0242fe60e569f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#af33fa5c173e1c102e6d0242fe60e569f">CR</a></td></tr>
-<tr class="separator:af33fa5c173e1c102e6d0242fe60e569f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a3df0d8dfcd1ec958659ffe21eb64fa94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#a3df0d8dfcd1ec958659ffe21eb64fa94">DR</a></td></tr>
+<tr class="separator:a3df0d8dfcd1ec958659ffe21eb64fa94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601d7b0ba761c987db359b2d7173b7e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#a601d7b0ba761c987db359b2d7173b7e0">IDR</a></td></tr>
+<tr class="separator:a601d7b0ba761c987db359b2d7173b7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d2bd5481ee985778c410a7e5826b71"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#aa7d2bd5481ee985778c410a7e5826b71">RESERVED0</a></td></tr>
+<tr class="separator:aa7d2bd5481ee985778c410a7e5826b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8249a3955aace28d92109b391311eb30"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#a8249a3955aace28d92109b391311eb30">RESERVED1</a></td></tr>
+<tr class="separator:a8249a3955aace28d92109b391311eb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40c89c59391aaa9d9a8ec011dd0907a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_r_c___type_def.html#ab40c89c59391aaa9d9a8ec011dd0907a">CR</a></td></tr>
+<tr class="separator:ab40c89c59391aaa9d9a8ec011dd0907a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>CRC calculation unit. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="af33fa5c173e1c102e6d0242fe60e569f"></a>
+
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00400">400</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="ab40c89c59391aaa9d9a8ec011dd0907a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t CRC_TypeDef::CR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t CR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>CRC Control register, Address offset: 0x08 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00406">406</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a50cb22870dbb9001241cec694994e5ef"></a>
+<a class="anchor" id="a3df0d8dfcd1ec958659ffe21eb64fa94"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t CRC_TypeDef::DR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t DR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>CRC Data register, Address offset: 0x00 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00402">402</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ad84e8694cd4b5375ee533c2d875c3b5a"></a>
+<a class="anchor" id="a601d7b0ba761c987db359b2d7173b7e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t CRC_TypeDef::IDR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint8_t IDR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>CRC Independent data register, Address offset: 0x04 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00403">403</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a70dfd1730dba65041550ef55a44db87c"></a>
+<a class="anchor" id="aa7d2bd5481ee985778c410a7e5826b71"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t CRC_TypeDef::RESERVED0</td>
+          <td class="memname">uint8_t RESERVED0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Reserved, 0x05 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00404">404</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a8b205c6e25b1808ac016db2356b3021d"></a>
+<a class="anchor" id="a8249a3955aace28d92109b391311eb30"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t CRC_TypeDef::RESERVED1</td>
+          <td class="memname">uint16_t RESERVED1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Reserved, 0x06 </p>
+
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00405">405</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
 
 </div>
 </div>

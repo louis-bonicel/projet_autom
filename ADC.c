@@ -22,7 +22,6 @@
 *
 * @details Potentiometre	: adc_consigne	-> PB0	ADC1 channel 8
 * @details Tachymetre		: adc_tachy		-> PA2	ADC1 channel 2
-* @param adc_buffer Buffer pour la reception DMA
 */
 void ADC_Config ( void )
 {

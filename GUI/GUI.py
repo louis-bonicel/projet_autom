@@ -125,6 +125,7 @@ class MotorController(QtGui.QWidget):
         signe_second_value = 1
         
         try:
+            print [ int(str(ord(received[i]))) for i in range(0,5)]
             signe = int(str(ord(received[0])))
             if ( signe & 0b00000100 ) == 0b00000100:
                 signe_first_value = -1
@@ -134,13 +135,13 @@ class MotorController(QtGui.QWidget):
             tachyValue_part_1 = int(str(ord(received[1])))
             tachyValue_part_2 = int(str(ord(received[2])))
 
-            tachyValue = ((tachyValue_part_1 & 0b11111110) << 7 ) | (tachyValue_part_2 >> 1)
+            tachyValue = ((tachyValue_part_1 & 0b11111110) << 6 ) | (tachyValue_part_2 >> 1)
             tachyValue = tachyValue * signe_first_value
 
             second_value_part_1 = int(str(ord(received[3])))
             second_value_part_2 = int(str(ord(received[4])))
 
-            value_2 = ((second_value_part_1 & 0b11111110) << 7 ) | (second_value_part_2 >> 1)
+            value_2 = ((second_value_part_1 & 0b11111110) << 6 ) | (second_value_part_2 >> 1)
             value_2 = value_2 * signe_second_value
 
             if self.unitSI:

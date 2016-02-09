@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,9 +71,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,8 +108,7 @@ $(document).ready(function(){initNavTree('struct_g_p_i_o___type_def.html','');})
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_g_p_i_o___type_def-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">GPIO_TypeDef Struct Reference<div class="ingroups"><a class="el" href="group___c_m_s_i_s.html">CMSIS</a> &raquo; <a class="el" href="group__stm32f4xx.html">Stm32f4xx</a> &raquo; <a class="el" href="group___peripheral__registers__structures.html">Peripheral_registers_structures</a></div></div>  </div>
 </div><!--header-->
@@ -119,158 +120,180 @@ $(document).ready(function(){initNavTree('struct_g_p_i_o___type_def.html','');})
 <p><code>#include &lt;<a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ac2505d096b6b650f1647b8e0ff8b196b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#ac2505d096b6b650f1647b8e0ff8b196b">MODER</a></td></tr>
-<tr class="separator:ac2505d096b6b650f1647b8e0ff8b196b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a910885e4d881c3a459dd11640237107f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a910885e4d881c3a459dd11640237107f">OTYPER</a></td></tr>
-<tr class="separator:a910885e4d881c3a459dd11640237107f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d233d720f18ae2050f9131fa6faf7c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a0d233d720f18ae2050f9131fa6faf7c6">OSPEEDR</a></td></tr>
-<tr class="separator:a0d233d720f18ae2050f9131fa6faf7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44ada3bfbe891e2efc1e06bda4c8014e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a44ada3bfbe891e2efc1e06bda4c8014e">PUPDR</a></td></tr>
-<tr class="separator:a44ada3bfbe891e2efc1e06bda4c8014e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf11156409414ad8841bb0b62959ee96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#acf11156409414ad8841bb0b62959ee96">IDR</a></td></tr>
-<tr class="separator:acf11156409414ad8841bb0b62959ee96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fb78f4a978a36032cdeac93ac3c9c8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a6fb78f4a978a36032cdeac93ac3c9c8b">ODR</a></td></tr>
-<tr class="separator:a6fb78f4a978a36032cdeac93ac3c9c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2528bbb921532be8116534651b1faee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#ad2528bbb921532be8116534651b1faee">BSRRL</a></td></tr>
-<tr class="separator:ad2528bbb921532be8116534651b1faee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4b5f8bc936e26e3980686d2aba9d882"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#ad4b5f8bc936e26e3980686d2aba9d882">BSRRH</a></td></tr>
-<tr class="separator:ad4b5f8bc936e26e3980686d2aba9d882"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95a59d4b1d52be521f3246028be32f3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a95a59d4b1d52be521f3246028be32f3e">LCKR</a></td></tr>
-<tr class="separator:a95a59d4b1d52be521f3246028be32f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2245603433e102f0fd8a85f7de020755"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a2245603433e102f0fd8a85f7de020755">AFR</a> [2]</td></tr>
-<tr class="separator:a2245603433e102f0fd8a85f7de020755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a2b671a94c63a612f81e0e9de8152d01c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a2b671a94c63a612f81e0e9de8152d01c">MODER</a></td></tr>
+<tr class="separator:a2b671a94c63a612f81e0e9de8152d01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9543592bda60cb5261075594bdeedac9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a9543592bda60cb5261075594bdeedac9">OTYPER</a></td></tr>
+<tr class="separator:a9543592bda60cb5261075594bdeedac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328d16cc6213783ede54e4059ffd50a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a328d16cc6213783ede54e4059ffd50a3">OSPEEDR</a></td></tr>
+<tr class="separator:a328d16cc6213783ede54e4059ffd50a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeed38529bd7b8de082e490e5d4f1727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#abeed38529bd7b8de082e490e5d4f1727">PUPDR</a></td></tr>
+<tr class="separator:abeed38529bd7b8de082e490e5d4f1727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328d2fe9ef1d513c3a97d30f98f0047c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a328d2fe9ef1d513c3a97d30f98f0047c">IDR</a></td></tr>
+<tr class="separator:a328d2fe9ef1d513c3a97d30f98f0047c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff7fffd2b5a718715a130006590c75c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#abff7fffd2b5a718715a130006590c75c">ODR</a></td></tr>
+<tr class="separator:abff7fffd2b5a718715a130006590c75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79204c9bcc8c481da0a5ffe7c74d8b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#aa79204c9bcc8c481da0a5ffe7c74d8b0">BSRRL</a></td></tr>
+<tr class="separator:aa79204c9bcc8c481da0a5ffe7c74d8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f89f65edca7ed58738166424aeef48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a35f89f65edca7ed58738166424aeef48">BSRRH</a></td></tr>
+<tr class="separator:a35f89f65edca7ed58738166424aeef48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2612a0f4b3fbdbb6293f6dc70105e190"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#a2612a0f4b3fbdbb6293f6dc70105e190">LCKR</a></td></tr>
+<tr class="separator:a2612a0f4b3fbdbb6293f6dc70105e190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab67c1158c04450d19ad483dcd2192e43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_p_i_o___type_def.html#ab67c1158c04450d19ad483dcd2192e43">AFR</a> [2]</td></tr>
+<tr class="separator:ab67c1158c04450d19ad483dcd2192e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>General Purpose I/O. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a2245603433e102f0fd8a85f7de020755"></a>
+
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00649">649</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="ab67c1158c04450d19ad483dcd2192e43"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::AFR[2]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t AFR[2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO alternate function registers, Address offset: 0x20-0x24 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00660">660</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ad4b5f8bc936e26e3980686d2aba9d882"></a>
+<a class="anchor" id="a35f89f65edca7ed58738166424aeef48"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t GPIO_TypeDef::BSRRH</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t BSRRH</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port bit set/reset high register, Address offset: 0x1A </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00658">658</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ad2528bbb921532be8116534651b1faee"></a>
+<a class="anchor" id="aa79204c9bcc8c481da0a5ffe7c74d8b0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t GPIO_TypeDef::BSRRL</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint16_t BSRRL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port bit set/reset low register, Address offset: 0x18 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00657">657</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="acf11156409414ad8841bb0b62959ee96"></a>
+<a class="anchor" id="a328d2fe9ef1d513c3a97d30f98f0047c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::IDR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t IDR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port input data register, Address offset: 0x10 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00655">655</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a95a59d4b1d52be521f3246028be32f3e"></a>
+<a class="anchor" id="a2612a0f4b3fbdbb6293f6dc70105e190"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::LCKR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t LCKR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port configuration lock register, Address offset: 0x1C </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00659">659</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ac2505d096b6b650f1647b8e0ff8b196b"></a>
+<a class="anchor" id="a2b671a94c63a612f81e0e9de8152d01c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::MODER</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t MODER</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port mode register, Address offset: 0x00 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00651">651</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a6fb78f4a978a36032cdeac93ac3c9c8b"></a>
+<a class="anchor" id="abff7fffd2b5a718715a130006590c75c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::ODR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t ODR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port output data register, Address offset: 0x14 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00656">656</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a0d233d720f18ae2050f9131fa6faf7c6"></a>
+<a class="anchor" id="a328d16cc6213783ede54e4059ffd50a3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::OSPEEDR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t OSPEEDR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port output speed register, Address offset: 0x08 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00653">653</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a910885e4d881c3a459dd11640237107f"></a>
+<a class="anchor" id="a9543592bda60cb5261075594bdeedac9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::OTYPER</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t OTYPER</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port output type register, Address offset: 0x04 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00652">652</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a44ada3bfbe891e2efc1e06bda4c8014e"></a>
+<a class="anchor" id="abeed38529bd7b8de082e490e5d4f1727"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t GPIO_TypeDef::PUPDR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t PUPDR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>GPIO port pull-up/pull-down register, Address offset: 0x0C </p>
+
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00654">654</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
 
 </div>
 </div>

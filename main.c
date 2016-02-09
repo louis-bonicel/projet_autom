@@ -13,7 +13,6 @@
 
 #include "PrjDefinitions.h"
 #include "stm32f4xx_conf.h"
-#include "delay.h"
 #include "usart.h"
 #include "DAC.h"
 #include "ADC.h"
@@ -23,10 +22,15 @@
 #include "tachy.h"
 #include "PID.h"
 
+
 void Global_Config ( void );
 
-volatile t_Flag flag;
+/**
+ * @var Used for interrupt flag
+ */
 t_PID pid;
+t_Data data;
+
 /**
 * @brief Entree du programme.
 * @return Rien, le int est ici pour eviter un warning GCC.
@@ -38,9 +42,7 @@ int main ( void )
 	t_ConsigneReceived consigne;
 	Consigne_Init( &consigne );
 
-	t_Data data;
 	Data_Init( &data );
-
 
 	PID_Init( &pid );
 
@@ -51,29 +53,31 @@ int main ( void )
 	{
 		while ( flag.mainProcess )
 		{
-			GPIO_ToggleBits( GPIOD , GPIO_Pin_12 );
+			GPIO_SetBits( GPIOE , GPIO_Pin_11 );
 			UpdateValues( &data );
+			int16_t valueToApply;
 
 			switch( consigne.mode )
 			{
 				case NORMAL:
 					data.consigneReceived = consigne.start_point;
-					PID_Calculate( &pid , data );
-					UpdateConsigneDAC( pid.consigneOut );
+					PID_Calculate( &pid , &data );
+					UpdateConsigneDAC( &(pid.consigneOut) );
+					// UpdateConsigneDAC( &(data.consigneReceived) );
 					break;
 
 				case STEP:
 					if ( stepCounter < STEP_HOLD_START )
 					{
 						stepCounter++;
-						UpdateConsigneDAC( consigne.start_point );
+						UpdateConsigneDAC( &(consigne.start_point) );
 					}
 					else
 					{
 						if (stepCounter < STEP_HOLD_START + STEP_HOLD_STOP)
 						{
 							stepCounter++;
-							UpdateConsigneDAC( consigne.end_point );
+							UpdateConsigneDAC( &(consigne.end_point) );
 						}
 						else
 							consigne.mode = NORMAL;
@@ -92,15 +96,21 @@ int main ( void )
 					{
 						consigne.mode = NORMAL;
 					}
-					UpdateConsigneDAC( sweepCounter );
+					UpdateConsigneDAC( &(sweepCounter) );
+					break;
+
+				case POTARD:
+					valueToApply = ( data.potardValue - 2048 );
+					DAC_SetChannel1Data( DAC_Align_12b_R , 2048 + valueToApply );
+					DAC_SetChannel2Data( DAC_Align_12b_R , 2047 - valueToApply );
 					break;
 			}
 
 			flag.mainProcess = 0;
+			GPIO_ResetBits( GPIOE , GPIO_Pin_11 );
 		}
 		while ( flag.consigneUpdate )
 		{
-			GPIO_ToggleBits( GPIOD , GPIO_Pin_14 );
 			UpdateReceivedConsigne( &consigne );
 			if (consigne.mode != NORMAL)
 			{
@@ -111,17 +121,21 @@ int main ( void )
 		}
 		while ( flag.sendData )
 		{
-			GPIO_ToggleBits( GPIOD , GPIO_Pin_13 );
-			SendData( data );
+			GPIO_SetBits( GPIOE , GPIO_Pin_12 );
+
+			if (flag.UARTTXReady)
+				SendData( data );
 			flag.sendData = 0;
+
+			GPIO_ResetBits( GPIOE , GPIO_Pin_12 );
 		}
 		while ( flag.button )
 		{
-			GPIO_ToggleBits( GPIOD , GPIO_Pin_15 );
 			PID_Init( &pid );
-			consigne.mode = SWEEP;
-			consigne.start_point = 0;
-			consigne.end_point = 8000;
+			if (consigne.mode == POTARD)
+				consigne.mode = NORMAL;
+			else
+				consigne.mode = POTARD;
 			flag.button = 0;
 		}
 	}
@@ -133,10 +147,9 @@ int main ( void )
  */
 void Global_Config ( void )
 {
-	// Initialise le "tick" systeme, qui permet de lever une interruption toutes les us.
-	SysTick_Init();
 	// Configure l'USART
 	USART3_Config();
+	flag.UARTTXReady = 1;
 
 
 	my_printf( "\r\n" );
@@ -145,8 +158,9 @@ void Global_Config ( void )
 	my_printf( "UART et RX DMA Initialise avec succes !\r\n\r\n" );
 
 	// Configure les GPIOs pour les LEDs.
-	my_printf( "Initialisation LEDs\r\n" );
+	my_printf( "Initialisation LEDs et BNCs\r\n" );
 	LED_Config();
+	GPIO_BNC_Config();
 
 	// Configure les GPIOs pour les LEDs.
 	my_printf( "Initialisation du bouton\r\n" );
@@ -177,47 +191,6 @@ void Global_Config ( void )
 }
 
 
-void Sweep_Consigne ( int16_t min , int16_t max )
-{
-	int16_t consigne = ( min < max ) ? min : max;
-	int16_t tachy_value = 0;
-	int16_t rpm_speed = 0;
-
-	my_printf( "                              Demarrage du sweep\r\n\r\n" );
-	my_printf( "Consigne,ADC_tachy,RPM\r\n" );
-
-	/// @todo replace
-	// Set_Consigne( min );
-	delay_nms( 100 );
-
-	int16_t fin = min < max ? max : min;
-
-	while ( !flag.consigneUpdate && consigne <= fin )
-	{
-		/// @todo replace
-		// Set_Consigne( consigne );
-		delay_nms( 1 );
-		/// @todo replace
-		// GetTachyValue( &tachy_value );
-
-		Tachy_to_RPM( tachy_value , &rpm_speed );
-
-		my_printf( "%i,%i,%i" , consigne , tachy_value , rpm_speed );
-
-		consigne++;
-	}
-}
-
-/**
-* @brief Utilisee pour gerer les delay.
-*/
-void SysTick_Handler ( void )
-{
-	// Called every microsecond
-	TimeTick_Decrement();
-}
-
-
 /**
  * @brief Gere l'interrupt sur le boutton
  */
@@ -227,27 +200,6 @@ void EXTI0_IRQHandler ( void )
 	{
 		flag.button = 1;
 		EXTI_ClearITPendingBit( EXTI_Line0 );
-	}
-}
-
-
-/**
- * @brief Handler sur l'interrupt venant de l'encodeur
- * 6 = PB6 => Enc_A
- * 7 = PB7 => Enc_B
- */
-void EXTI9_5_IRQHandler ( void )
-{
-	// Si changement d'etat sur enc_a ( bas -> haut ou haut -> bas )
-	if ( EXTI_GetITStatus( EXTI_Line6 ) != RESET )
-	{
-		EXTI_ClearITPendingBit( EXTI_Line6 );
-
-	}
-	// Si changement d'etat sur enc_b ( bas -> haut ou haut -> bas )
-	if ( EXTI_GetITStatus( EXTI_Line7 ) != RESET )
-	{
-		EXTI_ClearITPendingBit( EXTI_Line7 );
 	}
 }
 
@@ -265,8 +217,25 @@ void DMA1_Stream1_IRQHandler ( void )
 }
 
 
+/**
+ * @brief Handler pour buffer UART TX transmit
+ */
+void DMA1_Stream3_IRQHandler ( void )
+{
+	if ( DMA_GetITStatus( DMA1_Stream3 , DMA_IT_TCIF3 ) )
+	{
+		DMA_ClearITPendingBit( DMA1_Stream3 , DMA_IT_TCIF3 );
+		USART_DMACmd( USART3 , USART_DMAReq_Tx , DISABLE );
+		flag.UARTTXReady = 1;
+	}
+}
+
+/**
+ * Timer d'echantillonage @1kHz
+ */
 void TIM2_IRQHandler(void)
 {
+	GPIO_ToggleBits( GPIOE , GPIO_Pin_13 );
 	if ( TIM_GetITStatus( TIM2 , TIM_IT_Update ) != RESET )
 	{
 		flag.mainProcess = 1;
@@ -275,8 +244,12 @@ void TIM2_IRQHandler(void)
 }
 
 
+/**
+ * Timer d'envoie des donnees @ 10Hz
+ */
 void TIM3_IRQHandler(void)
 {
+	GPIO_ToggleBits( GPIOE , GPIO_Pin_14 );
 	if ( TIM_GetITStatus( TIM3 , TIM_IT_Update ) != RESET )
 	{
 		flag.sendData = 1;

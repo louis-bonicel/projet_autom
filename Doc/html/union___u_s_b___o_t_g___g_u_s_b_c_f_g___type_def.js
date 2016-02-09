@@ -1,0 +1,27 @@
+var union___u_s_b___o_t_g___g_u_s_b_c_f_g___type_def =
+[
+    [ "b", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gab6aa1650b02c6b52d6043c6ba1556d72", null ],
+    [ "corrupt_tx", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gaf379d7d49b05eb22e01743658be7e466", null ],
+    [ "d32", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga134240bc6149d901e426171a82068094", null ],
+    [ "ddrsel", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga5bbe2ca7a4b7685ac8bf60e1159d4da6", null ],
+    [ "force_dev", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gaa7e2352743461c23d539744313ddbe0b", null ],
+    [ "force_host", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga944e42733e009bf0c158ddda36b435b2", null ],
+    [ "fsintf", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gadcb973f091e087fa695e34431e429fa1", null ],
+    [ "hnpcap", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga5d0dbe44e11d64c813a6fcf9852b6d13", null ],
+    [ "nptxfrwnden", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga9bb9ca859e43742f0d40df579eec17fd", null ],
+    [ "otgutmifssel", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga0eb7362a83291a94f3c990f9f15372fa", null ],
+    [ "phyif", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gae015c98ff038a9005b694c09faf50fd3", null ],
+    [ "phylpwrclksel", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga27e9a8f38946c79a4fc27065a169ed3e", null ],
+    [ "physel", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gae4c1a1b8c529cf61076e1a343f32dc1c", null ],
+    [ "Reserved", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga43fae5b728aa075b9475bbe49a5738ef", null ],
+    [ "srpcap", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gac500e91fdc01c28a48ca152c02070fbe", null ],
+    [ "term_sel_dl_pulse", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga1dcb8042650dd76ccd486bbd4b56ff7e", null ],
+    [ "toutcal", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga63537c60d59d5bd51002035b15298310", null ],
+    [ "ulpi_auto_res", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga00fafb914794ded88712415f8c8eec3b", null ],
+    [ "ulpi_clk_sus_m", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga641c037af55a0f71875abc747de9715a", null ],
+    [ "ulpi_ext_vbus_drv", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga19520e4fec421e89bff26f207a6d3d9b", null ],
+    [ "ulpi_fsls", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#gab95ba44fc36d54065244373c4f98e07b", null ],
+    [ "ulpi_int_vbus_indicator", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga8a0691d0e84902841f2c0db7e3e4697b", null ],
+    [ "ulpi_utmi_sel", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga8874d070773a56b14639d11dcf244796", null ],
+    [ "usbtrdtim", "group___u_s_b___o_t_g___d_r_i_v_e_r.html#ga5c05076c43102aa382138dd8582958ab", null ]
+];

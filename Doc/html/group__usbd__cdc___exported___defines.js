@@ -1,0 +1,26 @@
+var group__usbd__cdc___exported___defines =
+[
+    [ "CDC_DATA_IN_PACKET_SIZE", "group__usbd__cdc___exported___defines.html#ga38c4cfb0c0882e9403d83ad61485c18f", null ],
+    [ "CDC_DATA_OUT_PACKET_SIZE", "group__usbd__cdc___exported___defines.html#ga26796336cb1b71cbba655f2dbe889e2a", null ],
+    [ "CDC_DESCRIPTOR_TYPE", "group__usbd__cdc___exported___defines.html#ga7ffaa00ea0c4e7c6ae0bf65c8ea59504", null ],
+    [ "CLEAR_COMM_FEATURE", "group__usbd__cdc___exported___defines.html#gad0be5fbdf6911ca9546e929984a01364", null ],
+    [ "DEVICE_CLASS_CDC", "group__usbd__cdc___exported___defines.html#ga310a8b3c9c2d89c404d933b7273548df", null ],
+    [ "DEVICE_SUBCLASS_CDC", "group__usbd__cdc___exported___defines.html#ga895a28e2369180dc82b0f93c088fb396", null ],
+    [ "GET_COMM_FEATURE", "group__usbd__cdc___exported___defines.html#gab156c6a84346f885ecf44eed291fff35", null ],
+    [ "GET_ENCAPSULATED_RESPONSE", "group__usbd__cdc___exported___defines.html#ga82f6db248764860f737ab97db4cbdfc3", null ],
+    [ "GET_LINE_CODING", "group__usbd__cdc___exported___defines.html#ga6698d8d2ca56fafdc943aec2cede1daf", null ],
+    [ "NO_CMD", "group__usbd__cdc___exported___defines.html#gaeafa7e353c5bae58e711ebf91ae3fd52", null ],
+    [ "SEND_BREAK", "group__usbd__cdc___exported___defines.html#gab22359d3d41b78ab1a9e634772b1ffbb", null ],
+    [ "SEND_ENCAPSULATED_COMMAND", "group__usbd__cdc___exported___defines.html#gaf6eb2e11501b197edb3c6bc3f6b3edbc", null ],
+    [ "SET_COMM_FEATURE", "group__usbd__cdc___exported___defines.html#ga96a98428a60e80787599adc8fad3a70b", null ],
+    [ "SET_CONTROL_LINE_STATE", "group__usbd__cdc___exported___defines.html#ga437869c339749d5d011060cd5676659e", null ],
+    [ "SET_LINE_CODING", "group__usbd__cdc___exported___defines.html#ga91a9c047339a1a5918b6a923af6d1af6", null ],
+    [ "STANDARD_ENDPOINT_DESC_SIZE", "group__usbd__cdc___exported___defines.html#ga46b6788bb403f537110e05b11ee40059", null ],
+    [ "USB_CDC_CONFIG_DESC_SIZ", "group__usbd__cdc___exported___defines.html#gaeace2e1a379f1cd527d26b7b713ba7d6", null ],
+    [ "USB_CDC_DESC_SIZ", "group__usbd__cdc___exported___defines.html#ga40b46c90fe672ca4e02832089488e591", null ],
+    [ "USB_CONFIGURATION_DESCRIPTOR_TYPE", "group__usbd__cdc___exported___defines.html#ga45e81401e4b530280fdd539da1b06c26", null ],
+    [ "USB_DEVICE_DESCRIPTOR_TYPE", "group__usbd__cdc___exported___defines.html#ga722f2d6ee2892228b6708e8b9904c645", null ],
+    [ "USB_ENDPOINT_DESCRIPTOR_TYPE", "group__usbd__cdc___exported___defines.html#ga4e8d6d81a224f8b511edc92b6cb4e085", null ],
+    [ "USB_INTERFACE_DESCRIPTOR_TYPE", "group__usbd__cdc___exported___defines.html#gad1699884fa580bba35246a566264c978", null ],
+    [ "USB_STRING_DESCRIPTOR_TYPE", "group__usbd__cdc___exported___defines.html#gab01c9c74f2eb266b20aecd48bab4b35c", null ]
+];

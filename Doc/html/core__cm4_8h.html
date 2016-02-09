@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,7 +106,7 @@ $(document).ready(function(){initNavTree('core__cm4_8h.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -124,7 +125,7 @@ $(document).ready(function(){initNavTree('core__cm4_8h.html','');});
 <p><a href="core__cm4_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
+Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_a_p_s_r___type.html">APSR_Type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Application Program Status Register (APSR).  <a href="union_a_p_s_r___type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,8 +165,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a041c3808b4c105d23b90b54646e2eeb6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a041c3808b4c105d23b90b54646e2eeb6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>__CORE_CM4_H_GENERIC</b></td></tr>
+<tr class="memitem:a041c3808b4c105d23b90b54646e2eeb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__cm4_8h.html#a041c3808b4c105d23b90b54646e2eeb6">__CORE_CM4_H_GENERIC</a></td></tr>
 <tr class="separator:a041c3808b4c105d23b90b54646e2eeb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9eebe495e2e48d302211108837a2b3e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_m_s_i_s___n_v_i_c.html#ga9eebe495e2e48d302211108837a2b3e8">NVIC_STIR_INTID_Pos</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:ga9eebe495e2e48d302211108837a2b3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1017,6 +1017,8 @@ Variables</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Copyright (C) 2009-2012 ARM Limited. All rights reserved.</dd></dl>
 <dl class="section user"><dt></dt><dd>ARM Limited (ARM) is supplying this software for use with Cortex-M processor based microcontrollers. This file can be freely distributed within development tools that are supporting such ARM based processors.</dd></dl>
 <dl class="section user"><dt></dt><dd>THIS SOFTWARE IS PROVIDED "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. ARM SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER. </dd></dl>
+
+<p>Definition in file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="acb6f5d2c3271c95d0a02fd06723af25d"></a>
 <div class="memitem">
@@ -1027,9 +1029,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((<a class="code" href="core__cm4_8h.html#a90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a> &lt;&lt; 16) | \</div><div class="line">                                    <a class="code" href="core__cm4_8h.html#afc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>          )</div><div class="ttc" id="core__cm4_8h_html_afc7392964da961a44e916fcff7add532"><div class="ttname"><a href="core__cm4_8h.html#afc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a></div><div class="ttdeci">#define __CM4_CMSIS_VERSION_SUB</div><div class="ttdef"><b>Definition:</b> core_cm4.h:57</div></div>
-<div class="ttc" id="core__cm4_8h_html_a90ffc8179476f80347379bfe29639edc"><div class="ttname"><a href="core__cm4_8h.html#a90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a></div><div class="ttdeci">#define __CM4_CMSIS_VERSION_MAIN</div><div class="ttdef"><b>Definition:</b> core_cm4.h:56</div></div>
+<b>Value:</b><div class="fragment"><div class="line">((<a class="code" href="core__cm4_8h.html#a90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a> &lt;&lt; 16) | \</div><div class="line">                                    <a class="code" href="core__cm4_8h.html#afc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>          )</div><div class="ttc" id="core__cm4_8h_html_afc7392964da961a44e916fcff7add532"><div class="ttname"><a href="core__cm4_8h.html#afc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a></div><div class="ttdeci">#define __CM4_CMSIS_VERSION_SUB</div><div class="ttdef"><b>Definition:</b> <a href="core__cm4_8h_source.html#l00057">core_cm4.h:57</a></div></div>
+<div class="ttc" id="core__cm4_8h_html_a90ffc8179476f80347379bfe29639edc"><div class="ttname"><a href="core__cm4_8h.html#a90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a></div><div class="ttdeci">#define __CM4_CMSIS_VERSION_MAIN</div><div class="ttdef"><b>Definition:</b> <a href="core__cm4_8h_source.html#l00056">core_cm4.h:56</a></div></div>
 </div><!-- fragment --><p>CMSIS HAL version number </p>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00058">58</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
 
 </div>
 </div>
@@ -1044,6 +1048,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>[31:16] CMSIS HAL main version </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00056">56</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="afc7392964da961a44e916fcff7add532"></a>
@@ -1056,6 +1062,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>[15:0] CMSIS HAL sub version </p>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00057">57</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
 
 </div>
 </div>
@@ -1070,6 +1078,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>__FPU_USED indicates whether an FPU is used or not. For this, __FPU_PRESENT has to be checked prior to making use of FPU specific registers and functions. </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00163">163</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a041c3808b4c105d23b90b54646e2eeb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __CORE_CM4_H_GENERIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00032">32</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a63ea62503c88acab19fcf3d5743009e3"></a>
@@ -1082,6 +1106,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Cortex-M Core </p>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00061">61</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
 
 </div>
 </div>
@@ -1096,6 +1122,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Defines 'read only' permissions </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00204">204</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aec43007d9998a0a0e01faede4133d6be"></a>
@@ -1109,6 +1137,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Defines 'read / write' permissions </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00207">207</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7e25d9380f9ef903923964322e71f2f6"></a>
@@ -1121,6 +1151,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Defines 'write only' permissions </p>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00206">206</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
 
 </div>
 </div>

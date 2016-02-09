@@ -23,5 +23,6 @@ var group___d_a_c__lfsrunmask__triangleamplitude =
     [ "DAC_TriangleAmplitude_4095", "group___d_a_c__lfsrunmask__triangleamplitude.html#ga3ce69f5a63a2464dc4b5f73cb6fe72f5", null ],
     [ "DAC_TriangleAmplitude_511", "group___d_a_c__lfsrunmask__triangleamplitude.html#ga565b0c97bbdf152756617d491bf8ef85", null ],
     [ "DAC_TriangleAmplitude_63", "group___d_a_c__lfsrunmask__triangleamplitude.html#gaaae92dae9c4da55e29c645396825e36b", null ],
-    [ "DAC_TriangleAmplitude_7", "group___d_a_c__lfsrunmask__triangleamplitude.html#gad3f31de1277836df1109576a53c47e87", null ]
+    [ "DAC_TriangleAmplitude_7", "group___d_a_c__lfsrunmask__triangleamplitude.html#gad3f31de1277836df1109576a53c47e87", null ],
+    [ "IS_DAC_LFSR_UNMASK_TRIANGLE_AMPLITUDE", "group___d_a_c__lfsrunmask__triangleamplitude.html#ga20f7c3c43f917f14593f0c478c2412e1", null ]
 ];

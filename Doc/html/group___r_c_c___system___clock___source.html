@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -107,16 +108,13 @@ $(document).ready(function(){initNavTree('group___r_c_c___system___clock___sourc
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga0f392254e74dd965c48edd5aad148e20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0f392254e74dd965c48edd5aad148e20"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RCC_SYSCLKSource_HSI</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="memitem:ga0f392254e74dd965c48edd5aad148e20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_c_c___system___clock___source.html#ga0f392254e74dd965c48edd5aad148e20">RCC_SYSCLKSource_HSI</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
 <tr class="separator:ga0f392254e74dd965c48edd5aad148e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabeae110e41833842f8620647ea0ce85a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabeae110e41833842f8620647ea0ce85a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RCC_SYSCLKSource_HSE</b>&#160;&#160;&#160;((uint32_t)0x00000001)</td></tr>
+<tr class="memitem:gabeae110e41833842f8620647ea0ce85a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_c_c___system___clock___source.html#gabeae110e41833842f8620647ea0ce85a">RCC_SYSCLKSource_HSE</a>&#160;&#160;&#160;((uint32_t)0x00000001)</td></tr>
 <tr class="separator:gabeae110e41833842f8620647ea0ce85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9301b7a07a7cb8c2c6ed87b619c1c966"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9301b7a07a7cb8c2c6ed87b619c1c966"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RCC_SYSCLKSource_PLLCLK</b>&#160;&#160;&#160;((uint32_t)0x00000002)</td></tr>
+<tr class="memitem:ga9301b7a07a7cb8c2c6ed87b619c1c966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_c_c___system___clock___source.html#ga9301b7a07a7cb8c2c6ed87b619c1c966">RCC_SYSCLKSource_PLLCLK</a>&#160;&#160;&#160;((uint32_t)0x00000002)</td></tr>
 <tr class="separator:ga9301b7a07a7cb8c2c6ed87b619c1c966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaae9d6172a72b0a90cb3703aa59258c57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_RCC_SYSCLK_SOURCE</b>(SOURCE)</td></tr>
+<tr class="memitem:gaae9d6172a72b0a90cb3703aa59258c57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_c_c___system___clock___source.html#gaae9d6172a72b0a90cb3703aa59258c57">IS_RCC_SYSCLK_SOURCE</a>(SOURCE)</td></tr>
 <tr class="separator:gaae9d6172a72b0a90cb3703aa59258c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -134,7 +132,54 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(((SOURCE) == RCC_SYSCLKSource_HSI) || \</div><div class="line">                                      ((SOURCE) == RCC_SYSCLKSource_HSE) || \</div><div class="line">                                      ((SOURCE) == RCC_SYSCLKSource_PLLCLK))</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line">(((SOURCE) == <a class="code" href="group___r_c_c___system___clock___source.html#ga0f392254e74dd965c48edd5aad148e20">RCC_SYSCLKSource_HSI</a>) || \</div><div class="line">                                      ((SOURCE) == <a class="code" href="group___r_c_c___system___clock___source.html#gabeae110e41833842f8620647ea0ce85a">RCC_SYSCLKSource_HSE</a>) || \</div><div class="line">                                      ((SOURCE) == <a class="code" href="group___r_c_c___system___clock___source.html#ga9301b7a07a7cb8c2c6ed87b619c1c966">RCC_SYSCLKSource_PLLCLK</a>))</div><div class="ttc" id="group___r_c_c___system___clock___source_html_gabeae110e41833842f8620647ea0ce85a"><div class="ttname"><a href="group___r_c_c___system___clock___source.html#gabeae110e41833842f8620647ea0ce85a">RCC_SYSCLKSource_HSE</a></div><div class="ttdeci">#define RCC_SYSCLKSource_HSE</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__rcc_8h_source.html#l00090">stm32f4xx_rcc.h:90</a></div></div>
+<div class="ttc" id="group___r_c_c___system___clock___source_html_ga0f392254e74dd965c48edd5aad148e20"><div class="ttname"><a href="group___r_c_c___system___clock___source.html#ga0f392254e74dd965c48edd5aad148e20">RCC_SYSCLKSource_HSI</a></div><div class="ttdeci">#define RCC_SYSCLKSource_HSI</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__rcc_8h_source.html#l00089">stm32f4xx_rcc.h:89</a></div></div>
+<div class="ttc" id="group___r_c_c___system___clock___source_html_ga9301b7a07a7cb8c2c6ed87b619c1c966"><div class="ttname"><a href="group___r_c_c___system___clock___source.html#ga9301b7a07a7cb8c2c6ed87b619c1c966">RCC_SYSCLKSource_PLLCLK</a></div><div class="ttdeci">#define RCC_SYSCLKSource_PLLCLK</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__rcc_8h_source.html#l00091">stm32f4xx_rcc.h:91</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00092">92</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabeae110e41833842f8620647ea0ce85a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RCC_SYSCLKSource_HSE&#160;&#160;&#160;((uint32_t)0x00000001)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00090">90</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0f392254e74dd965c48edd5aad148e20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RCC_SYSCLKSource_HSI&#160;&#160;&#160;((uint32_t)0x00000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00089">89</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga9301b7a07a7cb8c2c6ed87b619c1c966"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RCC_SYSCLKSource_PLLCLK&#160;&#160;&#160;((uint32_t)0x00000002)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="stm32f4xx__rcc_8h_source.html#l00091">91</a> of file <a class="el" href="stm32f4xx__rcc_8h_source.html">stm32f4xx_rcc.h</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

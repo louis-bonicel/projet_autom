@@ -18,14 +18,14 @@
 #include "usart.h"
 
 static uint8_t t_USART3_rx_buffer[5];
+static uint8_t t_USART3_tx_buffer[5];
 
 /**
  * @brief Cette fonction configure les GPIOs utilises pour l'USART et
- * le peripherique USART3.
+ * le peripherique USART3. Elle configure aussi le DMA
  *
  * @details TX -> PD8, USART 3
  * @details RX -> PD9, USART 3
- * @param rx_buffer Buffer pour la reception DMA
  */
 void USART3_Config( void )
 {
@@ -81,7 +81,7 @@ void USART3_Config( void )
 
 	DMA_InitStructure.DMA_PeripheralBaseAddr	= (uint32_t)0x40004804;
 	DMA_InitStructure.DMA_PeripheralDataSize	= DMA_PeripheralDataSize_Byte;
-	DMA_InitStructure.DMA_BufferSize			= (uint16_t)5;
+	DMA_InitStructure.DMA_BufferSize			= 5;
 	DMA_InitStructure.DMA_Memory0BaseAddr		= (uint32_t)t_USART3_rx_buffer;
 	DMA_InitStructure.DMA_MemoryInc				= DMA_MemoryInc_Enable;
 	DMA_InitStructure.DMA_PeripheralInc			= DMA_PeripheralInc_Disable;
@@ -96,6 +96,29 @@ void USART3_Config( void )
 
 	DMA_Cmd( DMA1_Stream1 , ENABLE );
 
+
+	DMA_DeInit( DMA1_Stream3 );
+	DMA_StructInit( &DMA_InitStructure );
+
+	DMA_InitStructure.DMA_Channel				= DMA_Channel_4;
+	DMA_InitStructure.DMA_PeripheralBaseAddr	= (uint32_t)0x40004804;
+	DMA_InitStructure.DMA_PeripheralDataSize	= DMA_PeripheralDataSize_Byte;
+	DMA_InitStructure.DMA_Memory0BaseAddr		= (uint32_t)t_USART3_tx_buffer;
+	DMA_InitStructure.DMA_MemoryDataSize		= DMA_MemoryDataSize_Byte;
+	DMA_InitStructure.DMA_BufferSize			= 5;
+	DMA_InitStructure.DMA_DIR					= DMA_DIR_MemoryToPeripheral;
+	DMA_InitStructure.DMA_MemoryInc				= DMA_MemoryInc_Enable;
+	DMA_InitStructure.DMA_PeripheralInc			= DMA_PeripheralInc_Disable;
+	DMA_InitStructure.DMA_Mode					= DMA_Mode_Normal;
+	DMA_InitStructure.DMA_MemoryBurst			= DMA_MemoryBurst_Single;
+	DMA_InitStructure.DMA_PeripheralBurst		= DMA_PeripheralBurst_Single;
+	DMA_InitStructure.DMA_Priority				= DMA_Priority_High;
+	DMA_Init( DMA1_Stream3 , &DMA_InitStructure );
+
+	USART_DMACmd( USART3 , USART_DMAReq_Tx , ENABLE );
+	DMA_Cmd( DMA1_Stream3 , ENABLE );
+
+
 	// Et on demarre l'USART
 	USART_Cmd( USART3 , ENABLE );
 
@@ -106,9 +129,22 @@ void USART3_Config( void )
 	NVIC_Init( &NVIC_InitStructure );
 
 	DMA_ITConfig( DMA1_Stream1 , DMA_IT_TC , ENABLE );
+
+	NVIC_InitStructure.NVIC_IRQChannel						= DMA1_Stream3_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 3;
+	NVIC_Init( &NVIC_InitStructure );
+
+	DMA_ITConfig( DMA1_Stream3 , DMA_IT_TC , ENABLE );
 }
 
 
+/**
+ * @brief Quand 5 octets sont recus, ils sont traites comme consigne
+ *  cette fonction met a jout la consigne avec le buffer de reception UART gere en DMA.
+ * @param consigne
+ */
 void UpdateReceivedConsigne( t_ConsigneReceived * consigne )
 {
 	uint8_t received_mode = t_USART3_rx_buffer[MODE_OFFSET] >> 4;
@@ -132,10 +168,12 @@ void UpdateReceivedConsigne( t_ConsigneReceived * consigne )
 }
 
 
+/**
+ * @brief Envoie des donnees formattee pour le python (5bytes)
+ * @param data
+ */
 void SendData( t_Data data )
 {
-	uint8_t to_send[5];
-
 	uint8_t signe = 0;
 	uint16_t speed_tachy_to_send = 0;
 	uint16_t speed_encoder_to_send = 0;
@@ -163,24 +201,28 @@ void SendData( t_Data data )
 	}
 
 	uint16_t buffer = 0;
-	to_send[ SIGNE_OFFSET ] = signe;
+	t_USART3_tx_buffer[ SIGNE_OFFSET ] = signe;
 
 	buffer = speed_tachy_to_send >> 6;
 	buffer |= 0b00000001;
-	to_send[ START_OFFSET ] = (uint8_t)buffer & 0x00FF;
+	t_USART3_tx_buffer[ START_OFFSET ] = (uint8_t)buffer & 0x00FF;
 
 	buffer = speed_tachy_to_send << 1;
 	buffer |= 0b00000001;
-	to_send[ START_OFFSET + 1 ] = (uint8_t)buffer & 0x00FF;
+	t_USART3_tx_buffer[ START_OFFSET + 1 ] = (uint8_t)buffer & 0x00FF;
 
 
 	buffer = speed_encoder_to_send >> 6;
 	buffer |= 0b00000001;
-	to_send[ END_OFFSET ] = (uint8_t)buffer & 0x00FF;
+	t_USART3_tx_buffer[ END_OFFSET ] = (uint8_t)buffer & 0x00FF;
 
 	buffer = speed_encoder_to_send << 1;
 	buffer |= 0b00000001;
-	to_send[ END_OFFSET + 1 ] = (uint8_t)buffer & 0x00FF;
+	t_USART3_tx_buffer[ END_OFFSET + 1 ] = (uint8_t)buffer & 0x00FF;
 
-	my_printf( &to_send[0] );
+
+	flag.UARTTXReady = 0;
+
+	DMA_Cmd( DMA1_Stream3 , ENABLE );
+	USART_DMACmd( USART3 , USART_DMAReq_Tx , ENABLE );
 }

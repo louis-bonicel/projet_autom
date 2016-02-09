@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,9 +71,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,8 +108,7 @@ $(document).ready(function(){initNavTree('struct_s_y_s_c_f_g___type_def.html',''
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_s_y_s_c_f_g___type_def-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">SYSCFG_TypeDef Struct Reference<div class="ingroups"><a class="el" href="group___c_m_s_i_s.html">CMSIS</a> &raquo; <a class="el" href="group__stm32f4xx.html">Stm32f4xx</a> &raquo; <a class="el" href="group___peripheral__registers__structures.html">Peripheral_registers_structures</a></div></div>  </div>
 </div><!--header-->
@@ -119,83 +120,95 @@ $(document).ready(function(){initNavTree('struct_s_y_s_c_f_g___type_def.html',''
 <p><code>#include &lt;<a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a85b9d3df2274b730327b181c402a7bf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#a85b9d3df2274b730327b181c402a7bf5">MEMRMP</a></td></tr>
-<tr class="separator:a85b9d3df2274b730327b181c402a7bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5c47c570566cb8ff9d0436c17cc9241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#ab5c47c570566cb8ff9d0436c17cc9241">PMC</a></td></tr>
-<tr class="separator:ab5c47c570566cb8ff9d0436c17cc9241"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66a06b3aab7ff5c8fa342f7c1994bf7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#a66a06b3aab7ff5c8fa342f7c1994bf7d">EXTICR</a> [4]</td></tr>
-<tr class="separator:a66a06b3aab7ff5c8fa342f7c1994bf7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43926e6d31a976a0018b2d1f5c92645d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#a43926e6d31a976a0018b2d1f5c92645d">RESERVED</a> [2]</td></tr>
-<tr class="separator:a43926e6d31a976a0018b2d1f5c92645d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada13497abc6402300570ff5f430a612e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#ada13497abc6402300570ff5f430a612e">CMPCR</a></td></tr>
-<tr class="separator:ada13497abc6402300570ff5f430a612e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:ab36c409d0a009e3ce5a89ac55d3ff194"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#ab36c409d0a009e3ce5a89ac55d3ff194">MEMRMP</a></td></tr>
+<tr class="separator:ab36c409d0a009e3ce5a89ac55d3ff194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2130abf1fefb63ce4c4b138fd8c9822a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#a2130abf1fefb63ce4c4b138fd8c9822a">PMC</a></td></tr>
+<tr class="separator:a2130abf1fefb63ce4c4b138fd8c9822a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f7bf8003ba69d66a4e86dea6eeab65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#a52f7bf8003ba69d66a4e86dea6eeab65">EXTICR</a> [4]</td></tr>
+<tr class="separator:a52f7bf8003ba69d66a4e86dea6eeab65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf27b66c1edc60064db3fa6e693fb59"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#afaf27b66c1edc60064db3fa6e693fb59">RESERVED</a> [2]</td></tr>
+<tr class="separator:afaf27b66c1edc60064db3fa6e693fb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ddbac546fa9928256654d31255c8c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_y_s_c_f_g___type_def.html#a08ddbac546fa9928256654d31255c8c3">CMPCR</a></td></tr>
+<tr class="separator:a08ddbac546fa9928256654d31255c8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>System configuration controller. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ada13497abc6402300570ff5f430a612e"></a>
+
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00667">667</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="a08ddbac546fa9928256654d31255c8c3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t SYSCFG_TypeDef::CMPCR</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t CMPCR</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>SYSCFG Compensation cell control register, Address offset: 0x20 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00673">673</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a66a06b3aab7ff5c8fa342f7c1994bf7d"></a>
+<a class="anchor" id="a52f7bf8003ba69d66a4e86dea6eeab65"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t SYSCFG_TypeDef::EXTICR[4]</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t EXTICR[4]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>SYSCFG external interrupt configuration registers, Address offset: 0x08-0x14 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00671">671</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a85b9d3df2274b730327b181c402a7bf5"></a>
+<a class="anchor" id="ab36c409d0a009e3ce5a89ac55d3ff194"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t SYSCFG_TypeDef::MEMRMP</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t MEMRMP</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>SYSCFG memory remap register, Address offset: 0x00 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00669">669</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ab5c47c570566cb8ff9d0436c17cc9241"></a>
+<a class="anchor" id="a2130abf1fefb63ce4c4b138fd8c9822a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t SYSCFG_TypeDef::PMC</td>
+          <td class="memname"><a class="el" href="core__cm4_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t PMC</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>SYSCFG peripheral mode configuration register, Address offset: 0x04 </p>
 
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00670">670</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a43926e6d31a976a0018b2d1f5c92645d"></a>
+<a class="anchor" id="afaf27b66c1edc60064db3fa6e693fb59"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t SYSCFG_TypeDef::RESERVED[2]</td>
+          <td class="memname">uint32_t RESERVED[2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Reserved, 0x18-0x1C </p>
+
+<p>Definition at line <a class="el" href="stm32f4xx_8h_source.html#l00672">672</a> of file <a class="el" href="stm32f4xx_8h_source.html">stm32f4xx.h</a>.</p>
 
 </div>
 </div>

@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,9 +71,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,8 +108,7 @@ $(document).ready(function(){initNavTree('union_c_o_n_t_r_o_l___type.html','');}
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="union_c_o_n_t_r_o_l___type-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">CONTROL_Type Union Reference<div class="ingroups"><a class="el" href="group___c_m_s_i_s__core__register.html">Defines and Type Definitions</a> &raquo; <a class="el" href="group___c_m_s_i_s___c_o_r_e.html">Status and Control Registers</a></div></div>  </div>
 </div><!--header-->
@@ -119,43 +120,47 @@ $(document).ready(function(){initNavTree('union_c_o_n_t_r_o_l___type.html','');}
 <p><code>#include &lt;<a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:adc6a38ab2980d0e9577b5a871da14eb9"><td class="memItemLeft" >struct {</td></tr>
-<tr class="memitem:a666f4d16841194dd2ffb38cd9c1ff021"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#a35c1732cf153b7b5c4bd321cf1de9605">nPRIV</a>:1</td></tr>
-<tr class="separator:a666f4d16841194dd2ffb38cd9c1ff021"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae452742bb12b77c4cae20418495334f1"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#a8cc085fea1c50a8bd9adea63931ee8e2">SPSEL</a>:1</td></tr>
-<tr class="separator:ae452742bb12b77c4cae20418495334f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63fd27005fb7c3828f9f145a4fccf9a8"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#ac62cfff08e6f055e0101785bad7094cd">FPCA</a>:1</td></tr>
-<tr class="separator:a63fd27005fb7c3828f9f145a4fccf9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada408fafd29cbe29e0c71ef479bd7564"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#af8c314273a1e4970a5671bd7f8184f50">_reserved0</a>:29</td></tr>
-<tr class="separator:ada408fafd29cbe29e0c71ef479bd7564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc6a38ab2980d0e9577b5a871da14eb9"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_c_o_n_t_r_o_l___type.html#adc6a38ab2980d0e9577b5a871da14eb9">b</a></td></tr>
-<tr class="separator:adc6a38ab2980d0e9577b5a871da14eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b642cca3d96da660b1198c133ca2a1f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_c_o_n_t_r_o_l___type.html#a6b642cca3d96da660b1198c133ca2a1f">w</a></td></tr>
-<tr class="separator:a6b642cca3d96da660b1198c133ca2a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:ab2a41711c248a319c2e7d0ab73c3a8b9"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:a2a6e513e8a6bf4e58db169e312172332"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#a2a6e513e8a6bf4e58db169e312172332">nPRIV</a>:1</td></tr>
+<tr class="separator:a2a6e513e8a6bf4e58db169e312172332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae185aac93686ffc78e998a9daf41415b"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#ae185aac93686ffc78e998a9daf41415b">SPSEL</a>:1</td></tr>
+<tr class="separator:ae185aac93686ffc78e998a9daf41415b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2518558c090f60161ba4e718a54ee468"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#a2518558c090f60161ba4e718a54ee468">FPCA</a>:1</td></tr>
+<tr class="separator:a2518558c090f60161ba4e718a54ee468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a6a13838a897c8d0b8bc991bbaf7c1"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="union_c_o_n_t_r_o_l___type.html#ac8a6a13838a897c8d0b8bc991bbaf7c1">_reserved0</a>:29</td></tr>
+<tr class="separator:ac8a6a13838a897c8d0b8bc991bbaf7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a41711c248a319c2e7d0ab73c3a8b9"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_c_o_n_t_r_o_l___type.html#ab2a41711c248a319c2e7d0ab73c3a8b9">b</a></td></tr>
+<tr class="separator:ab2a41711c248a319c2e7d0ab73c3a8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0fb62e7a08e70fc5e0a76b67809f84b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_c_o_n_t_r_o_l___type.html#ad0fb62e7a08e70fc5e0a76b67809f84b">w</a></td></tr>
+<tr class="separator:ad0fb62e7a08e70fc5e0a76b67809f84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Union type to access the Control Registers (CONTROL). </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="af8c314273a1e4970a5671bd7f8184f50"></a>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00298">298</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="ac8a6a13838a897c8d0b8bc991bbaf7c1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t CONTROL_Type::_reserved0</td>
+          <td class="memname">uint32_t _reserved0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>bit: 3..31 Reserved </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00305">305</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="adc6a38ab2980d0e9577b5a871da14eb9"></a>
+<a class="anchor" id="ab2a41711c248a319c2e7d0ab73c3a8b9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct { ... }   CONTROL_Type::b</td>
+          <td class="memname">struct { ... }   b</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -163,55 +168,63 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac62cfff08e6f055e0101785bad7094cd"></a>
+<a class="anchor" id="a2518558c090f60161ba4e718a54ee468"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t CONTROL_Type::FPCA</td>
+          <td class="memname">uint32_t FPCA</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>bit: 2 FP extension active flag </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00304">304</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a35c1732cf153b7b5c4bd321cf1de9605"></a>
+<a class="anchor" id="a2a6e513e8a6bf4e58db169e312172332"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t CONTROL_Type::nPRIV</td>
+          <td class="memname">uint32_t nPRIV</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>bit: 0 Execution privilege in Thread mode </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00302">302</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a8cc085fea1c50a8bd9adea63931ee8e2"></a>
+<a class="anchor" id="ae185aac93686ffc78e998a9daf41415b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t CONTROL_Type::SPSEL</td>
+          <td class="memname">uint32_t SPSEL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>bit: 1 Stack to be used </p>
 
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00303">303</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a6b642cca3d96da660b1198c133ca2a1f"></a>
+<a class="anchor" id="ad0fb62e7a08e70fc5e0a76b67809f84b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t CONTROL_Type::w</td>
+          <td class="memname">uint32_t w</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Type used for word access </p>
+
+<p>Definition at line <a class="el" href="core__cm4_8h_source.html#l00307">307</a> of file <a class="el" href="core__cm4_8h_source.html">core_cm4.h</a>.</p>
 
 </div>
 </div>

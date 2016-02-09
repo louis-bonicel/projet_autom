@@ -48,7 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,7 +106,8 @@ $(document).ready(function(){initNavTree('_d_a_c_8c.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">C:/CooCox/CoIDE/workspace/projet_autom/DAC.c File Reference</div>  </div>
 </div><!--header-->
@@ -113,16 +115,30 @@ $(document).ready(function(){initNavTree('_d_a_c_8c.html','');});
 
 <p>Implementation des fonctions pour la configuration du DAC.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;stm32f4xx_conf.h&quot;</code><br />
-</div><table class="memberdecls">
+<div class="textblock"><code>#include &quot;<a class="el" href="stm32f4xx__conf_8h_source.html">stm32f4xx_conf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usart_8h_source.html">usart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_d_a_c_8h_source.html">DAC.h</a>&quot;</code><br />
+</div>
+<p><a href="_d_a_c_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1c4fcf5b7727573c3b30e5b95e61cdcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_a_c_8c.html#a1c4fcf5b7727573c3b30e5b95e61cdcc">DAC_Config</a> (void)</td></tr>
 <tr class="memdesc:a1c4fcf5b7727573c3b30e5b95e61cdcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure les sorties DAC pour controler le moteur. Ce sont les ports dac_n et dac_p.  <a href="#a1c4fcf5b7727573c3b30e5b95e61cdcc">More...</a><br /></td></tr>
 <tr class="separator:a1c4fcf5b7727573c3b30e5b95e61cdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae52255c535a22134f4a645458fbc5ddb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_a_c_8c.html#ae52255c535a22134f4a645458fbc5ddb">DAC_SetValues</a> (uint16_t dac_p, uint16_t dac_n)</td></tr>
-<tr class="memdesc:ae52255c535a22134f4a645458fbc5ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met a jour les valeurs du DAC controlant le moteur.  <a href="#ae52255c535a22134f4a645458fbc5ddb">More...</a><br /></td></tr>
-<tr class="separator:ae52255c535a22134f4a645458fbc5ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df6f1c37ae773f0ed35d3ed94d9eb68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_a_c_8c.html#a7df6f1c37ae773f0ed35d3ed94d9eb68">UpdateConsigneDAC</a> (int16_t *consigne_rpm)</td></tr>
+<tr class="memdesc:a7df6f1c37ae773f0ed35d3ed94d9eb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met a jour le dac pour la consigne en tours/minute demandee.  <a href="#a7df6f1c37ae773f0ed35d3ed94d9eb68">More...</a><br /></td></tr>
+<tr class="separator:a7df6f1c37ae773f0ed35d3ed94d9eb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c70ae8df17f1202fe87dab64970346"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_a_c_8c.html#ad4c70ae8df17f1202fe87dab64970346">RPMToDAC</a> (int16_t *consigne)</td></tr>
+<tr class="memdesc:ad4c70ae8df17f1202fe87dab64970346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converti une valeur en tours/minute vers dac_p dac_n.  <a href="#ad4c70ae8df17f1202fe87dab64970346">More...</a><br /></td></tr>
+<tr class="separator:ad4c70ae8df17f1202fe87dab64970346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a421d0f0113de0da2a3860f310c87652b"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_a_c_8c.html#a421d0f0113de0da2a3860f310c87652b">dac_p</a> = 0</td></tr>
+<tr class="separator:a421d0f0113de0da2a3860f310c87652b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3688ec9aa7d63bb90c5f4cef03d7d0c"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_a_c_8c.html#aa3688ec9aa7d63bb90c5f4cef03d7d0c">dac_n</a> = 0</td></tr>
+<tr class="separator:aa3688ec9aa7d63bb90c5f4cef03d7d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation des fonctions pour la configuration du DAC. </p>
@@ -133,6 +149,8 @@ Florian Boyer </dd>
 Victor Marnas</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 Janvier 2016</dd></dl>
 <p>Ce fichier regroupe les implementations des differentes fonctions qui seront necessaires pour ecrire une valeur sur le DAC du STM. </p>
+
+<p>Definition in file <a class="el" href="_d_a_c_8c_source.html">DAC.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a1c4fcf5b7727573c3b30e5b95e61cdcc"></a>
 <div class="memitem">
@@ -149,43 +167,91 @@ Victor Marnas</dd></dl>
 </div><div class="memdoc">
 
 <p>Configure les sorties DAC pour controler le moteur. Ce sont les ports dac_n et dac_p. </p>
-<p>dac_n -&gt; PA5 DAC1</p>
-<p>dac_p -&gt; PA4 DAC2 </p>
+<p>dac_n -&gt; PA5 DAC2</p>
+<p>dac_p -&gt; PA4 DAC1 </p>
+
+<p>Definition at line <a class="el" href="_d_a_c_8c_source.html#l00029">29</a> of file <a class="el" href="_d_a_c_8c_source.html">DAC.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae52255c535a22134f4a645458fbc5ddb"></a>
+<a class="anchor" id="ad4c70ae8df17f1202fe87dab64970346"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DAC_SetValues </td>
+          <td class="memname">void RPMToDAC </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>dac_p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">int16_t *&#160;</td>
+          <td class="paramname"><em>consigne</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>dac_n</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Met a jour les valeurs du DAC controlant le moteur. </p>
+<p>Converti une valeur en tours/minute vers dac_p dac_n. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dac_p</td><td>La valeur a ecrire sur le port dac_p. </td></tr>
-    <tr><td class="paramname">dac_n</td><td>La valeur a ecrire sur le port dac_n. </td></tr>
+    <tr><td class="paramname">consigne</td><td>La consigne en tours/minute </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="_d_a_c_8c_source.html#l00123">123</a> of file <a class="el" href="_d_a_c_8c_source.html">DAC.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7df6f1c37ae773f0ed35d3ed94d9eb68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UpdateConsigneDAC </td>
+          <td>(</td>
+          <td class="paramtype">int16_t *&#160;</td>
+          <td class="paramname"><em>consigne_rpm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met a jour le dac pour la consigne en tours/minute demandee. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">consigne_rpm</td><td>La consigne en tours/minute demandee </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_d_a_c_8c_source.html#l00109">109</a> of file <a class="el" href="_d_a_c_8c_source.html">DAC.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="aa3688ec9aa7d63bb90c5f4cef03d7d0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t dac_n = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_a_c_8c_source.html#l00021">21</a> of file <a class="el" href="_d_a_c_8c_source.html">DAC.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a421d0f0113de0da2a3860f310c87652b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t dac_p = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_a_c_8c_source.html#l00020">20</a> of file <a class="el" href="_d_a_c_8c_source.html">DAC.c</a>.</p>
 
 </div>
 </div>
