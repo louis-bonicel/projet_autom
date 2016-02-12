@@ -19,7 +19,8 @@
  * @var Le rapport entre la vitesse de rotation du moteur et la consigne donnee.
  * @todo a determiner sur maquette
  */
-static const float K_RPM_TO_CONSIGNE = 0.4489154;
+/// static const float K_RPM_TO_CONSIGNE = 0.4489154;
+static const float K_RPM_TO_CONSIGNE = 0.67;
 
 /**
 * @var static const uint8_t RESOLUTION
@@ -30,4 +31,4 @@ static const uint8_t RESOLUTION = 12;
 
 void DAC_Config ( void );
 void UpdateConsigneDAC( int16_t * consigne_rpm );
-void RPMToDAC( int16_t * consigne );
+void RPMToDAC( int16_t * consigne , uint16_t * dac_p , uint16_t * dac_n );

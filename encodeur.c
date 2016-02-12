@@ -15,8 +15,8 @@ void Encodeur_Config ( void )
 	GPIO_InitStructure.GPIO_OType	= GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Speed	= GPIO_Speed_100MHz;
 
-	GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_TIM4);
-	GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_TIM4);
+	GPIO_PinAFConfig( GPIOB , GPIO_PinSource6 , GPIO_AF_TIM4 );
+	GPIO_PinAFConfig( GPIOB , GPIO_PinSource7 , GPIO_AF_TIM4 );
 
 	GPIO_Init( GPIOB , &GPIO_InitStructure );
 }

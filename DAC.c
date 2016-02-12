@@ -17,9 +17,6 @@
 #include "usart.h"
 #include "DAC.h"
 
-volatile uint16_t dac_p = 0;
-volatile uint16_t dac_n = 0;
-
 /**
 * @brief Configure les sorties DAC pour controler le moteur.
 * Ce sont les ports dac_n et dac_p.
@@ -71,7 +68,10 @@ void DAC_Config ( void )
  */
 void UpdateConsigneDAC( int16_t * consigne_rpm )
 {
-	RPMToDAC( consigne_rpm );
+	uint16_t dac_p = 0;
+	uint16_t dac_n = 0;
+
+	RPMToDAC( consigne_rpm , &dac_p , &dac_n );
 
 	// Met à jour les channel du DAC avec la valeur de dac_p et dac_n
 	DAC_SetChannel1Data( DAC_Align_12b_R , dac_p );
@@ -83,15 +83,15 @@ void UpdateConsigneDAC( int16_t * consigne_rpm )
  * @brief Converti une valeur en tours/minute vers dac_p dac_n
  * @param consigne La consigne en tours/minute
  */
-void RPMToDAC( int16_t * consigne )
+void RPMToDAC( int16_t * consigne , uint16_t * dac_p , uint16_t * dac_n )
 {
-	float consigne_dac = (float) *consigne * K_RPM_TO_CONSIGNE;
+	float consigne_dac = (float) * consigne * K_RPM_TO_CONSIGNE;
 	if (consigne_dac > 4095.0)
 		consigne_dac = 4095.0;
 	if (consigne_dac < -4095.0)
 			consigne_dac = -4095.0;
 
 
-	dac_p = (uint16_t)( 2048.0 + (consigne_dac / 2.0));
-	dac_n = (uint16_t)( 2048.0 - (consigne_dac / 2.0));
+	*dac_p = (uint16_t)( 2048.0 + (consigne_dac / 2.0));
+	*dac_n = (uint16_t)( 2048.0 - (consigne_dac / 2.0));
 }

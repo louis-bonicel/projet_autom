@@ -46,12 +46,29 @@ void UpdateValues( t_Data * data )
 	/**
 	 * @todo Determine best value to return in speed.
 	 */
-	if ( data -> speed_tachy > 1500 )
-		data -> speed = data -> speed_tachy;
-	else
+	if ( ( data -> speed_tachy > 150 ) || ( data -> speed_tachy < -150 ) )
 		data -> speed = ( data -> speed_encoder + data -> speed_tachy ) / 2;
+	else
+		data -> speed = data -> speed_encoder;
 }
 
+
+void Correcteur( int16_t * consigne_output , t_Data * data )
+{
+	static int16_t error_precedente = 0;
+	static int16_t consigne_output_precedente = 0;
+
+	int16_t error = data->consigneReceived - data->speed;
+	*consigne_output =  1.7098826 * error - 1.675685 * error_precedente + consigne_output_precedente;
+
+	if ( *consigne_output > 25000 )
+		*consigne_output = 25000;
+	if ( *consigne_output < -25000 )
+		*consigne_output = -25000;
+
+	error_precedente = error;
+	consigne_output_precedente = *consigne_output;
+}
 
 /**
  * @brief Initialise le TIMER 2 aux parametres definis.

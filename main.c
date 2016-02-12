@@ -30,6 +30,8 @@ void Global_Config ( void );
  */
 t_PID pid;
 t_Data data;
+t_ConsigneReceived consigne;
+int16_t valueToApply;
 
 /**
 * @brief Entree du programme.
@@ -39,7 +41,6 @@ int main ( void )
 {
 	Global_Config();
 
-	t_ConsigneReceived consigne;
 	Consigne_Init( &consigne );
 
 	Data_Init( &data );
@@ -55,33 +56,34 @@ int main ( void )
 		{
 			GPIO_SetBits( GPIOE , GPIO_Pin_11 );
 			UpdateValues( &data );
-			int16_t valueToApply;
 
 			switch( consigne.mode )
 			{
 				case NORMAL:
 					data.consigneReceived = consigne.start_point;
-					PID_Calculate( &pid , &data );
-					UpdateConsigneDAC( &(pid.consigneOut) );
-					// UpdateConsigneDAC( &(data.consigneReceived) );
+					///PID_Calculate( &pid , &data );
+					///UpdateConsigneDAC( &(pid.consigneOut) );
+					Correcteur( &valueToApply , &data );
+					UpdateConsigneDAC( &valueToApply );
 					break;
 
 				case STEP:
 					if ( stepCounter < STEP_HOLD_START )
 					{
 						stepCounter++;
-						UpdateConsigneDAC( &(consigne.start_point) );
+						valueToApply = consigne.start_point;
 					}
 					else
 					{
 						if (stepCounter < STEP_HOLD_START + STEP_HOLD_STOP)
 						{
 							stepCounter++;
-							UpdateConsigneDAC( &(consigne.end_point) );
+							valueToApply = consigne.end_point;
 						}
 						else
-							consigne.mode = NORMAL;
+							stepCounter = 0;
 					}
+					UpdateConsigneDAC( &valueToApply );
 					break;
 
 				case SWEEP:
@@ -94,7 +96,7 @@ int main ( void )
 					}
 					else
 					{
-						consigne.mode = NORMAL;
+						sweepCounter = consigne.start_point;
 					}
 					UpdateConsigneDAC( &(sweepCounter) );
 					break;

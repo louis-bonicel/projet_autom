@@ -2,8 +2,8 @@
 <breakpoints>
 <breakpoint enabled="true" persistant="true" registered="true">
 <resource path="/projet_autom/main.c" type="1"/>
-<marker lineNumber="124" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
-<attrib name="message" value="Line breakpoint: main.c [line: 128]"/>
+<marker lineNumber="67" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+<attrib name="message" value="Line breakpoint: main.c [line: 68]"/>
 <attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
 <attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
 <attrib name="org.eclipse.cdt.debug.core.installCount" value="0"/>
