@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -115,7 +114,7 @@ $(document).ready(function(){initNavTree('usart_8h.html','');});
 
 <p>Declaration des fonctions pour la configuration et l'acces au port USART.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_prj_definitions_8h_source.html">PrjDefinitions.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;PrjDefinitions.h&quot;</code><br />
 </div>
 <p><a href="usart_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -131,33 +130,42 @@ Functions</h2></td></tr>
 <tr class="memdesc:a18cc3ed8f104138f90565d85568a879b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie des donnees formattee pour le python (5bytes)  <a href="#a18cc3ed8f104138f90565d85568a879b">More...</a><br /></td></tr>
 <tr class="separator:a18cc3ed8f104138f90565d85568a879b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9749b09a79ef9329d2bfa6f4de6ae8e2"><td class="memItemLeft" align="right" valign="top">signed int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a9749b09a79ef9329d2bfa6f4de6ae8e2">my_printf</a> (const char *pFormat,...)</td></tr>
+<tr class="memdesc:a9749b09a79ef9329d2bfa6f4de6ae8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a formatted string on the DBGU stream, using a variable number of arguments.  <a href="#a9749b09a79ef9329d2bfa6f4de6ae8e2">More...</a><br /></td></tr>
 <tr class="separator:a9749b09a79ef9329d2bfa6f4de6ae8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3d8166c8fd25437d9b95c6a8c8248e31"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a3d8166c8fd25437d9b95c6a8c8248e31">MODE_OFFSET</a> = 0</td></tr>
-<tr class="memdesc:a3d8166c8fd25437d9b95c6a8c8248e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du mode.  <a href="#a3d8166c8fd25437d9b95c6a8c8248e31">More...</a><br /></td></tr>
+<tr class="memitem:a3d8166c8fd25437d9b95c6a8c8248e31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d8166c8fd25437d9b95c6a8c8248e31"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a3d8166c8fd25437d9b95c6a8c8248e31">MODE_OFFSET</a> = 0</td></tr>
+<tr class="memdesc:a3d8166c8fd25437d9b95c6a8c8248e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du mode. <br /></td></tr>
 <tr class="separator:a3d8166c8fd25437d9b95c6a8c8248e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4fa85bb1afb3d89314dca1f9c2adaef"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#ad4fa85bb1afb3d89314dca1f9c2adaef">SIGNE_OFFSET</a> = 0</td></tr>
-<tr class="memdesc:ad4fa85bb1afb3d89314dca1f9c2adaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du signe.  <a href="#ad4fa85bb1afb3d89314dca1f9c2adaef">More...</a><br /></td></tr>
+<tr class="memitem:ad4fa85bb1afb3d89314dca1f9c2adaef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4fa85bb1afb3d89314dca1f9c2adaef"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#ad4fa85bb1afb3d89314dca1f9c2adaef">SIGNE_OFFSET</a> = 0</td></tr>
+<tr class="memdesc:ad4fa85bb1afb3d89314dca1f9c2adaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du signe. <br /></td></tr>
 <tr class="separator:ad4fa85bb1afb3d89314dca1f9c2adaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7112e6b554c7d8c1ca76e52b516a05fc"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a7112e6b554c7d8c1ca76e52b516a05fc">START_OFFSET</a> = 1</td></tr>
-<tr class="memdesc:a7112e6b554c7d8c1ca76e52b516a05fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du point de depart.  <a href="#a7112e6b554c7d8c1ca76e52b516a05fc">More...</a><br /></td></tr>
+<tr class="memitem:a7112e6b554c7d8c1ca76e52b516a05fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7112e6b554c7d8c1ca76e52b516a05fc"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a7112e6b554c7d8c1ca76e52b516a05fc">START_OFFSET</a> = 1</td></tr>
+<tr class="memdesc:a7112e6b554c7d8c1ca76e52b516a05fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du point de depart. <br /></td></tr>
 <tr class="separator:a7112e6b554c7d8c1ca76e52b516a05fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa78bce2b0ea04133ec9739f4002827be"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#aa78bce2b0ea04133ec9739f4002827be">END_OFFSET</a> = 3</td></tr>
-<tr class="memdesc:aa78bce2b0ea04133ec9739f4002827be"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du point d'arrivee.  <a href="#aa78bce2b0ea04133ec9739f4002827be">More...</a><br /></td></tr>
+<tr class="memitem:aa78bce2b0ea04133ec9739f4002827be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa78bce2b0ea04133ec9739f4002827be"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#aa78bce2b0ea04133ec9739f4002827be">END_OFFSET</a> = 3</td></tr>
+<tr class="memdesc:aa78bce2b0ea04133ec9739f4002827be"><td class="mdescLeft">&#160;</td><td class="mdescRight">OFFSET de reception du point d'arrivee. <br /></td></tr>
 <tr class="separator:aa78bce2b0ea04133ec9739f4002827be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae682e52e8fe2c70209acef65e645353f"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#ae682e52e8fe2c70209acef65e645353f">START_POINT_NEG</a> = 0b0100</td></tr>
-<tr class="memdesc:ae682e52e8fe2c70209acef65e645353f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point de depart est negatif.  <a href="#ae682e52e8fe2c70209acef65e645353f">More...</a><br /></td></tr>
+<tr class="memitem:ae682e52e8fe2c70209acef65e645353f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae682e52e8fe2c70209acef65e645353f"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#ae682e52e8fe2c70209acef65e645353f">START_POINT_NEG</a> = 0b0100</td></tr>
+<tr class="memdesc:ae682e52e8fe2c70209acef65e645353f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point de depart est negatif. <br /></td></tr>
 <tr class="separator:ae682e52e8fe2c70209acef65e645353f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22a761f2f9664f6b800e7ad33eb0da4f"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a22a761f2f9664f6b800e7ad33eb0da4f">END_POINT_NEG</a> = 0b0001</td></tr>
-<tr class="memdesc:a22a761f2f9664f6b800e7ad33eb0da4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point d'arrivee est negatif.  <a href="#a22a761f2f9664f6b800e7ad33eb0da4f">More...</a><br /></td></tr>
+<tr class="memitem:a22a761f2f9664f6b800e7ad33eb0da4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22a761f2f9664f6b800e7ad33eb0da4f"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a22a761f2f9664f6b800e7ad33eb0da4f">END_POINT_NEG</a> = 0b0001</td></tr>
+<tr class="memdesc:a22a761f2f9664f6b800e7ad33eb0da4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point d'arrivee est negatif. <br /></td></tr>
 <tr class="separator:a22a761f2f9664f6b800e7ad33eb0da4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afecd1ecc501031e4364b740ea67f6193"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#afecd1ecc501031e4364b740ea67f6193">START_POINT_POS</a> = 0b1000</td></tr>
-<tr class="memdesc:afecd1ecc501031e4364b740ea67f6193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point de depart est positif.  <a href="#afecd1ecc501031e4364b740ea67f6193">More...</a><br /></td></tr>
+<tr class="memitem:afecd1ecc501031e4364b740ea67f6193"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afecd1ecc501031e4364b740ea67f6193"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#afecd1ecc501031e4364b740ea67f6193">START_POINT_POS</a> = 0b1000</td></tr>
+<tr class="memdesc:afecd1ecc501031e4364b740ea67f6193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point de depart est positif. <br /></td></tr>
 <tr class="separator:afecd1ecc501031e4364b740ea67f6193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18252262f05f0527a5a456f3862ff566"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a18252262f05f0527a5a456f3862ff566">END_POINT_POS</a> = 0b0010</td></tr>
-<tr class="memdesc:a18252262f05f0527a5a456f3862ff566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point d'arrivee est positif.  <a href="#a18252262f05f0527a5a456f3862ff566">More...</a><br /></td></tr>
+<tr class="memitem:a18252262f05f0527a5a456f3862ff566"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18252262f05f0527a5a456f3862ff566"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a18252262f05f0527a5a456f3862ff566">END_POINT_POS</a> = 0b0010</td></tr>
+<tr class="memdesc:a18252262f05f0527a5a456f3862ff566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point d'arrivee est positif. <br /></td></tr>
 <tr class="separator:a18252262f05f0527a5a456f3862ff566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -169,8 +177,6 @@ Florian Boyer </dd>
 Victor Marnas</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 Janvier 2016</dd></dl>
 <p>Ce fichier regroupe les declarations des differentes fonctions qui seront necessaires pour communiquer en utilisant le protocole USART. </p>
-
-<p>Definition in file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a9749b09a79ef9329d2bfa6f4de6ae8e2"></a>
 <div class="memitem">
@@ -196,6 +202,14 @@ Victor Marnas</dd></dl>
       </table>
 </div><div class="memdoc">
 
+<p>Outputs a formatted string on the DBGU stream, using a variable number of arguments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pFormat</td><td>Format string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a18cc3ed8f104138f90565d85568a879b"></a>
@@ -219,8 +233,6 @@ Victor Marnas</dd></dl>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="usart_8c_source.html#l00143">143</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
 
 </div>
 </div>
@@ -246,8 +258,6 @@ Victor Marnas</dd></dl>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="usart_8c_source.html#l00116">116</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a6e8f9ec5b0527c94b24ff6a6ee562a9b"></a>
@@ -267,201 +277,6 @@ Victor Marnas</dd></dl>
 <p>Cette fonction configure les GPIOs utilises pour l'USART et le peripherique USART3. Elle configure aussi le DMA. </p>
 <p>TX -&gt; PD8, USART 3</p>
 <p>RX -&gt; PD9, USART 3 </p>
-
-<p>Definition at line <a class="el" href="usart_8c_source.html#l00029">29</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="aa78bce2b0ea04133ec9739f4002827be"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t END_OFFSET = 3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>OFFSET de reception du point d'arrivee. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00026">26</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a22a761f2f9664f6b800e7ad33eb0da4f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t END_POINT_NEG = 0b0001</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Point d'arrivee est negatif. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00031">31</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a18252262f05f0527a5a456f3862ff566"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t END_POINT_POS = 0b0010</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Point d'arrivee est positif. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00035">35</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3d8166c8fd25437d9b95c6a8c8248e31"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t MODE_OFFSET = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>OFFSET de reception du mode. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00020">20</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad4fa85bb1afb3d89314dca1f9c2adaef"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t SIGNE_OFFSET = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>OFFSET de reception du signe. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00022">22</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7112e6b554c7d8c1ca76e52b516a05fc"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t START_OFFSET = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>OFFSET de reception du point de depart. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00024">24</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae682e52e8fe2c70209acef65e645353f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t START_POINT_NEG = 0b0100</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Point de depart est negatif. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00029">29</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afecd1ecc501031e4364b740ea67f6193"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t START_POINT_POS = 0b1000</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Point de depart est positif. </p>
-
-<p>Definition at line <a class="el" href="usart_8h_source.html#l00033">33</a> of file <a class="el" href="usart_8h_source.html">usart.h</a>.</p>
 
 </div>
 </div>

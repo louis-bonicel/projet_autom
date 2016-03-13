@@ -8,6 +8,5 @@ var group___d_a_c__trigger__selection =
     [ "DAC_Trigger_T5_TRGO", "group___d_a_c__trigger__selection.html#ga35352cebfd1ae8a3d63e374a5d86a85d", null ],
     [ "DAC_Trigger_T6_TRGO", "group___d_a_c__trigger__selection.html#ga083307783678a2f1d3066db57dc84cfe", null ],
     [ "DAC_Trigger_T7_TRGO", "group___d_a_c__trigger__selection.html#ga9b92d497746be54af46ae4e9c1fc4a6f", null ],
-    [ "DAC_Trigger_T8_TRGO", "group___d_a_c__trigger__selection.html#ga756700c6621eadb807e21a16966580a0", null ],
-    [ "IS_DAC_TRIGGER", "group___d_a_c__trigger__selection.html#ga4409b79639e6ae3b1f0ed61a33c810a3", null ]
+    [ "DAC_Trigger_T8_TRGO", "group___d_a_c__trigger__selection.html#ga756700c6621eadb807e21a16966580a0", null ]
 ];

@@ -22,7 +22,5 @@ var group___e_x_t_i___lines =
     [ "EXTI_Line6", "group___e_x_t_i___lines.html#ga97a5145d1d2612dd53bdd9db3d366873", null ],
     [ "EXTI_Line7", "group___e_x_t_i___lines.html#ga3b7155d54a4a98394b599718901ccbe5", null ],
     [ "EXTI_Line8", "group___e_x_t_i___lines.html#gacd51e087a088c3315049394cddf79e88", null ],
-    [ "EXTI_Line9", "group___e_x_t_i___lines.html#ga340ca6bb77b7a2d7747c78e7d3370360", null ],
-    [ "IS_EXTI_LINE", "group___e_x_t_i___lines.html#gaade8b8717a1d78f83d3cf180e2817557", null ],
-    [ "IS_GET_EXTI_LINE", "group___e_x_t_i___lines.html#ga77c85c7b8426c6cfe91b4f5a2c58ecda", null ]
+    [ "EXTI_Line9", "group___e_x_t_i___lines.html#ga340ca6bb77b7a2d7747c78e7d3370360", null ]
 ];

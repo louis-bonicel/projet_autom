@@ -25,10 +25,6 @@
 
 void Global_Config ( void );
 
-/**
- * @var Used for interrupt flag
- */
-t_PID pid;
 t_Data data;
 t_ConsigneReceived consigne;
 int16_t valueToApply;
@@ -42,10 +38,7 @@ int main ( void )
 	Global_Config();
 
 	Consigne_Init( &consigne );
-
 	Data_Init( &data );
-
-	PID_Init( &pid );
 
 	int16_t sweepCounter = 0;
 	uint16_t stepCounter = 0;
@@ -60,9 +53,7 @@ int main ( void )
 			switch( consigne.mode )
 			{
 				case NORMAL:
-					data.consigneReceived = consigne.start_point;
-					///PID_Calculate( &pid , &data );
-					///UpdateConsigneDAC( &(pid.consigneOut) );
+					data.consigne = consigne.start_point;
 					Correcteur( &valueToApply , &data );
 					UpdateConsigneDAC( &valueToApply );
 					break;
@@ -101,10 +92,10 @@ int main ( void )
 					UpdateConsigneDAC( &(sweepCounter) );
 					break;
 
-				case POTARD:
-					valueToApply = ( data.potardValue - 2048 );
-					DAC_SetChannel1Data( DAC_Align_12b_R , 2048 + valueToApply );
-					DAC_SetChannel2Data( DAC_Align_12b_R , 2047 - valueToApply );
+				case EXTERNAL_COMMAND:
+				        data.consigne = data.potardValue;
+                                        Correcteur( &valueToApply , &data );
+                                        UpdateConsigneDAC( &valueToApply );
 					break;
 			}
 
@@ -133,11 +124,10 @@ int main ( void )
 		}
 		while ( flag.button )
 		{
-			PID_Init( &pid );
-			if (consigne.mode == POTARD)
+			if (consigne.mode == EXTERNAL_COMMAND)
 				consigne.mode = NORMAL;
 			else
-				consigne.mode = POTARD;
+				consigne.mode = EXTERNAL_COMMAND;
 			flag.button = 0;
 		}
 	}

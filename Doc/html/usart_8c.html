@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -115,12 +114,10 @@ $(document).ready(function(){initNavTree('usart_8c.html','');});
 
 <p>Configuration et acces au port USART.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="stm32f4xx__conf_8h_source.html">stm32f4xx_conf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_prj_definitions_8h_source.html">PrjDefinitions.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;stm32f4xx_conf.h&quot;</code><br />
+<code>#include &quot;PrjDefinitions.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="usart_8h_source.html">usart.h</a>&quot;</code><br />
-</div>
-<p><a href="usart_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6e8f9ec5b0527c94b24ff6a6ee562a9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8c.html#a6e8f9ec5b0527c94b24ff6a6ee562a9b">USART3_Config</a> (void)</td></tr>
@@ -135,8 +132,12 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a14c26cf2d99161ba5d17be0b1877ed05"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8c.html#a14c26cf2d99161ba5d17be0b1877ed05">t_USART3_rx_buffer</a> [5]</td></tr>
+<tr class="memitem:a14c26cf2d99161ba5d17be0b1877ed05"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a14c26cf2d99161ba5d17be0b1877ed05"></a>
+static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>t_USART3_rx_buffer</b> [5]</td></tr>
 <tr class="separator:a14c26cf2d99161ba5d17be0b1877ed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224087c6f56afbde2deeec083ffff63f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a224087c6f56afbde2deeec083ffff63f"></a>
+static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>t_USART3_tx_buffer</b> [5]</td></tr>
+<tr class="separator:a224087c6f56afbde2deeec083ffff63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Configuration et acces au port USART. </p>
@@ -147,8 +148,6 @@ Florian Boyer </dd>
 Victor Marnas</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 Janvier 2016</dd></dl>
 <p>Ce fichier regroupe l'implementation des differentes fonctions qui seront necessaires pour communiquer en utilisant le protocole USART. </p>
-
-<p>Definition in file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a18cc3ed8f104138f90565d85568a879b"></a>
 <div class="memitem">
@@ -171,8 +170,6 @@ Victor Marnas</dd></dl>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="usart_8c_source.html#l00143">143</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
 
 </div>
 </div>
@@ -198,8 +195,6 @@ Victor Marnas</dd></dl>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="usart_8c_source.html#l00116">116</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a6e8f9ec5b0527c94b24ff6a6ee562a9b"></a>
@@ -219,31 +214,6 @@ Victor Marnas</dd></dl>
 <p>Cette fonction configure les GPIOs utilises pour l'USART et le peripherique USART3. Elle configure aussi le DMA. </p>
 <p>TX -&gt; PD8, USART 3</p>
 <p>RX -&gt; PD9, USART 3 </p>
-
-<p>Definition at line <a class="el" href="usart_8c_source.html#l00029">29</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a14c26cf2d99161ba5d17be0b1877ed05"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t t_USART3_rx_buffer[5]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="usart_8c_source.html#l00020">20</a> of file <a class="el" href="usart_8c_source.html">usart.c</a>.</p>
 
 </div>
 </div>

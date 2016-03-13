@@ -41,7 +41,7 @@ var hierarchy =
     [ "NVIC_Type", "struct_n_v_i_c___type.html", null ],
     [ "PWR_TypeDef", "struct_p_w_r___type_def.html", null ],
     [ "QWidget", null, [
-      [ "MotorController", "class_g_u_i_1_1_motor_controller.html", null ]
+      [ "GUI.MotorController", "class_g_u_i_1_1_motor_controller.html", null ]
     ] ],
     [ "RCC_ClocksTypeDef", "struct_r_c_c___clocks_type_def.html", null ],
     [ "RCC_TypeDef", "struct_r_c_c___type_def.html", null ],
@@ -69,6 +69,6 @@ var hierarchy =
     [ "WWDG_TypeDef", "struct_w_w_d_g___type_def.html", null ],
     [ "xPSR_Type", "unionx_p_s_r___type.html", null ],
     [ "QThread", null, [
-      [ "SerialReader", "class_g_u_i_1_1_serial_reader.html", null ]
+      [ "GUI.SerialReader", "class_g_u_i_1_1_serial_reader.html", null ]
     ] ]
 ];

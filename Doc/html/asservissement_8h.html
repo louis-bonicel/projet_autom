@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -129,14 +128,20 @@ Functions</h2></td></tr>
 <tr class="memitem:a72b74ab893135c61c7de2ad7b108287a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asservissement_8h.html#a72b74ab893135c61c7de2ad7b108287a">UpdateValues</a> (<a class="el" href="structt___data.html">t_Data</a> *data)</td></tr>
 <tr class="memdesc:a72b74ab893135c61c7de2ad7b108287a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mise a jour des valeurs de vitesse avec les dernieres dispo de l'ADC et de l'encodeur.  <a href="#a72b74ab893135c61c7de2ad7b108287a">More...</a><br /></td></tr>
 <tr class="separator:a72b74ab893135c61c7de2ad7b108287a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3495bb3fb04eb705961c75cdb7a94249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asservissement_8h.html#a3495bb3fb04eb705961c75cdb7a94249">Sweep_Consigne</a> (int16_t consigne_min, int16_t consigne_max)</td></tr>
+<tr class="memitem:ac527437b44e8862be1bdafa26aa45718"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac527437b44e8862be1bdafa26aa45718"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Correcteur</b> (int16_t *consigne_output, <a class="el" href="structt___data.html">t_Data</a> *data)</td></tr>
+<tr class="separator:ac527437b44e8862be1bdafa26aa45718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3495bb3fb04eb705961c75cdb7a94249"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3495bb3fb04eb705961c75cdb7a94249"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Sweep_Consigne</b> (int16_t consigne_min, int16_t consigne_max)</td></tr>
 <tr class="separator:a3495bb3fb04eb705961c75cdb7a94249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6bf2c16209f5120359ae40a5589d1012"><td class="memItemLeft" align="right" valign="top">static const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asservissement_8h.html#a6bf2c16209f5120359ae40a5589d1012">STEP_HOLD_START</a> = 100</td></tr>
+<tr class="memitem:a6bf2c16209f5120359ae40a5589d1012"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bf2c16209f5120359ae40a5589d1012"></a>
+static const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>STEP_HOLD_START</b> = 1000</td></tr>
 <tr class="separator:a6bf2c16209f5120359ae40a5589d1012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a946af3f753914ae926bd1409f718bef7"><td class="memItemLeft" align="right" valign="top">static const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asservissement_8h.html#a946af3f753914ae926bd1409f718bef7">STEP_HOLD_STOP</a> = 300</td></tr>
+<tr class="memitem:a946af3f753914ae926bd1409f718bef7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a946af3f753914ae926bd1409f718bef7"></a>
+static const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>STEP_HOLD_STOP</b> = 1000</td></tr>
 <tr class="separator:a946af3f753914ae926bd1409f718bef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -147,48 +152,7 @@ Florian Boyer </dd>
 <dd>
 Victor Marnas</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 Janvier 2016 </dd></dl>
-
-<p>Definition in file <a class="el" href="asservissement_8h_source.html">asservissement.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a3495bb3fb04eb705961c75cdb7a94249"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Sweep_Consigne </td>
-          <td>(</td>
-          <td class="paramtype">int16_t&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Sera tranferee dans le main </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">min</td><td>point de depart du Sweep </td></tr>
-    <tr><td class="paramname">max</td><td>point d'arrivee </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>replace </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>replace </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>replace </dd></dl>
-
-<p>Definition at line <a class="el" href="main_8c_source.html#l00204">204</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a6b18ff928bbae3c6deab0170bdc0885a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -205,8 +169,6 @@ Victor Marnas</dd></dl>
 
 <p>Initialise le TIMER 2 aux parametres definis. </p>
 <p>1kHz avec interruption. </p>
-
-<p>Definition at line <a class="el" href="asservissement_8c_source.html#l00056">56</a> of file <a class="el" href="asservissement_8c_source.html">asservissement.c</a>.</p>
 
 </div>
 </div>
@@ -226,8 +188,6 @@ Victor Marnas</dd></dl>
 
 <p>Initialise le TIMER 3 aux parametres definis. </p>
 <p>10Hz avec interruption. </p>
-
-<p>Definition at line <a class="el" href="asservissement_8c_source.html#l00087">87</a> of file <a class="el" href="asservissement_8c_source.html">asservissement.c</a>.</p>
 
 </div>
 </div>
@@ -252,54 +212,7 @@ Victor Marnas</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Add rotary encoder value, and determine best value to return in speed. </dd></dl>
-
-<p>Definition at line <a class="el" href="asservissement_8c_source.html#l00031">31</a> of file <a class="el" href="asservissement_8c_source.html">asservissement.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a6bf2c16209f5120359ae40a5589d1012"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint16_t STEP_HOLD_START = 100</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="asservissement_8h_source.html#l00017">17</a> of file <a class="el" href="asservissement_8h_source.html">asservissement.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a946af3f753914ae926bd1409f718bef7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint16_t STEP_HOLD_STOP = 300</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="asservissement_8h_source.html#l00018">18</a> of file <a class="el" href="asservissement_8h_source.html">asservissement.h</a>.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Determine best value to return in speed. </dd></dl>
 
 </div>
 </div>

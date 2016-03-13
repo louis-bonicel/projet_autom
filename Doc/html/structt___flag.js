@@ -1,9 +1,10 @@
 var structt___flag =
 [
-    [ "__pad0__", "structt___flag.html#a77132c2c26a75f5b8751b235cda23828", null ],
-    [ "button", "structt___flag.html#a8273db344fd3a2b068599f6cadba12f4", null ],
-    [ "consigneUpdate", "structt___flag.html#adb9797a5cd844616b47e781534113782", null ],
-    [ "mainProcess", "structt___flag.html#a7d96ec51a68775f5039fee640c3947cb", null ],
-    [ "potardUpdate", "structt___flag.html#a7af8bf3bec855673f394e7d1f032c9e4", null ],
-    [ "sendData", "structt___flag.html#aa8c308071fb2d34a26754ec3434dec7b", null ]
+    [ "__pad0__", "structt___flag.html#a6af9a61e90c6c98bb4759316ff6dae4c", null ],
+    [ "button", "structt___flag.html#a74134787569bff6da416752685d9b11f", null ],
+    [ "consigneUpdate", "structt___flag.html#aa91a1e5063f9a82d7a048a39498dd65d", null ],
+    [ "mainProcess", "structt___flag.html#ab21e401dc46ad09a768c4fc15ef524f0", null ],
+    [ "potardUpdate", "structt___flag.html#a7bcf4092548dc350628d22bedff139c7", null ],
+    [ "sendData", "structt___flag.html#a2665a1861db95011d5aa2319ae5b7a91", null ],
+    [ "UARTTXReady", "structt___flag.html#a8837c3b5c947e3bddfa9a27fd3a9d3fc", null ]
 ];

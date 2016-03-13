@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,7 +105,7 @@ $(document).ready(function(){initNavTree('stm32f4xx__dac_8h.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -121,7 +120,7 @@ $(document).ready(function(){initNavTree('stm32f4xx__dac_8h.html','');});
 <p><a href="stm32f4xx__dac_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
+Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_d_a_c___init_type_def.html">DAC_InitTypeDef</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Init structure definition.  <a href="struct_d_a_c___init_type_def.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,15 +145,18 @@ Macros</h2></td></tr>
 <tr class="separator:ga67c15b2c26246a2304f9db28e25adcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadef77bb8bbd109232900902402ef637f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__trigger__selection.html#gadef77bb8bbd109232900902402ef637f">DAC_Trigger_Software</a>&#160;&#160;&#160;((uint32_t)0x0000003C)</td></tr>
 <tr class="separator:gadef77bb8bbd109232900902402ef637f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4409b79639e6ae3b1f0ed61a33c810a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__trigger__selection.html#ga4409b79639e6ae3b1f0ed61a33c810a3">IS_DAC_TRIGGER</a>(TRIGGER)</td></tr>
+<tr class="memitem:ga4409b79639e6ae3b1f0ed61a33c810a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_TRIGGER</b>(TRIGGER)</td></tr>
 <tr class="separator:ga4409b79639e6ae3b1f0ed61a33c810a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaabbcd575d6106267f6b65ce988158f29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__wave__generation.html#gaabbcd575d6106267f6b65ce988158f29">DAC_WaveGeneration_None</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="memitem:gaabbcd575d6106267f6b65ce988158f29"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_WaveGeneration_None</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
 <tr class="separator:gaabbcd575d6106267f6b65ce988158f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1692990325098cae6f32182c1fa0f61e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__wave__generation.html#ga1692990325098cae6f32182c1fa0f61e">DAC_WaveGeneration_Noise</a>&#160;&#160;&#160;((uint32_t)0x00000040)</td></tr>
+<tr class="memitem:ga1692990325098cae6f32182c1fa0f61e"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_WaveGeneration_Noise</b>&#160;&#160;&#160;((uint32_t)0x00000040)</td></tr>
 <tr class="separator:ga1692990325098cae6f32182c1fa0f61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga68f1a71011437a5ea6298ab039554714"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__wave__generation.html#ga68f1a71011437a5ea6298ab039554714">DAC_WaveGeneration_Triangle</a>&#160;&#160;&#160;((uint32_t)0x00000080)</td></tr>
+<tr class="memitem:ga68f1a71011437a5ea6298ab039554714"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_WaveGeneration_Triangle</b>&#160;&#160;&#160;((uint32_t)0x00000080)</td></tr>
 <tr class="separator:ga68f1a71011437a5ea6298ab039554714"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga50fb2dd12305cd7bd0b738a1f6388d3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__wave__generation.html#ga50fb2dd12305cd7bd0b738a1f6388d3c">IS_DAC_GENERATE_WAVE</a>(WAVE)</td></tr>
+<tr class="memitem:ga50fb2dd12305cd7bd0b738a1f6388d3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_GENERATE_WAVE</b>(WAVE)</td></tr>
 <tr class="separator:ga50fb2dd12305cd7bd0b738a1f6388d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga60794fd5092a332cfa82e1cee13945fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__lfsrunmask__triangleamplitude.html#ga60794fd5092a332cfa82e1cee13945fc">DAC_LFSRUnmask_Bit0</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
 <tr class="separator:ga60794fd5092a332cfa82e1cee13945fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,43 +206,57 @@ Macros</h2></td></tr>
 <tr class="separator:gad33d28d7fcc09d84500ea9b6e6c5feed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3ce69f5a63a2464dc4b5f73cb6fe72f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__lfsrunmask__triangleamplitude.html#ga3ce69f5a63a2464dc4b5f73cb6fe72f5">DAC_TriangleAmplitude_4095</a>&#160;&#160;&#160;((uint32_t)0x00000B00)</td></tr>
 <tr class="separator:ga3ce69f5a63a2464dc4b5f73cb6fe72f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga20f7c3c43f917f14593f0c478c2412e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__lfsrunmask__triangleamplitude.html#ga20f7c3c43f917f14593f0c478c2412e1">IS_DAC_LFSR_UNMASK_TRIANGLE_AMPLITUDE</a>(VALUE)</td></tr>
+<tr class="memitem:ga20f7c3c43f917f14593f0c478c2412e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_LFSR_UNMASK_TRIANGLE_AMPLITUDE</b>(VALUE)</td></tr>
 <tr class="separator:ga20f7c3c43f917f14593f0c478c2412e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab3f92803a8b6bc5fb3e4859908b5161f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__output__buffer.html#gab3f92803a8b6bc5fb3e4859908b5161f">DAC_OutputBuffer_Enable</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="memitem:gab3f92803a8b6bc5fb3e4859908b5161f"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_OutputBuffer_Enable</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
 <tr class="separator:gab3f92803a8b6bc5fb3e4859908b5161f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad41f919d7141398cfdedf8218ce64450"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__output__buffer.html#gad41f919d7141398cfdedf8218ce64450">DAC_OutputBuffer_Disable</a>&#160;&#160;&#160;((uint32_t)0x00000002)</td></tr>
+<tr class="memitem:gad41f919d7141398cfdedf8218ce64450"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_OutputBuffer_Disable</b>&#160;&#160;&#160;((uint32_t)0x00000002)</td></tr>
 <tr class="separator:gad41f919d7141398cfdedf8218ce64450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa5a56816d641129fb62d11133c9dcccd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__output__buffer.html#gaa5a56816d641129fb62d11133c9dcccd">IS_DAC_OUTPUT_BUFFER_STATE</a>(STATE)</td></tr>
+<tr class="memitem:gaa5a56816d641129fb62d11133c9dcccd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_OUTPUT_BUFFER_STATE</b>(STATE)</td></tr>
 <tr class="separator:gaa5a56816d641129fb62d11133c9dcccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf6585474ed2a302b69a3725daa91555"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c___channel__selection.html#gacf6585474ed2a302b69a3725daa91555">DAC_Channel_1</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="memitem:gacf6585474ed2a302b69a3725daa91555"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_Channel_1</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
 <tr class="separator:gacf6585474ed2a302b69a3725daa91555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0e9b0096866bb06e8a82b3e4e66943bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c___channel__selection.html#ga0e9b0096866bb06e8a82b3e4e66943bb">DAC_Channel_2</a>&#160;&#160;&#160;((uint32_t)0x00000010)</td></tr>
+<tr class="memitem:ga0e9b0096866bb06e8a82b3e4e66943bb"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_Channel_2</b>&#160;&#160;&#160;((uint32_t)0x00000010)</td></tr>
 <tr class="separator:ga0e9b0096866bb06e8a82b3e4e66943bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafb2b9bdaccb3a5e3396925d7cba02cc3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c___channel__selection.html#gafb2b9bdaccb3a5e3396925d7cba02cc3">IS_DAC_CHANNEL</a>(CHANNEL)</td></tr>
+<tr class="memitem:gafb2b9bdaccb3a5e3396925d7cba02cc3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_CHANNEL</b>(CHANNEL)</td></tr>
 <tr class="separator:gafb2b9bdaccb3a5e3396925d7cba02cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f2a6fc71aaf90a27b0caf1bd06e73f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__data__alignement.html#ga0f2a6fc71aaf90a27b0caf1bd06e73f2">DAC_Align_12b_R</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="memitem:ga0f2a6fc71aaf90a27b0caf1bd06e73f2"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_Align_12b_R</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
 <tr class="separator:ga0f2a6fc71aaf90a27b0caf1bd06e73f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf3a46d37092eac0d4c9c1039e68208d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__data__alignement.html#gaf3a46d37092eac0d4c9c1039e68208d4">DAC_Align_12b_L</a>&#160;&#160;&#160;((uint32_t)0x00000004)</td></tr>
+<tr class="memitem:gaf3a46d37092eac0d4c9c1039e68208d4"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_Align_12b_L</b>&#160;&#160;&#160;((uint32_t)0x00000004)</td></tr>
 <tr class="separator:gaf3a46d37092eac0d4c9c1039e68208d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa633fbcf85e97e12c4894eaed530dd8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__data__alignement.html#gaa633fbcf85e97e12c4894eaed530dd8f">DAC_Align_8b_R</a>&#160;&#160;&#160;((uint32_t)0x00000008)</td></tr>
+<tr class="memitem:gaa633fbcf85e97e12c4894eaed530dd8f"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_Align_8b_R</b>&#160;&#160;&#160;((uint32_t)0x00000008)</td></tr>
 <tr class="separator:gaa633fbcf85e97e12c4894eaed530dd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7779c36606827a6a2c4423414a441bde"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__data__alignement.html#ga7779c36606827a6a2c4423414a441bde">IS_DAC_ALIGN</a>(ALIGN)</td></tr>
+<tr class="memitem:ga7779c36606827a6a2c4423414a441bde"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_ALIGN</b>(ALIGN)</td></tr>
 <tr class="separator:ga7779c36606827a6a2c4423414a441bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09c5ee68f8e726b1c039df1f6e195965"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__wave__generation.html#ga09c5ee68f8e726b1c039df1f6e195965">DAC_Wave_Noise</a>&#160;&#160;&#160;((uint32_t)0x00000040)</td></tr>
+<tr class="memitem:ga09c5ee68f8e726b1c039df1f6e195965"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_Wave_Noise</b>&#160;&#160;&#160;((uint32_t)0x00000040)</td></tr>
 <tr class="separator:ga09c5ee68f8e726b1c039df1f6e195965"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga95a1566e1728e1e345e8f3b50629a075"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__wave__generation.html#ga95a1566e1728e1e345e8f3b50629a075">DAC_Wave_Triangle</a>&#160;&#160;&#160;((uint32_t)0x00000080)</td></tr>
+<tr class="memitem:ga95a1566e1728e1e345e8f3b50629a075"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_Wave_Triangle</b>&#160;&#160;&#160;((uint32_t)0x00000080)</td></tr>
 <tr class="separator:ga95a1566e1728e1e345e8f3b50629a075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga45c25065fb713820f6dbae0009376e1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__wave__generation.html#ga45c25065fb713820f6dbae0009376e1c">IS_DAC_WAVE</a>(WAVE)</td></tr>
+<tr class="memitem:ga45c25065fb713820f6dbae0009376e1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_WAVE</b>(WAVE)</td></tr>
 <tr class="separator:ga45c25065fb713820f6dbae0009376e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga903e28d4971e172b37c1c2fc17c2a884"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__data.html#ga903e28d4971e172b37c1c2fc17c2a884">IS_DAC_DATA</a>(DATA)&#160;&#160;&#160;((DATA) &lt;= 0xFFF0)</td></tr>
+<tr class="memitem:ga903e28d4971e172b37c1c2fc17c2a884"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_DATA</b>(DATA)&#160;&#160;&#160;((DATA) &lt;= 0xFFF0)</td></tr>
 <tr class="separator:ga903e28d4971e172b37c1c2fc17c2a884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga100561d5004f54f09f988ed31a499d44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__interrupts__definition.html#ga100561d5004f54f09f988ed31a499d44">DAC_IT_DMAUDR</a>&#160;&#160;&#160;((uint32_t)0x00002000)</td></tr>
+<tr class="memitem:ga100561d5004f54f09f988ed31a499d44"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_IT_DMAUDR</b>&#160;&#160;&#160;((uint32_t)0x00002000)</td></tr>
 <tr class="separator:ga100561d5004f54f09f988ed31a499d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga274509cac59a8ee23ce3acb12e73e9ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__interrupts__definition.html#ga274509cac59a8ee23ce3acb12e73e9ea">IS_DAC_IT</a>(IT)&#160;&#160;&#160;(((IT) == <a class="el" href="group___d_a_c__interrupts__definition.html#ga100561d5004f54f09f988ed31a499d44">DAC_IT_DMAUDR</a>))</td></tr>
+<tr class="memitem:ga274509cac59a8ee23ce3acb12e73e9ea"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_IT</b>(IT)&#160;&#160;&#160;(((IT) == DAC_IT_DMAUDR))</td></tr>
 <tr class="separator:ga274509cac59a8ee23ce3acb12e73e9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9d216400f8dba560f11077e108346120"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__flags__definition.html#ga9d216400f8dba560f11077e108346120">DAC_FLAG_DMAUDR</a>&#160;&#160;&#160;((uint32_t)0x00002000)</td></tr>
+<tr class="memitem:ga9d216400f8dba560f11077e108346120"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DAC_FLAG_DMAUDR</b>&#160;&#160;&#160;((uint32_t)0x00002000)</td></tr>
 <tr class="separator:ga9d216400f8dba560f11077e108346120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5499552af0e1ad31870315a489ab3ff0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c__flags__definition.html#ga5499552af0e1ad31870315a489ab3ff0">IS_DAC_FLAG</a>(FLAG)&#160;&#160;&#160;(((FLAG) == <a class="el" href="group___d_a_c__flags__definition.html#ga9d216400f8dba560f11077e108346120">DAC_FLAG_DMAUDR</a>))</td></tr>
+<tr class="memitem:ga5499552af0e1ad31870315a489ab3ff0"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DAC_FLAG</b>(FLAG)&#160;&#160;&#160;(((FLAG) == DAC_FLAG_DMAUDR))</td></tr>
 <tr class="separator:ga5499552af0e1ad31870315a489ab3ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -254,16 +270,16 @@ Functions</h2></td></tr>
 <tr class="memitem:gadfc270974d54cb5fa5f92556015c4046"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#gadfc270974d54cb5fa5f92556015c4046">DAC_StructInit</a> (<a class="el" href="struct_d_a_c___init_type_def.html">DAC_InitTypeDef</a> *DAC_InitStruct)</td></tr>
 <tr class="memdesc:gadfc270974d54cb5fa5f92556015c4046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each DAC_InitStruct member with its default value.  <a href="group___d_a_c.html#gadfc270974d54cb5fa5f92556015c4046">More...</a><br /></td></tr>
 <tr class="separator:gadfc270974d54cb5fa5f92556015c4046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga323e61530d7fa9396c3bce9edb61f733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga323e61530d7fa9396c3bce9edb61f733">DAC_Cmd</a> (uint32_t DAC_Channel, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memitem:ga323e61530d7fa9396c3bce9edb61f733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga323e61530d7fa9396c3bce9edb61f733">DAC_Cmd</a> (uint32_t DAC_Channel, FunctionalState NewState)</td></tr>
 <tr class="memdesc:ga323e61530d7fa9396c3bce9edb61f733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified DAC channel.  <a href="group___d_a_c.html#ga323e61530d7fa9396c3bce9edb61f733">More...</a><br /></td></tr>
 <tr class="separator:ga323e61530d7fa9396c3bce9edb61f733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga46f9f7f6b9520a86e300fe966afe5fb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga46f9f7f6b9520a86e300fe966afe5fb3">DAC_SoftwareTriggerCmd</a> (uint32_t DAC_Channel, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memitem:ga46f9f7f6b9520a86e300fe966afe5fb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga46f9f7f6b9520a86e300fe966afe5fb3">DAC_SoftwareTriggerCmd</a> (uint32_t DAC_Channel, FunctionalState NewState)</td></tr>
 <tr class="memdesc:ga46f9f7f6b9520a86e300fe966afe5fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the selected DAC channel software trigger.  <a href="group___d_a_c.html#ga46f9f7f6b9520a86e300fe966afe5fb3">More...</a><br /></td></tr>
 <tr class="separator:ga46f9f7f6b9520a86e300fe966afe5fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab4d3b364a6b184dcd65f3b294ebf56dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#gab4d3b364a6b184dcd65f3b294ebf56dc">DAC_DualSoftwareTriggerCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memitem:gab4d3b364a6b184dcd65f3b294ebf56dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#gab4d3b364a6b184dcd65f3b294ebf56dc">DAC_DualSoftwareTriggerCmd</a> (FunctionalState NewState)</td></tr>
 <tr class="memdesc:gab4d3b364a6b184dcd65f3b294ebf56dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables simultaneously the two DAC channels software triggers.  <a href="group___d_a_c.html#gab4d3b364a6b184dcd65f3b294ebf56dc">More...</a><br /></td></tr>
 <tr class="separator:gab4d3b364a6b184dcd65f3b294ebf56dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabd51ae6880821d4dcd923969ec19a19e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#gabd51ae6880821d4dcd923969ec19a19e">DAC_WaveGenerationCmd</a> (uint32_t DAC_Channel, uint32_t DAC_Wave, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memitem:gabd51ae6880821d4dcd923969ec19a19e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#gabd51ae6880821d4dcd923969ec19a19e">DAC_WaveGenerationCmd</a> (uint32_t DAC_Channel, uint32_t DAC_Wave, FunctionalState NewState)</td></tr>
 <tr class="memdesc:gabd51ae6880821d4dcd923969ec19a19e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the selected DAC channel wave generation.  <a href="group___d_a_c.html#gabd51ae6880821d4dcd923969ec19a19e">More...</a><br /></td></tr>
 <tr class="separator:gabd51ae6880821d4dcd923969ec19a19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad06b4230d2b17d1d13f41dce4c782461"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#gad06b4230d2b17d1d13f41dce4c782461">DAC_SetChannel1Data</a> (uint32_t DAC_Align, uint16_t Data)</td></tr>
@@ -278,19 +294,19 @@ Functions</h2></td></tr>
 <tr class="memitem:ga51274838de1e5dd012a82d7f44d7a50b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga51274838de1e5dd012a82d7f44d7a50b">DAC_GetDataOutputValue</a> (uint32_t DAC_Channel)</td></tr>
 <tr class="memdesc:ga51274838de1e5dd012a82d7f44d7a50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last data output value of the selected DAC channel.  <a href="group___d_a_c.html#ga51274838de1e5dd012a82d7f44d7a50b">More...</a><br /></td></tr>
 <tr class="separator:ga51274838de1e5dd012a82d7f44d7a50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga194cba38f60ace11658824f0250121f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga194cba38f60ace11658824f0250121f4">DAC_DMACmd</a> (uint32_t DAC_Channel, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memitem:ga194cba38f60ace11658824f0250121f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga194cba38f60ace11658824f0250121f4">DAC_DMACmd</a> (uint32_t DAC_Channel, FunctionalState NewState)</td></tr>
 <tr class="memdesc:ga194cba38f60ace11658824f0250121f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified DAC channel DMA request.  <a href="group___d_a_c.html#ga194cba38f60ace11658824f0250121f4">More...</a><br /></td></tr>
 <tr class="separator:ga194cba38f60ace11658824f0250121f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12d7495b30eae40c2570118cabbda1c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga12d7495b30eae40c2570118cabbda1c3">DAC_ITConfig</a> (uint32_t DAC_Channel, uint32_t DAC_IT, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memitem:ga12d7495b30eae40c2570118cabbda1c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga12d7495b30eae40c2570118cabbda1c3">DAC_ITConfig</a> (uint32_t DAC_Channel, uint32_t DAC_IT, FunctionalState NewState)</td></tr>
 <tr class="memdesc:ga12d7495b30eae40c2570118cabbda1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified DAC interrupts.  <a href="group___d_a_c.html#ga12d7495b30eae40c2570118cabbda1c3">More...</a><br /></td></tr>
 <tr class="separator:ga12d7495b30eae40c2570118cabbda1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9ee60b78f0ccd23bfbe54bce2a2f909b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga9ee60b78f0ccd23bfbe54bce2a2f909b">DAC_GetFlagStatus</a> (uint32_t DAC_Channel, uint32_t DAC_FLAG)</td></tr>
+<tr class="memitem:ga9ee60b78f0ccd23bfbe54bce2a2f909b"><td class="memItemLeft" align="right" valign="top">FlagStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga9ee60b78f0ccd23bfbe54bce2a2f909b">DAC_GetFlagStatus</a> (uint32_t DAC_Channel, uint32_t DAC_FLAG)</td></tr>
 <tr class="memdesc:ga9ee60b78f0ccd23bfbe54bce2a2f909b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified DAC flag is set or not.  <a href="group___d_a_c.html#ga9ee60b78f0ccd23bfbe54bce2a2f909b">More...</a><br /></td></tr>
 <tr class="separator:ga9ee60b78f0ccd23bfbe54bce2a2f909b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga49543c52786d70d6b6311f3fee856d37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga49543c52786d70d6b6311f3fee856d37">DAC_ClearFlag</a> (uint32_t DAC_Channel, uint32_t DAC_FLAG)</td></tr>
 <tr class="memdesc:ga49543c52786d70d6b6311f3fee856d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the DAC channel's pending flags.  <a href="group___d_a_c.html#ga49543c52786d70d6b6311f3fee856d37">More...</a><br /></td></tr>
 <tr class="separator:ga49543c52786d70d6b6311f3fee856d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga541aac3b50db3a8a806ec5ef30679aca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#gaacbd7ed539db0aacd973a0f6eca34074">ITStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga541aac3b50db3a8a806ec5ef30679aca">DAC_GetITStatus</a> (uint32_t DAC_Channel, uint32_t DAC_IT)</td></tr>
+<tr class="memitem:ga541aac3b50db3a8a806ec5ef30679aca"><td class="memItemLeft" align="right" valign="top">ITStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga541aac3b50db3a8a806ec5ef30679aca">DAC_GetITStatus</a> (uint32_t DAC_Channel, uint32_t DAC_IT)</td></tr>
 <tr class="memdesc:ga541aac3b50db3a8a806ec5ef30679aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified DAC interrupt has occurred or not.  <a href="group___d_a_c.html#ga541aac3b50db3a8a806ec5ef30679aca">More...</a><br /></td></tr>
 <tr class="separator:ga541aac3b50db3a8a806ec5ef30679aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga12d90e69a2642997136b23224d180641"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_c.html#ga12d90e69a2642997136b23224d180641">DAC_ClearITPendingBit</a> (uint32_t DAC_Channel, uint32_t DAC_IT)</td></tr>
@@ -305,8 +321,6 @@ Functions</h2></td></tr>
 <dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <p>THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.</p>
 <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
-
-<p>Definition in file <a class="el" href="stm32f4xx__dac_8h_source.html">stm32f4xx_dac.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

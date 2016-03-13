@@ -10,7 +10,7 @@ void Data_Init( t_Data * data )
 	data -> speed_encoder			= 0;
 	data -> speed_tachy				= 0;
 	data -> speed					= 0;
-	data -> consigneReceived		= 0;
+	data -> consigne		= 0;
 	data -> potardValue				= 0;
 }
 

@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -114,11 +113,9 @@ $(document).ready(function(){initNavTree('_a_d_c_8c.html','');});
 
 <p>Implementation des fonctions pour la configuration de l'ADC.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="stm32f4xx__conf_8h_source.html">stm32f4xx_conf.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;stm32f4xx_conf.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_a_d_c_8h_source.html">ADC.h</a>&quot;</code><br />
-</div>
-<p><a href="_a_d_c_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a560179c9f943e8caf404c35c282f17c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_8c.html#a560179c9f943e8caf404c35c282f17c4">ADC_Config</a> (void)</td></tr>
@@ -134,8 +131,6 @@ Florian Boyer </dd>
 Victor Marnas</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 Janvier 2016</dd></dl>
 <p>Ce fichier regroupe l'implementation des differentes fonctions qui seront necessaires pour lire une valeur depuis les ADC du STM. </p>
-
-<p>Definition in file <a class="el" href="_a_d_c_8c_source.html">ADC.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a560179c9f943e8caf404c35c282f17c4"></a>
 <div class="memitem">
@@ -154,9 +149,6 @@ Victor Marnas</dd></dl>
 <p>Configure les ADC pour le potentiometre et le tachymetre. </p>
 <p>Potentiometre : adc_consigne -&gt; PB0 ADC1 channel 8</p>
 <p>Tachymetre : adc_tachy -&gt; PA2 ADC1 channel 2 </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Add adc treshold </dd></dl>
-
-<p>Definition at line <a class="el" href="_a_d_c_8c_source.html#l00026">26</a> of file <a class="el" href="_a_d_c_8c_source.html">ADC.c</a>.</p>
 
 </div>
 </div>

@@ -29,7 +29,7 @@ void PID_Calculate( t_PID * pid , t_Data * data )
 	static float consigne_d = 0;
 	float consigne = 0;
 
-	pid -> error = (float) data->consigneReceived - data->speed;
+	pid -> error = (float) data->consigne - data->speed;
 	pid -> sumError += pid -> error;
 
 

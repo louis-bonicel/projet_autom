@@ -1,7 +1,9 @@
 #pragma once
 #include "stm32f4xx.h"
 
-typedef enum { NORMAL = (uint8_t)0b0001 , SWEEP = (uint8_t)0b0010 , STEP = (uint8_t)0b0100 , POTARD = (uint8_t)0b1000 } e_mode;
+static const uint8_t SAMPLING_PERIOD = 1; // Sampling period in ms
+
+typedef enum { NORMAL = (uint8_t)0b0001 , SWEEP = (uint8_t)0b0010 , STEP = (uint8_t)0b0100 , EXTERNAL_COMMAND = (uint8_t)0b1000 } e_mode;
 
 typedef struct{
 	e_mode mode;
@@ -13,7 +15,7 @@ typedef struct{
 	int16_t speed_tachy;
 	int16_t speed_encoder;
 	int16_t speed;
-	int16_t consigneReceived;
+	int16_t consigne;
 	int16_t potardValue;
 }t_Data;
 
@@ -27,6 +29,9 @@ typedef struct{
 	uint16_t 				:10;
 }t_Flag;
 
+/**
+ * @var Used for interrupt flag
+ */
 volatile t_Flag flag;
 
 void Data_Init( t_Data * data );

@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -108,11 +107,13 @@ $(document).ready(function(){initNavTree('group___m_i_s_c___vector___table___bas
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga8be8181cc3e5d42f6204af306ab50f80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c___vector___table___base.html#ga8be8181cc3e5d42f6204af306ab50f80">NVIC_VectTab_RAM</a>&#160;&#160;&#160;((uint32_t)0x20000000)</td></tr>
+<tr class="memitem:ga8be8181cc3e5d42f6204af306ab50f80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8be8181cc3e5d42f6204af306ab50f80"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NVIC_VectTab_RAM</b>&#160;&#160;&#160;((uint32_t)0x20000000)</td></tr>
 <tr class="separator:ga8be8181cc3e5d42f6204af306ab50f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafbf92fd28a1090b2aa49732ebd5704b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c___vector___table___base.html#gafbf92fd28a1090b2aa49732ebd5704b5">NVIC_VectTab_FLASH</a>&#160;&#160;&#160;((uint32_t)0x08000000)</td></tr>
+<tr class="memitem:gafbf92fd28a1090b2aa49732ebd5704b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafbf92fd28a1090b2aa49732ebd5704b5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NVIC_VectTab_FLASH</b>&#160;&#160;&#160;((uint32_t)0x08000000)</td></tr>
 <tr class="separator:gafbf92fd28a1090b2aa49732ebd5704b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga26b9d493ccb98fcce9a27303078940c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c___vector___table___base.html#ga26b9d493ccb98fcce9a27303078940c8">IS_NVIC_VECTTAB</a>(VECTTAB)</td></tr>
+<tr class="memitem:ga26b9d493ccb98fcce9a27303078940c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_NVIC_VECTTAB</b>(VECTTAB)</td></tr>
 <tr class="separator:ga26b9d493ccb98fcce9a27303078940c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -130,39 +131,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(((VECTTAB) == <a class="code" href="group___m_i_s_c___vector___table___base.html#ga8be8181cc3e5d42f6204af306ab50f80">NVIC_VectTab_RAM</a>) || \</div><div class="line">                                  ((VECTTAB) == <a class="code" href="group___m_i_s_c___vector___table___base.html#gafbf92fd28a1090b2aa49732ebd5704b5">NVIC_VectTab_FLASH</a>))</div><div class="ttc" id="group___m_i_s_c___vector___table___base_html_ga8be8181cc3e5d42f6204af306ab50f80"><div class="ttname"><a href="group___m_i_s_c___vector___table___base.html#ga8be8181cc3e5d42f6204af306ab50f80">NVIC_VectTab_RAM</a></div><div class="ttdeci">#define NVIC_VectTab_RAM</div><div class="ttdef"><b>Definition:</b> <a href="misc_8h_source.html#l00080">misc.h:80</a></div></div>
-<div class="ttc" id="group___m_i_s_c___vector___table___base_html_gafbf92fd28a1090b2aa49732ebd5704b5"><div class="ttname"><a href="group___m_i_s_c___vector___table___base.html#gafbf92fd28a1090b2aa49732ebd5704b5">NVIC_VectTab_FLASH</a></div><div class="ttdeci">#define NVIC_VectTab_FLASH</div><div class="ttdef"><b>Definition:</b> <a href="misc_8h_source.html#l00081">misc.h:81</a></div></div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="misc_8h_source.html#l00082">82</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="gafbf92fd28a1090b2aa49732ebd5704b5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NVIC_VectTab_FLASH&#160;&#160;&#160;((uint32_t)0x08000000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="misc_8h_source.html#l00081">81</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga8be8181cc3e5d42f6204af306ab50f80"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NVIC_VectTab_RAM&#160;&#160;&#160;((uint32_t)0x20000000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="misc_8h_source.html#l00080">80</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
+<b>Value:</b><div class="fragment"><div class="line">(((VECTTAB) == NVIC_VectTab_RAM) || \</div><div class="line">                                  ((VECTTAB) == NVIC_VectTab_FLASH))</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

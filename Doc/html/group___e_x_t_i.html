@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -101,7 +100,7 @@ $(document).ready(function(){initNavTree('group___e_x_t_i.html','');});
 <div class="header">
   <div class="summary">
 <a href="#groups">Modules</a> &#124;
-<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -121,31 +120,33 @@ Modules</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
+Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_e_x_t_i___init_type_def.html">EXTI_InitTypeDef</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXTI Init Structure definition.  <a href="struct_e_x_t_i___init_type_def.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga8429170f3320b90227f9f5b252c1c5eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga8429170f3320b90227f9f5b252c1c5eb">IS_EXTI_MODE</a>(MODE)&#160;&#160;&#160;(((MODE) == <a class="el" href="group___e_x_t_i.html#ggad5e69af98dc0dfdf64417adc1cf57929a8c6ccdd7b1bc4872731306537e8c3b42">EXTI_Mode_Interrupt</a>) || ((MODE) == <a class="el" href="group___e_x_t_i.html#ggad5e69af98dc0dfdf64417adc1cf57929aa38ef186929ec74786df79877ea124a7">EXTI_Mode_Event</a>))</td></tr>
+<tr class="memitem:ga8429170f3320b90227f9f5b252c1c5eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8429170f3320b90227f9f5b252c1c5eb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_EXTI_MODE</b>(MODE)&#160;&#160;&#160;(((MODE) == EXTI_Mode_Interrupt) || ((MODE) == EXTI_Mode_Event))</td></tr>
 <tr class="separator:ga8429170f3320b90227f9f5b252c1c5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaee95ec6288944a6245696896604e509e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#gaee95ec6288944a6245696896604e509e">IS_EXTI_TRIGGER</a>(TRIGGER)</td></tr>
+<tr class="memitem:gaee95ec6288944a6245696896604e509e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_EXTI_TRIGGER</b>(TRIGGER)</td></tr>
 <tr class="separator:gaee95ec6288944a6245696896604e509e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4451b67e337fc341394ee695273798af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga4451b67e337fc341394ee695273798af">EXTI_LINENONE</a>&#160;&#160;&#160;((uint32_t)0x00000)  /* No interrupt selected */</td></tr>
+<tr class="memitem:ga4451b67e337fc341394ee695273798af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga4451b67e337fc341394ee695273798af"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXTI_LINENONE</b>&#160;&#160;&#160;((uint32_t)0x00000)  /* No interrupt selected */</td></tr>
 <tr class="separator:ga4451b67e337fc341394ee695273798af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:gad5e69af98dc0dfdf64417adc1cf57929"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#gad5e69af98dc0dfdf64417adc1cf57929">EXTIMode_TypeDef</a> { <a class="el" href="group___e_x_t_i.html#ggad5e69af98dc0dfdf64417adc1cf57929a8c6ccdd7b1bc4872731306537e8c3b42">EXTI_Mode_Interrupt</a> = 0x00, 
-<a class="el" href="group___e_x_t_i.html#ggad5e69af98dc0dfdf64417adc1cf57929aa38ef186929ec74786df79877ea124a7">EXTI_Mode_Event</a> = 0x04
- }<tr class="memdesc:gad5e69af98dc0dfdf64417adc1cf57929"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXTI mode enumeration.  <a href="group___e_x_t_i.html#gad5e69af98dc0dfdf64417adc1cf57929">More...</a><br /></td></tr>
+<tr class="memitem:gad5e69af98dc0dfdf64417adc1cf57929"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad5e69af98dc0dfdf64417adc1cf57929"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#gad5e69af98dc0dfdf64417adc1cf57929">EXTIMode_TypeDef</a> { <b>EXTI_Mode_Interrupt</b> = 0x00, 
+<b>EXTI_Mode_Event</b> = 0x04
+ }<tr class="memdesc:gad5e69af98dc0dfdf64417adc1cf57929"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXTI mode enumeration. <br /></td></tr>
 </td></tr>
 <tr class="separator:gad5e69af98dc0dfdf64417adc1cf57929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9da190f5425d1b421a06bced8cc48e9b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga9da190f5425d1b421a06bced8cc48e9b">EXTITrigger_TypeDef</a> { <a class="el" href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9baaa73605adf491dbe97994612e228af5e">EXTI_Trigger_Rising</a> = 0x08, 
-<a class="el" href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9bac4a21d397aa4648b8f8cf961f71f3ac5">EXTI_Trigger_Falling</a> = 0x0C, 
-<a class="el" href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9bab09db55a2e9118e86d03d69698434ebb">EXTI_Trigger_Rising_Falling</a> = 0x10
- }<tr class="memdesc:ga9da190f5425d1b421a06bced8cc48e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXTI Trigger enumeration.  <a href="group___e_x_t_i.html#ga9da190f5425d1b421a06bced8cc48e9b">More...</a><br /></td></tr>
+<tr class="memitem:ga9da190f5425d1b421a06bced8cc48e9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9da190f5425d1b421a06bced8cc48e9b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga9da190f5425d1b421a06bced8cc48e9b">EXTITrigger_TypeDef</a> { <b>EXTI_Trigger_Rising</b> = 0x08, 
+<b>EXTI_Trigger_Falling</b> = 0x0C, 
+<b>EXTI_Trigger_Rising_Falling</b> = 0x10
+ }<tr class="memdesc:ga9da190f5425d1b421a06bced8cc48e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXTI Trigger enumeration. <br /></td></tr>
 </td></tr>
 <tr class="separator:ga9da190f5425d1b421a06bced8cc48e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -163,13 +164,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ga897e8ea59f40a19e047fb9994876fc9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga897e8ea59f40a19e047fb9994876fc9b">EXTI_GenerateSWInterrupt</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:ga897e8ea59f40a19e047fb9994876fc9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a Software interrupt on selected EXTI line.  <a href="#ga897e8ea59f40a19e047fb9994876fc9b">More...</a><br /></td></tr>
 <tr class="separator:ga897e8ea59f40a19e047fb9994876fc9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0ce06e6b312592df149800d63218cffa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga0ce06e6b312592df149800d63218cffa">EXTI_GetFlagStatus</a> (uint32_t EXTI_Line)</td></tr>
+<tr class="memitem:ga0ce06e6b312592df149800d63218cffa"><td class="memItemLeft" align="right" valign="top">FlagStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga0ce06e6b312592df149800d63218cffa">EXTI_GetFlagStatus</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:ga0ce06e6b312592df149800d63218cffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified EXTI line flag is set or not.  <a href="#ga0ce06e6b312592df149800d63218cffa">More...</a><br /></td></tr>
 <tr class="separator:ga0ce06e6b312592df149800d63218cffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8e07aaaa286dea4803605d5968850a92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga8e07aaaa286dea4803605d5968850a92">EXTI_ClearFlag</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:ga8e07aaaa286dea4803605d5968850a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the EXTI's line pending flags.  <a href="#ga8e07aaaa286dea4803605d5968850a92">More...</a><br /></td></tr>
 <tr class="separator:ga8e07aaaa286dea4803605d5968850a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7b51519062ae42fd27ee689cab364aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#gaacbd7ed539db0aacd973a0f6eca34074">ITStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#gaf7b51519062ae42fd27ee689cab364aa">EXTI_GetITStatus</a> (uint32_t EXTI_Line)</td></tr>
+<tr class="memitem:gaf7b51519062ae42fd27ee689cab364aa"><td class="memItemLeft" align="right" valign="top">ITStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#gaf7b51519062ae42fd27ee689cab364aa">EXTI_GetITStatus</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:gaf7b51519062ae42fd27ee689cab364aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified EXTI line is asserted or not.  <a href="#gaf7b51519062ae42fd27ee689cab364aa">More...</a><br /></td></tr>
 <tr class="separator:gaf7b51519062ae42fd27ee689cab364aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3652a7e682728b310c124e7e974d1468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga3652a7e682728b310c124e7e974d1468">EXTI_ClearITPendingBit</a> (uint32_t EXTI_Line)</td></tr>
@@ -179,38 +180,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>EXTI driver modules. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ga4451b67e337fc341394ee695273798af"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EXTI_LINENONE&#160;&#160;&#160;((uint32_t)0x00000)  /* No interrupt selected */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00075">75</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga8429170f3320b90227f9f5b252c1c5eb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_EXTI_MODE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">MODE</td><td>)</td>
-          <td>&#160;&#160;&#160;(((MODE) == <a class="el" href="group___e_x_t_i.html#ggad5e69af98dc0dfdf64417adc1cf57929a8c6ccdd7b1bc4872731306537e8c3b42">EXTI_Mode_Interrupt</a>) || ((MODE) == <a class="el" href="group___e_x_t_i.html#ggad5e69af98dc0dfdf64417adc1cf57929aa38ef186929ec74786df79877ea124a7">EXTI_Mode_Event</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8h_source.html#l00054">54</a> of file <a class="el" href="stm32f4xx__exti_8h_source.html">stm32f4xx_exti.h</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="gaee95ec6288944a6245696896604e509e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -224,59 +193,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(((TRIGGER) == <a class="code" href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9baaa73605adf491dbe97994612e228af5e">EXTI_Trigger_Rising</a>) || \</div><div class="line">                                  ((TRIGGER) == <a class="code" href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9bac4a21d397aa4648b8f8cf961f71f3ac5">EXTI_Trigger_Falling</a>) || \</div><div class="line">                                  ((TRIGGER) == <a class="code" href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9bab09db55a2e9118e86d03d69698434ebb">EXTI_Trigger_Rising_Falling</a>))</div><div class="ttc" id="group___e_x_t_i_html_gga9da190f5425d1b421a06bced8cc48e9bac4a21d397aa4648b8f8cf961f71f3ac5"><div class="ttname"><a href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9bac4a21d397aa4648b8f8cf961f71f3ac5">EXTI_Trigger_Falling</a></div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__exti_8h_source.html#l00063">stm32f4xx_exti.h:63</a></div></div>
-<div class="ttc" id="group___e_x_t_i_html_gga9da190f5425d1b421a06bced8cc48e9baaa73605adf491dbe97994612e228af5e"><div class="ttname"><a href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9baaa73605adf491dbe97994612e228af5e">EXTI_Trigger_Rising</a></div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__exti_8h_source.html#l00062">stm32f4xx_exti.h:62</a></div></div>
-<div class="ttc" id="group___e_x_t_i_html_gga9da190f5425d1b421a06bced8cc48e9bab09db55a2e9118e86d03d69698434ebb"><div class="ttname"><a href="group___e_x_t_i.html#gga9da190f5425d1b421a06bced8cc48e9bab09db55a2e9118e86d03d69698434ebb">EXTI_Trigger_Rising_Falling</a></div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__exti_8h_source.html#l00064">stm32f4xx_exti.h:64</a></div></div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8h_source.html#l00067">67</a> of file <a class="el" href="stm32f4xx__exti_8h_source.html">stm32f4xx_exti.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="gad5e69af98dc0dfdf64417adc1cf57929"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group___e_x_t_i.html#gad5e69af98dc0dfdf64417adc1cf57929">EXTIMode_TypeDef</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>EXTI mode enumeration. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ggad5e69af98dc0dfdf64417adc1cf57929a8c6ccdd7b1bc4872731306537e8c3b42"></a>EXTI_Mode_Interrupt&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ggad5e69af98dc0dfdf64417adc1cf57929aa38ef186929ec74786df79877ea124a7"></a>EXTI_Mode_Event&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8h_source.html#l00048">48</a> of file <a class="el" href="stm32f4xx__exti_8h_source.html">stm32f4xx_exti.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga9da190f5425d1b421a06bced8cc48e9b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group___e_x_t_i.html#ga9da190f5425d1b421a06bced8cc48e9b">EXTITrigger_TypeDef</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>EXTI Trigger enumeration. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga9da190f5425d1b421a06bced8cc48e9baaa73605adf491dbe97994612e228af5e"></a>EXTI_Trigger_Rising&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="gga9da190f5425d1b421a06bced8cc48e9bac4a21d397aa4648b8f8cf961f71f3ac5"></a>EXTI_Trigger_Falling&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="gga9da190f5425d1b421a06bced8cc48e9bab09db55a2e9118e86d03d69698434ebb"></a>EXTI_Trigger_Rising_Falling&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8h_source.html#l00060">60</a> of file <a class="el" href="stm32f4xx__exti_8h_source.html">stm32f4xx_exti.h</a>.</p>
-
+<b>Value:</b><div class="fragment"><div class="line">(((TRIGGER) == EXTI_Trigger_Rising) || \</div><div class="line">                                  ((TRIGGER) == EXTI_Trigger_Falling) || \</div><div class="line">                                  ((TRIGGER) == EXTI_Trigger_Rising_Falling))</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -308,8 +225,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00243">243</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ga3652a7e682728b310c124e7e974d1468"></a>
@@ -339,8 +254,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00282">282</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
 
 </div>
 </div>
@@ -372,8 +285,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00103">103</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ga897e8ea59f40a19e047fb9994876fc9b"></a>
@@ -404,8 +315,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00190">190</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ga0ce06e6b312592df149800d63218cffa"></a>
@@ -413,7 +322,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a> EXTI_GetFlagStatus </td>
+          <td class="memname">FlagStatus EXTI_GetFlagStatus </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>EXTI_Line</em></td><td>)</td>
@@ -436,8 +345,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00220">220</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="gaf7b51519062ae42fd27ee689cab364aa"></a>
@@ -445,7 +352,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group___exported__types.html#gaacbd7ed539db0aacd973a0f6eca34074">ITStatus</a> EXTI_GetITStatus </td>
+          <td class="memname">ITStatus EXTI_GetITStatus </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>EXTI_Line</em></td><td>)</td>
@@ -467,8 +374,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00257">257</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
 
 </div>
 </div>
@@ -500,8 +405,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00119">119</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ga86b9e662d18a2f829999cfb26aa7ca20"></a>
@@ -531,8 +434,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__exti_8c_source.html#l00175">175</a> of file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
 
 </div>
 </div>

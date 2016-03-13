@@ -1,6 +1,9 @@
 var annotated_dup =
 [
-    [ "GUI", "namespace_g_u_i.html", "namespace_g_u_i" ],
+    [ "GUI", null, [
+      [ "MotorController", "class_g_u_i_1_1_motor_controller.html", "class_g_u_i_1_1_motor_controller" ],
+      [ "SerialReader", "class_g_u_i_1_1_serial_reader.html", "class_g_u_i_1_1_serial_reader" ]
+    ] ],
     [ "ADC_Common_TypeDef", "struct_a_d_c___common___type_def.html", "struct_a_d_c___common___type_def" ],
     [ "ADC_CommonInitTypeDef", "struct_a_d_c___common_init_type_def.html", "struct_a_d_c___common_init_type_def" ],
     [ "ADC_InitTypeDef", "struct_a_d_c___init_type_def.html", "struct_a_d_c___init_type_def" ],

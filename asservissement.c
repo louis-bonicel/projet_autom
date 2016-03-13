@@ -55,18 +55,19 @@ void UpdateValues( t_Data * data )
 
 void Correcteur( int16_t * consigne_output , t_Data * data )
 {
-	static int16_t error_precedente = 0;
+	static int16_t previous_error = 0;
 	static int16_t consigne_output_precedente = 0;
 
-	int16_t error = data->consigneReceived - data->speed;
-	*consigne_output =  1.7098826 * error - 1.675685 * error_precedente + consigne_output_precedente;
+	int16_t error = data->consigne - data->speed;
+	*consigne_output =  COEFF_CORRECTION_1 * error + COEFF_CORRECTION_2 * previous_error + consigne_output_precedente;
+        // *consigne_output =  1.7098826 * error - 1.675685 * previous_error + consigne_output_precedente;
 
-	if ( *consigne_output > 25000 )
-		*consigne_output = 25000;
-	if ( *consigne_output < -25000 )
-		*consigne_output = -25000;
+	if ( *consigne_output > MAX_CONSIGNE )
+		*consigne_output = MAX_CONSIGNE;
+	if ( *consigne_output < -MAX_CONSIGNE )
+		*consigne_output = -MAX_CONSIGNE;
 
-	error_precedente = error;
+	previous_error = error;
 	consigne_output_precedente = *consigne_output;
 }
 
@@ -83,14 +84,14 @@ void TIM2_Init( void )
 	RCC_APB1PeriphClockCmd( RCC_APB1Periph_TIM2 , ENABLE );
 
 	// Enable the TIM2&3 global Interrupt
-	NVIC_InitStructure.NVIC_IRQChannel						= TIM2_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannel		        = TIM2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd			= ENABLE;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority		= 0;
 	NVIC_Init(&NVIC_InitStructure);
 
-	TIM_TimeBaseStructure.TIM_Period		= 1000 - 1; 	// TS in us (1 milli)
-	TIM_TimeBaseStructure.TIM_Prescaler		= 84 - 1; 		// 84 MHz Clock down to 1 MHz
+	TIM_TimeBaseStructure.TIM_Period	= ( SAMPLING_PERIOD * 1000 ) - 1; 	// TS in us (1 milli)
+	TIM_TimeBaseStructure.TIM_Prescaler	= 84 - 1; 		// 84 MHz Clock down to 1 MHz
 	TIM_TimeBaseStructure.TIM_ClockDivision	= 0;
 	TIM_TimeBaseStructure.TIM_CounterMode	= TIM_CounterMode_Up;
 	TIM_TimeBaseInit( TIM2 , &TIM_TimeBaseStructure );

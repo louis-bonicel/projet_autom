@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -116,12 +115,11 @@ $(document).ready(function(){initNavTree('stm32f4xx__exti_8c.html','');});
 <p>This file provides firmware functions to manage the following functionalities of the EXTI peripheral:  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="stm32f4xx__exti_8h_source.html">stm32f4xx_exti.h</a>&quot;</code><br />
-</div>
-<p><a href="stm32f4xx__exti_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga4451b67e337fc341394ee695273798af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i.html#ga4451b67e337fc341394ee695273798af">EXTI_LINENONE</a>&#160;&#160;&#160;((uint32_t)0x00000)  /* No interrupt selected */</td></tr>
+<tr class="memitem:ga4451b67e337fc341394ee695273798af"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>EXTI_LINENONE</b>&#160;&#160;&#160;((uint32_t)0x00000)  /* No interrupt selected */</td></tr>
 <tr class="separator:ga4451b67e337fc341394ee695273798af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -138,13 +136,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ga897e8ea59f40a19e047fb9994876fc9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i___group1.html#ga897e8ea59f40a19e047fb9994876fc9b">EXTI_GenerateSWInterrupt</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:ga897e8ea59f40a19e047fb9994876fc9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a Software interrupt on selected EXTI line.  <a href="group___e_x_t_i___group1.html#ga897e8ea59f40a19e047fb9994876fc9b">More...</a><br /></td></tr>
 <tr class="separator:ga897e8ea59f40a19e047fb9994876fc9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0ce06e6b312592df149800d63218cffa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i___group2.html#ga0ce06e6b312592df149800d63218cffa">EXTI_GetFlagStatus</a> (uint32_t EXTI_Line)</td></tr>
+<tr class="memitem:ga0ce06e6b312592df149800d63218cffa"><td class="memItemLeft" align="right" valign="top">FlagStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i___group2.html#ga0ce06e6b312592df149800d63218cffa">EXTI_GetFlagStatus</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:ga0ce06e6b312592df149800d63218cffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified EXTI line flag is set or not.  <a href="group___e_x_t_i___group2.html#ga0ce06e6b312592df149800d63218cffa">More...</a><br /></td></tr>
 <tr class="separator:ga0ce06e6b312592df149800d63218cffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8e07aaaa286dea4803605d5968850a92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i___group2.html#ga8e07aaaa286dea4803605d5968850a92">EXTI_ClearFlag</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:ga8e07aaaa286dea4803605d5968850a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the EXTI's line pending flags.  <a href="group___e_x_t_i___group2.html#ga8e07aaaa286dea4803605d5968850a92">More...</a><br /></td></tr>
 <tr class="separator:ga8e07aaaa286dea4803605d5968850a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7b51519062ae42fd27ee689cab364aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#gaacbd7ed539db0aacd973a0f6eca34074">ITStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i___group2.html#gaf7b51519062ae42fd27ee689cab364aa">EXTI_GetITStatus</a> (uint32_t EXTI_Line)</td></tr>
+<tr class="memitem:gaf7b51519062ae42fd27ee689cab364aa"><td class="memItemLeft" align="right" valign="top">ITStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i___group2.html#gaf7b51519062ae42fd27ee689cab364aa">EXTI_GetITStatus</a> (uint32_t EXTI_Line)</td></tr>
 <tr class="memdesc:gaf7b51519062ae42fd27ee689cab364aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified EXTI line is asserted or not.  <a href="group___e_x_t_i___group2.html#gaf7b51519062ae42fd27ee689cab364aa">More...</a><br /></td></tr>
 <tr class="separator:gaf7b51519062ae42fd27ee689cab364aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3652a7e682728b310c124e7e974d1468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t_i___group2.html#ga3652a7e682728b310c124e7e974d1468">EXTI_ClearITPendingBit</a> (uint32_t EXTI_Line)</td></tr>
@@ -194,8 +192,6 @@ Functions</h2></td></tr>
 *  </pre><dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <p>THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.</p>
 <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
-
-<p>Definition in file <a class="el" href="stm32f4xx__exti_8c_source.html">stm32f4xx_exti.c</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

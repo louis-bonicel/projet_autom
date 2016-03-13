@@ -3,18 +3,11 @@ var group___d_a_c =
     [ "DAC_Exported_Constants", "group___d_a_c___exported___constants.html", "group___d_a_c___exported___constants" ],
     [ "DAC_Private_Functions", "group___d_a_c___private___functions.html", "group___d_a_c___private___functions" ],
     [ "DAC_InitTypeDef", "struct_d_a_c___init_type_def.html", [
-      [ "DAC_LFSRUnmask_TriangleAmplitude", "struct_d_a_c___init_type_def.html#aff0a3e0149873939ded70bc466c85dc2", null ],
-      [ "DAC_OutputBuffer", "struct_d_a_c___init_type_def.html#a22d062287d8cbba2342585ea7944f61d", null ],
-      [ "DAC_Trigger", "struct_d_a_c___init_type_def.html#ae1edfee233aee962b357cbc3994b330b", null ],
-      [ "DAC_WaveGeneration", "struct_d_a_c___init_type_def.html#a3dfc2e2197154ed20469e57ccff591d3", null ]
+      [ "DAC_LFSRUnmask_TriangleAmplitude", "struct_d_a_c___init_type_def.html#a27ed27a544d50781b20d59cc55e6cef8", null ],
+      [ "DAC_OutputBuffer", "struct_d_a_c___init_type_def.html#ad3e9e01486443e99f19e65a446b03ca6", null ],
+      [ "DAC_Trigger", "struct_d_a_c___init_type_def.html#a7b26ebaeb51a0157a781f7de8ba779e5", null ],
+      [ "DAC_WaveGeneration", "struct_d_a_c___init_type_def.html#a6753e78ddd2dc8273444ba01a272d63a", null ]
     ] ],
-    [ "CR_CLEAR_MASK", "group___d_a_c.html#ga8a5812a1d5ced986bb997a4bb7ae697d", null ],
-    [ "DHR12R1_OFFSET", "group___d_a_c.html#gaf1305e3b7cfb0f898678baeab6e91cbf", null ],
-    [ "DHR12R2_OFFSET", "group___d_a_c.html#ga157b0fbccea090637eea09172fdd6a39", null ],
-    [ "DHR12RD_OFFSET", "group___d_a_c.html#ga2893b0491ec29a95fd061e5e0fa029e3", null ],
-    [ "DOR_OFFSET", "group___d_a_c.html#ga051bab7263211bd232d13665339c1745", null ],
-    [ "DUAL_SWTRIG_RESET", "group___d_a_c.html#gacd3ce00f8b25892532af267f26932ed7", null ],
-    [ "DUAL_SWTRIG_SET", "group___d_a_c.html#ga6401668f65168b2b689b49155f380bdd", null ],
     [ "DAC_ClearFlag", "group___d_a_c.html#ga49543c52786d70d6b6311f3fee856d37", null ],
     [ "DAC_ClearITPendingBit", "group___d_a_c.html#ga12d90e69a2642997136b23224d180641", null ],
     [ "DAC_Cmd", "group___d_a_c.html#ga323e61530d7fa9396c3bce9edb61f733", null ],

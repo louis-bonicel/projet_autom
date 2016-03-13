@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -109,16 +108,12 @@ $(document).ready(function(){initNavTree('tachy_8h_source.html','');});
 <div class="title">C:/CooCox/CoIDE/workspace/projet_autom/tachy.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="tachy_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="tachy_8h.html#aa77eee177460bc054cb47d1f6f61b8d7">    6</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="tachy_8h.html#aa77eee177460bc054cb47d1f6f61b8d7">K_TACHY</a> = 0.518;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="tachy_8h.html#ab62e52cd8a1bb5c2734e3d38b58d5cba">   11</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="tachy_8h.html#ab62e52cd8a1bb5c2734e3d38b58d5cba">K_TACHY_TO_RPM</a> = 1.93003663004;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tachy_8h.html#a5d48cca097e24b28cc239a15775bc889">Tachy_to_RPM</a>( int16_t value_to_convert , <span class="keyword">volatile</span> int16_t * speed_rpm );</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="tachy_8h.html#aacc1e9260696be7c72164fe613734a10">Tachy_Config</a>( <span class="keywordtype">void</span> );</div><div class="ttc" id="tachy_8h_html_aa77eee177460bc054cb47d1f6f61b8d7"><div class="ttname"><a href="tachy_8h.html#aa77eee177460bc054cb47d1f6f61b8d7">K_TACHY</a></div><div class="ttdeci">static const float K_TACHY</div><div class="ttdoc">Constante pour convertir une valeur d&amp;#39;ADC en tours par minutes. Vitesse en RPM = Valeur d&amp;#39;ADC / K_TAC...</div><div class="ttdef"><b>Definition:</b> <a href="tachy_8h_source.html#l00006">tachy.h:6</a></div></div>
-<div class="ttc" id="tachy_8h_html_aacc1e9260696be7c72164fe613734a10"><div class="ttname"><a href="tachy_8h.html#aacc1e9260696be7c72164fe613734a10">Tachy_Config</a></div><div class="ttdeci">void Tachy_Config(void)</div><div class="ttdoc">Configure l&amp;#39;entree signe du Tachymetre. </div><div class="ttdef"><b>Definition:</b> <a href="tachy_8c_source.html#l00010">tachy.c:10</a></div></div>
-<div class="ttc" id="tachy_8h_html_ab62e52cd8a1bb5c2734e3d38b58d5cba"><div class="ttname"><a href="tachy_8h.html#ab62e52cd8a1bb5c2734e3d38b58d5cba">K_TACHY_TO_RPM</a></div><div class="ttdeci">static const float K_TACHY_TO_RPM</div><div class="ttdoc">Constante pour convertir une valeur d&amp;#39;ADC en tours par minutes. K_TACHY_TO_RPM = 1 / K_TACHY...</div><div class="ttdef"><b>Definition:</b> <a href="tachy_8h_source.html#l00011">tachy.h:11</a></div></div>
-<div class="ttc" id="tachy_8h_html_a5d48cca097e24b28cc239a15775bc889"><div class="ttname"><a href="tachy_8h.html#a5d48cca097e24b28cc239a15775bc889">Tachy_to_RPM</a></div><div class="ttdeci">void Tachy_to_RPM(int16_t value_to_convert, volatile int16_t *speed_rpm)</div><div class="ttdoc">Convertit une valeur de tachymetre vers une vitesse en tr/min. </div><div class="ttdef"><b>Definition:</b> <a href="tachy_8c_source.html#l00030">tachy.c:30</a></div></div>
-</div><!-- fragment --></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> K_TACHY = 0.518;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> K_TACHY_TO_RPM = 1.93003663004;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> Tachy_to_RPM( int16_t value_to_convert , <span class="keyword">volatile</span> int16_t * speed_rpm );</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> Tachy_Config( <span class="keywordtype">void</span> );</div></div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="tachy_8h.html">tachy.h</a></li>
+    <li class="navelem"><b>tachy.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

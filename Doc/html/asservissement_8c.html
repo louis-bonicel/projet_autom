@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -114,23 +113,24 @@ $(document).ready(function(){initNavTree('asservissement_8c.html','');});
 
 <p>Implementation des fonctions pour l'asservissement.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="stm32f4xx__conf_8h_source.html">stm32f4xx_conf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_prj_definitions_8h_source.html">PrjDefinitions.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;stm32f4xx_conf.h&quot;</code><br />
+<code>#include &quot;PrjDefinitions.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="asservissement_8h_source.html">asservissement.h</a>&quot;</code><br />
-<code>#include &quot;delay.h&quot;</code><br />
+<code>#include &quot;encodeur.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_d_a_c_8h_source.html">DAC.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_a_d_c_8h_source.html">ADC.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="usart_8h_source.html">usart.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="tachy_8h_source.html">tachy.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="board_8h_source.html">board.h</a>&quot;</code><br />
-</div>
-<p><a href="asservissement_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;tachy.h&quot;</code><br />
+<code>#include &quot;board.h&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a72b74ab893135c61c7de2ad7b108287a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asservissement_8c.html#a72b74ab893135c61c7de2ad7b108287a">UpdateValues</a> (<a class="el" href="structt___data.html">t_Data</a> *data)</td></tr>
 <tr class="memdesc:a72b74ab893135c61c7de2ad7b108287a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mise a jour des valeurs de vitesse avec les dernieres dispo de l'ADC et de l'encodeur.  <a href="#a72b74ab893135c61c7de2ad7b108287a">More...</a><br /></td></tr>
 <tr class="separator:a72b74ab893135c61c7de2ad7b108287a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac527437b44e8862be1bdafa26aa45718"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac527437b44e8862be1bdafa26aa45718"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Correcteur</b> (int16_t *consigne_output, <a class="el" href="structt___data.html">t_Data</a> *data)</td></tr>
+<tr class="separator:ac527437b44e8862be1bdafa26aa45718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b18ff928bbae3c6deab0170bdc0885a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asservissement_8c.html#a6b18ff928bbae3c6deab0170bdc0885a">TIM2_Init</a> (void)</td></tr>
 <tr class="memdesc:a6b18ff928bbae3c6deab0170bdc0885a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le TIMER 2 aux parametres definis.  <a href="#a6b18ff928bbae3c6deab0170bdc0885a">More...</a><br /></td></tr>
 <tr class="separator:a6b18ff928bbae3c6deab0170bdc0885a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,8 +146,6 @@ Florian Boyer </dd>
 <dd>
 Victor Marnas</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 Janvier 2016 </dd></dl>
-
-<p>Definition in file <a class="el" href="asservissement_8c_source.html">asservissement.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a6b18ff928bbae3c6deab0170bdc0885a"></a>
 <div class="memitem">
@@ -165,8 +163,6 @@ Victor Marnas</dd></dl>
 
 <p>Initialise le TIMER 2 aux parametres definis. </p>
 <p>1kHz avec interruption. </p>
-
-<p>Definition at line <a class="el" href="asservissement_8c_source.html#l00056">56</a> of file <a class="el" href="asservissement_8c_source.html">asservissement.c</a>.</p>
 
 </div>
 </div>
@@ -186,8 +182,6 @@ Victor Marnas</dd></dl>
 
 <p>Initialise le TIMER 3 aux parametres definis. </p>
 <p>10Hz avec interruption. </p>
-
-<p>Definition at line <a class="el" href="asservissement_8c_source.html#l00087">87</a> of file <a class="el" href="asservissement_8c_source.html">asservissement.c</a>.</p>
 
 </div>
 </div>
@@ -212,9 +206,7 @@ Victor Marnas</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Add rotary encoder value, and determine best value to return in speed. </dd></dl>
-
-<p>Definition at line <a class="el" href="asservissement_8c_source.html#l00031">31</a> of file <a class="el" href="asservissement_8c_source.html">asservissement.c</a>.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Determine best value to return in speed. </dd></dl>
 
 </div>
 </div>

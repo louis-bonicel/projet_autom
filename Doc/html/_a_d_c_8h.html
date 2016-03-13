@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -126,13 +125,17 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab462b7b7067e19b0efbf9bf62313b913"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_8h.html#ab462b7b7067e19b0efbf9bf62313b913">TACHY_OFFSET</a> = 0</td></tr>
+<tr class="memitem:ab462b7b7067e19b0efbf9bf62313b913"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab462b7b7067e19b0efbf9bf62313b913"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>TACHY_OFFSET</b> = 0</td></tr>
 <tr class="separator:ab462b7b7067e19b0efbf9bf62313b913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d5d1e0df0db9e74a4307b036eef1c83"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_8h.html#a0d5d1e0df0db9e74a4307b036eef1c83">POT_OFFSET</a> = 1</td></tr>
+<tr class="memitem:a0d5d1e0df0db9e74a4307b036eef1c83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d5d1e0df0db9e74a4307b036eef1c83"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>POT_OFFSET</b> = 1</td></tr>
 <tr class="separator:a0d5d1e0df0db9e74a4307b036eef1c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff9df32f7b11b4a1baca37e2a0486df"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_8h.html#a4ff9df32f7b11b4a1baca37e2a0486df">AWD_DELTA</a> = 10</td></tr>
+<tr class="memitem:a4ff9df32f7b11b4a1baca37e2a0486df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ff9df32f7b11b4a1baca37e2a0486df"></a>
+static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>AWD_DELTA</b> = 10</td></tr>
 <tr class="separator:a4ff9df32f7b11b4a1baca37e2a0486df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad993e1afd1725fba78c42c1a1c339577"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_8h.html#ad993e1afd1725fba78c42c1a1c339577">t_adc_buffer</a> [2]</td></tr>
+<tr class="memitem:ad993e1afd1725fba78c42c1a1c339577"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad993e1afd1725fba78c42c1a1c339577"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>t_adc_buffer</b> [2]</td></tr>
 <tr class="separator:ad993e1afd1725fba78c42c1a1c339577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -144,8 +147,6 @@ Florian Boyer </dd>
 Victor Marnas</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 Janvier 2016</dd></dl>
 <p>Ce fichier regroupe les declarations des differentes fonctions qui seront necessaires pour lire une valeur depuis les ADC du STM. </p>
-
-<p>Definition in file <a class="el" href="_a_d_c_8h_source.html">ADC.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a560179c9f943e8caf404c35c282f17c4"></a>
 <div class="memitem">
@@ -164,90 +165,6 @@ Victor Marnas</dd></dl>
 <p>Configure les ADC pour le potentiometre et le tachymetre. </p>
 <p>Potentiometre : adc_consigne -&gt; PB0 ADC1 channel 8</p>
 <p>Tachymetre : adc_tachy -&gt; PA2 ADC1 channel 2 </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Add adc treshold </dd></dl>
-
-<p>Definition at line <a class="el" href="_a_d_c_8c_source.html#l00026">26</a> of file <a class="el" href="_a_d_c_8c_source.html">ADC.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a4ff9df32f7b11b4a1baca37e2a0486df"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t AWD_DELTA = 10</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_d_c_8h_source.html#l00020">20</a> of file <a class="el" href="_a_d_c_8h_source.html">ADC.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0d5d1e0df0db9e74a4307b036eef1c83"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t POT_OFFSET = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_d_c_8h_source.html#l00019">19</a> of file <a class="el" href="_a_d_c_8h_source.html">ADC.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad993e1afd1725fba78c42c1a1c339577"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint16_t t_adc_buffer[2]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_d_c_8h_source.html#l00021">21</a> of file <a class="el" href="_a_d_c_8h_source.html">ADC.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab462b7b7067e19b0efbf9bf62313b913"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t TACHY_OFFSET = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_d_c_8h_source.html#l00018">18</a> of file <a class="el" href="_a_d_c_8h_source.html">ADC.h</a>.</p>
 
 </div>
 </div>

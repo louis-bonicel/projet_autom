@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -108,13 +107,16 @@ $(document).ready(function(){initNavTree('group___m_i_s_c___system___low___power
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga10748d2b2875afd122f6476864ad6cae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c___system___low___power.html#ga10748d2b2875afd122f6476864ad6cae">NVIC_LP_SEVONPEND</a>&#160;&#160;&#160;((uint8_t)0x10)</td></tr>
+<tr class="memitem:ga10748d2b2875afd122f6476864ad6cae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga10748d2b2875afd122f6476864ad6cae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NVIC_LP_SEVONPEND</b>&#160;&#160;&#160;((uint8_t)0x10)</td></tr>
 <tr class="separator:ga10748d2b2875afd122f6476864ad6cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeec2d10922fa9ec5e65398667b303253"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c___system___low___power.html#gaeec2d10922fa9ec5e65398667b303253">NVIC_LP_SLEEPDEEP</a>&#160;&#160;&#160;((uint8_t)0x04)</td></tr>
+<tr class="memitem:gaeec2d10922fa9ec5e65398667b303253"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaeec2d10922fa9ec5e65398667b303253"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NVIC_LP_SLEEPDEEP</b>&#160;&#160;&#160;((uint8_t)0x04)</td></tr>
 <tr class="separator:gaeec2d10922fa9ec5e65398667b303253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga368dc13a9c762a307c07cfa2e3ef59ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c___system___low___power.html#ga368dc13a9c762a307c07cfa2e3ef59ad">NVIC_LP_SLEEPONEXIT</a>&#160;&#160;&#160;((uint8_t)0x02)</td></tr>
+<tr class="memitem:ga368dc13a9c762a307c07cfa2e3ef59ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga368dc13a9c762a307c07cfa2e3ef59ad"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NVIC_LP_SLEEPONEXIT</b>&#160;&#160;&#160;((uint8_t)0x02)</td></tr>
 <tr class="separator:ga368dc13a9c762a307c07cfa2e3ef59ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga985896f03bc1d7b3da17a212f1bc3de9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___m_i_s_c___system___low___power.html#ga985896f03bc1d7b3da17a212f1bc3de9">IS_NVIC_LP</a>(LP)</td></tr>
+<tr class="memitem:ga985896f03bc1d7b3da17a212f1bc3de9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_NVIC_LP</b>(LP)</td></tr>
 <tr class="separator:ga985896f03bc1d7b3da17a212f1bc3de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -132,54 +134,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(((LP) == <a class="code" href="group___m_i_s_c___system___low___power.html#ga10748d2b2875afd122f6476864ad6cae">NVIC_LP_SEVONPEND</a>) || \</div><div class="line">                        ((LP) == <a class="code" href="group___m_i_s_c___system___low___power.html#gaeec2d10922fa9ec5e65398667b303253">NVIC_LP_SLEEPDEEP</a>) || \</div><div class="line">                        ((LP) == <a class="code" href="group___m_i_s_c___system___low___power.html#ga368dc13a9c762a307c07cfa2e3ef59ad">NVIC_LP_SLEEPONEXIT</a>))</div><div class="ttc" id="group___m_i_s_c___system___low___power_html_ga368dc13a9c762a307c07cfa2e3ef59ad"><div class="ttname"><a href="group___m_i_s_c___system___low___power.html#ga368dc13a9c762a307c07cfa2e3ef59ad">NVIC_LP_SLEEPONEXIT</a></div><div class="ttdeci">#define NVIC_LP_SLEEPONEXIT</div><div class="ttdef"><b>Definition:</b> <a href="misc_8h_source.html#l00094">misc.h:94</a></div></div>
-<div class="ttc" id="group___m_i_s_c___system___low___power_html_ga10748d2b2875afd122f6476864ad6cae"><div class="ttname"><a href="group___m_i_s_c___system___low___power.html#ga10748d2b2875afd122f6476864ad6cae">NVIC_LP_SEVONPEND</a></div><div class="ttdeci">#define NVIC_LP_SEVONPEND</div><div class="ttdef"><b>Definition:</b> <a href="misc_8h_source.html#l00092">misc.h:92</a></div></div>
-<div class="ttc" id="group___m_i_s_c___system___low___power_html_gaeec2d10922fa9ec5e65398667b303253"><div class="ttname"><a href="group___m_i_s_c___system___low___power.html#gaeec2d10922fa9ec5e65398667b303253">NVIC_LP_SLEEPDEEP</a></div><div class="ttdeci">#define NVIC_LP_SLEEPDEEP</div><div class="ttdef"><b>Definition:</b> <a href="misc_8h_source.html#l00093">misc.h:93</a></div></div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="misc_8h_source.html#l00095">95</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga10748d2b2875afd122f6476864ad6cae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NVIC_LP_SEVONPEND&#160;&#160;&#160;((uint8_t)0x10)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="misc_8h_source.html#l00092">92</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="gaeec2d10922fa9ec5e65398667b303253"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NVIC_LP_SLEEPDEEP&#160;&#160;&#160;((uint8_t)0x04)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="misc_8h_source.html#l00093">93</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga368dc13a9c762a307c07cfa2e3ef59ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NVIC_LP_SLEEPONEXIT&#160;&#160;&#160;((uint8_t)0x02)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="misc_8h_source.html#l00094">94</a> of file <a class="el" href="misc_8h_source.html">misc.h</a>.</p>
-
+<b>Value:</b><div class="fragment"><div class="line">(((LP) == NVIC_LP_SEVONPEND) || \</div><div class="line">                        ((LP) == NVIC_LP_SLEEPDEEP) || \</div><div class="line">                        ((LP) == NVIC_LP_SLEEPONEXIT))</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

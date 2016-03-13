@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -120,19 +119,26 @@ Modules</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga13f7abe3641989d4d063ad21962da8b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga13f7abe3641989d4d063ad21962da8b0">SYSCFG_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#ga62246020bf3b34b6a4d8d0e84ec79d3d">SYSCFG_BASE</a> - <a class="el" href="group___peripheral__memory__map.html#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>)</td></tr>
+<tr class="memitem:ga13f7abe3641989d4d063ad21962da8b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga13f7abe3641989d4d063ad21962da8b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYSCFG_OFFSET</b>&#160;&#160;&#160;(SYSCFG_BASE - <a class="el" href="group___peripheral__memory__map.html#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>)</td></tr>
 <tr class="separator:ga13f7abe3641989d4d063ad21962da8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga505f7263c4ca98810cca19505752d61d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga505f7263c4ca98810cca19505752d61d">PMC_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___s_y_s_c_f_g.html#ga13f7abe3641989d4d063ad21962da8b0">SYSCFG_OFFSET</a> + 0x04)</td></tr>
+<tr class="memitem:ga505f7263c4ca98810cca19505752d61d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga505f7263c4ca98810cca19505752d61d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PMC_OFFSET</b>&#160;&#160;&#160;(SYSCFG_OFFSET + 0x04)</td></tr>
 <tr class="separator:ga505f7263c4ca98810cca19505752d61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad4a9bbd669109039291f942d923ff8ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#gad4a9bbd669109039291f942d923ff8ae">MII_RMII_SEL_BitNumber</a>&#160;&#160;&#160;((uint8_t)0x17)</td></tr>
+<tr class="memitem:gad4a9bbd669109039291f942d923ff8ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad4a9bbd669109039291f942d923ff8ae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MII_RMII_SEL_BitNumber</b>&#160;&#160;&#160;((uint8_t)0x17)</td></tr>
 <tr class="separator:gad4a9bbd669109039291f942d923ff8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga06dbfd74f07783e68f03797038cd9457"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga06dbfd74f07783e68f03797038cd9457">PMC_MII_RMII_SEL_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_y_s_c_f_g.html#ga505f7263c4ca98810cca19505752d61d">PMC_OFFSET</a> * 32) + (<a class="el" href="group___s_y_s_c_f_g.html#gad4a9bbd669109039291f942d923ff8ae">MII_RMII_SEL_BitNumber</a> * 4))</td></tr>
+<tr class="memitem:ga06dbfd74f07783e68f03797038cd9457"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga06dbfd74f07783e68f03797038cd9457"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PMC_MII_RMII_SEL_BB</b>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (PMC_OFFSET * 32) + (MII_RMII_SEL_BitNumber * 4))</td></tr>
 <tr class="separator:ga06dbfd74f07783e68f03797038cd9457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8e5fbe846e7478d522df749672b90084"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga8e5fbe846e7478d522df749672b90084">CMPCR_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___s_y_s_c_f_g.html#ga13f7abe3641989d4d063ad21962da8b0">SYSCFG_OFFSET</a> + 0x20)</td></tr>
+<tr class="memitem:ga8e5fbe846e7478d522df749672b90084"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8e5fbe846e7478d522df749672b90084"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMPCR_OFFSET</b>&#160;&#160;&#160;(SYSCFG_OFFSET + 0x20)</td></tr>
 <tr class="separator:ga8e5fbe846e7478d522df749672b90084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0ca336e48ea4840c7d1cde05a0e07e82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga0ca336e48ea4840c7d1cde05a0e07e82">CMP_PD_BitNumber</a>&#160;&#160;&#160;((uint8_t)0x00)</td></tr>
+<tr class="memitem:ga0ca336e48ea4840c7d1cde05a0e07e82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0ca336e48ea4840c7d1cde05a0e07e82"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMP_PD_BitNumber</b>&#160;&#160;&#160;((uint8_t)0x00)</td></tr>
 <tr class="separator:ga0ca336e48ea4840c7d1cde05a0e07e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4516ed27e02d84d9d20c7d711b87437"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#gae4516ed27e02d84d9d20c7d711b87437">CMPCR_CMP_PD_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_y_s_c_f_g.html#ga8e5fbe846e7478d522df749672b90084">CMPCR_OFFSET</a> * 32) + (<a class="el" href="group___s_y_s_c_f_g.html#ga0ca336e48ea4840c7d1cde05a0e07e82">CMP_PD_BitNumber</a> * 4))</td></tr>
+<tr class="memitem:gae4516ed27e02d84d9d20c7d711b87437"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae4516ed27e02d84d9d20c7d711b87437"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMPCR_CMP_PD_BB</b>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (CMPCR_OFFSET * 32) + (CMP_PD_BitNumber * 4))</td></tr>
 <tr class="separator:gae4516ed27e02d84d9d20c7d711b87437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -149,114 +155,15 @@ Functions</h2></td></tr>
 <tr class="memitem:gabec494266ebbbde0279ad1d16c3065d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#gabec494266ebbbde0279ad1d16c3065d0">SYSCFG_ETH_MediaInterfaceConfig</a> (uint32_t SYSCFG_ETH_MediaInterface)</td></tr>
 <tr class="memdesc:gabec494266ebbbde0279ad1d16c3065d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the ETHERNET media interface.  <a href="#gabec494266ebbbde0279ad1d16c3065d0">More...</a><br /></td></tr>
 <tr class="separator:gabec494266ebbbde0279ad1d16c3065d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga85e423de2ee76b615120bde37881bb93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga85e423de2ee76b615120bde37881bb93">SYSCFG_CompensationCellCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memitem:ga85e423de2ee76b615120bde37881bb93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga85e423de2ee76b615120bde37881bb93">SYSCFG_CompensationCellCmd</a> (FunctionalState NewState)</td></tr>
 <tr class="memdesc:ga85e423de2ee76b615120bde37881bb93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the I/O Compensation Cell.  <a href="#ga85e423de2ee76b615120bde37881bb93">More...</a><br /></td></tr>
 <tr class="separator:ga85e423de2ee76b615120bde37881bb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2541640bdf35f63e4bb55f7dc8be9d16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga2541640bdf35f63e4bb55f7dc8be9d16">SYSCFG_GetCompensationCellStatus</a> (void)</td></tr>
+<tr class="memitem:ga2541640bdf35f63e4bb55f7dc8be9d16"><td class="memItemLeft" align="right" valign="top">FlagStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_y_s_c_f_g.html#ga2541640bdf35f63e4bb55f7dc8be9d16">SYSCFG_GetCompensationCellStatus</a> (void)</td></tr>
 <tr class="memdesc:ga2541640bdf35f63e4bb55f7dc8be9d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the I/O Compensation Cell ready flag is set or not.  <a href="#ga2541640bdf35f63e4bb55f7dc8be9d16">More...</a><br /></td></tr>
 <tr class="separator:ga2541640bdf35f63e4bb55f7dc8be9d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>SYSCFG driver modules. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ga0ca336e48ea4840c7d1cde05a0e07e82"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMP_PD_BitNumber&#160;&#160;&#160;((uint8_t)0x00)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00068">68</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="gae4516ed27e02d84d9d20c7d711b87437"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMPCR_CMP_PD_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_y_s_c_f_g.html#ga8e5fbe846e7478d522df749672b90084">CMPCR_OFFSET</a> * 32) + (<a class="el" href="group___s_y_s_c_f_g.html#ga0ca336e48ea4840c7d1cde05a0e07e82">CMP_PD_BitNumber</a> * 4))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00069">69</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga8e5fbe846e7478d522df749672b90084"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMPCR_OFFSET&#160;&#160;&#160;(<a class="el" href="group___s_y_s_c_f_g.html#ga13f7abe3641989d4d063ad21962da8b0">SYSCFG_OFFSET</a> + 0x20)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00067">67</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="gad4a9bbd669109039291f942d923ff8ae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MII_RMII_SEL_BitNumber&#160;&#160;&#160;((uint8_t)0x17)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00062">62</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga06dbfd74f07783e68f03797038cd9457"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PMC_MII_RMII_SEL_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_y_s_c_f_g.html#ga505f7263c4ca98810cca19505752d61d">PMC_OFFSET</a> * 32) + (<a class="el" href="group___s_y_s_c_f_g.html#gad4a9bbd669109039291f942d923ff8ae">MII_RMII_SEL_BitNumber</a> * 4))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00063">63</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga505f7263c4ca98810cca19505752d61d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PMC_OFFSET&#160;&#160;&#160;(<a class="el" href="group___s_y_s_c_f_g.html#ga13f7abe3641989d4d063ad21962da8b0">SYSCFG_OFFSET</a> + 0x04)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00061">61</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga13f7abe3641989d4d063ad21962da8b0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SYSCFG_OFFSET&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#ga62246020bf3b34b6a4d8d0e84ec79d3d">SYSCFG_BASE</a> - <a class="el" href="group___peripheral__memory__map.html#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00058">58</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga85e423de2ee76b615120bde37881bb93"></a>
 <div class="memitem">
@@ -265,7 +172,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void SYSCFG_CompensationCellCmd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a>&#160;</td>
+          <td class="paramtype">FunctionalState&#160;</td>
           <td class="paramname"><em>NewState</em></td><td>)</td>
           <td></td>
         </tr>
@@ -290,8 +197,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00157">157</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
 
 </div>
 </div>
@@ -322,8 +227,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00086">86</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
 
 </div>
 </div>
@@ -358,8 +261,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00140">140</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
 
 </div>
 </div>
@@ -402,8 +303,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00119">119</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ga2541640bdf35f63e4bb55f7dc8be9d16"></a>
@@ -411,7 +310,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a> SYSCFG_GetCompensationCellStatus </td>
+          <td class="memname">FlagStatus SYSCFG_GetCompensationCellStatus </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -433,8 +332,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00170">170</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
 
 </div>
 </div>
@@ -471,8 +368,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="stm32f4xx__syscfg_8c_source.html#l00102">102</a> of file <a class="el" href="stm32f4xx__syscfg_8c_source.html">stm32f4xx_syscfg.c</a>.</p>
 
 </div>
 </div>

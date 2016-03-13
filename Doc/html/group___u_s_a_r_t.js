@@ -3,23 +3,22 @@ var group___u_s_a_r_t =
     [ "USART_Exported_Constants", "group___u_s_a_r_t___exported___constants.html", "group___u_s_a_r_t___exported___constants" ],
     [ "USART_Private_Functions", "group___u_s_a_r_t___private___functions.html", "group___u_s_a_r_t___private___functions" ],
     [ "USART_InitTypeDef", "struct_u_s_a_r_t___init_type_def.html", [
-      [ "USART_BaudRate", "struct_u_s_a_r_t___init_type_def.html#a8712e31ee9d088d83c84d38d88c6af0b", null ],
-      [ "USART_HardwareFlowControl", "struct_u_s_a_r_t___init_type_def.html#ab41fe3b9f5cb4ed89be23bff0a1f4114", null ],
-      [ "USART_Mode", "struct_u_s_a_r_t___init_type_def.html#a1a581f24451bf5a4a210bab8d68998e2", null ],
-      [ "USART_Parity", "struct_u_s_a_r_t___init_type_def.html#a4edcc84644c8553a1a6e841c48ea8413", null ],
-      [ "USART_StopBits", "struct_u_s_a_r_t___init_type_def.html#aa58409990a6a0bc99f432eb90e204c0f", null ],
-      [ "USART_WordLength", "struct_u_s_a_r_t___init_type_def.html#aa1248b67914e095c0de768223eea9328", null ]
+      [ "USART_BaudRate", "struct_u_s_a_r_t___init_type_def.html#a6f763cb0e6044f838ee764ce437997b2", null ],
+      [ "USART_HardwareFlowControl", "struct_u_s_a_r_t___init_type_def.html#a9996edf3bfd90c36f03b4075969703f5", null ],
+      [ "USART_Mode", "struct_u_s_a_r_t___init_type_def.html#a7d944d35d7d1fc79a63f249615148584", null ],
+      [ "USART_Parity", "struct_u_s_a_r_t___init_type_def.html#a5ae66aba755bac37c5cf0dfbf529e2ed", null ],
+      [ "USART_StopBits", "struct_u_s_a_r_t___init_type_def.html#ac745bceb79a6c4c2640fd8e8ce6639d6", null ],
+      [ "USART_WordLength", "struct_u_s_a_r_t___init_type_def.html#a16d1fb7ccc2b51964f1bcfcbfba6d89d", null ]
     ] ],
     [ "USART_ClockInitTypeDef", "struct_u_s_a_r_t___clock_init_type_def.html", [
-      [ "USART_Clock", "struct_u_s_a_r_t___clock_init_type_def.html#a17b0a201922d9d4bad57583b9766904a", null ],
-      [ "USART_CPHA", "struct_u_s_a_r_t___clock_init_type_def.html#ae8d00e2e6f99439097a1b56cd33dd9f4", null ],
-      [ "USART_CPOL", "struct_u_s_a_r_t___clock_init_type_def.html#ab6507c7489a2e05e4ef1ade9fbf057d5", null ],
-      [ "USART_LastBit", "struct_u_s_a_r_t___clock_init_type_def.html#a998735e29b6f77d3e993d8d34c74cbca", null ]
+      [ "USART_Clock", "struct_u_s_a_r_t___clock_init_type_def.html#a229ba7c3f9a4d6d56513e6899f6c6693", null ],
+      [ "USART_CPHA", "struct_u_s_a_r_t___clock_init_type_def.html#abda3a2172bd5819e1c207dc0d1c822d8", null ],
+      [ "USART_CPOL", "struct_u_s_a_r_t___clock_init_type_def.html#a01450cba8a40cf9a624b25979dc6aa77", null ],
+      [ "USART_LastBit", "struct_u_s_a_r_t___clock_init_type_def.html#ab1b28d63d2be6e57849666d78a4467bd", null ]
     ] ],
     [ "CR1_CLEAR_MASK", "group___u_s_a_r_t.html#ga8d425258898b4af4ebc820f52635fad8", null ],
     [ "CR2_CLOCK_CLEAR_MASK", "group___u_s_a_r_t.html#ga7834b3d9be4875de242f87c12fd79f02", null ],
     [ "CR3_CLEAR_MASK", "group___u_s_a_r_t.html#ga5c882571db73abc5d1837368a1cb0a64", null ],
-    [ "IT_MASK", "group___u_s_a_r_t.html#gacde7fc0e46b3a5fc7e2002b2915884d5", null ],
     [ "USART_ClearFlag", "group___u_s_a_r_t.html#gad962e148fc466ae1b45b288f6c91d966", null ],
     [ "USART_ClearITPendingBit", "group___u_s_a_r_t.html#ga1fc25d0338695063be5e50156955d9bc", null ],
     [ "USART_ClockInit", "group___u_s_a_r_t.html#gadb50c7a2175c91acd3728f8eefd0c63d", null ],

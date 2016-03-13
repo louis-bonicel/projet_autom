@@ -48,8 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -108,61 +107,17 @@ $(document).ready(function(){initNavTree('group___d_m_a__memory__targets__defini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gadb576bccef5f2fc65fe9b451033bdc95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a__memory__targets__definitions.html#gadb576bccef5f2fc65fe9b451033bdc95">DMA_Memory_0</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="memitem:gadb576bccef5f2fc65fe9b451033bdc95"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gadb576bccef5f2fc65fe9b451033bdc95"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_Memory_0</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
 <tr class="separator:gadb576bccef5f2fc65fe9b451033bdc95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6d1e13631e4ef9a013d078e613fd7fd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a__memory__targets__definitions.html#ga6d1e13631e4ef9a013d078e613fd7fd5">DMA_Memory_1</a>&#160;&#160;&#160;((uint32_t)0x00080000)</td></tr>
+<tr class="memitem:ga6d1e13631e4ef9a013d078e613fd7fd5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6d1e13631e4ef9a013d078e613fd7fd5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_Memory_1</b>&#160;&#160;&#160;((uint32_t)0x00080000)</td></tr>
 <tr class="separator:ga6d1e13631e4ef9a013d078e613fd7fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga87d6abab18d2b4bb86db909854cc1f02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a__memory__targets__definitions.html#ga87d6abab18d2b4bb86db909854cc1f02">IS_DMA_CURRENT_MEM</a>(MEM)&#160;&#160;&#160;(((MEM) == <a class="el" href="group___d_m_a__memory__targets__definitions.html#gadb576bccef5f2fc65fe9b451033bdc95">DMA_Memory_0</a>) || ((MEM) == <a class="el" href="group___d_m_a__memory__targets__definitions.html#ga6d1e13631e4ef9a013d078e613fd7fd5">DMA_Memory_1</a>))</td></tr>
+<tr class="memitem:ga87d6abab18d2b4bb86db909854cc1f02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga87d6abab18d2b4bb86db909854cc1f02"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IS_DMA_CURRENT_MEM</b>(MEM)&#160;&#160;&#160;(((MEM) == DMA_Memory_0) || ((MEM) == DMA_Memory_1))</td></tr>
 <tr class="separator:ga87d6abab18d2b4bb86db909854cc1f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="gadb576bccef5f2fc65fe9b451033bdc95"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DMA_Memory_0&#160;&#160;&#160;((uint32_t)0x00000000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__dma_8h_source.html#l00540">540</a> of file <a class="el" href="stm32f4xx__dma_8h_source.html">stm32f4xx_dma.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga6d1e13631e4ef9a013d078e613fd7fd5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DMA_Memory_1&#160;&#160;&#160;((uint32_t)0x00080000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__dma_8h_source.html#l00541">541</a> of file <a class="el" href="stm32f4xx__dma_8h_source.html">stm32f4xx_dma.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga87d6abab18d2b4bb86db909854cc1f02"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_DMA_CURRENT_MEM</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">MEM</td><td>)</td>
-          <td>&#160;&#160;&#160;(((MEM) == <a class="el" href="group___d_m_a__memory__targets__definitions.html#gadb576bccef5f2fc65fe9b451033bdc95">DMA_Memory_0</a>) || ((MEM) == <a class="el" href="group___d_m_a__memory__targets__definitions.html#ga6d1e13631e4ef9a013d078e613fd7fd5">DMA_Memory_1</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="stm32f4xx__dma_8h_source.html#l00543">543</a> of file <a class="el" href="stm32f4xx__dma_8h_source.html">stm32f4xx_dma.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
